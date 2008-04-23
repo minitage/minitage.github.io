@@ -10,13 +10,14 @@ Contents:
 .. toctree::
     :maxdepth: 2
 
+    about
     installation
     minibuilds
-    develop
     project
     deps_project
     eggs_project
     zope_project
+    develop
 
 .. Indices and tables
 .. ==================
