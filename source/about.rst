@@ -150,6 +150,7 @@ shell
     Those are the packages that our package manager deals with.
     You can add search Directories by setting the "MINILAYS" environment variable.
     ex:
+
     .. sourcecode:: sh
 
         export MINILAYS="~/otherminibuildsdirectory"
