@@ -107,7 +107,7 @@ To achieve that, you can use the iw.recipe.command to execute shells commands an
        * BAD::
 
            $ cat patch.diff
-            --- old/LanguageTool.py 2008-02-21 14:54:58.000000000 +0100
+           --- old/LanguageTool.py 2008-02-21 14:54:58.000000000 +0100
            +++ ../path/i/was/dreaming/i/had/a/lot/of/money/new/LanguageTool.py 2008-02-21 14:55:15.000000000 +0
 
     #. Create a dedicated directory to put patchs in. Maybe $bd/patchs or put in your patch if the directory allready exists

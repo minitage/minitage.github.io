@@ -62,7 +62,7 @@ There are 2 solutions:
 
         echo "hooks https://URL/buildouts/hooks/branches/meta">$bd/EXTERNALS.txt
         echo "shell https://URL/buildouts/shell/trunk">>$bd/EXTERNALS.txt
-        echo "minitage.recipe.distros https://URL/eggs/minitage.recipe.distros/">$bd/src/EXTERNALS.txt.
+        echo "minitage.recipe.distros https://URL/eggs/minitage.recipe.distros/">$bd/src/EXTERNALS.txt
         svn propset svn:externals $bd -F $bd/EXTERNALS.txt
         svn propset svn:externals $bd/src -F $bd/src/EXTERNALS.txt
         svn add  $bd/EXTERNALS.txt $bd/src/EXTERNALS.txt

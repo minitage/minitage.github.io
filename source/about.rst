@@ -62,15 +62,11 @@ This package manager must:
     * Fetch from several methods: main are svn, http, ftp, CVS, GIT, mercurial and bzr
     * Provide an overlay system which allow us to override where to search packages.
     * Install each part independently of the others. Follow the http rule (DO NOT SHARE)
-
-        .. note::
+      ::
 
             Independently is not a synonym of not using another dependency.
-            It s just to say that you cannot drop eggs in a common site packages
-            or install 2 dependencies in the same /dependencies/foo at the same time.
-
-            You must install the 2 eggs or dependencies separatly and then
-            reference them together.
+            It s just to say that you cannot drop eggs in a common site packages or install 2 dependencies in the same /dependencies/foo at the same time.
+            You must install the 2 eggs or dependencies separatly and then reference them together.
 
     * Read [MinitageMinibuilds minibuilds] which indicate how to install our dependencies/eggs/projects.
 
@@ -133,14 +129,11 @@ eggs
 
 django
    Django projects which only the project code templates, and so on. No egg, not even the django code.
-
-   .. note::
+   ::
 
         The django code must live in /eggs/subdir!
-        Then you must provide a system to provide a python interpreter and a bash
-        environment file to run and use your project.
-        Like : http://hg.minitage.org/hg/minitage/shell/file/tip/geodjango-r7283.env
-        and http://hg.minitage.org/hg/minitage/shell/file/tip/geodjango-r7283.python
+        Then you must provide a system to provide a python interpreter and a bash environment file to run and use your project.
+        Like : http://hg.minitage.org/hg/minitage/shell/file/tip/geodjango-r7283.env and http://hg.minitage.org/hg/minitage/shell/file/tip/geodjango-r7283.python
 
 zope
     Zope/Plone projects which only install zope, plone and the needed products.
