@@ -182,7 +182,7 @@ Steps to minitaging a project
         src_type=hg
         src_uri=http://hg.minitage.org/hg/minitage/mylittleproject/
         install_method=buildout
-        category=eggs
+        category=django
  * Put this miniuild in a seen minilay
  * Enjoy and listen to the wind.
 
