@@ -17,6 +17,7 @@ Contents:
     deps_project
     eggs_project
     zope_project
+    django_project
     develop
 
 .. Indices and tables
