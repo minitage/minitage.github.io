@@ -1,6 +1,7 @@
 ================
 django Projects
 ================
+.. highlight:: cfg
 
 Purpose
 =======
