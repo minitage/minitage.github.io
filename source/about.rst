@@ -54,7 +54,7 @@ This will allow us to:
 
 This package manager must:
 
-    * Be simple ! 
+    * Be simple !
     * Run on popular Unixes, including FreeBSD, Linux and MacOSX.
     * Have a dependency system
     * Integrates other build systems
@@ -118,7 +118,7 @@ minimerge.cfg
 
 dependencies
 
-    * Necessary libraries (libpng, readline). 
+    * Necessary libraries (libpng, readline).
     * Needed applications.
     * It is not necessary to say that those must be installed prior to your project which will depend on them.
       That's why we need a dependency system ;)
