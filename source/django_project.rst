@@ -1,17 +1,16 @@
-=============
+================
 django Projects
-=============
+================
 
 Purpose
 =======
 
 Creating a django project using buildout and minitage
-The minitage category is ``"zope"``.
+The minitage category is ``"django"``.
 
 Conventions
 ===========
 
- * Allways name versionned products (packagename-version)
  * category is django
 
 Template
@@ -20,24 +19,30 @@ Template
 There is a `template project`_ online that can be used as bases for your
 project.
 
-.. _`template project`: https://hg.minitage.org/minitage/samples/django (mercurial)
+.. _`template project`: https://hg.minitage.org/minitage/samples/django
 
 
 Django
 ======
- * django is a dependency of your project. Even if it is the main one. So, you must not package it along with your project stuff.
- * Django work out of the box after a checkout, so the buildout will be very simple. We just need a recipe that knows how to checkout.
- * Problem is that django applications are often tied to a particular branche and a particular revision.  So, we will package for each project 2 kind of eggs:
+ * django is a dependency of your project. Even if it is the main one.
+   So, you must not package it along with your project stuff.
+ * Django work out of the box after a checkout, so the buildout will be very simple.
+   We just need a recipe that knows how to checkout.
+ * Problem is that django applications are often tied to a particular branche and a particular revision.
+   So, we will package for each project 2 kind of eggs:
 
-   - one suffixed in -svn pointing to the current unstable svn version supported
-   - many eggs suffixed in -rREV pointing to the corresponding revision
+   - one suffixed in -scm pointing to the current unstable svn version used in our developpment.
+   - many eggs suffixed in -rREV pointing to the corresponding revision. Those one will be used by production branches
 
  * We will use shell helpers to assemble the python path needed by our application.
 
-Packaging Django
-================
-Packaging the -r7283 (http://hg.minitage.org/hg/minitage/buildouts/ultimate-eggs/geodjango-r7283/)
-Exemple::
+Basic Django Packaging
+======================
+ We will package the -r7283 of geodjango as an example. And we 'll name it 'geodjango-r7283'
+ The result is here : http://hg.minitage.org/hg/minitage/buildouts/ultimate-eggs/geodjango-r7283/
+
+
+ The buildout.cfg::
 
     [project]
     eggs-directory=${buildout:directory}/../../eggs/cache
@@ -89,8 +94,8 @@ Exemple::
     url =  -r7283 http://code.djangoproject.com/svn/django/branches/gis/django
     subfolder=django
 
-The corresponding minibuild:
-Example::
+ The corresponding minibuild:
+ Example::
 
     [minimerge]
     depends=python-2.5
@@ -99,14 +104,14 @@ Example::
     install_method=buildout
     category=eggs
 
-Django is a classical python package, that s why we package it like it!
-Furtherthe more, the name of the minibuild will be the name you ll reference later in the django.env helper file.
+ Django is a classical pur-python package.
+ So, hopefully, we have not much work to package it :)
+ When you ll minimerge it, it will go in minitage/eggs/geodjango-r7283.
 
-
-Project Layout
-==============
- * the project will look like :
-
+django based Project's Layout
+=============================
+The project will look like
+--------------------------
    - app/ the code
    - templates/ : django templates
    - shell/ : bash helpers
@@ -118,33 +123,32 @@ Project Layout
    - share/ : misc, doc and etc.
 
 
-Specific to django shell helpers
-================================
+Django shell helpers
+--------------------
+ django.env which provides thoses aliases:
+  * python
+  * python-2.5
+  * python2.5
+  * compile-messages
+  * daily-cleanup
+  * django-admin
+  * make-messages
+  * unique-messages
 
-:django.env
-    Provides those aliases:
-     * python
-     * python-2.5
-     * python2.5
-     * compile-messages
-     * daily-cleanup
-     * django-admin
-     * make-messages
-     * unique-messages
-django.python
-     * provides a python interpreter with a preset PYTHONPATH
-     * you will need to specify inside the wanted geodjango that you have previously packaged.
+ django.python
+  * provides a python interpreter with a preset PYTHONPATH
+  * you will need to specify inside the wanted geodjango that you have previously packaged.
 
 
 Using the django instance
 =========================
-Example::
+ Example::
 
-    cd minitage/django/project
-    source shell/django.env
-    python ....
-    django-admin
-    ./shell/django.python
+     cd minitage/django/project
+     source shell/django.env
+     python ....
+     django-admin
+     ./shell/django.python
 
 
 Steps to minitaging a project
@@ -159,17 +163,19 @@ Steps to minitaging a project
     src_uri=http://hg.minitage.org/hg/minitage/buildouts/ultimate-eggs/geodjango-r7283/
     install_method=buildout
     category=eggs
+
  * Put this miniuild in a seen minilay
  * Check out the django template
- * Assemble your code inside the template
- * Edit shell/django.env to point to the needed django version
+ * Grab your django project source code into the wanted app/ subdirectory
+ * Edit shell/django.env to point to the needed django version (the variable WANTED_DJANGO)
+ * Check in the project somewhere (http://hg.minitage.org/hg/minitage/mylittleproject/)
  * Make a minibuild pointing to that project and put the specific django version as a dependency of your project:
    Example::
 
         [minimerge]
         depends=myproject-django-rxxx
         src_type=hg
-        src_uri=http://hg.minitage.org/hg/minitage/buildouts/ultimate-eggs/geodjango-r7283/
+        src_uri=http://hg.minitage.org/hg/minitage/mylittleproject/
         install_method=buildout
         category=eggs
  * Put this miniuild in a seen minilay
@@ -178,13 +184,19 @@ Steps to minitaging a project
 
 Tips and Tricks
 ===============
-Make 2 kind of eggs to packages django and use this naming scheme:
- * YOURPROJECT-django-rXXX to point to a specific revision of django.
- * YOURPROJECT-django-scm to point to the current developpment version used
 
-In those eggs, copy one allready packaged django, and modify the revision to have the one you want
+ - Make 2 kind of eggs packages to packages django and use this naming scheme:
 
-This  will allow you to just edit point to your wanted django:
- * project/shell/django.env
- * the project minibuild to make come the wanted django as a dependency
+  * YOURPROJECT-django-rXXX to point to a specific revision of django.
+  * YOURPROJECT-django-scm to point to the current developpment version used
+
+ - In those eggs packages , copy one already packaged django, and modify the revision to have the one you want
+
+ - In the developpement branch (HEAD,tip, trunk): use the YOURPROJECT-django-scm as dependency (minibuild, WANTED_DJANGO in django.env)
+ - In production branch, use YOURPROJECT-django-rxxx as dependency (minibuild, WANTED_DJANGO in django.env)
+
+ - This  will allow you to just edit point to your wanted django:
+
+  * project/shell/django.env (the variable WANTED_DJANGO)
+  * the project minibuild to make come the wanted django as a dependency
 
