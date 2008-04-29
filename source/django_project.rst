@@ -42,8 +42,9 @@ Basic Django Packaging
  We will package the -r7283 of geodjango as an example. And we 'll name it 'geodjango-r7283'
  The result is here : http://hg.minitage.org/hg/minitage/buildouts/ultimate-eggs/geodjango-r7283/
 
+ The buildout.cfg:
 
- The buildout.cfg::
+.. sourcecode:: ini
 
     [project]
     eggs-directory=${buildout:directory}/../../eggs/cache
@@ -95,6 +96,8 @@ Basic Django Packaging
     url =  -r7283 http://code.djangoproject.com/svn/django/branches/gis/django
     subfolder=django
 
+..
+
  The corresponding minibuild:
  Example::
 
@@ -108,6 +111,7 @@ Basic Django Packaging
  Django is a classical pur-python package.
  So, hopefully, we have not much work to package it :)
  When you ll minimerge it, it will go in minitage/eggs/geodjango-r7283.
+
 
 django based Project's Layout
 =============================
