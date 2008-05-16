@@ -5,7 +5,7 @@ minitage
 1. Contexte
 ===========
 
-    - Utilisation de zope pour deployer de gros projets zope / gis
+    - Utilisation de buildout pour deployer de gros projets zope / gis
     - Mauvaise gestion des dépendances et difficilement maintenable.
     - Mais qu'est ce que c'est bien.
 
