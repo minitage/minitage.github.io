@@ -35,7 +35,7 @@ minitage
           - Les (dé-)installations
 
 4. Layout
-========
+=========
     - Layout ou les packages doivent etre installés d'une maniere precise::
 
         eggs/
@@ -61,6 +61,9 @@ Qestions/Réponses
 =================
 
     - Allez y !
+    - /me a besoin de gens
+    - http://trac.minitage.org 
+    - #minitage@irc.freenode.org
 
 
 
