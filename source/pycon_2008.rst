@@ -52,6 +52,7 @@ minitage
     - Ré ecriture des recettes de base
     - format des minibuilds bash -> cfg.ini
     - Implémentation des profils applicatifs
+
       - base pgsql
       - base ldap
       - interpréteur python personnalisé
@@ -62,7 +63,7 @@ Qestions/Réponses
 
     - Allez y !
     - /me a besoin de gens
-    - http://trac.minitage.org 
+    - http://trac.minitage.org
     - #minitage@irc.freenode.org
 
 
