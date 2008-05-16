@@ -2,54 +2,40 @@
 minitage
 =========
 
-Buildout
-========
+1. Contexte
+===========
 
-    - Mauvaise gestion des dépendances.
-    - Inmaintenable quand c'est gros.
+    - Utilisation de zope pour deployer de gros projets zope / gis
+    - Mauvaise gestion des dépendances et difficilement maintenable.
     - Mais qu'est ce que c'est bien.
 
-Système
-=======
+
+2. Des besoins plus vastes
+==========================
 
     - Isolation du projet.
-    - Gestion de conflit de versions.
+    - Gestion des dépendances systemes
+
+        - conflit de versions
+
     - Compilation et utilisation en prefixe.
-
-Le stuff python
-===============
-
-    - Eggs/packages python plus ou moins bien packagés.
-    - Flags de compilation spécifiques pour l'isolation.
     - Mode offline ou meme online sans reposer sur un index.
 
 
-Projet
-======
-
-    - Déploiement identique et reproductible
-    - Multi plateforme
-    - Adaptation d'un profil applicatif à un projet.
-
-        - base pgsql
-        - base ldap
-        - interpréteur python personnalisé
-
-Minitage
-========
+3. Minitage
+===========
 
     - Meta package manager qui repose sur d'autres systèmes de packaging
 
         - inspiré des systemes de ports
-        - Gere
+        - Permet de déployer à l'identique indépendamment de la plateforme hote
+        - Doit gérer
 
           - les dépendances
-          - Les installations
-          - Les dé-installations
-          - les profils
+          - Les (dé-)installations
 
-Layout
-======
+4. Layout
+========
     - Layout ou les packages doivent etre installés d'une maniere precise::
 
         eggs/
@@ -59,22 +45,16 @@ Layout
         zope/
             myproject
 
-Historique
-==========
-
-    - Faire un truc inspiré des systèmes de ports
-    - Non public jusqu'a la v0.3
-    - Etait tres lié a subversion et en bash.
-
-
-On the road to 0.4
-==================
+5. On the road to 0.4
+=====================
 
     - Reécriture en python / eggyfication
-    - Migration a mercurial
     - Ré ecriture des recettes de base
     - format des minibuilds bash -> cfg.ini
-    - Implémentation des profils
+    - Implémentation des profils applicatifs
+      - base pgsql
+      - base ldap
+      - interpréteur python personnalisé
 
 
 Qestions/Réponses
