@@ -2,9 +2,6 @@
 minitage
 =========
 
-
-background
-===========
 Buildout
 ========
 
