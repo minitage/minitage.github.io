@@ -65,7 +65,7 @@ Qestions/Réponses
     - #minitage@irc.freenode.org
 
 Off. Layout
-=========
+============
     - Layout ou les packages doivent etre installés d'une maniere precise::
 
         eggs/
