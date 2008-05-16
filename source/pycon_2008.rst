@@ -34,16 +34,14 @@ minitage
           - les dépendances
           - Les (dé-)installations
 
-4. Layout
-=========
-    - Layout ou les packages doivent etre installés d'une maniere precise::
+Mais ca sert?
+=============
 
-        eggs/
-            lxml-666.666/
-        dependencies/
-            python-2.4/
-        zope/
-            myproject
+    -Actuellementn à Makina Corpus, on utilise minitage sur ces technos:
+
+        - tiny erp
+        - zope
+        - django
 
 5. On the road to 0.4
 =====================
@@ -66,7 +64,16 @@ Qestions/Réponses
     - http://trac.minitage.org
     - #minitage@irc.freenode.org
 
+4. Layout
+=========
+    - Layout ou les packages doivent etre installés d'une maniere precise::
 
+        eggs/
+            lxml-666.666/
+        dependencies/
+            python-2.4/
+        zope/
+            myproject
 
 
 
