@@ -55,6 +55,7 @@ minitage
       - base ldap
       - interpréteur python personnalisé
 
+    - release début juin (peut etre pas le 01)
 
 Qestions/Réponses
 =================
