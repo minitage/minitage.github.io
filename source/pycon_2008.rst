@@ -34,8 +34,8 @@ minitage
           - les dépendances
           - Les (dé-)installations
 
-Mais ca sert?
-=============
+4. Mais ca sert?
+================
 
     -Actuellementn à Makina Corpus, on utilise minitage sur ces technos:
 
