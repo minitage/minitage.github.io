@@ -19,6 +19,7 @@ Contents:
     zope_project
     django_project
     develop
+    pycon_2008
 
 .. Indices and tables
 .. ==================
