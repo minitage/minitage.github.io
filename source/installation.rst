@@ -88,7 +88,7 @@ Do not forget to update your bash profile to take your installed ports into acco
 
 
 Python
-=======    
+=======
 
 Existing python
 ----------------
@@ -103,7 +103,7 @@ Try that in your interpretery::
 >>> import zlib
 >>> import setuptools
 >>>
- 
+
 PyBootstrapper
 ---------------
 
@@ -113,7 +113,7 @@ Goal
 This utility deploys for you a nicely python with all its dependencies.
 
     WILL INSTALL IN PREFIX:
-    
+
     * Python-2.5.2
     * openssl= 0.9.7
     * zlib-1.2.3
@@ -141,42 +141,102 @@ You can use it in offline mode but put the archives in your prefix / downloads e
     ln -s /prod/1.0/downloads  $HOME/tools/python-2.4/downloads
     ./MakinaBootstrapper.sh  -o $HOME/tools/python-2.4
 
+Using virtualenv
+=================
+You 'd better to use `virtualenv <http://pypi.python.org/pypi/virtualenv/1.1>`_ ,
+minitage fits well with it.
+
+virtualenv is a tool that allow you to create isolated Python
+environments.
+
+
+    Here is how to set up an environment with it:
+
+    - Install virtualenv::
+
+        easy_install virtualenv #(maybe use sudo ;))
+
+    - Install minitage prefix::
+
+        virtualenv --no-site-packages  ~/minitage
+
+    - activate it::
+
+        source ~/minitage/bin/activate
+
+
+    KEEP IN MIND THAT YOU MUST ACTIVATE VIRTUALENV AT ANY TIME YOU USE IT.
+
 
 Installing minitage
-===================
+====================
 
+A stable version
+-----------------
+
+    Minitage is a classical python egg, you can get it throught easy_install.
+
+    To install minitage in a stable version, follow those steps:
+
+    - Install minitage::
+
+        easy_install minitage.core
+
+    - Sync its packages (all its minilays in minitage terminology).::
+
+        minimerge -s
+
+
+A develop version:
+------------------
+If you want to be bleeding edge and not lhave a 3 years old debianised
+minitage, you can give a try to the egg in developement mode?
+
+    - If you need to, fire your virtualenv
 .. sourcecode:: sh
 
-    svn co https://URL_IS_NOT_VALID_MIGRATION_TO_MERCURIAL/zopina/buildouts/minitage/trunk/ /path/to/minitage/
-    cd /path/to/minitage/
-    cp etc/minimerge.cfg.in etc/minimerge.cfg
-    # specify your python
-    $EDITOR etc/minimerge.cfg
+        source ~/minitage/bin/activate
 
-Variable you can override there (bash):
-
-    * python : python executable
-    * debug: set to y to enable debug mode
-    * subversion_args: co or export, arguments to add to the svn line.
-    * default_minilays: where to search for  minibuilds, directories separated by spaces.
-
-
-Minitage is virtualenv friendly, if you create a virtualenv inside the toplevel directory, or in the subproject one, minitage will use it!
-Minitage searches for the bin/activate file.
-For example, creating a virtualenv with our precedent python:
-
+    - Get the sources
 .. sourcecode:: sh
 
-    $HOME/tools/python-2.4/bin/virtualenv /path/to/minitage
+        mkdir -p ~/repos/minitage
+        cd ~/repos/minitage
+        hg clone http://hg.minitage.org/hg/minitage/eggs/minitage.core
+        hg clone http://hg.minitage.org/hg/minitage/eggs/minitage.recipe
+
+    - Or update them
+.. sourcecode:: sh
+
+        hg pull -u -R ~/repos/minitage/minitage.core
+        hg pull -u -R ~/repos/minitage/minitage.recipe
+
+    - Install/Reinstall minitage in develop mode
+.. sourcecode:: sh
+
+        cd ~/repos/minitage/minitage.core
+        python setup.py develop
+        cd ~/repos/minitage/minitage.recipe
+        python setup.py develop
+
+
+Syncing packages
+-----------------
+
+    To sync all your minilays
+.. sourcecode:: sh
+            source ~/minitage/bin/activate
+            minimerge -s
+
 
 Using minitage
 ==============
 
     * Install python-2.4
 
-      .. sourcecode:: sh
-
-        ./minimerge python-2.4
+.. sourcecode:: sh
+        source ~/minitage/bin/activate
+        minimerge python-2.4
 
 Example: deploy a project with minitage
 ---------------------------------------
