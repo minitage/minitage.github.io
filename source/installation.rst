@@ -238,7 +238,7 @@ Syncing packages
 Using minitage
 ==============
 
-    * Install python-2.4
+    - Install python-2.4
 
 .. sourcecode:: sh
 
