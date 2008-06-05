@@ -5,8 +5,7 @@ Installation
 Buildout Configuration
 ======================
 
-You must set the download and cache directory are the eggs constructions will be incomplete as we do not include allways by now the downloads directory on the svn!
-
+To store all downloaded stuff in the same place, you ll need to set buildout to do so.
 ::
 
     mkdir -p ~/.buildout/downloads
@@ -15,6 +14,7 @@ You must set the download and cache directory are the eggs constructions will be
     download-directory = $HOME/.buildout/downloads
     download-cache = $HOME/.buildout/downloads
     EOF
+    cat ~/.buildout/downloads
 
 
 Requirements
@@ -27,20 +27,20 @@ Prior to begin with the project, ensure those dependencies are installed on
 your system:
 
     * m4
-    * subversion
     * build-essential
-    * libtool
     * pkg-config
+    * automake
+    * libtool
+    * autoconf
 
 .. sourcecode:: sh
 
-    apt-get install build-essential subversion m4 libtool libtool pkg-config
+    apt-get install build-essential m4 libtool pkg-config autoconf pkg-config m4
 
 
 FreeBSD
 -------
 
-    * subversion
     * gmake
     * gsed
 
@@ -48,16 +48,13 @@ FreeBSD
 
     cd /usr/ports/sysutils/portupgrade
     make install clean
-    for i in gsed gmake subversion;do portinstall $i;done
+    for i in gsed gmake ;do portinstall $i;done
 
 Gentoo
 ------
 
-    * subversion
+Gentoo is perfect by default, no requirement.
 
-.. sourcecode:: sh
-
-    emerge subversion
 
 Suze
 ----
@@ -65,7 +62,6 @@ Suze
 Prior to begin with the project, ensure those dependencies are installed on
 your system:
 
-    * subversion
     * toolchain (gcc, autotools, m4)
 
 MacOS X
@@ -97,10 +93,10 @@ This utility deploys for you a nicely python with all its dependencies.
 Persist in using one of your existings python at your own risk.
 System Requirements:
 
-    * openssl >= 0.9.7
 
       WILL INSTALL IN PREFIX:
     * Python-2.4.4
+    * openssl >= 0.9.7
     * zlib-1.2.3
     * bzip2-1.0.4
     * ncurses-5.6
@@ -143,7 +139,7 @@ Variable you can override there (bash):
     * python : python executable
     * debug: set to y to enable debug mode
     * subversion_args: co or export, arguments to add to the svn line.
-    * default_minilays: where to search for  minibuilds, directories separated by spaces. 
+    * default_minilays: where to search for  minibuilds, directories separated by spaces.
 
 
 Minitage is virtualenv friendly, if you create a virtualenv inside the toplevel directory, or in the subproject one, minitage will use it!
