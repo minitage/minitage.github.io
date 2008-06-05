@@ -6,7 +6,8 @@ Buildout Configuration
 ======================
 
 To store all downloaded stuff in the same place, you ll need to set buildout to do so.
-::
+
+.. sourcecode:: sh
 
     mkdir -p ~/.buildout/downloads
     cat << EOF > ~/.buildout/default.cfg
