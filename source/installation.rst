@@ -132,7 +132,7 @@ Usage
     bash ./PyBootstrapper.sh $HOME/tools/python-2.4
 
 offline mode
-------------
++++++++++++++
 
 You can use it in offline mode but put the archives in your prefix / downloads eg:
 
