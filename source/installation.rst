@@ -107,12 +107,12 @@ Try that in your interpretery::
 PyBootstrapper
 ---------------
 
-
 This utility deploys for you a nicely python with all its dependencies.
 Persist in using one of your existings python at your own risk.
 System Requirements:
 
-      WILL INSTALL IN PREFIX:
+    WILL INSTALL IN PREFIX:
+    
     * Python-2.5.2
     * openssl>= 0.9.7
     * zlib-1.2.3
