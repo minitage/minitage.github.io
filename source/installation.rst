@@ -192,13 +192,13 @@ A develop version:
 If you want to be bleeding edge and not lhave a 3 years old debianised
 minitage, you can give a try to the egg in developement mode?
 
-- If you need to, fire your virtualenv
+    If you need to, fire your virtualenv
 
 .. sourcecode:: sh
 
         source ~/minitage/bin/activate
 
-- Get the sources
+    Get the sources
 
 .. sourcecode:: sh
 
@@ -214,7 +214,7 @@ minitage, you can give a try to the egg in developement mode?
         hg pull -u -R ~/repos/minitage/minitage.core
         hg pull -u -R ~/repos/minitage/minitage.recipe
 
-- Install/Reinstall minitage in develop mode
+    Install/Reinstall minitage in develop mode
 
 .. sourcecode:: sh
 
