@@ -107,14 +107,15 @@ Try that in your interpretery::
 PyBootstrapper
 ---------------
 
+Goal
+++++
+
 This utility deploys for you a nicely python with all its dependencies.
-Persist in using one of your existings python at your own risk.
-System Requirements:
 
     WILL INSTALL IN PREFIX:
     
     * Python-2.5.2
-    * openssl>= 0.9.7
+    * openssl= 0.9.7
     * zlib-1.2.3
     * bzip2-1.0.4
     * ncurses-5.6
@@ -122,7 +123,7 @@ System Requirements:
     * ez_setup.py which will provide setuptools,zc.buildout, paster and virtual env
 
 Usage
------
+++++++
 
 .. sourcecode:: sh
 
