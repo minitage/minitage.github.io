@@ -17,8 +17,8 @@ To store all downloaded stuff in the same place, you ll need to set buildout to 
     cat ~/.buildout/downloads
 
 
-Requirements
-============
+System Requirements
+====================
 
 Debian/Ubuntu
 -------------
@@ -86,17 +86,35 @@ Do not forget to update your bash profile to take your installed ports into acco
     # put this line into ~/.bashrc and ~/.bash_profile
     export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 
-pybootstrapper
-==============
+
+Python
+=======    
+
+Existing python
+----------------
+You need a python with setuptools, zlib, bz2 and ssl support.
+
+Try that in your interpretery::
+
+>>> import tarfile
+>>> import zipfile
+>>> import bz2
+>>> import _ssl
+>>> import zlib
+>>> import setuptools
+>>>
+ 
+PyBootstrapper
+---------------
+
 
 This utility deploys for you a nicely python with all its dependencies.
 Persist in using one of your existings python at your own risk.
 System Requirements:
 
-
       WILL INSTALL IN PREFIX:
-    * Python-2.4.4
-    * openssl >= 0.9.7
+    * Python-2.5.2
+    * openssl>= 0.9.7
     * zlib-1.2.3
     * bzip2-1.0.4
     * ncurses-5.6
