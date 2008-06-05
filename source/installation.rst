@@ -195,12 +195,14 @@ minitage, you can give a try to the egg in developement mode?
 - If you need to, fire your virtualenv
 
 .. sourcecode:: sh
+
         source ~/minitage/bin/activate
 
 - Get the sources
 
 .. sourcecode:: sh
-    mkdir -p ~/repos/minitage
+
+        mkdir -p ~/repos/minitage
         cd ~/repos/minitage
         hg clone http://hg.minitage.org/hg/minitage/eggs/minitage.core
         hg clone http://hg.minitage.org/hg/minitage/eggs/minitage.recipe
@@ -208,12 +210,14 @@ minitage, you can give a try to the egg in developement mode?
 - Or update them
 
 .. sourcecode:: sh
+
         hg pull -u -R ~/repos/minitage/minitage.core
         hg pull -u -R ~/repos/minitage/minitage.recipe
 
 - Install/Reinstall minitage in develop mode
 
 .. sourcecode:: sh
+
         cd ~/repos/minitage/minitage.core
         python setup.py develop
         cd ~/repos/minitage/minitage.recipe
@@ -225,8 +229,9 @@ Syncing packages
 
     To sync all your minilays
 .. sourcecode:: sh
-            source ~/minitage/bin/activate
-            minimerge -s
+
+        source ~/minitage/bin/activate
+        minimerge -s
 
 
 Using minitage
@@ -235,6 +240,7 @@ Using minitage
     * Install python-2.4
 
 .. sourcecode:: sh
+
         source ~/minitage/bin/activate
         minimerge python-2.4
 
