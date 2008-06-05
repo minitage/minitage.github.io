@@ -228,6 +228,7 @@ Syncing packages
 -----------------
 
     To sync all your minilays
+
 .. sourcecode:: sh
 
         source ~/minitage/bin/activate
