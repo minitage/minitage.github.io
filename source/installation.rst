@@ -7,7 +7,7 @@ Buildout Configuration
 
 To store all downloaded stuff in the same place, you ll need to set buildout to do so.
 
-.. sourcecode:: sh
+.. code-block:: sh
 
     mkdir -p ~/.buildout/downloads
     cat << EOF > ~/.buildout/default.cfg
@@ -34,7 +34,7 @@ your system:
     * libtool
     * autoconf
 
-.. sourcecode:: sh
+.. code-block:: sh
 
     apt-get install build-essential m4 libtool pkg-config autoconf pkg-config m4
 
@@ -45,7 +45,7 @@ FreeBSD
     * gmake
     * gsed
 
-.. sourcecode:: sh
+.. code-block:: sh
 
     cd /usr/ports/sysutils/portupgrade
     make install clean
@@ -82,7 +82,7 @@ Before starting with the project, be sure that these dependencies are installed 
 
 Do not forget to update your bash profile to take your installed ports into account
 
-.. sourcecode:: sh
+.. code-block:: sh
 
     # put this line into ~/.bashrc and ~/.bash_profile
     export PATH=/opt/local/bin:/opt/local/sbin:$PATH
@@ -126,7 +126,7 @@ This utility deploys for you a nicely python with all its dependencies.
 Usage
 ++++++
 
-.. sourcecode:: sh
+.. code-block:: sh
 
     wget http://hg.minitage.org/hg/minitage/shell/raw-file/tip/PyBootstrapper.sh
     mkdir -p $HOME/tools/python-2.4
@@ -137,7 +137,7 @@ offline mode
 
 You can use it in offline mode but put the archives in your prefix / downloads eg:
 
-.. sourcecode:: sh
+.. code-block:: sh
 
     ln -s /prod/1.0/downloads  $HOME/tools/python-2.4/downloads
     ./MakinaBootstrapper.sh  -o $HOME/tools/python-2.4
@@ -179,13 +179,17 @@ A stable version
 
     To install minitage in a stable version, follow those steps:
 
-    - Install minitage::
+    - Install minitage
 
-        easy_install minitage.core
+.. code-block:: sh
 
-    - Sync its packages (all its minilays in minitage terminology).::
+    easy_install minitage.core
 
-        minimerge -s
+    - Sync its packages (all its minilays in minitage terminology).
+
+.. code-block:: sh
+    
+    minimerge -s
 
 
 A develop version:
@@ -195,32 +199,29 @@ minitage, you can give a try to the egg in developement mode?
 
     - If you need to, fire your virtualenv
 
-.. sourcecode:: sh
-
-    source ~/minitage/bin/activate
+.. code-block:: sh
+   source ~/minitage/bin/activate
 
  
     - Get the sources
 
-.. sourcecode:: sh
+.. code-block:: sh
 
         mkdir -p ~/repos/minitage
         cd ~/repos/minitage
- :!       hg clone http://hg.minitage.org/hg/minitage/eggs/minitage.core
+        hg clone http://hg.minitage.org/hg/minitage/eggs/minitage.core
         hg clone http://hg.minitage.org/hg/minitage/eggs/minitage.recipe
-\ 
+
         - Or update them
 
-.. sourcecode:: sh
+.. code-block:: sh
 
         hg pull -u -R ~/repos/minitage/minitage.core
         hg pull -u -R ~/repos/minitage/minitage.recipe
 
-.
-
     - Install/Reinstall minitage in develop mode
 
-.. sourcecode:: sh
+.. code-block:: sh
 
         cd ~/repos/minitage/minitage.core
         python setup.py develop
@@ -233,7 +234,7 @@ Syncing packages
 
     - To sync all your minilays
 
-.. sourcecode:: sh
+.. code-block:: sh
 
         source ~/minitage/bin/activate
         minimerge -s
@@ -244,7 +245,7 @@ Using minitage
 
     - Install python-2.4
 
-.. sourcecode:: sh
+.. code-block:: sh
 
         source ~/minitage/bin/activate
         minimerge python-2.4
@@ -252,7 +253,7 @@ Using minitage
 Example: deploy a project with minitage
 ---------------------------------------
 
-.. sourcecode:: sh
+.. code-block:: sh
 
     # get the project minilay
     # minitage is aware of the MINILAYS environnment variable, you can use it to specify space separated minlays
@@ -263,7 +264,7 @@ Example: deploy a project with minitage
 Extra options and usage:
 ------------------------
 
-.. sourcecode:: sh
+.. code-block:: sh
 
    ./minimerge  --hel
 
