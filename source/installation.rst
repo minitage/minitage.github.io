@@ -197,22 +197,19 @@ minitage, you can give a try to the egg in developement mode?
 
 .. sourcecode:: sh
 
-        source ~/minitage/bin/activate
+    source ~/minitage/bin/activate
 
-.
-
+ 
     - Get the sources
 
 .. sourcecode:: sh
 
         mkdir -p ~/repos/minitage
         cd ~/repos/minitage
-        hg clone http://hg.minitage.org/hg/minitage/eggs/minitage.core
+ :!       hg clone http://hg.minitage.org/hg/minitage/eggs/minitage.core
         hg clone http://hg.minitage.org/hg/minitage/eggs/minitage.recipe
-
-.
-
-    - Or update them
+\ 
+        - Or update them
 
 .. sourcecode:: sh
 
