@@ -198,6 +198,7 @@ minitage, you can give a try to the egg in developement mode?
 .. sourcecode:: sh
 
         source ~/minitage/bin/activate
+
 .
 
     - Get the sources
@@ -208,6 +209,7 @@ minitage, you can give a try to the egg in developement mode?
         cd ~/repos/minitage
         hg clone http://hg.minitage.org/hg/minitage/eggs/minitage.core
         hg clone http://hg.minitage.org/hg/minitage/eggs/minitage.recipe
+
 .
 
     - Or update them
@@ -216,6 +218,7 @@ minitage, you can give a try to the egg in developement mode?
 
         hg pull -u -R ~/repos/minitage/minitage.core
         hg pull -u -R ~/repos/minitage/minitage.recipe
+
 .
 
     - Install/Reinstall minitage in develop mode
