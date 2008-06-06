@@ -200,7 +200,8 @@ minitage, you can give a try to the egg in developement mode?
     - If you need to, fire your virtualenv
 
 .. code-block:: sh
-   source ~/minitage/bin/activate
+
+    source ~/minitage/bin/activate
 
  
     - Get the sources
