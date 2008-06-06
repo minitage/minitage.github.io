@@ -181,15 +181,15 @@ A stable version
 
     - Install minitage
 
-.. code-block:: sh
+    .. code-block:: sh
 
-    easy_install minitage.core
+        easy_install minitage.core
 
     - Sync its packages (all its minilays in minitage terminology).
 
-.. code-block:: sh
+    .. code-block:: sh
     
-    minimerge -s
+        minimerge -s
 
 
 A develop version:
