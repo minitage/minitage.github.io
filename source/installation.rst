@@ -195,7 +195,7 @@ A stable version
 A develop version:
 ------------------
 If you want to be bleeding edge and not lhave a 3 years old debianised
-minitage, you can give a try to the egg in developement mode?
+minitage. You can give a try to the egg in developement mode.
 
     - If you need to, fire your virtualenv::
 
