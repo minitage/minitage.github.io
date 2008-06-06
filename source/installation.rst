@@ -198,6 +198,7 @@ minitage, you can give a try to the egg in developement mode?
 .. sourcecode:: sh
 
         source ~/minitage/bin/activate
+.
 
     - Get the sources
 
@@ -207,6 +208,7 @@ minitage, you can give a try to the egg in developement mode?
         cd ~/repos/minitage
         hg clone http://hg.minitage.org/hg/minitage/eggs/minitage.core
         hg clone http://hg.minitage.org/hg/minitage/eggs/minitage.recipe
+.
 
     - Or update them
 
@@ -214,6 +216,7 @@ minitage, you can give a try to the egg in developement mode?
 
         hg pull -u -R ~/repos/minitage/minitage.core
         hg pull -u -R ~/repos/minitage/minitage.recipe
+.
 
     - Install/Reinstall minitage in develop mode
 
@@ -253,26 +256,14 @@ Example: deploy a project with minitage
 
     # get the project minilay
     # minitage is aware of the MINILAYS environnment variable, you can use it to specify space separated minlays
-    svn co https://subversion.foo.net/YOURPROJECT/minilay/trunk /path/to/minitage/minilays/YOURPROJECTMINILAY
+    scm CHECKOUT  https://subversion.foo.net/YOURPROJECT/minilay/trunk /path/to/minitage/minilays/YOURPROJECTMINILAY
     # minimerging it
-    ./minimerge meta-project
+    minimerge project
 
 Extra options and usage:
 ------------------------
 
 .. sourcecode:: sh
 
-    $ ./minimerge  -c --help
-       Minimerge v.0.3
-      ../minimerge --help for more infos
-      ../minimerge  [Options]     minibuild ... minibuildn  :  Installs  package(s)
-      ../minimerge  [Options] -rm minibuild ... minibuildn  :  Uninstall package(s)
-       Options:
-      --offline (-o) : offline mode
-      --debug   (-d) : enable debug mode
-      --nodeps  (-N) : desactive dependencies checking to merge just a package without calculating and merging its dependencies, use at your own risks !
-      --help    (-h) : print this help message
-      --nocolor (-c) : desactivate colors !
-
-
+   ./minimerge  --hel
 
