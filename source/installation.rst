@@ -266,5 +266,5 @@ Extra options and usage:
 
 .. code-block:: sh
 
-   ./minimerge  --hel
+   ./minimerge  --help
 
