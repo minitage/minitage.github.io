@@ -37,14 +37,14 @@ create the project layout
 What project template to choose?
 ----------------------------------
 
-    - for libraries and applications, make a ``minitage.dependencies`` one
-    - for "pur-python" eggs, make an ``minitage.eggs`` one
-    - for distutils stuff, make an ``minitage.du`` one
-    - for plone25 instances make an ``minitage.plone25`` one
-    - for plone31 instances make an ``minitage.plone31`` one
-    - for zope3 instances make an ``minitage.zope3`` one
-    - for django instances make an ``minitage.django`` one
-    - for geodjango instances make an ``minitage.geodjango`` one
+    - for libraries and applications, use ``minitage.dependencies``
+    - for "pur-python" eggs, use ``minitage.eggs``
+    - for distutils stuff, use ``minitage.du``
+    - for plone25 instances, use ``minitage.plone25``
+    - for plone31 instances, use ``minitage.plone31``
+    - for zope3 instances, use ``minitage.zope3``
+    - for django instances, use ``minitage.django``
+    - for geodjango instances, use ``minitage.geodjango``
 
 NOTE : minitage.dependencies/minitage.eggs/minitage.du are not yet written
 
