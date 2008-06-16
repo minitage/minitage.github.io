@@ -9,7 +9,7 @@ The steps for minitaging a project are:
     * Create the 'layout' part of the project.
     * Create a minibuild which points to this layout.
 
-Begin a new project with buildout and minitage
+Begin a new project with paster and minitage
 ==============================================
 
 paster
