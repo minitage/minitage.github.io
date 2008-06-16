@@ -36,7 +36,7 @@ your system:
 
 .. code-block:: sh
 
-    apt-get install build-essential m4 libtool pkg-config autoconf pkg-config m4
+    apt-get install build-essential m4 libtool pkg-config autoconf m4 gettext
 
 
 FreeBSD
@@ -243,13 +243,23 @@ Syncing packages
 Using minitage
 ==============
 
-    - Install python-2.4
+Install python-2.4
+-------------------
 
 .. code-block:: sh
 
         source ~/minitage/bin/activate
         minimerge python-2.4
 
+Install a custom minilay
+---------------------------
+
+.. code-block:: sh
+
+    # get the project minilay
+    # minitage is aware of the MINILAYS environnment variable, you can use it to specify space separated minlays
+    scm CHECKOUT  https://subversion.foo.net/YOURPROJECT/minilay/trunk /path/to/minitage/minilays/YOURPROJECTMINILAY 
+ 
 Example: deploy a project with minitage
 ---------------------------------------
 

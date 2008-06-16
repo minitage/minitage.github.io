@@ -11,15 +11,14 @@ Contents:
     :maxdepth: 2
 
     about
+    spec
     installation
-    minibuilds
     project
     deps_project
     eggs_project
     zope_project
     django_project
     develop
-    pycon_2008
 
 .. Indices and tables
 .. ==================
