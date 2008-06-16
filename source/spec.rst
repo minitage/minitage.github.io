@@ -59,7 +59,7 @@ Specifying alternate minilays to minimerge
 
 
 
-The minibuilds:
+The minibuilds
 ===============
 
 Abstract
