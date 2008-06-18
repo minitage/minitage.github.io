@@ -1,6 +1,6 @@
-=============
-deps projects
-=============
+====================
+Dependency project
+====================
 
 Purpose
 =======
@@ -8,78 +8,50 @@ Purpose
 How to package a system dependency which is not python related software (not installed with distutils or setuptools) in minitage.
 The minitage category is "dependencies".
 
-Buidout
+Layout
 =======
-You must install into minitage/dependencies/dependencyName/part !
+You must install into minitage/dependencies/dependencyName/parts/part
 
 Sample Layout
 =============
-You can use this sample ::
+You can use this sample throught paster::
 
-    https://URL/samples/dependency/
+    easy_install minitage.paste
+    paster create -t minitage.dependency dependencyName
 
-Configure && Make && Make Install parts
----------------------------------------
 
-Above, You have that you can set some interessant variables that make easier the LD_FLAGS and CFLAGS handling.
-Knowing that, you can define easily some compile parts:
+The minitage.recipe:cmmi recipe
+================================
+The command just installed a project based on the ``minitage.recipe:cmmi`` recipe.
 
-    * CFLAGS : -I${A_DIRECTORY_WHERE_THE_COMPILER_CAN_FINd_SOME_C_HEADERS}
-    * LD_FLAGS : -L${A_DIRECTORY_WHERE_THE_LINKER_CAN_FIND_LIBRARIES} -Wl,-rpath -Wl,${A_DIRECTORY_WHERE_THE_LINKER_CAN_FIND_LIBRARIES}
+This one is likely to do:
+    - pre-configure-hook
+    - ./configure
+    - pre-make-hook
+    - make
+    - pre-make-hook
+    - make install
+    - post-install-hook 
+    
 
-Example::
+Hooks just point to python callables to do boilerplate that the classical
+./configure && make && make install can not do.
 
-    [libbar]
-    location=${project:dependencies}/libbar
-    include=${project:dependencies}/libbar/include
-    lib=${project:dependencies}/libbar/lib
-    [libfoo]
-    recipe = makina.recipe.cmmi
-    url = ftp://ftp.remotesensing.org/pub/libfoo/foo-3.8.2.tar.gz
-    md5sum = fbb6f446ea4ed18955e2714934e5b698
-    configure-options =
-        CFLAGS="-I${libbar:include}"
-        LDFLAGS="-L${libbar:lib} -Wl,-rpath -Wl,${libbar:lib} $(bash -c "if [[ $(uname) == 'Darwin' ]];then echo '-mmacosx-version-min=10.5.0';fi")"
+You can set a lot of options to fine control the build process.
 
-NB: ``$(bash -c "if [[ $(uname) == 'Darwin' ]];then echo '-mmacosx-version-min=10.5.0';fi")`` is for macintosh keep and dont touch it !
+To know them, just create a project with paster and edit the generated buildout.cfg.
 
-Complicated CMMI
-""""""""""""""""
+Under the hood
+===============
+Minitage as a package manager will give you some means to refer to the dependencies.
 
-You can set addtionnal make target and also be able to disable parts in the cmmi procedure.
-Example::
+At build time:
 
-    [part]
-    recipe = makina.recipe.cmmi
-    url = http://85.25.128.62/gentoo/distfiles/bzip2-1.0.4.tar.gz
-    md5sum = fc310b254f6ba5fbb5da018f04533688
-    noconfigure = true
-    nomake = true
-    noinstall = true
-    post-make-hook = ${buildout:hooks-directory}/cmmi-hooks.py:bz2
-    additionnal-make-targets =
-        -f Makefile-libbz2_so CFLAGS="-fpic -fPIC -Wall -Winline -O3  -I. -L."
-        CFLAGS="-fpic -fPIC -Wall -Winline -O3  -I. -L. "
-
-Definition of some variables that can be used:
-
-``gmake = true``
-    use gmake
-
-``patches``
-    list of patches to apply. Patches' names are separated by a space or a new
-    line (``\n``).
-
-Create the appropriate minibuild
---------------------------------
-
-Create a minibuild for your dependency::
-
-    $ cat yourproject
-    install_method="buildout"
-    src_uri="https://subversion.foo.net/yourproject/trunk"
-    src_type="svn"
-    category="dependencies"
-
+for all the minibuild dependency:
+    - it adds all binaries inside the path
+    - it registers the ``includes`` directories to the CFLAGS varible
+    - it registers the ``libraries`` directories to the LDFLAGS and LD_LIBRARY_PATH and LD_RUN_PATH variable
+    - it registers the ``libraries/pkgconfig`` directories to the PKGCONFIGPATH
+    - it registers the disutils stuff inside the PYTHONPATH
 
 
