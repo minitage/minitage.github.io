@@ -1,0 +1,58 @@
+Bonjours a tous;
+Donc je suis mathieu pasquet, je suis développeur plone a makina corpus.
+Ce lightning talk est destiné a un public de dev. et d'admins systemes.
+
+
+Bon d'abord qu'est ce que le deploiement?
+C'est surtout le moment ou on se rend compte que les commerciaux n'avaient des
+arguments qui n'etaient que des arguments et que les dev netaient que des
+reveurs.
+
+Automatiser, perenniser et mettre à jour un projet aujourd'hui, c'est pas si
+facile. Bien plus encore quand on a tout un tas de dépendances.
+
+On a été embété avec un projet qui demandait a la fois du GIS, du plone, des
+bases de données, du ldap avec des versions précises a avoir de chaque soft.
+Et la il mest venu l'idée d'écrire un gros buildout qui sest tres vite revelé
+inmaintenable. Je pouvais bien en faire plusieurs mais il fallait les
+ordenancer et la m'est venu l'idée de minitage.
+
+Pour moi ce truc va devoir  ressembler a portage, le systeme de paquets de
+gentoo mais tout ca pour poser en prefix et isoler chaque element du projet
+dans son coin et permettre des mises a jour faciles et controllées.
+Et a coté de ca on doit pouvoir gerer des bases de données, un ldap etc.
+
+Magie ou pas ? Et bien non, ca tourne en prod. On a pour linstance
+essentiellement des deploiement autour de technos zope/plone et django (bison
+vert, vous connaissez ?). Et surement bientot turbogears et openerp
+
+Au debut cetait du bash un peu crado, mais la ca se corse et je suis passé a
+quelquechose de bien plus costaud en python avec des tests unitaires et tout.
+Les profils ont aussi été introduits dans cette version et la release stable
+devrait etre pour la fin du mois.
+
+Et apres, quoi de prévu ?
+Et bien, je suis parti pour essayuer d'integrer des packages precompilés
+histoire de gagner un peu de temps. Car la compil' c'est peut etre agreable a
+regarder mais cest plutot long.
+
+Certaines personnes sont assez folles pour utiliser windows, et ca on ne peut
+pas y couper. Donc je vais essayer de porter ce qui est portable sous cet os.
+Pour les packages, surement mysql et bien d'autre.
+
+Et voila, c'est fini.
+Des questions ?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
