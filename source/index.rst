@@ -18,7 +18,9 @@ Contents:
     eggs_project
     zope_project
     django_project
+    profils
     develop
+
 
 .. Indices and tables
 .. ==================

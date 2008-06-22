@@ -46,5 +46,3 @@ What project template to choose?
     - for django instances, use ``minitage.django``
     - for geodjango instances, use ``minitage.geodjango``
 
-NOTE : minitage.dependencies/minitage.eggs/minitage.du are not yet written
-
