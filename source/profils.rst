@@ -76,6 +76,8 @@ minitage.postgresql
 -------------------
 This profil will install a 'postgresql database'.
 
+When you answer to question, think that the 'main user' is a system user.
+
 - In `sys/bin`, you ll have binaries which point to the created database.
 - In `sys/etc/initd`, you ll have an init script to start the database.
 - In `sys/var/data/postgresql/database`, you ll have the database.
