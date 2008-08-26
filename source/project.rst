@@ -15,6 +15,10 @@ Begin a new project with paster and minitage
 paster
 -----------------------
     - paster from http://pypi.python.org/pypi/PasteScript/ will assist you in your project creation.
+      If you do not have installed minitage.paste (PasteScript is a dependency, it would be installed when you install minitage.paste), do it now::
+
+        easy_install minitage.paste
+
     - Just answer to a bunch of question and it will generate a layout saving you from a lot of edit time.
 
 Basicly it will create the following things:
@@ -37,12 +41,14 @@ create the project layout
 What project template to choose?
 ----------------------------------
 
-    - for libraries and applications, use ``minitage.dependencies``
-    - for "pur-python" eggs, use ``minitage.eggs``
-    - for distutils stuff, use ``minitage.du``
+    - for libraries and applications, use ``minitage.dependency``
+    - for "pur-python" eggs, use ``minitage.egg``
     - for plone25 instances, use ``minitage.plone25``
     - for plone31 instances, use ``minitage.plone31``
+    - for plone31 instances with zeo server connection, use ``minitage.plone31zeo``
     - for zope3 instances, use ``minitage.zope3``
     - for django instances, use ``minitage.django``
     - for geodjango instances, use ``minitage.geodjango``
+    - for buildbot slave instances, use ``minitage.buildbot-slave``
+    - for buildbot master instances, use ``minitage.buildbot-master``
 

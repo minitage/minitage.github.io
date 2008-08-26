@@ -111,12 +111,12 @@ PyBootstrapper
 Goal
 ++++
 
-This utility deploys for you a nicely python with all its dependencies.
+This utility deploys for you a nicely python with all its dependencies in a prefix of your choice.
 
-    WILL INSTALL IN PREFIX:
+    This script will install for you:
 
-    * Python-2.5.2
-    * openssl= 0.9.7
+    * Python-2.5.2 or Python-2.4.5 (default)
+    * openssl 0.9.7
     * zlib-1.2.3
     * bzip2-1.0.4
     * ncurses-5.6
@@ -125,26 +125,27 @@ This utility deploys for you a nicely python with all its dependencies.
 
 Usage
 ++++++
+- Please use a FULL path with this script!
 
 .. code-block:: sh
 
     wget http://hg.minitage.org/hg/minitage/shell/raw-file/tip/PyBootstrapper.sh
     mkdir -p $HOME/tools/python-2.4
-    bash ./PyBootstrapper.sh $HOME/tools/python-2.4
+    bash ./PyBootstrapper.sh $HOME/tools/python
 
 offline mode
 +++++++++++++
-
-You can use it in offline mode but put the archives in your prefix / downloads eg:
+- Please use a FULL path with this script!
+- You can use it in offline mode but put the archives in your `$prefix/downloads` eg:
 
 .. code-block:: sh
 
     ln -s /prod/1.0/downloads  $HOME/tools/python-2.4/downloads
-    ./MakinaBootstrapper.sh  -o $HOME/tools/python-2.4
+    bash ./PyBootstrapper.sh  -o $HOME/tools/python
 
 Using virtualenv
 =================
-You 'd better to use `virtualenv <http://pypi.python.org/pypi/virtualenv/1.1>`_ ,
+You have to use `virtualenv <http://pypi.python.org/pypi/virtualenv/1.1>`_ ,
 minitage fits well with it.
 
 virtualenv is a tool that allow you to create isolated Python
@@ -155,7 +156,7 @@ environments.
 
     - Install virtualenv::
 
-        easy_install virtualenv #(maybe use sudo ;))
+        easy_install virtualenv #(maybe use sudo if you have dared not to use the bootstrapper ;))
 
     - Install minitage prefix::
 
@@ -186,9 +187,10 @@ A stable version
         easy_install minitage.core
 
     - Sync its packages (all its minilays in minitage terminology).
+      This will initiate also all the minitage directories for the first run.
 
     .. code-block:: sh
-    
+
         minimerge -s
 
 
@@ -198,13 +200,13 @@ If you want to be bleeding edge and not lhave a 3 years old debianised
 minitage. You can give a try to the egg in developement mode.
 
     - If you need to, fire your virtualenv
-    
+
     .. code-block:: sh
 
         source ~/minitage/bin/activate
- 
+
     - Get the sources
-    
+
     .. code-block:: sh
 
         mkdir -p ~/repos/minitage
@@ -213,7 +215,7 @@ minitage. You can give a try to the egg in developement mode.
         hg clone http://hg.minitage.org/hg/minitage/eggs/minitage.recipe
 
     - Or update them
-    
+
     .. code-block:: sh
 
         hg pull -u -R ~/repos/minitage/minitage.core
@@ -228,11 +230,17 @@ minitage. You can give a try to the egg in developement mode.
         cd ~/repos/minitage/minitage.recipe
         python setup.py develop
 
+    - Sync its packages (all its minilays in minitage terminology).
+      This will initiate also all the minitage directories for the first run.
 
-Syncing packages
------------------
+    .. code-block:: sh
 
-    - To sync all your minilays
+        minimerge -s
+
+Syncing packages or first time use
+-------------------------------------
+
+    - To sync all your minilays (and initiate stuff the first time)
 
 .. code-block:: sh
 
@@ -243,13 +251,15 @@ Syncing packages
 Using minitage
 ==============
 
-Install python-2.4
+Those are usage samples... You have not to run that if you do not need to ;)
+
+Install python-xxx
 -------------------
 
 .. code-block:: sh
 
         source ~/minitage/bin/activate
-        minimerge python-2.4
+        minimerge python-xxx
 
 Install a custom minilay
 ---------------------------
@@ -258,9 +268,9 @@ Install a custom minilay
 
     # get the project minilay
     # minitage is aware of the MINILAYS environnment variable, you can use it to specify space separated minlays
-    scm CHECKOUT  https://subversion.foo.net/YOURPROJECT/minilay/trunk /path/to/minitage/minilays/YOURPROJECTMINILAY 
- 
-Example: deploy a project with minitage
+    scm CHECKOUT  https://subversion.foo.net/YOURPROJECT/minilay/trunk /path/to/minitage/minilays/YOURPROJECTMINILAY
+
+Deploy a project with minitage
 ---------------------------------------
 
 .. code-block:: sh
@@ -272,7 +282,7 @@ Example: deploy a project with minitage
     minimerge project
 
 Extra options and usage:
-------------------------
+=========================
 
 .. code-block:: sh
 
