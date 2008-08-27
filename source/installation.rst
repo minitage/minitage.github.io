@@ -23,8 +23,7 @@ System Requirements
 Debian/Ubuntu
 -------------
 
-Prior to begin with the project, ensure those dependencies are installed on
-your system:
+Prior to begin with the project, ensure those dependencies are installed on your system:
 
     * m4
     * build-essential
@@ -132,7 +131,6 @@ Just adjust the following code to fit to your needs and type it in your current 
 
     export minitage=$HOME/minitage
     export python=$HOME/python
-
 
 
 Usage
