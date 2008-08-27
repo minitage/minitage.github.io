@@ -213,51 +213,51 @@ minitage. You can give a try to the egg in developement mode.
 
     - If you need to, fire your virtualenv
 
-    .. code-block:: sh
+        .. code-block:: sh
 
-        source $prefix/bin/activate
+            source $prefix/bin/activate
 
     - Get the sources
 
-    .. code-block:: sh
+        .. code-block:: sh
 
-        mkdir -p ~/repos/minitage
-        cd ~/repos/minitage
-        hg clone http://hg.minitage.org/hg/minitage/eggs/minitage.core
-        hg clone http://hg.minitage.org/hg/minitage/eggs/minitage.recipe
+            mkdir -p ~/repos/minitage
+            cd ~/repos/minitage
+            hg clone http://hg.minitage.org/hg/minitage/eggs/minitage.core
+            hg clone http://hg.minitage.org/hg/minitage/eggs/minitage.recipe
 
     - Or update them
 
-    .. code-block:: sh
+        .. code-block:: sh
 
-        hg pull -u -R ~/repos/minitage/minitage.core
-        hg pull -u -R ~/repos/minitage/minitage.recipe
+            hg pull -u -R ~/repos/minitage/minitage.core
+            hg pull -u -R ~/repos/minitage/minitage.recipe
 
     - Install/Reinstall minitage in develop mode
 
-    .. code-block:: sh
+        .. code-block:: sh
 
-        cd ~/repos/minitage/minitage.core
-        python setup.py develop
-        cd ~/repos/minitage/minitage.recipe
-        python setup.py develop
+            cd ~/repos/minitage/minitage.core
+            python setup.py develop
+            cd ~/repos/minitage/minitage.recipe
+            python setup.py develop
 
     - Sync its packages (all its minilays in minitage terminology).
       This will initiate also all the minitage directories for the first run.
 
-    .. code-block:: sh
+        .. code-block:: sh
 
-        minimerge -s
+            minimerge -s
 
 Syncing packages or first time use
 -------------------------------------
 
     - To sync all your minilays (and initiate stuff the first time)
 
-.. code-block:: sh
+        .. code-block:: sh
 
-        source $prefix/bin/activate
-        minimerge -s
+                source $prefix/bin/activate
+                minimerge -s
 
 
 Using minitage
