@@ -95,13 +95,13 @@ Existing python
 
     Try that in your interpretery::
 
-        >>> import tarfile
-        >>> import zipfile
-        >>> import bz2
-        >>> import _ssl
-        >>> import zlib
-        >>> import setuptools
-        >>>
+            >>> import tarfile
+            >>> import zipfile
+            >>> import bz2
+            >>> import _ssl
+            >>> import zlib
+            >>> import setuptools
+            >>>
 
 PyBootstrapper
 ---------------
