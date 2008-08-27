@@ -130,7 +130,7 @@ Variables
     .. code-block:: sh
 
         export minitage=$HOME/minitage
-        export python=$HOME/python
+        export python=$HOME/tools/python
 
 
 Usage
