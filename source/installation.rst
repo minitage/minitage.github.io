@@ -199,7 +199,7 @@ A stable version
             easy_install minitage.core
 
     - Sync its packages (all its minilays in minitage terminology).
-      This will initiate also all the minitage directories for the first run.
+      **This will initiate also all the minitage directories for the first run.**
 
         .. code-block:: sh
 
