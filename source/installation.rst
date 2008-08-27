@@ -243,23 +243,13 @@ minitage. You can give a try to the egg in developement mode.
             cd ~/repos/minitage/minitage.recipe
             python setup.py develop
 
-    - Sync its packages (all its minilays in minitage terminology).
-      This will initiate also all the minitage directories for the first run.
+    - Sync its packages (all its minilays in minitage vocabulary).
+
+      **This will initiate also all the minitage directories for the first run.**
 
         .. code-block:: sh
 
             minimerge -s
-
-Syncing packages or first time use
--------------------------------------
-
-    - To sync all your minilays (and initiate stuff the first time)
-
-        .. code-block:: sh
-
-                source $prefix/bin/activate
-                minimerge -s
-
 
 Using minitage
 ==============
