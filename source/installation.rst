@@ -122,15 +122,27 @@ This utility deploys for you a nicely python with all its dependencies in a pref
     * readlines-5.2
     * ez_setup.py which will provide setuptools,zc.buildout, paster and virtual env
 
+Variables
++++++++++++
+
+We will use some variables to refer to well known places and scripts.
+Just adjust the following code to fit to your needs and type it in your current shell/
+
+.. code-block:: sh
+    export minitage=$HOME/minitage
+    export python=$HOME/python
+
+
 Usage
 ++++++
 - Please use a FULL path with this script!
 
 .. code-block:: sh
 
+    mkdir -p $python
+    cd $python
     wget http://hg.minitage.org/hg/minitage/shell/raw-file/tip/PyBootstrapper.sh
-    mkdir -p $HOME/tools/python
-    bash ./PyBootstrapper.sh $HOME/tools/python
+    bash ./PyBootstrapper.sh $python
 
 offline mode
 +++++++++++++
@@ -139,8 +151,8 @@ offline mode
 
 .. code-block:: sh
 
-    ln -s /prod/1.0/downloads  $HOME/tools/python/downloads
-    bash ./PyBootstrapper.sh  -o $HOME/tools/python
+    ln -s /prod/1.0/downloads  $python/downloads
+    bash ./PyBootstrapper.sh  -o $python
 
 Using virtualenv
 =================
@@ -153,17 +165,21 @@ environments.
 
     Here is how to set up an environment with it:
 
-    - Install virtualenv::
+    - Only if you do not have used the boostrap script, you must install virtualenv::
 
-        easy_install virtualenv #(maybe use sudo if you have dared not to use the bootstrapper ;))
+        # maybe sudo ?
+        easy_install virtualenv
 
-    - Install minitage prefix::
+    - Install the minitage prefix, this is just a new virtualenv creation::
 
-        virtualenv --no-site-packages  ~/minitage
+        $python/bin/virtualenv --no-site-packages $prefix
+        # maybe that if you do not used the bootstrapper
+        # virtualenv --no-site-packages $prefix
+
 
     - activate it::
 
-        source ~/minitage/bin/activate
+        source $prefix/bin/activate
 
 
     KEEP IN MIND THAT YOU MUST ACTIVATE VIRTUALENV AT ANY TIME YOU USE IT.
@@ -202,7 +218,7 @@ minitage. You can give a try to the egg in developement mode.
 
     .. code-block:: sh
 
-        source ~/minitage/bin/activate
+        source $prefix/bin/activate
 
     - Get the sources
 
@@ -243,7 +259,7 @@ Syncing packages or first time use
 
 .. code-block:: sh
 
-        source ~/minitage/bin/activate
+        source $prefix/bin/activate
         minimerge -s
 
 
@@ -257,7 +273,7 @@ Install python-xxx
 
 .. code-block:: sh
 
-        source ~/minitage/bin/activate
+        source $prefix/bin/activate
         minimerge python-xxx
 
 Install a custom minilay
@@ -267,7 +283,7 @@ Install a custom minilay
 
     # get the project minilay
     # minitage is aware of the MINILAYS environnment variable, you can use it to specify space separated minlays
-    scm CHECKOUT  https://subversion.foo.net/YOURPROJECT/minilay/trunk /path/to/minitage/minilays/YOURPROJECTMINILAY
+    scm CHECKOUT  https://subversion.foo.net/YOURPROJECT/minilay/trunk $prefix/minilays/YOURPROJECTMINILAY
 
 Deploy a project with minitage
 ---------------------------------------
@@ -276,7 +292,7 @@ Deploy a project with minitage
 
     # get the project minilay
     # minitage is aware of the MINILAYS environnment variable, you can use it to specify space separated minlays
-    scm CHECKOUT  https://subversion.foo.net/YOURPROJECT/minilay/trunk /path/to/minitage/minilays/YOURPROJECTMINILAY
+    scm CHECKOUT  https://subversion.foo.net/YOURPROJECT/minilay/trunk $prefix/minilays/YOURPROJECTMINILAY
     # minimerging it
     minimerge project
 
@@ -285,5 +301,5 @@ Extra options and usage:
 
 .. code-block:: sh
 
-   ./minimerge  --help
+   minimerge  --help
 
