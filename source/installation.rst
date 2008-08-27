@@ -165,7 +165,7 @@ environments.
 
     Here is how to set up an environment with it:
 
-    - `Only` if you do not have used the bootstrap script, you must install virtualenv::
+    - ``Only`` if you do not have used the bootstrap script, you must install virtualenv::
 
         # maybe sudo ?
         easy_install virtualenv
