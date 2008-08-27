@@ -91,17 +91,17 @@ Python
 
 Existing python
 ----------------
-You need a python with setuptools, zlib, bz2 and ssl support.
+    You need a python with setuptools, zlib, bz2 and ssl support.
 
-Try that in your interpretery::
+    Try that in your interpretery::
 
->>> import tarfile
->>> import zipfile
->>> import bz2
->>> import _ssl
->>> import zlib
->>> import setuptools
->>>
+        >>> import tarfile
+        >>> import zipfile
+        >>> import bz2
+        >>> import _ssl
+        >>> import zlib
+        >>> import setuptools
+        >>>
 
 PyBootstrapper
 ---------------
