@@ -113,7 +113,7 @@ Goal
 
 This utility deploys for you a nicely python with all its dependencies in a prefix of your choice.
 
-    This script will install for you:
+This script will install for you:
 
     * Python-2.5.2 or Python-2.4.5 (default)
     * openssl 0.9.7
