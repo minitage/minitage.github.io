@@ -93,7 +93,9 @@ Existing python
 ----------------
     You need a python with setuptools, zlib, bz2 and ssl support.
 
-    Try that in your interpretery::
+    Try that in your interpretery
+
+        .. code-block:: python
 
             >>> import tarfile
             >>> import zipfile
