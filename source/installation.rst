@@ -194,16 +194,16 @@ A stable version
 
     - Install minitage
 
-    .. code-block:: sh
+        .. code-block:: sh
 
-        easy_install minitage.core
+            easy_install minitage.core
 
     - Sync its packages (all its minilays in minitage terminology).
       This will initiate also all the minitage directories for the first run.
 
-    .. code-block:: sh
+        .. code-block:: sh
 
-        minimerge -s
+            minimerge -s
 
 
 A develop version:
@@ -268,35 +268,35 @@ Those are usage samples... You have not to run that if you do not need to ;)
 Install python-xxx
 -------------------
 
-.. code-block:: sh
+    .. code-block:: sh
 
-        source $prefix/bin/activate
-        minimerge python-xxx
+            source $prefix/bin/activate
+            minimerge python-xxx
 
 Install a custom minilay
 ---------------------------
 
-.. code-block:: sh
+    .. code-block:: sh
 
-    # get the project minilay
-    # minitage is aware of the MINILAYS environnment variable, you can use it to specify space separated minlays
-    scm CHECKOUT  https://subversion.foo.net/YOURPROJECT/minilay/trunk $prefix/minilays/YOURPROJECTMINILAY
+        # get the project minilay
+        # minitage is aware of the MINILAYS environnment variable, you can use it to specify space separated minlays
+        scm CHECKOUT  https://subversion.foo.net/YOURPROJECT/minilay/trunk $prefix/minilays/YOURPROJECTMINILAY
 
 Deploy a project with minitage
 ---------------------------------------
 
-.. code-block:: sh
+    .. code-block:: sh
 
-    # get the project minilay
-    # minitage is aware of the MINILAYS environnment variable, you can use it to specify space separated minlays
-    scm CHECKOUT  https://subversion.foo.net/YOURPROJECT/minilay/trunk $prefix/minilays/YOURPROJECTMINILAY
-    # minimerging it
-    minimerge project
+        # get the project minilay
+        # minitage is aware of the MINILAYS environnment variable, you can use it to specify space separated minlays
+        scm CHECKOUT  https://subversion.foo.net/YOURPROJECT/minilay/trunk $prefix/minilays/YOURPROJECTMINILAY
+        # minimerging it
+        minimerge project
 
 Extra options and usage:
 =========================
 
-.. code-block:: sh
+    .. code-block:: sh
 
-   minimerge  --help
+       minimerge  --help
 
