@@ -129,6 +129,7 @@ We will use some variables to refer to well known places and scripts.
 Just adjust the following code to fit to your needs and type it in your current shell/
 
 .. code-block:: sh
+
     export minitage=$HOME/minitage
     export python=$HOME/python
 
