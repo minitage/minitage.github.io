@@ -180,7 +180,7 @@ environments.
 
         source $prefix/bin/activate
 
-    KEEP IN MIND THAT YOU MUST ACTIVATE VIRTUALENV AT ANY TIME YOU USE IT.
+    **KEEP IN MIND THAT YOU MUST ACTIVATE VIRTUALENV AT ANY TIME YOU USE IT.**
 
 Installing minitage
 ====================
