@@ -15,7 +15,6 @@ To store all downloaded stuff in the same place, you ll need to set buildout to 
     download-directory = $HOME/.buildout/downloads
     download-cache = $HOME/.buildout/downloads
     EOF
-    cat ~/.buildout/downloads
 
 
 System Requirements
