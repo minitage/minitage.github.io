@@ -23,18 +23,18 @@ System Requirements
 Debian/Ubuntu
 -------------
 
-Prior to begin with the project, ensure those dependencies are installed on your system :
+    Prior to begin with the project, ensure those dependencies are installed on your system :
 
-    * m4
-    * build-essential
-    * pkg-config
-    * automake
-    * libtool
-    * autoconf
+        * m4
+        * build-essential
+        * pkg-config
+        * automake
+        * libtool
+        * autoconf
 
-.. code-block:: sh
+        .. code-block:: sh
 
-    apt-get install build-essential m4 libtool pkg-config autoconf m4 gettext
+            apt-get install build-essential m4 libtool pkg-config autoconf m4 gettext
 
 
 FreeBSD
@@ -43,47 +43,47 @@ FreeBSD
     * gmake
     * gsed
 
-.. code-block:: sh
+        .. code-block:: sh
 
-    cd /usr/ports/sysutils/portupgrade
-    make install clean
-    for i in gsed gmake ;do portinstall $i;done
+            cd /usr/ports/sysutils/portupgrade
+            make install clean
+            for i in gsed gmake ;do portinstall $i;done
 
 Gentoo
 ------
 
-Gentoo is perfect by default, no requirement.
+    Gentoo is perfect by default, no requirement.
 
 
 Suze
 ----
 
-Prior to begin with the project, ensure those dependencies are installed on
-your system:
+    Prior to begin with the project, ensure those dependencies are installed on
+    your system:
 
-    * toolchain (gcc, autotools, m4)
+        * toolchain (gcc, autotools, m4)
 
 MacOS X
 -------
 
-Before starting with the project, be sure that these dependencies are installed via macports (http://macports.org) on your system :
+    Before starting with the project, be sure that these dependencies are installed via macports (http://macports.org) on your system :
 
-    * `bzip2 <http://trac.macports.org/projects/macports/browser/trunk/dports/archivers/bzip2/Portfile>`_
-    * `gnu tar (gtar) <http://trac.macports.org/projects/macports/browser/trunk/dports/archivers/gnutar/Portfile>`_
-    * `unzip <http://trac.macports.org/projects/macports/browser/trunk/dports/archivers/unzip/Portfile>`_
-    * `binutils <http://trac.macports.org/projects/macports/browser/trunk/dports/devel/binutils/Portfile>`_
-    * `sed (gsed) <http://trac.macports.org/projects/macports/browser/trunk/dports/textproc/gsed/Portfile>`_
-    * `gnu make (gmake) <http://trac.macports.org/projects/macports/browser/trunk/dports/devel/gmake/Portfile>`_
-    * `autoconf <http://trac.macports.org/projects/macports/browser/trunk/dports/devel/autoconf/Portfile>`_
-    * `automake <http://trac.macports.org/projects/macports/browser/trunk/dports/devel/automake/Portfile>`_
-    * `m4 <http://trac.macports.org/projects/macports/browser/trunk/dports/devel/m4/Portfile>`_
+        * `bzip2 <http://trac.macports.org/projects/macports/browser/trunk/dports/archivers/bzip2/Portfile>`_
+        * `gnu tar (gtar) <http://trac.macports.org/projects/macports/browser/trunk/dports/archivers/gnutar/Portfile>`_
+        * `unzip <http://trac.macports.org/projects/macports/browser/trunk/dports/archivers/unzip/Portfile>`_
+        * `binutils <http://trac.macports.org/projects/macports/browser/trunk/dports/devel/binutils/Portfile>`_
+        * `sed (gsed) <http://trac.macports.org/projects/macports/browser/trunk/dports/textproc/gsed/Portfile>`_
+        * `gnu make (gmake) <http://trac.macports.org/projects/macports/browser/trunk/dports/devel/gmake/Portfile>`_
+        * `autoconf <http://trac.macports.org/projects/macports/browser/trunk/dports/devel/autoconf/Portfile>`_
+        * `automake <http://trac.macports.org/projects/macports/browser/trunk/dports/devel/automake/Portfile>`_
+        * `m4 <http://trac.macports.org/projects/macports/browser/trunk/dports/devel/m4/Portfile>`_
 
-Do not forget to update your bash profile to take your installed ports into account
+    Do not forget to update your bash profile to take your installed ports into account
 
-.. code-block:: sh
+        .. code-block:: sh
 
-    # put this line into ~/.bashrc and ~/.bash_profile
-    export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+            # put this line into ~/.bashrc and ~/.bash_profile
+            export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 
 
 Python
