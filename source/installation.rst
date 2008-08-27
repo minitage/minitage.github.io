@@ -25,12 +25,12 @@ Debian/Ubuntu
 
     Prior to begin with the project, ensure those dependencies are installed on your system :
 
-        * m4
-        * build-essential
-        * pkg-config
-        * automake
-        * libtool
-        * autoconf
+    * m4
+    * build-essential
+    * pkg-config
+    * automake
+    * libtool
+    * autoconf
 
         .. code-block:: sh
 
