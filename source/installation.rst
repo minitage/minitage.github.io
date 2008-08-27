@@ -61,7 +61,7 @@ Suze
     Prior to begin with the project, ensure those dependencies are installed on
     your system:
 
-        * toolchain (gcc, autotools, m4)
+    * toolchain (gcc, autotools, m4)
 
 MacOS X
 -------
