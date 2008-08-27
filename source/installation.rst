@@ -137,22 +137,22 @@ Usage
 ++++++
 - Please use a FULL path with this script!
 
-.. code-block:: sh
+    .. code-block:: sh
 
-    mkdir -p $python
-    cd $python
-    wget http://hg.minitage.org/hg/minitage/shell/raw-file/tip/PyBootstrapper.sh
-    bash ./PyBootstrapper.sh $python
+        mkdir -p $python
+        cd $python
+        wget http://hg.minitage.org/hg/minitage/shell/raw-file/tip/PyBootstrapper.sh
+        bash ./PyBootstrapper.sh $python
 
 offline mode
 +++++++++++++
 - Please use a FULL path with this script!
 - You can use it in offline mode but put the archives in your `$python/downloads` eg:
 
-.. code-block:: sh
+    .. code-block:: sh
 
-    ln -s /prod/1.0/downloads  $python/downloads
-    bash ./PyBootstrapper.sh  -o $python
+        ln -s /prod/1.0/downloads  $python/downloads
+        bash ./PyBootstrapper.sh  -o $python
 
 Using virtualenv
 =================
@@ -176,14 +176,11 @@ environments.
         # maybe that if you do not used the bootstrapper
         # virtualenv --no-site-packages $prefix
 
-
     - activate it::
 
         source $prefix/bin/activate
 
-
     KEEP IN MIND THAT YOU MUST ACTIVATE VIRTUALENV AT ANY TIME YOU USE IT.
-
 
 Installing minitage
 ====================
