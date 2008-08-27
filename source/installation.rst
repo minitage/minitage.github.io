@@ -23,7 +23,7 @@ System Requirements
 Debian/Ubuntu
 -------------
 
-Prior to begin with the project, ensure those dependencies are installed on your system:
+Prior to begin with the project, ensure those dependencies are installed on your system :
 
     * m4
     * build-essential
