@@ -121,7 +121,12 @@ This script will install for you:
     * bzip2-1.0.4
     * ncurses-5.6
     * readlines-5.2
-    * ez_setup.py which will provide setuptools,zc.buildout, paster and virtual env
+    * ez_setup.py which will provide in turn:
+    
+        * setuptools
+        * zc.buildout 
+        * paster 
+        * virtualenv
 
 Variables
 +++++++++++
