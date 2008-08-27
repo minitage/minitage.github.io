@@ -147,7 +147,7 @@ Usage
 offline mode
 +++++++++++++
 - Please use a FULL path with this script!
-- You can use it in offline mode but put the archives in your `$prefix/downloads` eg:
+- You can use it in offline mode but put the archives in your `$python/downloads` eg:
 
 .. code-block:: sh
 
