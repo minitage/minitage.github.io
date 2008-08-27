@@ -129,7 +129,7 @@ Usage
 .. code-block:: sh
 
     wget http://hg.minitage.org/hg/minitage/shell/raw-file/tip/PyBootstrapper.sh
-    mkdir -p $HOME/tools/python-2.4
+    mkdir -p $HOME/tools/python
     bash ./PyBootstrapper.sh $HOME/tools/python
 
 offline mode
@@ -139,7 +139,7 @@ offline mode
 
 .. code-block:: sh
 
-    ln -s /prod/1.0/downloads  $HOME/tools/python-2.4/downloads
+    ln -s /prod/1.0/downloads  $HOME/tools/python/downloads
     bash ./PyBootstrapper.sh  -o $HOME/tools/python
 
 Using virtualenv
