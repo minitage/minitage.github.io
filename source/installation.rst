@@ -196,6 +196,7 @@ A stable version
 
         .. code-block:: sh
 
+            source $prefix/bin/activate
             easy_install minitage.core
 
     - Sync its packages (all its minilays in minitage terminology).
@@ -204,6 +205,7 @@ A stable version
 
         .. code-block:: sh
 
+            source $prefix/bin/activate
             minimerge -s
 
 
@@ -238,6 +240,7 @@ minitage. You can give a try to the egg in developement mode.
 
         .. code-block:: sh
 
+            source $prefix/bin/activate
             cd ~/repos/minitage/minitage.core
             python setup.py develop
             cd ~/repos/minitage/minitage.recipe
@@ -249,6 +252,7 @@ minitage. You can give a try to the egg in developement mode.
 
         .. code-block:: sh
 
+            source $prefix/bin/activate
             minimerge -s
 
 Using minitage
@@ -282,6 +286,7 @@ Deploy a project with minitage
         # minitage is aware of the MINILAYS environnment variable, you can use it to specify space separated minlays
         scm CHECKOUT  https://subversion.foo.net/YOURPROJECT/minilay/trunk $prefix/minilays/YOURPROJECTMINILAY
         # minimerging it
+        source $prefix/bin/activate
         minimerge project
 
 Extra options and usage:
@@ -289,5 +294,6 @@ Extra options and usage:
 
     .. code-block:: sh
 
-       minimerge  --help
+        source $prefix/bin/activate
+        minimerge  --help
 
