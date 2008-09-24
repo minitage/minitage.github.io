@@ -39,3 +39,8 @@ Turbogears Projects
 
         bin/tg-admin --help
 
+
+    - The code of your project is in ::
+
+        src/foo
+
