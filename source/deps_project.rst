@@ -1,6 +1,5 @@
-====================
 Dependency project
-====================
+####################
 
 Purpose
 =======
@@ -31,8 +30,8 @@ This one is likely to do:
     - make
     - pre-make-hook
     - make install
-    - post-install-hook 
-    
+    - post-install-hook
+
 
 Hooks just point to python callables to do boilerplate that the classical
 ./configure && make && make install can not do.

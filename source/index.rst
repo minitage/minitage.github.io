@@ -3,7 +3,7 @@
    contain the root `toctree` directive.
 
 Welcome to Minitage's documentation!
-====================================
+#######################################
 
 Contents:
 
@@ -18,6 +18,7 @@ Contents:
     eggs_project
     zope_project
     django_project
+    tg_project
     profils
     develop
 

@@ -1,6 +1,5 @@
-================
 Specifications
-================
+################
 
 The package manager
 ===================
@@ -22,7 +21,7 @@ The minilays
 ==============
 Abstract
 ----------
- 
+
     - A minilay is a directory containing minibuilds.
     - The name come from gentoo overlays system. See http://www.gentoo.org/proj/en/overlays/userguide.xml
 
@@ -37,7 +36,7 @@ Overlaping minilays
                 minibuild1
             dependencies/
                 minibuild1
-    
+
     - And try to::
 
         minimerge minibuild1
@@ -172,9 +171,9 @@ They are rules, not just conventions, follow them or be killed.
         - test-1.0_tagHEADDIGIT
         - test-1.0_r1
         - test-1.0_rHEAD
-        - test-1.0_rTIP 
+        - test-1.0_rTIP
 
-    - Please set the version to MAJOR:MINOR without the revision for compiled dependencies ! 
+    - Please set the version to MAJOR:MINOR without the revision for compiled dependencies !
       This will prevent from recompiling everything on security updates for example
 
 
@@ -247,7 +246,7 @@ Abstract
 
 
 Layout explanation
-++++++++++++++++++++
+--------------------
 
 bin/minimerge:
     - The project Assembler.
@@ -315,7 +314,7 @@ minilays/:
         export MINILAYS="~/otherminibuildsdirectory"
 
 TIPS
-=============
+=======
 
     * Make and abuse of branches.
 

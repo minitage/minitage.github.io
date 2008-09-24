@@ -1,6 +1,5 @@
-============
 Installation
-============
+###############
 
 Buildout Configuration
 ======================
@@ -204,7 +203,7 @@ A stable version
         .. code-block:: sh
 
             source $prefix/bin/activate
-            easy_install minitage.core
+            easy_install -U minitage.core mercurial
 
     - Sync its packages (all its minilays in minitage terminology).
 
@@ -260,6 +259,7 @@ minitage. You can give a try to the egg in developement mode.
         .. code-block:: sh
 
             source $prefix/bin/activate
+            easy_install -U mercurial
             minimerge -s
 
 Using minitage

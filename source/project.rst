@@ -1,6 +1,6 @@
-=======
 Project
-=======
+########
+
 The steps
 =========
 
@@ -41,14 +41,15 @@ create the project layout
 What project template to choose?
 ----------------------------------
 
-    - for libraries and applications, use ``minitage.dependency``
-    - for "pur-python" eggs, use ``minitage.egg``
-    - for plone25 instances, use ``minitage.plone25``
-    - for plone31 instances, use ``minitage.plone31``
-    - for plone31 instances with zeo server connection, use ``minitage.plone31zeo``
-    - for zope3 instances, use ``minitage.zope3``
-    - for django instances, use ``minitage.django``
-    - for geodjango instances, use ``minitage.geodjango``
-    - for buildbot slave instances, use ``minitage.buildbot-slave``
-    - for buildbot master instances, use ``minitage.buildbot-master``
+    - for libraries and applications, use `minitage.dependency`
+    - for "pur-python" eggs, use `minitage.egg`
+    - for plone25 instances, use `minitage.plone25`
+    - for plone31 instances, use `minitage.plone31`
+    - for plone31 instances with zeo server connection, use `minitage.plone31zeo`
+    - for zope3 instances, use `minitage.zope3`
+    - for django instances, use `minitage.django`
+    - for turbogears instances, use `minitage.tg` (see :ref:`tgprojects`. )
+    - for geodjango instances, use `minitage.geodjango`
+    - for buildbot slave instances, use `minitage.buildbot-slave`
+    - for buildbot master instances, use `minitage.buildbot-master`
 
