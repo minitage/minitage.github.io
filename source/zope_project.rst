@@ -19,15 +19,32 @@ Now, the supported way to create minitage based projects is to use paster from
 
 
 For zope projects, those templates are available:
-    - `minitage.plone3`  : A zope3 project
-    - `minitage.zope3`   : A plone 3x project
+    - `minitage.zope3`  : A zope3 project
 
         - The zope3 installed is a totally eggyfied installation.
 
+    - `minitage.plone31`   : A plone 3x project
+    - `minitage.plone31zeo`   : A plone 3x project with a backend zeo server
+
+
     - `minitage;plone25` : A plone 25 project
 
+For example::
+
+    # create a plone31 vith zeo project
+    easy_install -U minitage.env
+    paster create -t minitage.plone31zeo myproject
+
+    # create a zope3 project
+    paster create -t minitage.zope3 myproject
+
+
+
+Playing with the buildout.cfg
+================================
+
 ExtraPythonPath / Eggs to add to the python path
-================================================
+-------------------------------------------------
 
 You can play with the ``${project:extra-paths}``  to add PATHS in the PYTHONPATH at run time.
 It will generate the appriopriate ``bin/zopepy`` and ``bin/instance`` files according to those variable.
@@ -49,7 +66,7 @@ Do not make egg parts there if they need special stuff. Do them in a special egg
 
 
 External thirdparty "special" products to add to the instance
-=============================================================
+-------------------------------------------------------------
 
 You will need to update the ``${project:products}`` variable.
 Use this recipe : http://pypi.python.org/pypi/plone.recipe.bundlecheckout/
@@ -66,24 +83,24 @@ Example:
        ${buildout:directory}/parts/plomino
 
 Developpement products
-======================
+----------------------
 
 Place them in $bd/Products with svn:externals set on $bd/Products for example
 
 Official products
-=================
+-----------------
 
 Add the url to the ${project:urls} variable. You can use one mirror from the ${mirrors} parts
 
 Production mode
-===============
+---------------
 
  * disable the ${project:debug} variable (set to off).*
  * Un comment the effective-user and set it in [instance]
 
 
 Add versionned Thirdparty Zope Products
-=======================================
+---------------------------------------
 
     * Distributed products (available as an archive).
       Use this recipe : http://pypi.python.org/pypi/plone.recipe.distros/
@@ -95,7 +112,7 @@ Add versionned Thirdparty Zope Products
    urls=http://plone.org/products/clouseau/releases/0.8.1/clouseau-0-8-1.zip
 
 Patchs
-======
+------
 
 Sometimes you need to be dirty and to apply patches somewhere in parts/ or elsewhere.
 To achieve that, you can use the iw.recipe.command to execute shells commands and invoke the patch binary to apply a patch.
@@ -152,13 +169,22 @@ To achieve that, you can use the iw.recipe.command to execute shells commands an
             cmds=
                 patch -p0 ${plone:location}/Products/somefile.py < ${buildout:directory}/patchs/patch.diff 2>&1 >> /dev/null
 
-Using the zope instance
-=======================
+
+Using it
+==========
+
+Using the zope3 instance
+-------------------------
+
+Launching it::
+
+    $ cd minitage/zope/yourinstance/ && bin/yourproject-ctl fg
+
+Using the plonexx instance
+----------------------------
 
 Launching it::
 
     $ cd minitage/zope/yourinstance/ && bin/instance fg
-
-
 
 
