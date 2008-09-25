@@ -205,20 +205,6 @@ A stable version
             source $prefix/bin/activate
             easy_install -U minitage.core mercurial
 
-    - setuptools <= 0.6.8 is pretty annoying as it does not interact well with
-      svn. As a temporary fix, whenever the maintainers do not want to make
-      another release, We must install the "trunk" version.
-
-        - Try first::
-            
-            easy_install -U setuptools==dev
-
-        - If it fails::
-            
-            svn co http://svn.python.org/projects/sandbox/trunk/setuptools/
-            cd setuptools
-            python setup.py install
- 
     - Sync its packages (all its minilays in minitage terminology).
 
       **This will initiate also all the minitage directories for the first run.**
@@ -276,6 +262,23 @@ minitage. You can give a try to the egg in developement mode.
             easy_install -U mercurial
             minimerge -s
 
+setuptools Fix
+================
+            
+    - setuptools <= 0.6.8 is pretty annoying as it does not interact well with
+      svn. As a temporary fix, whenever the maintainers do not want to make
+      another release, We must install the "trunk" version.
+
+        - Try first::
+            
+            easy_install -U setuptools==dev
+
+        - If it fails::
+            
+            svn co http://svn.python.org/projects/sandbox/trunk/setuptools/
+            cd setuptools
+            python setup.py install
+  
 Using minitage
 ==============
 
