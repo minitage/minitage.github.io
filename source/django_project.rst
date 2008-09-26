@@ -1,3 +1,5 @@
+.. _minitagedjango:
+
 Django Projects
 #################
 

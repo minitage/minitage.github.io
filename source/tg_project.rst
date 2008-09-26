@@ -1,4 +1,4 @@
-.. _tgprojects:
+.. _minitagetg:
 
 Turbogears Projects
 ####################
@@ -7,14 +7,14 @@ Turbogears Projects
 - We add a wrapper to buildout to add those specific needs.
 
     - Running paster::
- 
-        paster create -t minitage.tg foo 
+
+        paster create -t minitage.tg foo
             Answer questions
 
 
     - Create and activate the envrionnement helper::
 
-        paster create -t minitage.env foo 
+        paster create -t minitage.env foo
         source ~/minitage/tg/foo/sys/share/minitage/minitage.env
 
     - minimerging your project::
@@ -30,7 +30,7 @@ Turbogears Projects
         bin/tgbuildout
 
     -  You can also launch your brand new Turbogears project::
-        
+
         bin/tg-admin sql create
         bin/start-foo
 

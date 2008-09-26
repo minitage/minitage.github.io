@@ -1,33 +1,20 @@
+.. _minitagezope:
+
 Zope Projects
 ###############
 
 Purpose
 =======
 
-Creating zope projects using buildout and minitage
+Creating zope based projects using buildout and minitage
 
 The minitage category is ``zope``.
 
-Templates
-=============
-Now, the supported way to create minitage based projects is to use paster from
-`PasteScripts` which will construct you a base layout for your project after you have answered to some questions:
-
-    - A minilay
-    - A minibuild pointing to the template (inside the minilay)
-    - A buildout based project.
-
-
-For zope projects, those templates are available:
+Those templates are available:
     - `minitage.zope3`  : A zope3 project
-
-        - The zope3 installed is a totally eggyfied installation.
-
-    - `minitage.plone31`   : A plone 3x project
-    - `minitage.plone31zeo`   : A plone 3x project with a backend zeo server
-
-
-    - `minitage;plone25` : A plone 25 project
+    - `minitage.plone31` : A plone 3x project
+    - `minitage.plone31zeo` : A plone 3x project with a backend zeo server
+    - `minitage.plone25` : A plone 25 project
 
 For example::
 
