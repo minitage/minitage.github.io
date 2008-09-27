@@ -1,6 +1,6 @@
 
-Minitage profils
-*****************
+Introduction
+*************
 
 - Minitage profils are the way to integrate applications in minitage projects.
 
