@@ -1,4 +1,7 @@
 
+Minitage and projects
+########################
+
 .. toctree::
     :maxdepth: 3
 
