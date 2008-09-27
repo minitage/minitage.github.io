@@ -34,7 +34,7 @@ master_doc = 'index'
 
 # General substitutions.
 project = 'Minitage'
-copyright = '2008, Matthieu Pasquet'
+copyright = '2008, Mathieu Pasquet'
 
 # The default replacements for |version| and |release|, also used in various
 # other places throughout the built documents.
