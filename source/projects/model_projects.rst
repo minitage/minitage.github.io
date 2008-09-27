@@ -3,39 +3,63 @@
 Zope Projects
 ***************
 
-Purpose
-=======
+Available templates
+===================
 
-Creating zope based projects using buildout and minitage
+.. _minitageplone25:
 
-The minitage category is ``zope``.
+Plone 2.5
+----------
+    - template : `minitage.plone25`
+    - minitage category : `zope`
+    - template initialization and project start::
 
-Those templates are available:
-    - `minitage.zope3`  : A zope3 project
-    - `minitage.plone31` : A plone 3x project
-    - `minitage.plone31zeo` : A plone 3x project with a backend zeo server
-    - `minitage.plone25` : A plone 25 project
+         paster create -t minitage.plone25 myproject
+         cd /minitage/zope/myproject/ && bin/instance restart
 
-For example::
+.. _minitageplone31:
 
-    # create a plone31 vith zeo project
-    easy_install -U minitage.env
-    paster create -t minitage.plone31zeo myproject
+Plone 3.1
+----------
+    - template : `minitage.plone31`
+    - minitage category : `zope`
+    - template initialization and project start::
 
-    # create a zope3 project
-    paster create -t minitage.zope3 myproject
+         paster create -t minitage.plone31 myproject
+         cd /minitage/zope/myproject/ && bin/instance restart
 
-Playing with the buildout.cfg
-================================
+.. _minitageplone31zeo:
 
-ExtraPythonPath / Eggs to add to the python path
--------------------------------------------------
+Plone 3.1 with ZEO
+-------------------
+    - template : `minitage.plone31zeo`
+    - minitage category : `zope`
+    - template initialization and project start::
 
-You can play with the ``${project:extra-paths}``  to add PATHS in the PYTHONPATH at run time.
-It will generate the appriopriate ``bin/zopepy`` and ``bin/instance`` files according to those variable.
-``${project:eggs}`` and ``${project:develop-eggs}`` can be used to reference eggs too.
+         paster create -t minitage.plone31zeo myproject
+         cd /minitage/zope/myproject/ && bin/instance restart
 
-Do not make egg parts there if they need special stuff. Do them in a special egg buildout.
+.. _minitagezope3:
+
+Zope 3
+-------
+    - template : `minitage.zope3`
+    - minitage category : `zope`
+    - template initialization and project start::
+
+         paster create -t minitage.zope3 myproject
+         cd /minitage/zope/myproject/ && bin/myproject-ctl restart
+
+Integration with zc.buildout
+==============================
+
+PythonPath / Eggs
+------------------
+    - You can play with the ``${project:extra-paths}``  to add PATHS in the PYTHONPATH at run time.
+      It will generate the appriopriate ``bin/zopepy`` and ``bin/instance`` files according to those variable.
+    - ``${project:eggs}`` and ``${project:develop-eggs}`` can be used to reference eggs too.
+
+Do not make egg parts there if they need special stuff. Do them in a special :ref:`egg minitage-buildout <eggproject>`.
 
 .. sourcecode:: ini
 
@@ -80,15 +104,16 @@ Add the url to the ${project:urls} variable. You can use one mirror from the ${m
 Production mode
 ---------------
 
- * disable the ${project:debug} variable (set to off).*
- * Un comment the effective-user and set it in [instance]
+    * disable the ${project:debug} variable (set to off).*
+    * Un comment the effective-user and set it in [instance]
 
 
 Add versionned Thirdparty Zope Products
 ---------------------------------------
 
     * Distributed products (available as an archive).
-      Use this recipe : http://pypi.python.org/pypi/plone.recipe.distros/
+
+    Use this recipe : http://pypi.python.org/pypi/plone.recipe.distros/
 
 .. sourcecode:: ini
 
@@ -100,7 +125,7 @@ Patchs
 ------
 
 Sometimes you need to be dirty and to apply patches somewhere in parts/ or elsewhere.
-To achieve that, you can use the iw.recipe.command to execute shells commands and invoke the patch binary to apply a patch.
+To achieve that, you can use the ``iw.recipe.command`` recipe to execute shells commands and invoke the patch binary to apply a patch.
 
     #. Get a clean patch with clean paths declared in the header. The best is to have the same tree between the old and the new file.
        Please note that the Source Controls programs can generate clean diffs  for you. So, if your source is versionned or if you can grab
@@ -155,39 +180,20 @@ To achieve that, you can use the iw.recipe.command to execute shells commands an
                 patch -p0 ${plone:location}/Products/somefile.py < ${buildout:directory}/patchs/patch.diff 2>&1 >> /dev/null
 
 
-Using it
-==========
-
-Using the zope3 instance
--------------------------
-
-Launching it::
-
-    $ cd minitage/zope/yourinstance/ && bin/yourproject-ctl fg
-
-Using the plonexx instance
-----------------------------
-
-Launching it::
-
-    $ cd minitage/zope/yourinstance/ && bin/instance fg
-
-
-
-
 
 .. _minitagetg:
 
 Turbogears Projects
-**********************
+********************
 
-- Turbogears basic eggs needs some specific Turbogears stuff. So we will need to install our template in two steps.
-- We add a wrapper to buildout to add those specific needs.
-
-    - Running paster::
+    - Turbogears basic eggs needs some specific Turbogears stuff at build time.
+      So we will need to install our template in two steps to allow the use of buildout with those needs.
+    - template : `minitage.tg`
+    - minitage category : `tg`
+    - template initialization::
 
         paster create -t minitage.tg foo
-            Answer questions
+            # Answer questions
 
 
     - Create and activate the envrionnement helper::
@@ -222,49 +228,36 @@ Turbogears Projects
 
         src/foo
 
-
-
-
-
 .. _minitagedjango:
 
 Django Projects
 ****************
 
-Purpose
-=======
+   - templates :
 
-Creating a django project using buildout and minitage
-The minitage category is ``django``.
-
-Template
-========
-Now, the supported way to create minitage based projects is to use paster from
-`PasteScripts` which will construct you a base layout for your project after you have answered to some questions:
-
-    - A minilay
-    - A minibuild pointing to the template (inside the minilay)
-    - A buildout based project.
-
-
-For django projects, those templates are available:
     - `minitage.django`  : A django project
     - `minitage.geodjango`   : A geodjango project based on the GIS branche
 
-Django
-======
- * Django work out of the box after a checkout, so the buildout will be very simple.
-   - We just need a recipe that knows how to checkout
-   - We need too to patch it to generate a versionned egg.
-   - So read the generated buildout.cfg, it does all that stuff.
+   - minitage category : `django`
+   - template initialization::
 
+         paster create -t minitage.django myproject
+
+   - Django work out of the box after a checkout, so the buildout will be very simple.
+
+    - We just need a recipe that knows how to checkout
+      We need too to patch it to generate a versionned egg.
+    - So read the generated buildout.cfg, it does all that stuff.
 
 Django based Project's Layout
 =============================
+
 The project will look like
---------------------------
-   - app/ the code
-   - templates/ : django templates
-   - media/ : js, image and static stuff
-   - share/ : misc, doc and etc.
+----------------------------
+    ::
+
+       app/ the code
+       templates/ : django templates
+       media/ : js, image and static stuff
+       share/ : misc, doc and etc.
 

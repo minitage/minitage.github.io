@@ -1,5 +1,9 @@
 minitage.env
 =============
+Installation::
+
+    paster create -t minitage.env myproject
+
 **This is maybe the most important profil.**
 
 This profil will install a 'minitage.env' shell script.
@@ -15,9 +19,12 @@ It will also register some environement variables like:
     - `MT`: the path to the minitage top directory
     - `INS`: the path to the current project
 
-
 minitage.postgresql
 ====================
+Installation::
+
+    paster create -t minitage.postgresql myproject
+
 This profil will install a 'postgresql database'.
 
 When you answer to question, think that the 'main user' is a system user.
@@ -30,6 +37,10 @@ When you answer to question, think that the 'main user' is a system user.
 
 minitage.varnish
 ==================
+Installation::
+
+    paster create -t minitage.varnish myproject
+
 This profil will install a varnish instance.
 
     - In `sys/bin`, you ll have wrappers for original varnish binaries pointing to your instance

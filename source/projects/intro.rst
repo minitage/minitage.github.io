@@ -52,7 +52,7 @@ What project template to choose?
         - for plone31 instances with zeo server connection, use `minitage.plone31zeo`
 
     - for zope3 instances, use `minitage.zope3`
-    - for django instances, use `minitage.django <minitagedjnago>`
+    - for django instances, use `minitage.django <minitagedjango>`
     - for turbogears instances, use :ref:`minitage.tg <minitagetg>`.
     - for geodjango instances, use `minitage.geodjango`
     - for buildbot slave instances, use `minitage.buildbot-slave`

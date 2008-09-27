@@ -1,3 +1,5 @@
+.. _depproject:
+
 Dependency project
 *******************
 
@@ -53,6 +55,9 @@ for all the minibuild dependency:
     - it registers the ``libraries/pkgconfig`` directories to the PKGCONFIGPATH
     - it registers the disutils stuff inside the PYTHONPATH
 
+
+
+.. _eggproject:
 
 Python based projet
 *********************

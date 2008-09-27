@@ -6,7 +6,6 @@ Minitage and projects
     :maxdepth: 2
 
     intro
-    buildout
     packaging_projects
     model_projects
 

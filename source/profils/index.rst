@@ -8,4 +8,3 @@ Minitage and profils
     intro
     profils
 
-
