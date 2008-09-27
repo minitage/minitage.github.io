@@ -121,9 +121,9 @@ This script will install for you:
     * ncurses-5.6
     * readlines-5.2
     * ez_setup.py which will install those python packages:
-    
+
         * setuptools
-        * zc.buildout 
+        * zc.buildout
         * PasteScripts
         * virtualenv
 
@@ -262,23 +262,25 @@ minitage. You can give a try to the egg in developement mode.
             easy_install -U mercurial
             minimerge -s
 
-setuptools Fix
-================
-            
-    - setuptools <= 0.6.8 is pretty annoying as it does not interact well with
-      svn. As a temporary fix, whenever the maintainers do not want to make
-      another release, We must install the "trunk" version.
 
-        - Try first::
-            
-            easy_install -U setuptools==dev
+.. setuptools Fix
+.. ================
+..
+..     - setuptools <= 0.6.8 is pretty annoying as it does not interact well with
+..       svn. As a temporary fix, whenever the maintainers do not want to make
+..       another release, We must install the "trunk" version.
+..
+..         - Try first::
+..
+..             easy_install -U setuptools==dev
+..
+..         - If it fails::
+..
+..             svn co http://svn.python.org/projects/sandbox/trunk/setuptools/
+..             cd setuptools
+..             python setup.py install
+..
 
-        - If it fails::
-            
-            svn co http://svn.python.org/projects/sandbox/trunk/setuptools/
-            cd setuptools
-            python setup.py install
-  
 Using minitage
 ==============
 
@@ -293,7 +295,7 @@ Install python-xxx
             minimerge python-xxx
 
 Install a custom minilay
----------------------------
+-------------------------
 
     .. code-block:: sh
 
@@ -302,7 +304,7 @@ Install a custom minilay
         scm CHECKOUT  https://subversion.foo.net/YOURPROJECT/minilay/trunk $prefix/minilays/YOURPROJECTMINILAY
 
 Deploy a project with minitage
----------------------------------------
+-------------------------------
 
     .. code-block:: sh
 
@@ -313,8 +315,8 @@ Deploy a project with minitage
         source $prefix/bin/activate
         minimerge project
 
-Extra options and usage:
-=========================
+Extra options and usage
+========================
 
     .. code-block:: sh
 
