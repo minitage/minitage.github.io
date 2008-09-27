@@ -1,7 +1,7 @@
 .. _minitagezope:
 
 Zope Projects
-###############
+***************
 
 Purpose
 =======
@@ -24,8 +24,6 @@ For example::
 
     # create a zope3 project
     paster create -t minitage.zope3 myproject
-
-
 
 Playing with the buildout.cfg
 ================================
@@ -174,4 +172,99 @@ Launching it::
 
     $ cd minitage/zope/yourinstance/ && bin/instance fg
 
+
+
+
+
+.. _minitagetg:
+
+Turbogears Projects
+**********************
+
+- Turbogears basic eggs needs some specific Turbogears stuff. So we will need to install our template in two steps.
+- We add a wrapper to buildout to add those specific needs.
+
+    - Running paster::
+
+        paster create -t minitage.tg foo
+            Answer questions
+
+
+    - Create and activate the envrionnement helper::
+
+        paster create -t minitage.env foo
+        source ~/minitage/tg/foo/sys/share/minitage/minitage.env
+
+    - minimerging your project::
+
+        minimerge foo
+
+    - running the post-installation script::
+
+        bin/tgpostinstall
+
+    - After that, do not use anymore `bin/buildout` but use instead::
+
+        bin/tgbuildout
+
+    -  You can also launch your brand new Turbogears project::
+
+        bin/tg-admin sql create
+        bin/start-foo
+
+
+    - Or use tg-admin::
+
+        bin/tg-admin --help
+
+
+    - The code of your project is in ::
+
+        src/foo
+
+
+
+
+
+.. _minitagedjango:
+
+Django Projects
+****************
+
+Purpose
+=======
+
+Creating a django project using buildout and minitage
+The minitage category is ``django``.
+
+Template
+========
+Now, the supported way to create minitage based projects is to use paster from
+`PasteScripts` which will construct you a base layout for your project after you have answered to some questions:
+
+    - A minilay
+    - A minibuild pointing to the template (inside the minilay)
+    - A buildout based project.
+
+
+For django projects, those templates are available:
+    - `minitage.django`  : A django project
+    - `minitage.geodjango`   : A geodjango project based on the GIS branche
+
+Django
+======
+ * Django work out of the box after a checkout, so the buildout will be very simple.
+   - We just need a recipe that knows how to checkout
+   - We need too to patch it to generate a versionned egg.
+   - So read the generated buildout.cfg, it does all that stuff.
+
+
+Django based Project's Layout
+=============================
+The project will look like
+--------------------------
+   - app/ the code
+   - templates/ : django templates
+   - media/ : js, image and static stuff
+   - share/ : misc, doc and etc.
 

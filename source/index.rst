@@ -8,17 +8,12 @@ Welcome to Minitage's documentation!
 Contents:
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 3
 
     about
     spec
     installation
-    project
-    deps_project
-    eggs_project
-    zope_project
-    django_project
-    tg_project
+    projects/index
     profils
     develop
 
