@@ -3,9 +3,10 @@ Minitage and projects
 ########################
 
 .. toctree::
-    :maxdepth: 3
+    :maxdepth: 2
 
     intro
+    buildout
     packaging_projects
     model_projects
 

@@ -8,15 +8,14 @@ Welcome to Minitage's documentation!
 Contents:
 
 .. toctree::
-    :maxdepth: 3
+    :maxdepth: 2
 
     about
     spec
     installation
     projects/index
-    profils
+    profils/index
     develop
-
 
 .. Indices and tables
 .. ==================

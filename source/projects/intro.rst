@@ -1,5 +1,5 @@
-Project
-*********
+Introduction
+****************
 
 The steps
 =========
