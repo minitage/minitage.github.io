@@ -15,6 +15,7 @@ Contents:
     installation
     projects/index
     profils/index
+    usecases/index
     develop
 
 .. Indices and tables
