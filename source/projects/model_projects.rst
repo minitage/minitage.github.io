@@ -196,7 +196,7 @@ Turbogears Projects
             # Answer questions
 
 
-    - Create and activate the envrionnement helper::
+    - Create and activate the environment helper::
 
         paster create -t minitage.env foo
         source ~/minitage/tg/foo/sys/share/minitage/minitage.env
