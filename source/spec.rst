@@ -88,6 +88,7 @@ Writing Minibuilds
 
         - svn
         - hg
+        - bzr
         - static (for http, file, local and ftp)
 
     - a dependencies variable: list of other minibuilds which this one depends on
@@ -104,6 +105,7 @@ Writing Minibuilds
         - eggs
         - misc
         - django
+        - tg
         - zope
 
     - minitage installs a minibuild called MINIBUILDNAME to your minitage/CATEGORY/MINIBUILDNAME.
@@ -150,6 +152,7 @@ Conventions
 -----------
 
 They are rules, not just conventions, follow them or be killed.
+Please not that your project name cannot contain "``-``" as it is used to generate eggs names.
 
     - Valid names:
 
@@ -175,11 +178,6 @@ They are rules, not just conventions, follow them or be killed.
 
     - Please set the version to MAJOR:MINOR without the revision for compiled dependencies !
       This will prevent from recompiling everything on security updates for example
-
-
-
-
-
 
 
 
@@ -301,6 +299,12 @@ zope/:
     - Do not use not packaged eggs parts there or BURN IN HELL!
 
 minilays/:
+
+misc:/
+    - All that cannot be elsewhere
+
+tg/:
+    - Turbogears project
 
 [MinitageMinibuilds#Minilays minilays] : dependencies | zope | django | eggs
     Those are MINILAYS. Minilays are similar to gentoo 's OVERLAYS. Or, be reference, to entries in your source.list on Debian/Ubuntu.
