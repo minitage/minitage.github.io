@@ -33,7 +33,7 @@ Debian/Ubuntu
 
         .. code-block:: sh
 
-            apt-get install build-essential m4 libtool pkg-config autoconf m4 gettext
+            apt-get install build-essential m4 libtool pkg-config autoconf m4 gettext bzip2
 
 
 FreeBSD
