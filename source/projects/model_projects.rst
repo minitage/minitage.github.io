@@ -228,9 +228,32 @@ Turbogears Projects
 
         src/foo
 
+.. _minitagepylons:
+
+Pylons projects
+*****************
+
+   - template : `minitage.pylons`
+   - minitage category : `pylons`
+   - template initialization::
+
+         paster create -t minitage.pylons myproject
+
+    - It will generate an egg in develop mode into::
+
+        $mt/pylons/myproject/src/myproject
+
+    - Under the hood, it just uses **paster create -t pylons**. This comes from
+      Pylons itself.
+    - to start your project::
+
+        mt/pylons/myproject/bin/paster serve mt/pylons/myproject/src/myproject/development.ini
+
+   - Dont forget to keep the egg into version control.
+
 .. _minitagedjango:
 
-Django Projects
+django projects
 ****************
 
    - templates :
@@ -249,12 +272,7 @@ Django Projects
       We need too to patch it to generate a versionned egg.
     - So read the generated buildout.cfg, it does all that stuff.
 
-Django based Project's Layout
-=============================
-
-The project will look like
-----------------------------
-    ::
+    The project will look like::
 
        app/ the code
        templates/ : django templates

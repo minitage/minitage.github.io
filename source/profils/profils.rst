@@ -1,8 +1,8 @@
-minitage.env
-=============
+minitage.profils.env
+=====================
 Installation::
 
-    paster create -t minitage.env myproject
+    paster create -t minitage.profils.env myproject
 
 **This is maybe the most important profil.**
 
@@ -19,11 +19,11 @@ It will also register some environement variables like:
     - `MT`: the path to the minitage top directory
     - `INS`: the path to the current project
 
-minitage.postgresql
-====================
+minitage.profils.postgresql
+=============================
 Installation::
 
-    paster create -t minitage.postgresql myproject
+    paster create -t minitage.profils.postgresql myproject
 
 This profil will install a 'postgresql database'.
 
@@ -35,11 +35,11 @@ When you answer to question, think that the 'main user' is a system user.
     - In `sys/var/log/postgresql`, you ll have the logs.
 
 
-minitage.varnish
-==================
+minitage.profils.varnish
+=========================
 Installation::
 
-    paster create -t minitage.varnish myproject
+    paster create -t minitage.profils.varnish myproject
 
 This profil will install a varnish instance.
 

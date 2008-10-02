@@ -106,8 +106,11 @@ Writing Minibuilds
         - misc
         - django
         - tg
+        - pylons
         - zope
 
+    - You can use of course your own categories but be aware to name them
+      with only letters and digits.
     - minitage installs a minibuild called MINIBUILDNAME to your minitage/CATEGORY/MINIBUILDNAME.
     - The steps ran are:
 
