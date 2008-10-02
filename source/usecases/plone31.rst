@@ -26,7 +26,7 @@ Create and install a **plone31 with zeo project** with the varnish profile::
 
     paster create -t minitage.plone31zeo myproject
     minimerge myproject
-    paster create -t minitage.varnish myproject
+    paster create -t minitage.profils.varnish myproject
 
 Launch the varnish::
 

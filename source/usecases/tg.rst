@@ -33,7 +33,7 @@ Add postgresql dependencies, the database and the python bindings::
 Install a **turbogears project** with the **postgresql profile**::
 
     minimerge myproject
-    paster create -t minitage.postgresql myproject
+    paster create -t minitage.profils.postgresql myproject
 
 Launch the database::
 
