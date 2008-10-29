@@ -114,7 +114,7 @@ This utility deploys for you a nicely python with all its dependencies in a pref
 
 This script will install for you:
 
-    * Python-2.5.2 or Python-2.4.5 (default)
+    * Python-2.5.2 (default) or Python-2.4.5 
     * openssl 0.9.7
     * zlib-1.2.3
     * bzip2-1.0.4
