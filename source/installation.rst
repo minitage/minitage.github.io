@@ -1,6 +1,14 @@
 Installation
 ###############
 
+
+Variables
+==========
+
+    - ``$prefix``: root of minitage
+    - ``$ins``: root of a project inside minitage 
+
+
 Buildout Configuration
 ======================
 
@@ -135,7 +143,7 @@ Variables
 
     .. code-block:: sh
 
-        export minitage=$HOME/minitage
+        export prefix=$HOME/minitage
         export python=$HOME/tools/python
 
 
@@ -322,4 +330,4 @@ Extra options and usage
 
         source $prefix/bin/activate
         minimerge  --help
-
+ minitage
