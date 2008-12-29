@@ -330,4 +330,4 @@ Extra options and usage
 
         source $prefix/bin/activate
         minimerge  --help
- minitage
+
