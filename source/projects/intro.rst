@@ -55,7 +55,6 @@ What project template to choose?
     - for django instances, use `minitage.django <minitagedjango>`
     - for turbogears instances, use :ref:`minitage.tg <minitagetg>`.
     - for Pylons instances, use :ref:`minitage.tg <minitagepylons>`.
-    - for geodjango instances, use `minitage.geodjango`
     - for buildbot slave instances, use `minitage.buildbot-slave`
     - for buildbot master instances, use `minitage.buildbot-master`
 

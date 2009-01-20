@@ -259,7 +259,6 @@ django projects
    - templates :
 
     - `minitage.django`  : A django project
-    - `minitage.geodjango`   : A geodjango project based on the GIS branche
 
    - minitage category : `django`
    - template initialization::
@@ -269,7 +268,7 @@ django projects
    - Django work out of the box after a checkout, so the buildout will be very simple.
 
     - We just need a recipe that knows how to checkout
-      We need too to patch it to generate a versionned egg.
+    - And we will use recipes to generate scripts and interpreters with good python path
     - So read the generated buildout.cfg, it does all that stuff.
 
     The project will look like::
