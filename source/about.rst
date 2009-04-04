@@ -24,8 +24,8 @@ Variables used in this documentation
  - ``$mt`` -> minitage root path
  - ``$url`` -> the url of your versioned project
 
-Minitage
-========
+Minitage, the origins
+=======================
 
 Buildout Limits
 ---------------
@@ -33,18 +33,17 @@ Buildout Limits
 First of all, do not buy a gun before using buildout
 Buildout is not a magical tool and we just had quite a lot of drawbacks :
 
- - Today offline mode is problematic
+ - Today offline mode can be problematic
  - If you change your python, take a coffee.
  - 1GB per project, it s too much.
- - Pypi is just the only one index
  - Buildout behaviour can be hard to predict even more if the configuration file is huge.
 
 The Idea
 ---------
 
- -  The idea is to write a light and simple package manager from scratch which will allow us to integrate various build systems.
- -  What about shell scripts, buildout or makefiles interact together to assemble all the parts of our project parts?
- -  To allow this, the approach is to share a common  'well known' layout to install things in minitage.
+ - The idea is to write a light and simple package manager from scratch which will allow us to integrate various build systems.
+ - What about shell scripts, buildout or makefiles interact together to assemble all the parts of our project parts?
+ - To allow this, the approach is to share a common 'well known' layout to install things in minitage.
 
 Implementation goals
 ----------------------
@@ -58,7 +57,7 @@ Implementation goals
  - Reproduce the same environement everywhere (on UNIX platforms). It is known to work on:
 
      - Linux
-     - MacOSX but at least OSX Leopard is required.
+     - MacOSX but at least OSX Leopard is required. (not tested recently) 
      - FreeBSD (not tested recently)
 
 

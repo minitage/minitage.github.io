@@ -5,10 +5,10 @@ The package manager
 ===================
 
  - Be simple !
- - Run on popular Unixes, including FreeBSD, Linux and MacOSX. And in a second time, why not port him to other dirty OSs.
+ - Run on popular Unixes, including FreeBSD, Linux and MacOSX. And in a second time, why not port him to other OSs.
  - Have a simple and robust dependency system.
  - Integrates other build systems
- - Fetch from several methods: main are svn, http, ftp, ercurial (CVS, GIT, and bzr in a second time)
+ - Fetch from several methods: main are svn, http, ftp, Mercurial, Git and Bzr
  - Provide some system which allow us search for packages in alternate locations.
  - Install each part independently to the others. Follow the http rule (DO NOT SHARE)::
 
@@ -89,6 +89,7 @@ Writing Minibuilds
         - svn
         - hg
         - bzr
+        - git
         - static (for http, file, local and ftp)
 
     - a dependencies variable: list of other minibuilds which this one depends on
@@ -155,6 +156,7 @@ Conventions
 -----------
 
 They are rules, not just conventions, follow them or be killed.
+If you want a full review, just take a look to ``minitage.core/minitage/core/objects/minibuild.py``` regular expressions ;).
 Please not that your project name cannot contain "``-``" as it is used to generate eggs names.
 
     - Valid names:

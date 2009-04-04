@@ -12,6 +12,11 @@ When you source this shell script, all the environnement of the project is pushe
 
 This will enable `PATH`, and  `LD_LIBRARY_PATH` to be filled with all the dependencies subdirectories.
 
+the `LD_LIBRARY_PATH` setted by minitage.paste may interact with the rest of the system. if you get troubles, just unset it::
+
+    unset LD_LIBRARY_PATH
+
+
 For example, if your project has `postgresql` as a dependency, sourcing `sys/share/minitage/minitage.env` will give you `psql` in the `PATH`.
 
 It will also register some environement variables like:

@@ -211,7 +211,7 @@ A stable version
         .. code-block:: sh
 
             source $prefix/bin/activate
-            easy_install -U minitage.core mercurial
+            easy_install -U minitage.core
 
     - Sync its packages (all its minilays in minitage terminology).
 
@@ -227,6 +227,7 @@ A develop version:
 ------------------
 If you want to be bleeding edge and not lhave a 3 years old debianised
 minitage. You can give a try to the egg in developement mode.
+Be aware that you must know what you are doing there !
 
     - If you need to, fire your virtualenv
 
@@ -267,7 +268,6 @@ minitage. You can give a try to the egg in developement mode.
         .. code-block:: sh
 
             source $prefix/bin/activate
-            easy_install -U mercurial
             minimerge -s
 
 
@@ -295,7 +295,7 @@ Using minitage
 Those are usage samples... You have not to run that if you do not need to ;)
 
 Install python-xxx
--------------------
+------------------------------
 
     .. code-block:: sh
 
@@ -303,7 +303,7 @@ Install python-xxx
             minimerge python-xxx
 
 Install a custom minilay
--------------------------
+-----------------------------
 
     .. code-block:: sh
 
@@ -312,7 +312,7 @@ Install a custom minilay
         scm CHECKOUT  https://subversion.foo.net/YOURPROJECT/minilay/trunk $prefix/minilays/YOURPROJECTMINILAY
 
 Deploy a project with minitage
--------------------------------
+------------------------------------
 
     .. code-block:: sh
 

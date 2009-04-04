@@ -19,7 +19,7 @@ Make a minitage instance::
 
     $python/bin/virtualenv --no-site-packages $minitage
     source $minitage/bin/activate
-    easy_install -U minitage.core minitage.paste mercurial
+    easy_install -U minitage.core minitage.paste
     minimerge -s
 
 Create and install a **turbogears project** with the postgresql profile::

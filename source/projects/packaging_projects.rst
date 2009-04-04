@@ -93,7 +93,7 @@ Python eggs
 
 Layout
 --------
-The resulted eggs will be put in the egg cache of the buildout section, the project lives in the eggs/ directory
+The resulted eggs will be put in the egg cache of the buildout section, those projects live in the eggs/ directory
 
 
 The minitage.recipe:egg recipe
