@@ -124,6 +124,8 @@ Add versionned Thirdparty Zope Products
 Patchs
 ------
 
+*It's not for eggs patches. If you want to patch one egg, just use the minitage.recipe:egg and its patching facility!!!*
+
 Sometimes you need to be dirty and to apply patches somewhere in parts/ or elsewhere.
 To achieve that, you can use the ``iw.recipe.command`` recipe to execute shells commands and invoke the patch binary to apply a patch.
 
@@ -163,22 +165,16 @@ To achieve that, you can use the ``iw.recipe.command`` recipe to execute shells 
 
         .. sourcecode:: ini
 
-            [project]
+            [buildout]
             parts =
                 ...
-                ${parts:patchs}
-            ...
-            [parts]
-            ...
-            patchss =
                 patch-money
             ...
             [patch-money]
             recipe = iw.recipe.cmd
             on_install=true
             cmds=
-                patch -p0 ${plone:location}/Products/somefile.py < ${buildout:directory}/patchs/patch.diff 2>&1 >> /dev/null
-
+                patch -p0 ${plone:location}/Products/somefile.py < ${buildout:directory}/patchs/patch.diff
 
 
 .. _minitagetg:
