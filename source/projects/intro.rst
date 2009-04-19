@@ -6,7 +6,8 @@ The steps
 
 The steps for minitaging a project are:
 
-    * Create the 'layout' part of the project.
+    * Create the project itself and package it to be 'minitage compliant'
+      (uploading, versionining)
     * Create a minibuild which points to this layout.
 
 Begin a new project with paster and minitage
@@ -26,7 +27,7 @@ Basicly it will create the following things:
  - A project layout
  - A minilay containing:
 
-     - A minibuild (inside the previous minilay) which points to the project layout.
+     - minibuild(s) (inside the previous minilay) which points to the project layout.
 
 
 create the project layout
@@ -48,13 +49,9 @@ What project template to choose?
       Some specifics layouts based on zope:
 
         - for plone25 instances, use `minitage.plone25`
-        - for plone31 instances, use `minitage.plone31`
-        - for plone31 instances with zeo server connection, use `minitage.plone31zeo`
+        - for plone3 instances, use `minitage.plone3`
 
     - for zope3 instances, use `minitage.zope3`
     - for django instances, use `minitage.django <minitagedjango>`
-    - for turbogears instances, use :ref:`minitage.tg <minitagetg>`.
     - for Pylons instances, use :ref:`minitage.tg <minitagepylons>`.
-    - for buildbot slave instances, use `minitage.buildbot-slave`
-    - for buildbot master instances, use `minitage.buildbot-master`
 

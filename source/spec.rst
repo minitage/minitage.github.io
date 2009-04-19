@@ -56,8 +56,6 @@ Specifying alternate minilays to minimerge
 
         export MINILAYS="path1 path2"
 
-
-
 The minibuilds
 ===============
 
@@ -100,7 +98,7 @@ Writing Minibuilds
 
     - a category variable : controls the category of the minibuilds. [[br]]
       Categories are top level  directories in your minitage directory. [[br]]
-      Available categories are:
+      Possible categories may be:
 
         - dependencies
         - eggs
@@ -140,20 +138,8 @@ Exemple : the minibuilds/cyrus-sasl-2.1 minibuild::
 
 You must place your minibuild in a minilay.
 
-meta minibuilds
----------------
-
-You can even define meta-minibuilds just to grab dependencies. Those minibuilds will just have a dependenciess variable.
-This is useful to split large minibuilds. For example the meta-project will specify all the proiject dependencies including the project itself.
-Thas's why my projects minilays have always a "project" and "meta-project"
-minibuild. eg::
-
-    [minibuild]
-    dependenciess=foo-1.0
-
-
 Conventions
------------
+------------
 
 They are rules, not just conventions, follow them or be killed.
 If you want a full review, just take a look to ``minitage.core/minitage/core/objects/minibuild.py``` regular expressions ;).
@@ -217,7 +203,6 @@ Abstract
 
         eggs/
             cache/
-            develop-cache/
             projectn/
                 buildout.cfg
                 hooks/
@@ -251,20 +236,20 @@ Abstract
 Layout explanation
 --------------------
 
-bin/minimerge:
+*bin/minimerge*:
     - The project Assembler.
 
-etc/minimerge.cfg
+*etc/minimerge.cfg*:
     Minitage configuration file.
 
-dependencies/:
+*dependencies/*:
  - Libraries and applications like libpng, python-2.4 or readline.
  - One dependency per directory.
  - The installation prefix for each dependency is::
 
             dependencies/dependency-name/parts/part
 
-eggs:
+*eggs/*:
     They is two possibilities there:
 
     - In a particular eggs/directory:
@@ -290,20 +275,13 @@ eggs:
 
                 eggs/cache
 
-            - eggs in develop-mode::
-
-                eggs/develop-cache
-
-
 django/:
     - Django projects.
 
-zope/:
+*zope/*:
     - Zope/Plone projects which only install zope, plone and the needed products.
     - Just think to add the needed site-packages in the project's extra-path so that buildout can find them!
     - Do not use not packaged eggs parts there or BURN IN HELL!
-
-minilays/:
 
 misc:/
     - All that cannot be elsewhere
@@ -311,24 +289,14 @@ misc:/
 tg/:
     - Turbogears project
 
-[MinitageMinibuilds#Minilays minilays] : dependencies | zope | django | eggs
+*minilays/* : *dependencies* | *zope* | *django* | *eggs*
     Those are MINILAYS. Minilays are similar to gentoo 's OVERLAYS. Or, be reference, to entries in your source.list on Debian/Ubuntu.
     They contains minibuilds.
     Those are the packages that our package manager deals with.
-    You can add search Directories by setting the "MINILAYS" environment variable.
+    You can add search Directories which are not in ``minilays/`` by setting the "MINILAYS" environment variable.
     ex:
 
     .. sourcecode:: sh
 
         export MINILAYS="~/otherminibuildsdirectory"
 
-TIPS
-=======
-
-    * Make and abuse of branches.
-
-        * Make branches for special needs (light ones)
-        * Make a (pre)-production branch
-
-    * Tag your products
-    * Fix versions in the buildout for re-execution in the same state.
