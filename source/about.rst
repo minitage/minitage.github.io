@@ -7,6 +7,8 @@ Purpose
     - It's goal is to integrate build systems / other package manager together to make them install in a 'well known' layout.
     - In other terms, it install its stuff in 'prefix' and it targets the total isolation from the host system.
     - Moreover, this tool will make you forget compilation and other crazy stuff that put your mind away from your real project needs.
+    - Another subsidiary goal is to standardize installations, and make development environments as similar as possible with production deployments
+    - With all the precedings targets achieved, minitage would be called a good ``industrialization tool`` :)
 
 Pre requisite knowledge
 =======================
@@ -54,13 +56,9 @@ Implementation goals
  - Use different ways to install, One tool for one thing, remember the Unix way.
  - Deploy a project from start to end.
  - Isolate all the needed boilerplate from the host system. All stuff in minitage is supposed to be independant from the host base system. Compiled stuff is interlinked as much as possible.
- - Reproduce the same environement everywhere (on UNIX platforms). It is known to work on:
+ - Reproduce the same environement everywhere (on UNIX platforms). It will probably work on
 
      - Linux
-     - MacOSX but at least OSX Leopard is required. (not tested recently) 
-     - FreeBSD (not tested recently)
-
-
-
-
+     - MacOSX but at least OSX Leopard is required. (it has worked, but not tested recently)
+     - FreeBSD (it has worked, but not tested recently)
 

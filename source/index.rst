@@ -5,22 +5,44 @@
 Welcome to Minitage's documentation!
 #######################################
 
-Contents:
+What is minitage
+=================
+.. toctree::
+   :maxdepth: 2
+
+   why
+   Minitage, the meta-package manager <about>
+   spec
+
+How do i use it
+=================
 
 .. toctree::
-    :maxdepth: 2
+   :maxdepth: 1
 
-    about
-    spec
-    installation
-    projects/index
-    profils/index
-    usecases/index
-    develop
+   installation
+
+.. toctree::
+   :maxdepth: 2
+
+   usecases/index
+
+.. toctree::
+   :maxdepth: 3
+
+   paster/index
+
+How can i contribute to its development
+=========================================
+.. toctree::
+   :maxdepth: 2
+
+   develop
 
 .. Indices and tables
 .. ==================
 .. * :ref:`genindex`
 .. * :ref:`modindex`
 .. * :ref:`search`
+
 

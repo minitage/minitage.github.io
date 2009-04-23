@@ -12,7 +12,7 @@ Bootstrap python::
 
     mkdir -p $python
     cd $python
-    wget http://hg.minitage.org/hg/minitage/shell/raw-file/tip/PyBootstrapper.sh
+    wget http://git.minitage.org/git/minitage/shell/plain/PyBootstrapper.sh
     bash ./PyBootstrapper.sh $python
 
 Make a minitage instance::
@@ -21,4 +21,9 @@ Make a minitage instance::
     source $minitage/bin/activate
     easy_install -U minitage.core minitage.paste
     minimerge -s
+
+
+Install python-2.5::
+
+    minimerge python-2.5
 

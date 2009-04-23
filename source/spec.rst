@@ -1,8 +1,8 @@
 Specifications
 ################
 
-The package manager
-===================
+The package manager in 7 points
+=================================
 
  - Be simple !
  - Run on popular Unixes, including FreeBSD, Linux and MacOSX. And in a second time, why not port him to other OSs.
@@ -92,9 +92,10 @@ Writing Minibuilds
 
     - a dependencies variable: list of other minibuilds which this one depends on
     - a install_method variable : how to install it
+
       Available install methods are:
 
-        - buildout
+        - buildout (use the :ref:`buildout maker <buildout_maker>`)
 
     - a category variable : controls the category of the minibuilds. [[br]]
       Categories are top level  directories in your minitage directory. [[br]]
@@ -170,6 +171,19 @@ Please not that your project name cannot contain "``-``" as it is used to genera
     - Please set the version to MAJOR:MINOR without the revision for compiled dependencies !
       This will prevent from recompiling everything on security updates for example
 
+    - Multiple maker specific metadata
+
+.. _`buildout_maker`:
+
+The buildout maker
+--------------------
+
+It will run a buildout somewhere
+
+Specific options:
+
+    * buildout_config:
+          configuration file  to run
 
 
 
@@ -230,7 +244,6 @@ Abstract
             meta/
             samples/
             anExternalMinilay/
-
 
 
 Layout explanation

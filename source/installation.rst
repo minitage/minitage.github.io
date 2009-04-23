@@ -6,13 +6,13 @@ Variables
 ==========
 
     - ``$prefix``: root of minitage
-    - ``$ins``: root of a project inside minitage 
+    - ``$ins``: root of a project inside minitage
 
 
 Buildout Configuration
 ======================
 
-To store all downloaded stuff in the same place, you ll need to set buildout to do so.
+**To store all downloaded stuff in the same place**, you ll need to set buildout to do so.
 
     .. code-block:: sh
 
@@ -43,7 +43,6 @@ Debian/Ubuntu
 
             apt-get install build-essential m4 libtool pkg-config autoconf m4 gettext bzip2
 
-
 FreeBSD
 -------
 
@@ -52,9 +51,9 @@ FreeBSD
 
         .. code-block:: sh
 
-            cd /usr/ports/sysutils/portupgrade
+            cd /usr/ports/sysutils/portinstall
             make install clean
-            for i in gsed gmake ;do portinstall $i;done
+            for i in gsed gmake autotools autoconf;do portinstall $i;done
 
 Gentoo
 ------
@@ -122,7 +121,7 @@ This utility deploys for you a nicely python with all its dependencies in a pref
 
 This script will install for you:
 
-    * Python-2.5.2 (default) or Python-2.4.5 
+    * Python-2.5.2 (default) or Python-2.4.5
     * openssl 0.9.7
     * zlib-1.2.3
     * bzip2-1.0.4
@@ -155,7 +154,7 @@ Usage
 
         mkdir -p $python
         cd $python
-        wget http://hg.minitage.org/hg/minitage/shell/raw-file/tip/PyBootstrapper.sh
+        wget http://git.minitage.org/git/minitage/shell/plain/PyBootstrapper.sh
         bash ./PyBootstrapper.sh $python
 
 offline mode
@@ -170,7 +169,7 @@ offline mode
 
 Using virtualenv
 =================
-You have to use `virtualenv <http://pypi.python.org/pypi/virtualenv/1.1>`_ ,
+**You have to use** `virtualenv <http://pypi.python.org/pypi/virtualenv/1.1>`_,
 minitage fits well with it.
 
 virtualenv is a tool that allow you to create isolated Python
@@ -221,73 +220,6 @@ A stable version
 
             source $prefix/bin/activate
             minimerge -s
-
-
-A develop version:
-------------------
-If you want to be bleeding edge and not lhave a 3 years old debianised
-minitage. You can give a try to the egg in developement mode.
-Be aware that you must know what you are doing there !
-
-    - If you need to, fire your virtualenv
-
-        .. code-block:: sh
-
-            source $prefix/bin/activate
-
-    - Get the sources
-
-        .. code-block:: sh
-
-            mkdir -p ~/repos/minitage
-            cd ~/repos/minitage
-            hg clone http://hg.minitage.org/hg/minitage/eggs/minitage.core
-            hg clone http://hg.minitage.org/hg/minitage/eggs/minitage.recipe
-
-    - Or update them
-
-        .. code-block:: sh
-
-            hg pull -u -R ~/repos/minitage/minitage.core
-            hg pull -u -R ~/repos/minitage/minitage.recipe
-
-    - Install/Reinstall minitage in develop mode
-
-        .. code-block:: sh
-
-            source $prefix/bin/activate
-            cd ~/repos/minitage/minitage.core
-            python setup.py develop
-            cd ~/repos/minitage/minitage.recipe
-            python setup.py develop
-
-    - Sync its packages (all its minilays in minitage vocabulary).
-
-      **This will initiate also all the minitage directories for the first run.**
-
-        .. code-block:: sh
-
-            source $prefix/bin/activate
-            minimerge -s
-
-
-.. setuptools Fix
-.. ================
-..
-..     - setuptools <= 0.6.8 is pretty annoying as it does not interact well with
-..       svn. As a temporary fix, whenever the maintainers do not want to make
-..       another release, We must install the "trunk" version.
-..
-..         - Try first::
-..
-..             easy_install -U setuptools==dev
-..
-..         - If it fails::
-..
-..             svn co http://svn.python.org/projects/sandbox/trunk/setuptools/
-..             cd setuptools
-..             python setup.py install
-..
 
 Using minitage
 ==============
