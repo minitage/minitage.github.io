@@ -26,6 +26,23 @@ Buildout Configuration
 
 System Requirements
 ====================
+Minitage requires a complete toolchain to build softwares from the c compiler to the autotools.
+
+if you need something that must be compiled, you must have some requirements installed like :
+
+    * m4
+    * A c compiler (gcc ?)
+    * pkg-config
+    * autotools
+
+        - automake
+        - autoconf
+    * libtool if your platform supports it
+    * groff
+    * man-db, man utils,  whatever your systemescore  man packages are
+
+
+
 
 Debian/Ubuntu
 -------------
