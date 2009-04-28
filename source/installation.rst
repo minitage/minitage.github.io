@@ -37,6 +37,7 @@ if you need something that must be compiled, you must have some requirements ins
 
         - automake
         - autoconf
+
     * libtool if your platform supports it
     * groff
     * man-db, man utils,  whatever your systemescore  man packages are
