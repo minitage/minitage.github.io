@@ -97,7 +97,7 @@ Relaunch an interrupted minitage
             minimerge -u mypackage
 
 Relaunch a failed installation exactly where it stopped
----------------------------------------
+------------------------------------------------------------
 ::
 
             minimerge -uj myfailedpackage package
