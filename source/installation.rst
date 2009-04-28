@@ -40,7 +40,7 @@ if you need something that must be compiled, you must have some requirements ins
 
     * libtool if your platform supports it
     * groff
-    * man-db, man utils,  whatever your systemescore  man packages are
+    * man-db, man utils,  whatever your system core man packages are
 
 
 
