@@ -87,6 +87,19 @@ Suze
 
     * toolchain (gcc, autotools, m4)
 
+Fedora
+-----------
+
+    Prior to begin with the project, ensure those dependencies are installed on
+    your system:
+
+    This one liner can help you::
+
+        .. code-block:: sh
+
+             yum install automake autoconf libtool python-setuptools wget gcc-c++ patch
+
+
 MacOS X
 -------
 
