@@ -188,10 +188,6 @@ Django projects
 
             buildout.cfg # buildout for customizing and deploying your project
 
-    * /category/project/::
-
-            buildout.cfg # buildout for customizing and deploying your project
-
 - template initialization and starting your project::
 
      $mt/bin/paster create -t minitage.django myproject
