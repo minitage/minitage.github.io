@@ -195,7 +195,7 @@ Django projects
 - template initialization and starting your project::
 
      $mt/bin/paster create -t minitage.django myproject
-     $mt/categ/project/bin/paster serve etc/CONFIG.ini
+     $mt/categ/project/bin/paster serve $mt/categ/project/etc/CONFIG.ini
      # or
      $mt/categ/project/bin/project_manage runserver # may God kill you :)
 
