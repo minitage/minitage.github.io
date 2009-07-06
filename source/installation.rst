@@ -142,6 +142,12 @@ Existing python
             >>> import setuptools
             >>>
 
+Tip:
+If you do not want to use a custom compiled python, be sure to have installed python with it's "dev" packages and with setuptools and virtualenv.
+On Debian systems, for example, you can use the following snippet::
+
+    apt-get install python-dev python python-setuptools python-virtualenv
+
 PyBootstrapper
 ---------------
 
