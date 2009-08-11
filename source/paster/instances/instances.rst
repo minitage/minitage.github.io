@@ -76,5 +76,44 @@ This instance will install an initd script to wrap a paste configuration start t
 
     - In `sys/etc/init.d`, you ll have an init script to start the project.
 
+minitage.instances. mysql=================================
+Installation::
+
+    paster create -t minitage.instances.paste-initd myproject
+
+This instance will install an initd script to wrap a paste configuration start throught paster serve (with appropriate project dependencies).
+
+    - In `sys/etc/init.d`, you ll have an init script to start the project.
+
+minitage.instances.mysql
+=================================
+Installation::
+
+    paster create -t minitage.instances.mysql myproject
+
+This instance will install a 'mysql database'.
+
+When you answer to question, think that the 'main user' is a system user.
+
+    - In `sys/bin`, you ll have binaries which point to the created database.
+    - In `sys/etc/init.d`, you ll have an init script to start the database.
+    - In `sys/var/data/mysql/database`, you ll have the database.
+    - In `sys/var/log/mysql`, you ll have the logs. 
+
+minitage.instances.cas
+=================================
+Installation::
+
+    easy_install minitage.paste.cas
+    minimerge tomcat-0.0.20 # or add it to your minibuild and launch minimerge my project
+    paster create -t minitage.instances.cas myproject
+
+This instance will install a tomcat isntance where is installed a CAS server on top of it
+
+    - In `sys/etc/init.d`, you ll have an init script to start the project.
+    - In `sys/bin`, you ll have wrappers for original binaries pointing to your instance
+    - In `sys/etc/init.d`, you ll have an init script to start the tomcat.
+    - In `sys/etc/cas.project/`, you ll have the configuration files
+    - In `sys/var/data/tomcat/cas`, you ll have the tomcat instance files.
 
 
