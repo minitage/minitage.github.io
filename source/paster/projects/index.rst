@@ -24,7 +24,7 @@ Listing the available templates
 ----------------------------------
 ::
 
-    $mt/bin/paster create --list-templates | grep minitage | grep -v profils
+    $mt/bin/paster create --list-templates | grep minitage | grep -v instances
 
 Generating a minitage project from a paster template
 --------------------------------------------------------

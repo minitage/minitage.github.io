@@ -1,8 +1,8 @@
-minitage.profils.env
+minitage.instances.env
 =====================
 Installation::
 
-    paster create -t minitage.profils.env myproject
+    paster create -t minitage.instances.env myproject
 
 **This is maybe the most important profil.**
 
@@ -24,11 +24,11 @@ It will also register some environement variables like:
     - `MT`: the path to the minitage top directory
     - `INS`: the path to the current project
 
-minitage.profils.postgresql
+minitage.instances.postgresql
 =============================
 Installation::
 
-    paster create -t minitage.profils.postgresql myproject
+    paster create -t minitage.instances.postgresql myproject
 
 This profil will install a 'postgresql database'.
 
@@ -40,11 +40,11 @@ When you answer to question, think that the 'main user' is a system user.
     - In `sys/var/log/postgresql`, you ll have the logs.
 
 
-minitage.profils.varnish
+minitage.instances.varnish
 =========================
 Installation::
 
-    paster create -t minitage.profils.varnish myproject
+    paster create -t minitage.instances.varnish myproject
 
 This profil will install a varnish instance.
 
@@ -53,11 +53,11 @@ This profil will install a varnish instance.
     - In `sys/etc/varnish/`, you ll have the VCL configuration file
     - In `sys/var/data/varnish`, you ll have the cache file.
 
-minitage.profils.varnish2
+minitage.instances.varnish2
 ==========================
 Installation::
 
-    paster create -t minitage.profils.varnish2 myproject
+    paster create -t minitage.instances.varnish2 myproject
 
 This profil will install a varnish2 instance.
 
@@ -66,11 +66,11 @@ This profil will install a varnish2 instance.
     - In `sys/etc/varnish/`, you ll have the VCL configuration file
     - In `sys/var/data/varnish`, you ll have the cache file.
 
-minitage.profils.paste-initd
+minitage.instances.paste-initd
 =================================
 Installation::
 
-    paster create -t minitage.profils.paste-initd myproject
+    paster create -t minitage.instances.paste-initd myproject
 
 This profil will install an initd script to wrap a paste configuration start throught paster serve (with appropriate project dependencies).
 

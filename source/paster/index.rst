@@ -17,5 +17,5 @@ Minitage and paster templates
     :maxdepth: 2
 
     projects/index
-    profils/index
+    instances/index
 

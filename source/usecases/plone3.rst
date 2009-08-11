@@ -27,8 +27,8 @@ Create and install a **plone3 with RelsSorage project** with the **varnish2** an
 
     $paster create -t minitage.plone3 plony with_psycopg2=yes mode=relstorage
     minimerge plony
-    $paster create -t minitage.profils.varnish2 plony
-    $paster create -t minitage.profils.postgresql plony
+    $paster create -t minitage.instances.varnish2 plony
+    $paster create -t minitage.instances.postgresql plony
 
 Launch the varnish if you want (you may edit the VCL in $ins/sys/etc/varnish before)::
 

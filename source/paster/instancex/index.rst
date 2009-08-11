@@ -1,8 +1,8 @@
-Minitage and profils
+Minitage and instances
 ***********************
 Abstract
 -----------
-- Minitage profils are the way to integrate applications in minitage projects or simply generate convenient templates with less efforts.
+- Minitage instances are the way to integrate applications in minitage projects or simply generate convenient templates with less efforts.
 
 - The goal is to make boilerplate to facilitate the use of prefixed applications or the intialization of databases instances to ease the admins job.
 
@@ -46,15 +46,15 @@ A postgresql example::
             postgresql/
                 MyDatabase.log
 
-Listing the available profils
+Listing the available instances
 -------------------------------
 ::
 
-    $mt/bin/paster create --list-templates | grep minitage | grep profils
+    $mt/bin/paster create --list-templates | grep minitage | grep instances
 
 Installing a profil
 ---------------------
-The profils are just specialized paster templates so you just have to apply a template to a project.
+The instances are just specialized paster templates so you just have to apply a template to a project.
 
 There are too ways to use one profil, inside or without minitage, just by **anssering yes or no** to the minitage presence question.
 
@@ -64,18 +64,18 @@ Examples:
 
     * inside minitage::
 
-        paster create -t minitage.profils.env myproject inside_minitage=yes
+        paster create -t minitage.instances.env myproject inside_minitage=yes
         Will produce: $mt/categ/project/myproject/sys/share/minitage/minitage.env
 
     * without minitage::
 
-        paster create -t minitage.profils.env myproject inside_minitage=no
+        paster create -t minitage.instances.env myproject inside_minitage=no
         Will produce: myproject/share/minitage/minitage.env
 
-Available profils
+Available instances
 *******************
 .. toctree::
     :maxdepth: 3
 
-    profils
+    instances
 
