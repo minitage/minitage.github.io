@@ -105,7 +105,7 @@ minitage.instances.cas
 Installation::
 
     easy_install minitage.paste.cas
-    minimerge tomcat-0.0.20 # or add it to your minibuild and launch minimerge my project
+    minimerge tomcat-6.0.20 # or add it to your minibuild and launch minimerge my project
     paster create -t minitage.instances.cas myproject
 
 This instance will install a tomcat isntance where is installed a CAS server on top of it
