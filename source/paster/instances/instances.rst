@@ -110,7 +110,6 @@ Installation::
 
 This instance will install a tomcat isntance where is installed a CAS server on top of it
 
-    - In `sys/etc/init.d`, you ll have an init script to start the project.
     - In `sys/bin`, you ll have wrappers for original binaries pointing to your instance
     - In `sys/etc/init.d`, you ll have an init script to start the tomcat.
     - In `sys/etc/cas.project/`, you ll have the configuration files
