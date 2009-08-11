@@ -1,5 +1,5 @@
 minitage.instances.env
-=====================
+=============================
 Installation::
 
     paster create -t minitage.instances.env myproject
@@ -25,7 +25,7 @@ It will also register some environement variables like:
     - `INS`: the path to the current project
 
 minitage.instances.postgresql
-=============================
+==================================
 Installation::
 
     paster create -t minitage.instances.postgresql myproject
@@ -41,7 +41,7 @@ When you answer to question, think that the 'main user' is a system user.
 
 
 minitage.instances.varnish
-=========================
+=============================
 Installation::
 
     paster create -t minitage.instances.varnish myproject
@@ -54,7 +54,7 @@ This profil will install a varnish instance.
     - In `sys/var/data/varnish`, you ll have the cache file.
 
 minitage.instances.varnish2
-==========================
+========================================
 Installation::
 
     paster create -t minitage.instances.varnish2 myproject
