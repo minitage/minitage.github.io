@@ -4,9 +4,9 @@ Installation::
 
     paster create -t minitage.instances.env myproject
 
-**This is maybe the most important profil.**
+**This is maybe the most important instance.**
 
-This profil will install a 'minitage.env' shell script.
+This instance will install a 'minitage.env' shell script.
 
 When you source this shell script, all the environnement of the project is pushed into the current environment.
 
@@ -30,7 +30,7 @@ Installation::
 
     paster create -t minitage.instances.postgresql myproject
 
-This profil will install a 'postgresql database'.
+This instance will install a 'postgresql database'.
 
 When you answer to question, think that the 'main user' is a system user.
 
@@ -46,7 +46,7 @@ Installation::
 
     paster create -t minitage.instances.varnish myproject
 
-This profil will install a varnish instance.
+This instance will install a varnish instance.
 
     - In `sys/bin`, you ll have wrappers for original varnish binaries pointing to your instance
     - In `sys/etc/init.d`, you ll have an init script to start the cache.
@@ -59,7 +59,7 @@ Installation::
 
     paster create -t minitage.instances.varnish2 myproject
 
-This profil will install a varnish2 instance.
+This instance will install a varnish2 instance.
 
     - In `sys/bin`, you ll have wrappers for original varnish binaries pointing to your instance
     - In `sys/etc/init.d`, you ll have an init script to start the cache.
@@ -72,7 +72,7 @@ Installation::
 
     paster create -t minitage.instances.paste-initd myproject
 
-This profil will install an initd script to wrap a paste configuration start throught paster serve (with appropriate project dependencies).
+This instance will install an initd script to wrap a paste configuration start throught paster serve (with appropriate project dependencies).
 
     - In `sys/etc/init.d`, you ll have an init script to start the project.
 

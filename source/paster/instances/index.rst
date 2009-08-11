@@ -52,15 +52,15 @@ Listing the available instances
 
     $mt/bin/paster create --list-templates | grep minitage | grep instances
 
-Installing a profil
+Installing a instance
 ---------------------
 The instances are just specialized paster templates so you just have to apply a template to a project.
 
-There are too ways to use one profil, inside or without minitage, just by **anssering yes or no** to the minitage presence question.
+There are too ways to use one instance, inside or without minitage, just by **anssering yes or no** to the minitage presence question.
 
 Examples:
 
-    We will apply the 'minitage.env' profil to 'myproject'
+    We will apply the 'minitage.env' instance to 'myproject'
 
     * inside minitage::
 

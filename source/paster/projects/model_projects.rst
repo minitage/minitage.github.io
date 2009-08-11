@@ -113,7 +113,7 @@ Zope 3
 
 - Another note on ZDaemon, it can be used as a init script for your application,
   althought, you can use directly paster. Another way to make your application
-  "initd compliant" is to use the ``minitage.paste-initd`` profile.
+  "initd compliant" is to use the ``minitage.paste-initd`` instancee.
 
 - You can regenerate the \*.conf after editing the ``.in`` ine ``etc/``::
 
