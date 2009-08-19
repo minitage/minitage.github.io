@@ -96,15 +96,17 @@ minitage.instances.cas
 
 
 Be sure to have tomcat installed, and moreover, you must have the JAVA_HOME variable defined in your environment.
-Many distrib's as debian don't set it by default.::
+Many distrib's as debian don't set it by default.
+::
 
     export JAVA_HOME=/path/to/your/jdk
     minimerge tomcat-6.0.20 (if alreazdy installed : minimerge -NRuUv tomcat-6.0.20)
 
-Installation::
+Installation
+::
 
-    easy_install minitage.paste.instances.cas
-    minimerge tomcat-6.0.20 # or add it to your minibuild and launch minimerge my project
+    easy_install minitage.paste.extras
+    $EDITOR $MT/minilays/*/yourproject # add tomcat-6.0.20 to dependencies
     paster create -t minitage.instances.cas myproject
 
 This instance will install a tomcat isntance where is installed a CAS server on top of it
