@@ -11,5 +11,6 @@ Here are some examples and documentation to help you discover the wonderful worl
     maintain_project
     install25
     plone3
+    deploying_a_cas_server
     FAQ
 

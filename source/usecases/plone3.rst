@@ -34,12 +34,12 @@ Launch the varnish if you want (you may edit the VCL in $ins/sys/etc/varnish bef
 
     cd $mt/zope/plony
     $ins/sys/etc/init.d/plony-varnish2 restart
-    $ins/sys/etc/init.d/postgresql_plony.minitagedb restart
+    $ins/sys/etc/init.d/postgresql_plony.plony restart
     $ins/bin/instance fg
 
 You can verify that you have things in the db::
 
-    $sys/bin/minitagedb.psql
+    $sys/bin/plony.psql
 
 Play around and when your are ready, just version in this way:
 

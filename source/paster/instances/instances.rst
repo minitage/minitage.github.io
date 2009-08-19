@@ -76,15 +76,6 @@ This instance will install an initd script to wrap a paste configuration start t
 
     - In `sys/etc/init.d`, you ll have an init script to start the project.
 
-minitage.instances. mysql=================================
-Installation::
-
-    paster create -t minitage.instances.paste-initd myproject
-
-This instance will install an initd script to wrap a paste configuration start throught paster serve (with appropriate project dependencies).
-
-    - In `sys/etc/init.d`, you ll have an init script to start the project.
-
 minitage.instances.mysql
 =================================
 Installation::
@@ -102,6 +93,14 @@ When you answer to question, think that the 'main user' is a system user.
 
 minitage.instances.cas
 =================================
+
+
+Be sure to have tomcat installed, and moreover, you must have the JAVA_HOME variable defined in your environment.
+Many distrib's as debian don't set it by default.::
+
+    export JAVA_HOME=/path/to/your/jdk
+    minimerge tomcat-6.0.20 (if alreazdy installed : minimerge -NRuUv tomcat-6.0.20)
+
 Installation::
 
     easy_install minitage.paste.instances.cas
