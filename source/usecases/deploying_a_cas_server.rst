@@ -107,7 +107,7 @@ Create the base ldif
     objectClass: domainRelatedObject
     associatedDomain: my-domain.com
 
-EOF
+    EOF
 
 Load the base ldif
 ::
@@ -169,7 +169,7 @@ Notes:
     - Please have a look on the generated README in $INS
 
 
-Configure the LDAP server as an authentication backend for the CAS server (http://www.ja-sig.org/wiki/display/CASUM/LDAP)::
+Configure the LDAP server as an authentication backend for the CAS server (http://www.ja-sig.org/wiki/display/CASUM/LDAP):
 
     - comment the bean *org.jasig.cas.authentication.handler.support.SimpleTestUsernamePasswordAuthenticationHandler* around the li.91 in $INS/sys/var/data/tomcat/cas/webapps/cas/WEB-INF/deployerConfigContext.xml::
 
@@ -241,7 +241,7 @@ Configure the LDAP server as an authentication backend for the CAS server (http:
                     objectClass: inetOrgPerson
                     objectClass: top
                     userPassword: foo
-EOF
+                    EOF
 
 Insert::
 
@@ -251,6 +251,7 @@ Checks
 -----------
 I can connect; see my own password but not the other one's
 ::
+
         $ my-domain.com.ldapsearch -D uid=test,ou=People,dc=my-domain,dc=com -x -wfoo uid=test1
         # extended LDIF
         #
