@@ -7,6 +7,9 @@ Welcome to Minitage's documentation!
 
 What is minitage
 =================
+
+Minitage is all about deployment and projects packaging
+
 .. toctree::
    :maxdepth: 2
 
