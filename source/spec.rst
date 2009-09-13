@@ -15,7 +15,7 @@ The package manager in 7 points
      Independently is not a synonym of not using another dependency.
      It s just to say that you can not install in the same /dependencies/foo for 2 different dependencies at the same time.
      You must install each dependency separatly from the others and then reference in other packages.
-     Be warn that there is not sandbo mecanism for checks and it is not goiong to appear, minitage must be simple.
+     Be warned that there is not sandbox mecanism for checks and it is not goiong to appear, minitage must be simple.
 
 The minilays
 ==============
