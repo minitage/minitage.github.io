@@ -97,7 +97,7 @@ Fedora
 
         .. code-block:: sh
 
-             yum install automake autoconf libtool python-setuptools wget gcc-c++ patch
+             yum install automake autoconf libtool wget gcc-c++ patch
 
 
 MacOS X
@@ -128,7 +128,7 @@ Python
 
 Existing python
 ----------------
-    You need a python with setuptools, zlib, bz2 and ssl support.
+    You need a python with distribute, zlib, bz2 and ssl support.
 
     Try that in your interpretery
 
@@ -143,10 +143,10 @@ Existing python
             >>>
 
 Tip:
-If you do not want to use a custom compiled python, be sure to have installed python with it's "dev" packages and with setuptools and virtualenv.
+If you do not want to use a custom compiled python, be sure to have installed python with it's "dev" packages and with distribute and virtualenv-distribute.
 On Debian systems, for example, you can use the following snippet::
 
-    apt-get install python-dev python python-setuptools python-virtualenv
+    apt-get install python-dev python
 
 PyBootstrapper
 ---------------
@@ -166,7 +166,7 @@ This script will install for you:
     * readlines-5.2
     * ez_setup.py which will install those python packages:
 
-        * setuptools
+        * distribute
         * zc.buildout
         * PasteScripts
         * virtualenv
@@ -206,8 +206,8 @@ offline mode
 
 Using virtualenv
 =================
-**You have to use** `virtualenv <http://pypi.python.org/pypi/virtualenv/1.1>`_,
-minitage fits well with it.
+**You have to use** `virtualenv-distribute <http://pypi.python.org/pypi/virtualenv-distribute>`_,
+minitage fits well with it and requires now *distribute* to run.
 
 virtualenv is a tool that allow you to create isolated Python
 environments.
@@ -218,7 +218,9 @@ environments.
     -  **Only if you do not have used the bootstrap script**, you must install virtualenv::
 
         # maybe sudo ?
-        easy_install virtualenv
+        wget  http://python-distribute.org/distribute_setup.py
+        python distribute_setup.py
+        easy_install virtualenv-distribute # remove also any other virtualenv installation
 
     - Install the minitage prefix, this is just a new virtualenv creation::
 
@@ -238,7 +240,7 @@ Installing minitage
 A stable version
 -----------------
 
-    Minitage is a classical python egg, you can get it throught easy_install.
+    Minitage is a classical python egg, you can get it throught easy_install (DISTRIBUTE).
 
     To install minitage in a stable version, follow those steps:
 
