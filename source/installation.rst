@@ -169,7 +169,7 @@ This script will install for you:
         * distribute
         * zc.buildout
         * PasteScripts
-        * virtualenv
+        * virtualenv-distribute
 
 Variables
 +++++++++++
@@ -204,8 +204,8 @@ offline mode
         ln -s /prod/1.0/downloads  $python/downloads
         bash ./PyBootstrapper.sh  -o $python
 
-Using virtualenv
-=================
+Using virtualenv-distribute
+===============================
 **You have to use** `virtualenv-distribute <http://pypi.python.org/pypi/virtualenv-distribute>`_,
 minitage fits well with it and requires now *distribute* to run.
 
