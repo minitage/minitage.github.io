@@ -143,7 +143,7 @@ Existing python
             >>>
 
 Tip:
-If you do not want to use a custom compiled python, be sure to have installed python with it's "dev" packages and with distribute and virtualenv-distribute.
+If you do not want to use a custom compiled python, be sure to have installed python with it's "dev" packages and with distribute and virtualenv.
 On Debian systems, for example, you can use the following snippet::
 
     apt-get install python-dev python
@@ -169,7 +169,7 @@ This script will install for you:
         * distribute
         * zc.buildout
         * PasteScripts
-        * virtualenv-distribute
+        * virtualenv
 
 Variables
 +++++++++++
@@ -204,9 +204,9 @@ offline mode
         ln -s /prod/1.0/downloads  $python/downloads
         bash ./PyBootstrapper.sh  -o $python
 
-Using virtualenv-distribute
+Using virtualenv
 ===============================
-**You have to use** `virtualenv-distribute <http://pypi.python.org/pypi/virtualenv-distribute>`_,
+**You have to use** `virtualenv <http://pypi.python.org/pypi/virtualenv>`_,
 minitage fits well with it and requires now *distribute* to run.
 
 virtualenv is a tool that allow you to create isolated Python
@@ -220,13 +220,13 @@ environments.
         # maybe sudo ?
         wget  http://python-distribute.org/distribute_setup.py
         python distribute_setup.py
-        easy_install virtualenv-distribute # remove also any other virtualenv installation
+        easy_install -U virtualenv # remove also any other virtualenv installation
 
     - Install the minitage prefix, this is just a new virtualenv creation::
 
-        $python/bin/virtualenv --no-site-packages $prefix
+        $python/bin/virtualenv --no-site-packages --distribute $prefix
         # maybe that if you do not used the bootstrapper
-        # virtualenv --no-site-packages $prefix
+        # virtualenv --no-site-packages --distribute $prefix
 
     - activate it::
 
