@@ -4,6 +4,7 @@ The minitage swiss knife, **minimerge**
 
 Verbose mode
 -----------------
+Usable with any other option, recommended to use which each command !
 ::
 
     minimerge -v [opts] [args]
@@ -51,14 +52,15 @@ That will run only your package installation::
 
 Update the package codebase
 ------------------------------------------------------------
-That will run the udpate method of what you have used to checkout your
+That will run the update method of what you have used to checkout your
 package::
 
     minimerge -U package
 
+
 Run again the installation of a package
 ------------------------------------------------------------
-That will run the udpate method of what you have used to checkout your
+That will run the update method of what you have used to checkout your
 package::
 
     minimerge -u package
@@ -70,7 +72,16 @@ Unconditionnally install or reinstall a package
     minimerge -R package
 
 
+Note
+------
 All the previous options can be combined.
+
+Update/Rebuid  a package and all its dependencies
+------------------------------------------------------
+To install & rebuild a package and all its dependencies::
+
+    minimerge -s
+    minimerge -Uu package
 
 Behaviour notes
 -------------------
