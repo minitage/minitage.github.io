@@ -13,7 +13,7 @@ Dry run
 -------------
 ::
 
-    minimerge [opts] -p [args]
+    minimerge [opts] -pv [args]
 
 Ask mode
 -------------
@@ -31,6 +31,12 @@ If you want to install ``a`` and ``a`` depends on ``b``, ``c``, ``d`` respectivl
 To squizze ``b`` and ``c`` and only install ``d`` and ``a``::
 
     minimerge -j d a
+
+Build only dependencies
+------------------------------
+::
+
+    minimerge --only-dependencies package
 
 Update your minimlays
 --------------------------
