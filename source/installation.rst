@@ -214,6 +214,7 @@ minitage fits well with it and requires now *distribute* to run.
 virtualenv is a tool that allow you to create isolated Python
 environments.
 
+- !!!  *PIP* IS NOT SUPPORTED !!!
 
     Here is how to set up an environment with it:
 
@@ -246,6 +247,7 @@ A stable version
 
     To install minitage in a stable version, follow those steps:
 
+    - !!!  *PIP* IS NOT SUPPORTED !!!
     - Install minitage
 
         .. code-block:: sh
