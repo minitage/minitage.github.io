@@ -52,8 +52,7 @@ div.sphinxsidebar form {
 }
 #zrssfeed  {
     font-size: 80%;
-    position: absolute;
-    right: 0;
+    float:right;
     top: 32px;
     width: 300px;
 }
