@@ -1,0 +1,291 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>minitage.instances.env &mdash; Minitage - Last updated: Dec 29, 2010</title>
+    <link rel="stylesheet" href="../../static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     'Last updated: Dec 29, 2010',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../static/jquery.js"></script>
+    <script type="text/javascript" src="../../static/underscore.js"></script>
+    <script type="text/javascript" src="../../static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Minitage - Last updated: Dec 29, 2010"
+          href="../../static/opensearch.xml"/>
+    <link rel="shortcut icon" href="../../static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="top" title="Minitage - Last updated: Dec 29, 2010" href="../../index.html" />
+    <link rel="up" title="Minitage and instances" href="index.html" />
+    <link rel="next" title="Develop" href="../../develop.html" />
+    <link rel="prev" title="Minitage and instances" href="index.html" />
+    <script src="static/jquery.min.js" type="text/javascript"></script>
+    <script src="static/jquery.zrssfeed.min.js" type="text/javascript"></script>
+
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../develop.html" title="Develop"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Minitage and instances"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">Minitage - Last updated: Dec 29, 2010</a> &raquo;</li>
+          <li><a href="../index.html" >Minitage and paster templates</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Minitage and instances</a> &raquo;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../index.html">
+              <img class="logo" src="../../static/logo.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+<h3><a href="../../index.html">Table Of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../why.html">Why should i use minitage?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">Minitage, the meta-package manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../spec.html">Specifications</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usecases/index.html">Minitage in the daily use of a developer</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Minitage and paster templates</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../projects/index.html">Minitage and projects templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/index.html#available-projects">Available projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html">Minitage and instances</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#available-instances">Available instances</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="">minitage.instances.env</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#minitage-instances-postgresql">minitage.instances.postgresql</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#minitage-instances-varnish">minitage.instances.varnish</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#minitage-instances-varnish2">minitage.instances.varnish2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#minitage-instances-paste-initd">minitage.instances.paste-initd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#minitage-instances-mysql">minitage.instances.mysql</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#minitage-instances-cas">minitage.instances.cas</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../develop.html">Develop</a></li>
+</ul>
+
+        </div>
+      </div>
+
+<script type="text/javascript">
+$(document).ready(function () {
+    $('#zrssfeed-minitage-dependencies').rssfeed('https://github.com/minitage-dependencies.atom', {
+        limit: 5
+    });
+});
+$(document).ready(function () {
+    $('#zrssfeed-minitage-eggs').rssfeed('https://github.com/minitage-eggs.atom', {
+        limit: 5
+    });
+});
+$(document).ready(function () {
+    $('#zrssfeed-minitage').rssfeed('https://github.com/minitage.atom', {
+        limit: 5
+    });
+});
+$(document).ready(function () {
+    $('#zrssfeed-kiorky').rssfeed('https://github.com/kiorky.atom', {
+        limit: 5
+    });
+}); 
+</script>
+<div id="zrssfeed-minitage"></div>
+<div id="zrssfeed-minitage-dependencies"></div>
+<div id="zrssfeed-minitage-eggs"></div>
+<div id="zrssfeed-kiorky"></div>
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="minitage-instances-env">
+<h1>minitage.instances.env<a class="headerlink" href="#minitage-instances-env" title="Permalink to this headline">¶</a></h1>
+<p>Installation:</p>
+<div class="highlight-python"><pre>paster create -t minitage.instances.env myproject</pre>
+</div>
+<p><strong>This is maybe the most important instance.</strong></p>
+<p>This instance will install a &#8216;minitage.env&#8217; shell script.</p>
+<p>When you source this shell script, all the environnement of the project is pushed into the current environment.</p>
+<p>This will enable <cite>PATH</cite>, and  <cite>LD_LIBRARY_PATH</cite> to be filled with all the dependencies subdirectories.</p>
+<p>the <cite>LD_LIBRARY_PATH</cite> setted by minitage.paste may interact with the rest of the system. if you get troubles, just unset it:</p>
+<div class="highlight-python"><pre>unset LD_LIBRARY_PATH</pre>
+</div>
+<p>For example, if your project has <cite>postgresql</cite> as a dependency, sourcing <cite>sys/share/minitage/minitage.env</cite> will give you <cite>psql</cite> in the <cite>PATH</cite>.</p>
+<p>It will also register some environement variables like:</p>
+<blockquote>
+<ul class="simple">
+<li><cite>MT</cite>: the path to the minitage top directory</li>
+<li><cite>INS</cite>: the path to the current project</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="minitage-instances-postgresql">
+<h1>minitage.instances.postgresql<a class="headerlink" href="#minitage-instances-postgresql" title="Permalink to this headline">¶</a></h1>
+<p>Installation:</p>
+<div class="highlight-python"><pre>paster create -t minitage.instances.postgresql myproject</pre>
+</div>
+<p>This instance will install a &#8216;postgresql database&#8217;.</p>
+<p>When you answer to question, think that the &#8216;main user&#8217; is a system user.</p>
+<blockquote>
+<ul class="simple">
+<li>In <cite>sys/bin</cite>, you ll have binaries which point to the created database.</li>
+<li>In <cite>sys/etc/init.d</cite>, you ll have an init script to start the database.</li>
+<li>In <cite>sys/var/data/postgresql/database</cite>, you ll have the database.</li>
+<li>In <cite>sys/var/log/postgresql</cite>, you ll have the logs.</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="minitage-instances-varnish">
+<h1>minitage.instances.varnish<a class="headerlink" href="#minitage-instances-varnish" title="Permalink to this headline">¶</a></h1>
+<p>Installation:</p>
+<div class="highlight-python"><pre>paster create -t minitage.instances.varnish myproject</pre>
+</div>
+<p>This instance will install a varnish instance.</p>
+<blockquote>
+<ul class="simple">
+<li>In <cite>sys/bin</cite>, you ll have wrappers for original varnish binaries pointing to your instance</li>
+<li>In <cite>sys/etc/init.d</cite>, you ll have an init script to start the cache.</li>
+<li>In <cite>sys/etc/varnish/</cite>, you ll have the VCL configuration file</li>
+<li>In <cite>sys/var/data/varnish</cite>, you ll have the cache file.</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="minitage-instances-varnish2">
+<h1>minitage.instances.varnish2<a class="headerlink" href="#minitage-instances-varnish2" title="Permalink to this headline">¶</a></h1>
+<p>Installation:</p>
+<div class="highlight-python"><pre>paster create -t minitage.instances.varnish2 myproject</pre>
+</div>
+<p>This instance will install a varnish2 instance.</p>
+<blockquote>
+<ul class="simple">
+<li>In <cite>sys/bin</cite>, you ll have wrappers for original varnish binaries pointing to your instance</li>
+<li>In <cite>sys/etc/init.d</cite>, you ll have an init script to start the cache.</li>
+<li>In <cite>sys/etc/varnish/</cite>, you ll have the VCL configuration file</li>
+<li>In <cite>sys/var/data/varnish</cite>, you ll have the cache file.</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="minitage-instances-paste-initd">
+<h1>minitage.instances.paste-initd<a class="headerlink" href="#minitage-instances-paste-initd" title="Permalink to this headline">¶</a></h1>
+<p>Installation:</p>
+<div class="highlight-python"><pre>paster create -t minitage.instances.paste-initd myproject</pre>
+</div>
+<p>This instance will install an initd script to wrap a paste configuration start throught paster serve (with appropriate project dependencies).</p>
+<blockquote>
+<ul class="simple">
+<li>In <cite>sys/etc/init.d</cite>, you ll have an init script to start the project.</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="minitage-instances-mysql">
+<h1>minitage.instances.mysql<a class="headerlink" href="#minitage-instances-mysql" title="Permalink to this headline">¶</a></h1>
+<p>Installation:</p>
+<div class="highlight-python"><pre>paster create -t minitage.instances.mysql myproject</pre>
+</div>
+<p>This instance will install a &#8216;mysql database&#8217;.</p>
+<p>When you answer to question, think that the &#8216;main user&#8217; is a system user.</p>
+<blockquote>
+<ul class="simple">
+<li>In <cite>sys/bin</cite>, you ll have binaries which point to the created database.</li>
+<li>In <cite>sys/etc/init.d</cite>, you ll have an init script to start the database.</li>
+<li>In <cite>sys/var/data/mysql/database</cite>, you ll have the database.</li>
+<li>In <cite>sys/var/log/mysql</cite>, you ll have the logs.</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="minitage-instances-cas">
+<h1>minitage.instances.cas<a class="headerlink" href="#minitage-instances-cas" title="Permalink to this headline">¶</a></h1>
+<p>Be sure to have tomcat installed, and moreover, you must have the JAVA_HOME variable defined in your environment.
+Many distrib&#8217;s as debian don&#8217;t set it by default.</p>
+<div class="highlight-python"><pre>export JAVA_HOME=/path/to/your/jdk
+minimerge tomcat-6.0.20 (if alreazdy installed : minimerge -NRuUv tomcat-6.0.20)</pre>
+</div>
+<p>Installation</p>
+<div class="highlight-python"><pre>easy_install minitage.paste.extras
+$EDITOR $MT/minilays/*/yourproject # add tomcat-6.0.20 to dependencies
+paster create -t minitage.instances.cas myproject</pre>
+</div>
+<p>This instance will install a tomcat isntance where is installed a CAS server on top of it</p>
+<blockquote>
+<ul class="simple">
+<li>In <cite>sys/bin</cite>, you ll have wrappers for original binaries pointing to your instance</li>
+<li>In <cite>sys/etc/init.d</cite>, you ll have an init script to start the tomcat.</li>
+<li>In <cite>sys/etc/cas.project/</cite>, you ll have the configuration files</li>
+<li>In <cite>sys/var/data/tomcat/cas</cite>, you ll have the tomcat instance files.</li>
+</ul>
+</blockquote>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../develop.html" title="Develop"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Minitage and instances"
+             >previous</a> |</li>
+        <li><a href="../../index.html">Minitage - Last updated: Dec 29, 2010</a> &raquo;</li>
+          <li><a href="../index.html" >Minitage and paster templates</a> &raquo;</li>
+          <li><a href="index.html" >Minitage and instances</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2008, Mathieu Pasquet.
+      Last updated on Dec 29, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

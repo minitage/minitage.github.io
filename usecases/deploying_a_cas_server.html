@@ -1,0 +1,446 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Install a project with a CAS server wired on an OpenLDAP backend &mdash; Minitage - Last updated: Dec 29, 2010</title>
+    <link rel="stylesheet" href="../static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Last updated: Dec 29, 2010',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../static/jquery.js"></script>
+    <script type="text/javascript" src="../static/underscore.js"></script>
+    <script type="text/javascript" src="../static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Minitage - Last updated: Dec 29, 2010"
+          href="../static/opensearch.xml"/>
+    <link rel="shortcut icon" href="../static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="top" title="Minitage - Last updated: Dec 29, 2010" href="../index.html" />
+    <link rel="up" title="Minitage in the daily use of a developer" href="index.html" />
+    <link rel="next" title="FAQ" href="FAQ.html" />
+    <link rel="prev" title="A plone3 project with relstorage (postgresql) and varnish2 support" href="plone3.html" />
+    <script src="static/jquery.min.js" type="text/javascript"></script>
+    <script src="static/jquery.zrssfeed.min.js" type="text/javascript"></script>
+
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="FAQ.html" title="FAQ"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="plone3.html" title="A plone3 project with relstorage (postgresql) and varnish2 support"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Minitage - Last updated: Dec 29, 2010</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Minitage in the daily use of a developer</a> &raquo;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../static/logo.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+<h3><a href="../index.html">Table Of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../why.html">Why should i use minitage?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">Minitage, the meta-package manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spec.html">Specifications</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Minitage in the daily use of a developer</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="using_minimerge.html">The minitage swiss knife, <strong>minimerge</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="begin_project.html">Beginning a project with minitage: The Initial Steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maintain_project.html">Porting an exising buildout based project to be a good minitage citizen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install25.html">Installation with a python 2.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plone3.html">A plone3 project with relstorage (postgresql) and varnish2 support</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Install a project with a CAS server wired on an OpenLDAP backend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FAQ.html">FAQ</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../paster/index.html">Minitage and paster templates</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../develop.html">Develop</a></li>
+</ul>
+
+        </div>
+      </div>
+
+<script type="text/javascript">
+$(document).ready(function () {
+    $('#zrssfeed-minitage-dependencies').rssfeed('https://github.com/minitage-dependencies.atom', {
+        limit: 5
+    });
+});
+$(document).ready(function () {
+    $('#zrssfeed-minitage-eggs').rssfeed('https://github.com/minitage-eggs.atom', {
+        limit: 5
+    });
+});
+$(document).ready(function () {
+    $('#zrssfeed-minitage').rssfeed('https://github.com/minitage.atom', {
+        limit: 5
+    });
+});
+$(document).ready(function () {
+    $('#zrssfeed-kiorky').rssfeed('https://github.com/kiorky.atom', {
+        limit: 5
+    });
+}); 
+</script>
+<div id="zrssfeed-minitage"></div>
+<div id="zrssfeed-minitage-dependencies"></div>
+<div id="zrssfeed-minitage-eggs"></div>
+<div id="zrssfeed-kiorky"></div>
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="install-a-project-with-a-cas-server-wired-on-an-openldap-backend">
+<h1>Install a project with a CAS server wired on an OpenLDAP backend<a class="headerlink" href="#install-a-project-with-a-cas-server-wired-on-an-openldap-backend" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="minitage">
+<h2>Minitage<a class="headerlink" href="#minitage" title="Permalink to this headline">¶</a></h2>
+<p>Installer minitage as the official documentation says. <tt class="docutils literal"><span class="pre">http://www.minitage.org/installation.html</span></tt>.</p>
+<p>Take $MT as the minitage installation prefix.</p>
+<div class="highlight-python"><pre>MT=$HOME/minitage/</pre>
+</div>
+<p>Be up to date before each minitage commande usage</p>
+<div class="highlight-python"><pre>easy_install -U minitage.core minitage.paste minitage.paste.extras</pre>
+</div>
+<p>Right after minitage installation, issue the following commands</p>
+<div class="highlight-python"><pre>cd $MT/minilays
+svn co https://yoururl/yourminilay
+cd $MT
+minimerge myproject
+paster create -t minitage.instances.env myproject
+. $MT/zope/myproject/sys/share/minitage/minitage.env</pre>
+</div>
+<p>Now, there are 3 tasks left:</p>
+<ul class="simple">
+<li>LDAP server configuration</li>
+<li>CAS (sso) server configuration</li>
+</ul>
+</div>
+<div class="section" id="ldap-configuration">
+<h2>Ldap configuration<a class="headerlink" href="#ldap-configuration" title="Permalink to this headline">¶</a></h2>
+<p>Install a non privilegied slapd instance.</p>
+<div class="highlight-python"><pre>passwd=$(whoami)
+$MT/bin/paster create --no-interactive -t minitage.instances.openldap myproject db_orga=my-domain db_suffix=com db_port=1389 ssl_port=1636
+cd $INS/sys/etc/openldap</pre>
+</div>
+<p>Include the right schemas in the slapd configuration file:</p>
+<div class="highlight-python"><pre>- core
+- cosine
+- inetorgperson
+- nis:</pre>
+</div>
+<p>Comment out the additional schemas.</p>
+<div class="highlight-python"><pre>$EDITOR $INS/etc/openldap/myproject_my-domain.com-slapd.conf</pre>
+</div>
+<p>Create the base ldif</p>
+<div class="highlight-python"><pre>cat &lt;&lt; EOF|sed "s/    //g" &gt; /tmp/initial.ldif
+dn: dc=my-domain,dc=com
+objectClass: dcObject
+objectClass: organization
+o: Example Company
+dc: my-domain
+structuralObjectClass: organization
+entryUUID: bde2ec54-fc08-102d-9c3e-0d9dd31353b4
+creatorsName: cn=Manager,dc=my-domain,dc=com
+createTimestamp: 20090703103350Z
+entryCSN: 20090703103350.268281Z#000000#000#000000
+modifiersName: cn=Manager,dc=my-domain,dc=com
+modifyTimestamp: 20090703103350Z
+
+dn: cn=Manager,dc=my-domain,dc=com
+objectClass: organizationalRole
+cn: Manager
+structuralObjectClass: organizationalRole
+entryUUID: be07d7bc-fc08-102d-9c3f-0d9dd31353b4
+creatorsName: cn=Manager,dc=my-domain,dc=com
+createTimestamp: 20090703103350Z
+entryCSN: 20090703103350.510240Z#000000#000#000000
+modifiersName: cn=Manager,dc=my-domain,dc=com
+modifyTimestamp: 20090703103350Z
+
+dn: cn=Professionnels,dc=my-domain,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+uniqueMember: cn=Manager,dc=my-domain,dc=com
+uniqueMember: cn=hpotter,dc=my-domain,dc=com
+cn: Professionnels
+structuralObjectClass: groupOfUniqueNames
+entryUUID: f5e1d890-fc08-102d-9c40-0d9dd31353b4
+creatorsName: cn=Manager,dc=my-domain,dc=com
+createTimestamp: 20090703103524Z
+entryCSN: 20090703142607.008076Z#000000#000#000000
+modifiersName: cn=Manager,dc=my-domain,dc=com
+modifyTimestamp: 20090703142607Z
+
+dn: ou=People,dc=my-domain,dc=com
+ou: People
+objectClass: top
+objectClass: organizationalUnit
+objectClass: domainRelatedObject
+associatedDomain: my-domain.com
+
+EOF</pre>
+</div>
+<p>Load the base ldif</p>
+<div class="highlight-python"><pre>source $INS/sys/share/minitage/mintiage.env
+$INS/sys//etc/init.d/openldap_myproject_my-domain.com stop
+my-domain.com.slapadd  -l /tmp/initial.ldif
+$INS/sys//etc/init.d/openldap_myproject_my-domain.com start</pre>
+</div>
+<p>Check</p>
+<div class="highlight-python"><pre>my-domain.com.ldapsearch -w$(whoami)</pre>
+</div>
+<p>How to change the password</p>
+<div class="highlight-python"><pre>passwd=$(my-domain.com.slappasswd  -h'{MD5}');sed -re "s/\{MD.*/$passwd/g" -i $INS/sys/etc/openldap/myproject_my-domain.com-slapd.conf
+$INS/sys//etc/init.d/openldap_myproject_my-domain.com restart</pre>
+</div>
+<p>Check</p>
+<div class="highlight-python"><pre>my-domain.com.ldapsearch -w$passwd</pre>
+</div>
+<p>At this stage, your OpenLDAP server must be configured and listening for input connections.</p>
+</div>
+<div class="section" id="cas-server-configuration">
+<h2>CAS Server configuration<a class="headerlink" href="#cas-server-configuration" title="Permalink to this headline">¶</a></h2>
+<p>First, you must have a JDK configured and integrated (JAVA_HOME) under the hood
+For thus to be done, on Debian/Ubuntu, you can issue the followiung commands</p>
+<div class="highlight-python"><pre>cd $MT
+source bin/activate
+sudo apt-get install openjdk-6-jdk
+export JAVA_HOME=/usr/lib/jvm/java-6-openjdk/</pre>
+</div>
+<p>Assure to have java in your path and JAVA_HOME defined unless tomcat will not install</p>
+<p>Install tomcat</p>
+<div class="highlight-python"><pre># add tomcat-6.0.20 to minilays/yourminilay/myproject
+vim $MT/minilays/yourminilay/myproject
+minimerge -v myproject</pre>
+</div>
+<p>Install a CAS server instance</p>
+<div class="highlight-python"><pre>$MT/bin/paster create -t minitage.instances.cas --no-interactive myproject http_port=8000</pre>
+</div>
+<p>Notes:</p>
+<blockquote>
+<ul class="simple">
+<li>Default admin credentials:  $(whoami)/secret</li>
+<li>Please have a look on the generated README in $INS</li>
+</ul>
+</blockquote>
+<p>Configure the LDAP server as an authentication backend for the CAS server (<a class="reference external" href="http://www.ja-sig.org/wiki/display/CASUM/LDAP">http://www.ja-sig.org/wiki/display/CASUM/LDAP</a>):</p>
+<blockquote>
+<ul>
+<li><p class="first">comment the bean <em>org.jasig.cas.authentication.handler.support.SimpleTestUsernamePasswordAuthenticationHandler</em> around the li.91 in $INS/sys/var/data/tomcat/cas/webapps/cas/WEB-INF/deployerConfigContext.xml:</p>
+<div class="highlight-python"><pre>&lt;!--    &lt;bean class="org.jasig.cas.authentication.handler.support.SimpleTestUsernamePasswordAuthenticationHandler" /&gt;--&gt;</pre>
+</div>
+</li>
+<li><p class="first">add the following Lines under the commented line and adapt the urls:</p>
+<div class="highlight-python"><pre>&lt;bean
+    class="org.jasig.cas.adaptors.ldap.FastBindLdapAuthenticationHandler"&gt;
+    &lt;property name="filter" value="uid=%u,ou=People,dc=my-domain,dc=com" /&gt;
+    &lt;property name="contextSource" ref="contextSource" /&gt;
+&lt;/bean&gt;</pre>
+</div>
+</li>
+<li><p class="first">under the bean containing the previous one, just add:</p>
+<div class="highlight-python"><pre>    &lt;bean id="contextSource" class="org.springframework.ldap.core.support.LdapContextSource"&gt;
+            &lt;property name="anonymousReadOnly" value="false"/&gt;
+            &lt;property name="pooled" value="true"/&gt;
+            &lt;property name="urls"&gt;
+                    &lt;list&gt;
+        &lt;!-- TO ENABLE SSL,  YOU MUST INSTALL THE SERVER CERTIFICATE INE THE JAVA SSL KEYSTORE
+                            &lt;value&gt;ldaps://localhost:1389/&lt;/value&gt;
+        --&gt;
+                            &lt;value&gt;ldap://localhost:1389/&lt;/value&gt;
+                    &lt;/list&gt;
+            &lt;/property&gt;
+            &lt;property name="baseEnvironmentProperties"&gt;
+                    &lt;map&gt;
+        &lt;!--
+                            &lt;entry&gt;
+                                    &lt;key&gt;
+                                            &lt;value&gt;java.naming.security.protocol&lt;/value&gt;
+                                    &lt;/key&gt;
+                                    &lt;value&gt;ssl&lt;/value&gt;
+                            &lt;/entry&gt;
+        --&gt;
+                            &lt;entry&gt;
+                                    &lt;key&gt;
+                                            &lt;value&gt;java.naming.security.authentication&lt;/value&gt;
+                                    &lt;/key&gt;
+                                    &lt;value&gt;simple&lt;/value&gt;
+                            &lt;/entry&gt;
+                    &lt;/map&gt;
+            &lt;/property&gt;
+    &lt;/bean&gt;
+
+- Create some test users ::
+
+            cat &lt;&lt; EOF|sed "s/                    //g" &gt; /tmp/test.ldif
+            dn: uid=test1,ou=People,dc=my-domain,dc=com
+            uid: test1
+            cn: test1
+            sn: test1
+            mail: test1@my-domain.com
+            objectClass: person
+            objectClass: organizationalPerson
+            objectClass: inetOrgPerson
+            objectClass: top
+            userPassword: foo
+
+            dn: uid=test,ou=People,dc=my-domain,dc=com
+            uid: test
+            cn: test
+            sn: test
+            mail: test@my-domain.com
+            objectClass: person
+            objectClass: organizationalPerson
+            objectClass: inetOrgPerson
+            objectClass: top
+            userPassword: foo
+            EOF</pre>
+</div>
+</li>
+</ul>
+</blockquote>
+<p>Insert:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">my</span><span class="o">-</span><span class="n">domain</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">ldapadd</span> <span class="o">-</span><span class="n">f</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">test</span><span class="o">.</span><span class="n">ldif</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="checks">
+<h2>Checks<a class="headerlink" href="#checks" title="Permalink to this headline">¶</a></h2>
+<p>I can connect; see my own password but not the other one&#8217;s</p>
+<div class="highlight-python"><pre>$ my-domain.com.ldapsearch -D uid=test,ou=People,dc=my-domain,dc=com -x -wfoo uid=test1
+# extended LDIF
+#
+# LDAPv3
+# base &lt;dc=my-domain,dc=com&gt; (default) with scope subtree
+# filter: uid=test1
+# requesting: ALL
+#
+
+# test1, People, my-domain.com
+dn: uid=test1,ou=People,dc=my-domain,dc=com
+uid: test1
+cn: test1
+sn: test1
+mail: test1@my-domain.com
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: top
+
+# search result
+search: 2
+result: 0 Success
+
+# numResponses: 2
+# numEntries: 1
+$ my-domain.com.ldapsearch -D uid=test,ou=People,dc=my-domain,dc=com -x -wfoo uid=test
+# extended LDIF
+#
+# LDAPv3
+# base &lt;dc=my-domain,dc=com&gt; (default) with scope subtree
+# filter: uid=test
+# requesting: ALL
+#
+
+# test, People, my-domain.com
+dn: uid=test,ou=People,dc=my-domain,dc=com
+uid: test
+cn: test
+sn: test
+mail: test@my-domain.com
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: top
+userPassword:: Zm9v
+
+# search result
+search: 2
+result: 0 Success
+
+# numResponses: 2
+# numEntries: 1</pre>
+</div>
+<p>I can authenticate on the CAS server (TTW) with the test1/foo login</p>
+<div class="highlight-python"><pre>Connexion réussie
+
+Vous vous êtes authentifié(e) auprès du Service Central d'Authentification.
+
+Pour des raisons de sécurité, veuillez vous déconnecter et fermer votre navigateur lorsque vous avez fini d'accéder aux services authentifiés.</pre>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="FAQ.html" title="FAQ"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="plone3.html" title="A plone3 project with relstorage (postgresql) and varnish2 support"
+             >previous</a> |</li>
+        <li><a href="../index.html">Minitage - Last updated: Dec 29, 2010</a> &raquo;</li>
+          <li><a href="index.html" >Minitage in the daily use of a developer</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2008, Mathieu Pasquet.
+      Last updated on Dec 29, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

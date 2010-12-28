@@ -1,0 +1,523 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Installation &mdash; Minitage - Last updated: Dec 29, 2010</title>
+    <link rel="stylesheet" href="static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     'Last updated: Dec 29, 2010',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="static/jquery.js"></script>
+    <script type="text/javascript" src="static/underscore.js"></script>
+    <script type="text/javascript" src="static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Minitage - Last updated: Dec 29, 2010"
+          href="static/opensearch.xml"/>
+    <link rel="shortcut icon" href="static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="top" title="Minitage - Last updated: Dec 29, 2010" href="index.html" />
+    <link rel="next" title="Minitage in the daily use of a developer" href="usecases/index.html" />
+    <link rel="prev" title="Specifications" href="spec.html" />
+    <script src="static/jquery.min.js" type="text/javascript"></script>
+    <script src="static/jquery.zrssfeed.min.js" type="text/javascript"></script>
+
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="usecases/index.html" title="Minitage in the daily use of a developer"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="spec.html" title="Specifications"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Minitage - Last updated: Dec 29, 2010</a> &raquo;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="static/logo.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+<h3><a href="index.html">Table Of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="why.html">Why should i use minitage?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">Minitage, the meta-package manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spec.html">Specifications</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Installation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usecases/index.html">Minitage in the daily use of a developer</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="paster/index.html">Minitage and paster templates</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="develop.html">Develop</a></li>
+</ul>
+
+        </div>
+      </div>
+
+<script type="text/javascript">
+$(document).ready(function () {
+    $('#zrssfeed-minitage-dependencies').rssfeed('https://github.com/minitage-dependencies.atom', {
+        limit: 5
+    });
+});
+$(document).ready(function () {
+    $('#zrssfeed-minitage-eggs').rssfeed('https://github.com/minitage-eggs.atom', {
+        limit: 5
+    });
+});
+$(document).ready(function () {
+    $('#zrssfeed-minitage').rssfeed('https://github.com/minitage.atom', {
+        limit: 5
+    });
+});
+$(document).ready(function () {
+    $('#zrssfeed-kiorky').rssfeed('https://github.com/kiorky.atom', {
+        limit: 5
+    });
+}); 
+</script>
+<div id="zrssfeed-minitage"></div>
+<div id="zrssfeed-minitage-dependencies"></div>
+<div id="zrssfeed-minitage-eggs"></div>
+<div id="zrssfeed-kiorky"></div>
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">$prefix</span></tt>: root of minitage</li>
+<li><tt class="docutils literal"><span class="pre">$ins</span></tt>: root of a project inside minitage</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="buildout-configuration">
+<h2>Buildout Configuration<a class="headerlink" href="#buildout-configuration" title="Permalink to this headline">¶</a></h2>
+<p><strong>To store all downloaded stuff in the same place</strong>, you ll need to set buildout to do so.</p>
+<blockquote>
+<div class="highlight-sh"><div class="highlight"><pre>mkdir -p ~/.buildout/downloads
+cat <span class="s">&lt;&lt; EOF &gt; ~/.buildout/default.cfg</span>
+<span class="s">[buildout]</span>
+<span class="s">download-directory = $HOME/.buildout/downloads</span>
+<span class="s">download-cache = $HOME/.buildout/downloads</span>
+<span class="s">EOF</span>
+</pre></div>
+</div>
+</blockquote>
+</div>
+<div class="section" id="system-requirements">
+<h2>System Requirements<a class="headerlink" href="#system-requirements" title="Permalink to this headline">¶</a></h2>
+<p>Minitage requires a complete toolchain to build softwares from the c compiler to the autotools.</p>
+<p>if you need something that must be compiled, you must have some requirements installed like :</p>
+<blockquote>
+<ul>
+<li><p class="first">m4</p>
+</li>
+<li><p class="first">A c compiler (gcc ?)</p>
+</li>
+<li><p class="first">pkg-config</p>
+</li>
+<li><p class="first">autotools</p>
+<blockquote>
+<ul class="simple">
+<li>automake</li>
+<li>autoconf</li>
+</ul>
+</blockquote>
+</li>
+<li><p class="first">libtool if your platform supports it</p>
+</li>
+<li><p class="first">groff</p>
+</li>
+<li><p class="first">man-db, man utils,  whatever your system core man packages are</p>
+</li>
+</ul>
+</blockquote>
+<div class="section" id="debian-ubuntu">
+<h3>Debian/Ubuntu<a class="headerlink" href="#debian-ubuntu" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<p>Prior to begin with the project, ensure those dependencies are installed on your system :</p>
+<ul>
+<li><p class="first">m4</p>
+</li>
+<li><p class="first">build-essential</p>
+</li>
+<li><p class="first">pkg-config</p>
+</li>
+<li><p class="first">automake</p>
+</li>
+<li><p class="first">libtool</p>
+</li>
+<li><p class="first">autoconf</p>
+<blockquote>
+<div class="highlight-sh"><div class="highlight"><pre>apt-get install build-essential m4 libtool pkg-config autoconf gettext bzip2 groff man-db automake libsigc++-2.0-dev tcl8.4
+or
+apt-get install build-essential m4 libtool pkg-config autoconf gettext bzip2 groff man-db automake libsigc++-2.0-dev tcl8.5
+</pre></div>
+</div>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="freebsd">
+<h3>FreeBSD<a class="headerlink" href="#freebsd" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<ul>
+<li><p class="first">gmake</p>
+</li>
+<li><p class="first">gsed</p>
+<blockquote>
+<div class="highlight-sh"><div class="highlight"><pre><span class="nb">cd</span> /usr/ports/sysutils/portinstall
+make install clean
+<span class="k">for </span>i in gsed gmake autotools autoconf;do portinstall <span class="nv">$i</span>;<span class="k">done</span>
+</pre></div>
+</div>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="gentoo">
+<h3>Gentoo<a class="headerlink" href="#gentoo" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+Gentoo is perfect by default, no requirement.</blockquote>
+</div>
+<div class="section" id="suze">
+<h3>Suze<a class="headerlink" href="#suze" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<p>Prior to begin with the project, ensure those dependencies are installed on
+your system:</p>
+<ul class="simple">
+<li>toolchain (gcc, autotools, m4)</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="fedora">
+<h3>Fedora<a class="headerlink" href="#fedora" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<p>Prior to begin with the project, ensure those dependencies are installed on
+your system:</p>
+<p>This one liner can help you</p>
+<blockquote>
+<div class="highlight-sh"><div class="highlight"><pre>yum install automake autoconf libtool wget gcc-c++ patch
+</pre></div>
+</div>
+</blockquote>
+</blockquote>
+</div>
+<div class="section" id="macos-x">
+<h3>MacOS X<a class="headerlink" href="#macos-x" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<p>Before starting with the project, be sure that these dependencies are installed via macports (<a class="reference external" href="http://macports.org">http://macports.org</a>) on your system :</p>
+<blockquote>
+<ul class="simple">
+<li><a class="reference external" href="http://trac.macports.org/projects/macports/browser/trunk/dports/archivers/bzip2/Portfile">bzip2</a></li>
+<li><a class="reference external" href="http://trac.macports.org/projects/macports/browser/trunk/dports/archivers/gnutar/Portfile">gnu tar (gtar)</a></li>
+<li><a class="reference external" href="http://trac.macports.org/projects/macports/browser/trunk/dports/archivers/unzip/Portfile">unzip</a></li>
+<li><a class="reference external" href="http://trac.macports.org/projects/macports/browser/trunk/dports/devel/binutils/Portfile">binutils</a></li>
+<li><a class="reference external" href="http://trac.macports.org/projects/macports/browser/trunk/dports/textproc/gsed/Portfile">sed (gsed)</a></li>
+<li><a class="reference external" href="http://trac.macports.org/projects/macports/browser/trunk/dports/devel/gmake/Portfile">gnu make (gmake)</a></li>
+<li><a class="reference external" href="http://trac.macports.org/projects/macports/browser/trunk/dports/devel/autoconf/Portfile">autoconf</a></li>
+<li><a class="reference external" href="http://trac.macports.org/projects/macports/browser/trunk/dports/devel/automake/Portfile">automake</a></li>
+<li><a class="reference external" href="http://trac.macports.org/projects/macports/browser/trunk/dports/devel/m4/Portfile">m4</a></li>
+</ul>
+</blockquote>
+<p>Do not forget to update your bash profile to take your installed ports into account</p>
+<blockquote>
+<div class="highlight-sh"><div class="highlight"><pre><span class="c"># put this line into ~/.bashrc and ~/.bash_profile</span>
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>/opt/local/bin:/opt/local/sbin:<span class="nv">$PATH</span>
+</pre></div>
+</div>
+</blockquote>
+</blockquote>
+</div>
+</div>
+<div class="section" id="python">
+<h2>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="existing-python">
+<h3>Existing python<a class="headerlink" href="#existing-python" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<p>You need a python with distribute, zlib, bz2 and ssl support.</p>
+<p>Try that in your interpretery</p>
+<blockquote>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">tarfile</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">zipfile</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">bz2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">_ssl</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">zlib</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">setuptools</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</blockquote>
+</blockquote>
+<p>Tip:
+If you do not want to use a custom compiled python, be sure to have installed python with it&#8217;s &#8220;dev&#8221; packages and with distribute and virtualenv.
+On Debian systems, for example, you can use the following snippet:</p>
+<div class="highlight-python"><pre>apt-get install python-dev python</pre>
+</div>
+</div>
+<div class="section" id="pybootstrapper">
+<h3>PyBootstrapper<a class="headerlink" href="#pybootstrapper" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="goal">
+<h4>Goal<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h4>
+<p>This utility deploys for you a nicely python with all its dependencies in a prefix of your choice.</p>
+<p>This script will install for you:</p>
+<blockquote>
+<ul>
+<li><p class="first">Python-2.5.2 (default) or Python-2.4.5</p>
+</li>
+<li><p class="first">openssl 0.9.7</p>
+</li>
+<li><p class="first">zlib-1.2.3</p>
+</li>
+<li><p class="first">bzip2-1.0.4</p>
+</li>
+<li><p class="first">ncurses-5.6</p>
+</li>
+<li><p class="first">readlines-5.2</p>
+</li>
+<li><p class="first">ez_setup.py which will install those python packages:</p>
+<blockquote>
+<ul class="simple">
+<li>distribute</li>
+<li>zc.buildout</li>
+<li>PasteScripts</li>
+<li>virtualenv</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="id1">
+<h4>Variables<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p class="first">We will use some variables to refer to well known places and scripts.</p>
+</li>
+<li><p class="first">Just adjust the following code to fit to your needs and type it in your current shell/</p>
+<blockquote>
+<div class="highlight-sh"><div class="highlight"><pre><span class="nb">export </span><span class="nv">prefix</span><span class="o">=</span><span class="nv">$HOME</span>/minitage
+<span class="nb">export </span><span class="nv">python</span><span class="o">=</span><span class="nv">$HOME</span>/tools/python
+</pre></div>
+</div>
+</blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="usage">
+<h4>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p class="first">Please use a FULL path with this script!</p>
+<blockquote>
+<div class="highlight-sh"><div class="highlight"><pre>mkdir -p <span class="nv">$python</span>
+<span class="nb">cd</span> <span class="nv">$python</span>
+wget http://git.minitage.org/git/minitage/shell/plain/PyBootstrapper.sh
+bash ./PyBootstrapper.sh <span class="nv">$python</span>
+</pre></div>
+</div>
+</blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="offline-mode">
+<h4>offline mode<a class="headerlink" href="#offline-mode" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p class="first">Please use a FULL path with this script!</p>
+</li>
+<li><p class="first">You can use it in offline mode but put the archives in your <cite>$python/downloads</cite> eg:</p>
+<blockquote>
+<div class="highlight-sh"><div class="highlight"><pre>ln -s /prod/1.0/downloads  <span class="nv">$python</span>/downloads
+bash ./PyBootstrapper.sh  -o <span class="nv">$python</span>
+</pre></div>
+</div>
+</blockquote>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="using-virtualenv">
+<h2>Using virtualenv<a class="headerlink" href="#using-virtualenv" title="Permalink to this headline">¶</a></h2>
+<p><strong>You have to use</strong> <a class="reference external" href="http://pypi.python.org/pypi/virtualenv">virtualenv</a>,
+minitage fits well with it and requires now <em>distribute</em> to run.</p>
+<p>virtualenv is a tool that allow you to create isolated Python
+environments.</p>
+<ul>
+<li><p class="first">!!!  <em>PIP</em> IS NOT SUPPORTED !!!</p>
+<blockquote>
+<p>Here is how to set up an environment with it:</p>
+<ul>
+<li><p class="first"><strong>Only if you do not have used the bootstrap script</strong>, you must install virtualenv:</p>
+<div class="highlight-python"><pre># maybe sudo ?
+wget  http://python-distribute.org/distribute_setup.py
+python distribute_setup.py
+easy_install -U virtualenv # remove also any other virtualenv installation</pre>
+</div>
+</li>
+<li><p class="first">Install the minitage prefix, this is just a new virtualenv creation:</p>
+<div class="highlight-python"><pre>$python/bin/virtualenv --no-site-packages --distribute $prefix
+# maybe that if you do not used the bootstrapper
+# virtualenv --no-site-packages --distribute $prefix</pre>
+</div>
+</li>
+<li><p class="first">activate it:</p>
+<div class="highlight-python"><pre>source $prefix/bin/activate</pre>
+</div>
+</li>
+</ul>
+<p><strong>KEEP IN MIND THAT YOU MUST ACTIVATE VIRTUALENV AT ANY TIME YOU USE IT.</strong></p>
+</blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="installing-minitage">
+<h2>Installing minitage<a class="headerlink" href="#installing-minitage" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="a-stable-version">
+<h3>A stable version<a class="headerlink" href="#a-stable-version" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<p>Minitage is a classical python egg, you can get it throught easy_install (DISTRIBUTE).</p>
+<p>To install minitage in a stable version, follow those steps:</p>
+<ul>
+<li><p class="first">!!!  <em>PIP</em> IS NOT SUPPORTED !!!</p>
+</li>
+<li><p class="first">Install minitage</p>
+<blockquote>
+<div class="highlight-sh"><div class="highlight"><pre><span class="nb">source</span> <span class="nv">$prefix</span>/bin/activate
+easy_install -U minitage.core
+</pre></div>
+</div>
+</blockquote>
+</li>
+<li><p class="first">Sync its packages (all its minilays in minitage terminology).</p>
+<p><strong>This will initiate also all the minitage directories for the first run.</strong></p>
+<blockquote>
+<div class="highlight-sh"><div class="highlight"><pre><span class="nb">source</span> <span class="nv">$prefix</span>/bin/activate
+minimerge -s
+</pre></div>
+</div>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+</div>
+</div>
+<div class="section" id="using-minitage">
+<h2>Using minitage<a class="headerlink" href="#using-minitage" title="Permalink to this headline">¶</a></h2>
+<p>Those are usage samples... You have not to run that if you do not need to ;)</p>
+<div class="section" id="install-python-xxx">
+<h3>Install python-xxx<a class="headerlink" href="#install-python-xxx" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div class="highlight-sh"><div class="highlight"><pre><span class="nb">source</span> <span class="nv">$prefix</span>/bin/activate
+minimerge python-xxx
+</pre></div>
+</div>
+</blockquote>
+</div>
+<div class="section" id="install-a-custom-minilay">
+<h3>Install a custom minilay<a class="headerlink" href="#install-a-custom-minilay" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div class="highlight-sh"><div class="highlight"><pre><span class="c"># get the project minilay</span>
+<span class="c"># minitage is aware of the MINILAYS environnment variable, you can use it to specify space separated minlays</span>
+scm CHECKOUT  https://subversion.foo.net/YOURPROJECT/minilay/trunk <span class="nv">$prefix</span>/minilays/YOURPROJECTMINILAY
+</pre></div>
+</div>
+</blockquote>
+</div>
+<div class="section" id="deploy-a-project-with-minitage">
+<h3>Deploy a project with minitage<a class="headerlink" href="#deploy-a-project-with-minitage" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div class="highlight-sh"><div class="highlight"><pre><span class="c"># get the project minilay</span>
+<span class="c"># minitage is aware of the MINILAYS environnment variable, you can use it to specify space separated minlays</span>
+scm CHECKOUT  https://subversion.foo.net/YOURPROJECT/minilay/trunk <span class="nv">$prefix</span>/minilays/YOURPROJECTMINILAY
+<span class="c"># minimerging it</span>
+<span class="nb">source</span> <span class="nv">$prefix</span>/bin/activate
+minimerge project
+</pre></div>
+</div>
+</blockquote>
+</div>
+</div>
+<div class="section" id="extra-options-and-usage">
+<h2>Extra options and usage<a class="headerlink" href="#extra-options-and-usage" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div class="highlight-sh"><div class="highlight"><pre><span class="nb">source</span> <span class="nv">$prefix</span>/bin/activate
+minimerge  --help
+</pre></div>
+</div>
+</blockquote>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="usecases/index.html" title="Minitage in the daily use of a developer"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="spec.html" title="Specifications"
+             >previous</a> |</li>
+        <li><a href="index.html">Minitage - Last updated: Dec 29, 2010</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2008, Mathieu Pasquet.
+      Last updated on Dec 29, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

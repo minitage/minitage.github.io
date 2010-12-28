@@ -1,0 +1,263 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Minitage and instances &mdash; Minitage - Last updated: Dec 29, 2010</title>
+    <link rel="stylesheet" href="../../static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     'Last updated: Dec 29, 2010',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../static/jquery.js"></script>
+    <script type="text/javascript" src="../../static/underscore.js"></script>
+    <script type="text/javascript" src="../../static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Minitage - Last updated: Dec 29, 2010"
+          href="../../static/opensearch.xml"/>
+    <link rel="shortcut icon" href="../../static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="top" title="Minitage - Last updated: Dec 29, 2010" href="../../index.html" />
+    <link rel="up" title="Minitage and paster templates" href="../index.html" />
+    <link rel="next" title="minitage.instances.env" href="instances.html" />
+    <link rel="prev" title="Plone 2.5" href="../projects/model_projects.html" />
+    <script src="static/jquery.min.js" type="text/javascript"></script>
+    <script src="static/jquery.zrssfeed.min.js" type="text/javascript"></script>
+
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="instances.html" title="minitage.instances.env"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../projects/model_projects.html" title="Plone 2.5"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">Minitage - Last updated: Dec 29, 2010</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">Minitage and paster templates</a> &raquo;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../index.html">
+              <img class="logo" src="../../static/logo.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+<h3><a href="../../index.html">Table Of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../why.html">Why should i use minitage?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">Minitage, the meta-package manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../spec.html">Specifications</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usecases/index.html">Minitage in the daily use of a developer</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Minitage and paster templates</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../projects/index.html">Minitage and projects templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/index.html#available-projects">Available projects</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Minitage and instances</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#abstract">Abstract</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#basic-layout">Basic layout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#listing-the-available-instances">Listing the available instances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installing-a-instance">Installing a instance</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#available-instances">Available instances</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="instances.html">minitage.instances.env</a></li>
+<li class="toctree-l3"><a class="reference internal" href="instances.html#minitage-instances-postgresql">minitage.instances.postgresql</a></li>
+<li class="toctree-l3"><a class="reference internal" href="instances.html#minitage-instances-varnish">minitage.instances.varnish</a></li>
+<li class="toctree-l3"><a class="reference internal" href="instances.html#minitage-instances-varnish2">minitage.instances.varnish2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="instances.html#minitage-instances-paste-initd">minitage.instances.paste-initd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="instances.html#minitage-instances-mysql">minitage.instances.mysql</a></li>
+<li class="toctree-l3"><a class="reference internal" href="instances.html#minitage-instances-cas">minitage.instances.cas</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../develop.html">Develop</a></li>
+</ul>
+
+        </div>
+      </div>
+
+<script type="text/javascript">
+$(document).ready(function () {
+    $('#zrssfeed-minitage-dependencies').rssfeed('https://github.com/minitage-dependencies.atom', {
+        limit: 5
+    });
+});
+$(document).ready(function () {
+    $('#zrssfeed-minitage-eggs').rssfeed('https://github.com/minitage-eggs.atom', {
+        limit: 5
+    });
+});
+$(document).ready(function () {
+    $('#zrssfeed-minitage').rssfeed('https://github.com/minitage.atom', {
+        limit: 5
+    });
+});
+$(document).ready(function () {
+    $('#zrssfeed-kiorky').rssfeed('https://github.com/kiorky.atom', {
+        limit: 5
+    });
+}); 
+</script>
+<div id="zrssfeed-minitage"></div>
+<div id="zrssfeed-minitage-dependencies"></div>
+<div id="zrssfeed-minitage-eggs"></div>
+<div id="zrssfeed-kiorky"></div>
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="minitage-and-instances">
+<h1>Minitage and instances<a class="headerlink" href="#minitage-and-instances" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="abstract">
+<h2>Abstract<a class="headerlink" href="#abstract" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Minitage instances are the way to integrate applications in minitage projects or simply generate convenient templates with less efforts.</li>
+<li>The goal is to make boilerplate to facilitate the use of prefixed applications or the intialization of databases instances to ease the admins job.</li>
+<li>The main thing is to simulate a subsystem is a subdirectory <tt class="docutils literal"><span class="pre">/sys</span></tt> of a project, or creating an instance of something, <tt class="docutils literal"><span class="pre">./somewhere</span></tt>.</li>
+<li>The optionnal minitage support is mostly recent for all templates and can lead to bugs, please report them.</li>
+</ul>
+</div>
+<div class="section" id="basic-layout">
+<h2>Basic layout<a class="headerlink" href="#basic-layout" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>/bin
+    instancename.binary
+/etc/
+    /logrotate.d
+    /init.d
+    /cron.d
+/var/
+    /var/data
+    /var/run
+    /var/log</pre>
+</div>
+<p>A postgresql example:</p>
+<div class="highlight-python"><pre>/bin
+    MyDatabase.psql
+/etc/
+    /logrotate.d
+        MyDatabase.logrotate
+    /init.d
+        MyDatabase.postgresql
+    /cron.d
+        MyDatabase.cron
+/var/
+    /var/data
+        MyDatabase/
+    /var/run
+        MyDatabase.pid
+    /var/log
+        postgresql/
+            MyDatabase.log</pre>
+</div>
+</div>
+<div class="section" id="listing-the-available-instances">
+<h2>Listing the available instances<a class="headerlink" href="#listing-the-available-instances" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>$mt/bin/paster create --list-templates | grep minitage | grep instances</pre>
+</div>
+</div>
+<div class="section" id="installing-a-instance">
+<h2>Installing a instance<a class="headerlink" href="#installing-a-instance" title="Permalink to this headline">¶</a></h2>
+<p>The instances are just specialized paster templates so you just have to apply a template to a project.</p>
+<p>There are too ways to use one instance, inside or without minitage, just by <strong>anssering yes or no</strong> to the minitage presence question.</p>
+<p>Examples:</p>
+<blockquote>
+<p>We will apply the &#8216;minitage.env&#8217; instance to &#8216;myproject&#8217;</p>
+<ul>
+<li><p class="first">inside minitage:</p>
+<div class="highlight-python"><pre>paster create -t minitage.instances.env myproject inside_minitage=yes
+Will produce: $mt/categ/project/myproject/sys/share/minitage/minitage.env</pre>
+</div>
+</li>
+<li><p class="first">without minitage:</p>
+<div class="highlight-python"><pre>paster create -t minitage.instances.env myproject inside_minitage=no
+Will produce: myproject/share/minitage/minitage.env</pre>
+</div>
+</li>
+</ul>
+</blockquote>
+</div>
+</div>
+<div class="section" id="available-instances">
+<h1>Available instances<a class="headerlink" href="#available-instances" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="instances.html">minitage.instances.env</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instances.html#minitage-instances-postgresql">minitage.instances.postgresql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instances.html#minitage-instances-varnish">minitage.instances.varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instances.html#minitage-instances-varnish2">minitage.instances.varnish2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instances.html#minitage-instances-paste-initd">minitage.instances.paste-initd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instances.html#minitage-instances-mysql">minitage.instances.mysql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instances.html#minitage-instances-cas">minitage.instances.cas</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="instances.html" title="minitage.instances.env"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../projects/model_projects.html" title="Plone 2.5"
+             >previous</a> |</li>
+        <li><a href="../../index.html">Minitage - Last updated: Dec 29, 2010</a> &raquo;</li>
+          <li><a href="../index.html" >Minitage and paster templates</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2008, Mathieu Pasquet.
+      Last updated on Dec 29, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

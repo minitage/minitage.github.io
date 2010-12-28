@@ -1,0 +1,210 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Beginning a project with minitage: The Initial Steps &mdash; Minitage - Last updated: Dec 29, 2010</title>
+    <link rel="stylesheet" href="../static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'Last updated: Dec 29, 2010',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../static/jquery.js"></script>
+    <script type="text/javascript" src="../static/underscore.js"></script>
+    <script type="text/javascript" src="../static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Minitage - Last updated: Dec 29, 2010"
+          href="../static/opensearch.xml"/>
+    <link rel="shortcut icon" href="../static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="top" title="Minitage - Last updated: Dec 29, 2010" href="../index.html" />
+    <link rel="up" title="Minitage in the daily use of a developer" href="index.html" />
+    <link rel="next" title="Porting an exising buildout based project to be a good minitage citizen" href="maintain_project.html" />
+    <link rel="prev" title="The minitage swiss knife, minimerge" href="using_minimerge.html" />
+    <script src="static/jquery.min.js" type="text/javascript"></script>
+    <script src="static/jquery.zrssfeed.min.js" type="text/javascript"></script>
+
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="maintain_project.html" title="Porting an exising buildout based project to be a good minitage citizen"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="using_minimerge.html" title="The minitage swiss knife, minimerge"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Minitage - Last updated: Dec 29, 2010</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Minitage in the daily use of a developer</a> &raquo;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../static/logo.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+<h3><a href="../index.html">Table Of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../why.html">Why should i use minitage?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">Minitage, the meta-package manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spec.html">Specifications</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Minitage in the daily use of a developer</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="using_minimerge.html">The minitage swiss knife, <strong>minimerge</strong></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Beginning a project with minitage: The Initial Steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maintain_project.html">Porting an exising buildout based project to be a good minitage citizen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install25.html">Installation with a python 2.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plone3.html">A plone3 project with relstorage (postgresql) and varnish2 support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploying_a_cas_server.html">Install a project with a CAS server wired on an OpenLDAP backend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FAQ.html">FAQ</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../paster/index.html">Minitage and paster templates</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../develop.html">Develop</a></li>
+</ul>
+
+        </div>
+      </div>
+
+<script type="text/javascript">
+$(document).ready(function () {
+    $('#zrssfeed-minitage-dependencies').rssfeed('https://github.com/minitage-dependencies.atom', {
+        limit: 5
+    });
+});
+$(document).ready(function () {
+    $('#zrssfeed-minitage-eggs').rssfeed('https://github.com/minitage-eggs.atom', {
+        limit: 5
+    });
+});
+$(document).ready(function () {
+    $('#zrssfeed-minitage').rssfeed('https://github.com/minitage.atom', {
+        limit: 5
+    });
+});
+$(document).ready(function () {
+    $('#zrssfeed-kiorky').rssfeed('https://github.com/kiorky.atom', {
+        limit: 5
+    });
+}); 
+</script>
+<div id="zrssfeed-minitage"></div>
+<div id="zrssfeed-minitage-dependencies"></div>
+<div id="zrssfeed-minitage-eggs"></div>
+<div id="zrssfeed-kiorky"></div>
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="beginning-a-project-with-minitage-the-initial-steps">
+<h1>Beginning a project with minitage: The Initial Steps<a class="headerlink" href="#beginning-a-project-with-minitage-the-initial-steps" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="project-initialization">
+<h2>Project initialization<a class="headerlink" href="#project-initialization" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Choose an existing  <a class="reference internal" href="../paster/index.html#minitageprojects"><em>minitage layout</em></a> if any suits your needs.</p>
+</li>
+<li><p class="first">Create the project itself and package it to be &#8216;minitage compliant&#8217;
+(uploading, versionining). To quickstart, just just an existing minitage template.</p>
+</li>
+<li><p class="first">Create or edit a minibuild, in a minilays  which points to this layout:</p>
+<div class="highlight-python"><pre>mkdir -p $mt/minilays/mynewminilay
+vim  $mt/minilays/mynewminilay/project</pre>
+</div>
+</li>
+<li><p class="first">Maybe, it is a good time to version the minilay.</p>
+</li>
+<li><p class="first">Lets go for the minimerge dance:</p>
+<div class="highlight-python"><pre>minimerge myproject</pre>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="project-versionning">
+<span id="versioning-project"></span><h2>Project versionning<a class="headerlink" href="#project-versionning" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Play around and when your are ready, just version in this way:</p>
+<blockquote>
+<ul class="simple">
+<li>$mt/category/project      -&gt; <a class="reference external" href="http://url/buildouts/$category/myproject">http://url/buildouts/$category/myproject</a></li>
+<li>$mt/minilays/yourproject  -&gt; <a class="reference external" href="http://url/minilays/myproject">http://url/minilays/myproject</a></li>
+</ul>
+</blockquote>
+</li>
+<li><p class="first">Don&#8217;t forget to adapt the <cite>src_uri</cite> or your minibuild:</p>
+<div class="highlight-python"><pre>[minibuild]
+...
+src_uri=http://url/buildouts/$category/myproject
+...</pre>
+</div>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="maintain_project.html" title="Porting an exising buildout based project to be a good minitage citizen"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="using_minimerge.html" title="The minitage swiss knife, minimerge"
+             >previous</a> |</li>
+        <li><a href="../index.html">Minitage - Last updated: Dec 29, 2010</a> &raquo;</li>
+          <li><a href="index.html" >Minitage in the daily use of a developer</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2008, Mathieu Pasquet.
+      Last updated on Dec 29, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

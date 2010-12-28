@@ -1,0 +1,229 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Develop &mdash; Minitage - Last updated: Dec 29, 2010</title>
+    <link rel="stylesheet" href="static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     'Last updated: Dec 29, 2010',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="static/jquery.js"></script>
+    <script type="text/javascript" src="static/underscore.js"></script>
+    <script type="text/javascript" src="static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Minitage - Last updated: Dec 29, 2010"
+          href="static/opensearch.xml"/>
+    <link rel="shortcut icon" href="static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="top" title="Minitage - Last updated: Dec 29, 2010" href="index.html" />
+    <link rel="prev" title="minitage.instances.env" href="paster/instances/instances.html" />
+    <script src="static/jquery.min.js" type="text/javascript"></script>
+    <script src="static/jquery.zrssfeed.min.js" type="text/javascript"></script>
+
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="paster/instances/instances.html" title="minitage.instances.env"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Minitage - Last updated: Dec 29, 2010</a> &raquo;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="static/logo.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+<h3><a href="index.html">Table Of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="why.html">Why should i use minitage?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">Minitage, the meta-package manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spec.html">Specifications</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usecases/index.html">Minitage in the daily use of a developer</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="paster/index.html">Minitage and paster templates</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Develop</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#tools-for-developers">Tools for developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-the-development-version-of-minitage">Installing the development version of minitage</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+
+<script type="text/javascript">
+$(document).ready(function () {
+    $('#zrssfeed-minitage-dependencies').rssfeed('https://github.com/minitage-dependencies.atom', {
+        limit: 5
+    });
+});
+$(document).ready(function () {
+    $('#zrssfeed-minitage-eggs').rssfeed('https://github.com/minitage-eggs.atom', {
+        limit: 5
+    });
+});
+$(document).ready(function () {
+    $('#zrssfeed-minitage').rssfeed('https://github.com/minitage.atom', {
+        limit: 5
+    });
+});
+$(document).ready(function () {
+    $('#zrssfeed-kiorky').rssfeed('https://github.com/kiorky.atom', {
+        limit: 5
+    });
+}); 
+</script>
+<div id="zrssfeed-minitage"></div>
+<div id="zrssfeed-minitage-dependencies"></div>
+<div id="zrssfeed-minitage-eggs"></div>
+<div id="zrssfeed-kiorky"></div>
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="develop">
+<h1>Develop<a class="headerlink" href="#develop" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="tools-for-developers">
+<h2>Tools for developers<a class="headerlink" href="#tools-for-developers" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<ul>
+<li><p class="first">We live on  <a class="reference external" href="https://git.minitage.org">git repositories</a>. If you need commit access, it will be over ssh and you ll need to ask kiorky for an account.</p>
+</li>
+<li><p class="first">Bug tracking system is hosted on our <a class="reference external" href="https://www.minitage.org/trac">Trac</a></p>
+</li>
+<li><p class="first">We also have a <a class="reference external" href="https://gitweb.minitage.org">gitweb</a>.</p>
+</li>
+<li><p class="first">We host the eggs on <a class="reference external" href="http://pypi.python.org">Pypi package index</a></p>
+<blockquote>
+<ul class="simple">
+<li><a class="reference external" href="http://pypi.python.org/pypi/minitage.core">http://pypi.python.org/pypi/minitage.core</a></li>
+<li><a class="reference external" href="http://pypi.python.org/pypi/minitage.paste">http://pypi.python.org/pypi/minitage.paste</a></li>
+<li><a class="reference external" href="http://pypi.python.org/pypi/minitage.recipe">http://pypi.python.org/pypi/minitage.recipe</a></li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="installing-the-development-version-of-minitage">
+<h2>Installing the development version of minitage<a class="headerlink" href="#installing-the-development-version-of-minitage" title="Permalink to this headline">¶</a></h2>
+<p>If you want to be bleeding edge and not have a 3 years old debianised
+minitage. You can give a try to the egg in development mode.
+Be aware that you must know what you are doing there !</p>
+<blockquote>
+<ul>
+<li><p class="first">If you need to, fire your virtualenv</p>
+<blockquote>
+<div class="highlight-sh"><div class="highlight"><pre><span class="nb">source</span> <span class="nv">$prefix</span>/bin/activate
+</pre></div>
+</div>
+</blockquote>
+</li>
+<li><p class="first">Get the sources</p>
+<blockquote>
+<div class="highlight-sh"><div class="highlight"><pre>mkdir -p ~/repos/minitage
+<span class="nb">cd</span> ~/repos/minitage
+git clone http://git.minitage.org/git/minitage/eggs/minitage.recipe/
+git clone http://git.minitage.org/git/minitage/eggs/minitage.core/
+git clone http://git.minitage.org/git/minitage/eggs/minitage.paste/
+git clone http://git.minitage.org/git/minitage/eggs/buildout.minitagificator
+</pre></div>
+</div>
+</blockquote>
+</li>
+<li><p class="first">Install/Reinstall minitage in develop mode</p>
+<blockquote>
+<div class="highlight-sh"><div class="highlight"><pre><span class="nb">source</span> <span class="nv">$prefix</span>/bin/activate
+<span class="nb">cd</span> ~/repos/minitage/minitage.core
+python setup.py develop
+<span class="nb">cd</span> ~/repos/minitage/minitage.recipe
+python setup.py develop
+<span class="nb">cd</span> ~/repos/minitage/minitage.paste
+python setup.py develop
+<span class="nb">cd</span> ~/repos/minitage/buildout.minitagificator
+python setup.py develop
+</pre></div>
+</div>
+</blockquote>
+</li>
+<li><p class="first">Sync its packages (all its minilays in minitage vocabulary).</p>
+<p><strong>This will initiate also all the minitage directories for the first run.</strong></p>
+<blockquote>
+<div class="highlight-sh"><div class="highlight"><pre><span class="nb">source</span> <span class="nv">$prefix</span>/bin/activate
+minimerge -s
+</pre></div>
+</div>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="paster/instances/instances.html" title="minitage.instances.env"
+             >previous</a> |</li>
+        <li><a href="index.html">Minitage - Last updated: Dec 29, 2010</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2008, Mathieu Pasquet.
+      Last updated on Dec 29, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

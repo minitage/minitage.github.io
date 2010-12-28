@@ -1,0 +1,584 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Specifications &mdash; Minitage - Last updated: Dec 29, 2010</title>
+    <link rel="stylesheet" href="static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     'Last updated: Dec 29, 2010',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="static/jquery.js"></script>
+    <script type="text/javascript" src="static/underscore.js"></script>
+    <script type="text/javascript" src="static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Minitage - Last updated: Dec 29, 2010"
+          href="static/opensearch.xml"/>
+    <link rel="shortcut icon" href="static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="top" title="Minitage - Last updated: Dec 29, 2010" href="index.html" />
+    <link rel="next" title="Installation" href="installation.html" />
+    <link rel="prev" title="About" href="about.html" />
+    <script src="static/jquery.min.js" type="text/javascript"></script>
+    <script src="static/jquery.zrssfeed.min.js" type="text/javascript"></script>
+
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="installation.html" title="Installation"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="about.html" title="About"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Minitage - Last updated: Dec 29, 2010</a> &raquo;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="static/logo.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+<h3><a href="index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="why.html">Why should i use minitage?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">Minitage, the meta-package manager</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Specifications</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-package-manager-in-7-points">The package manager in 7 points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-minilays">The minilays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-minibuilds">The minibuilds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-installation-layout">The installation layout</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usecases/index.html">Minitage in the daily use of a developer</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="paster/index.html">Minitage and paster templates</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="develop.html">Develop</a></li>
+</ul>
+
+        </div>
+      </div>
+
+<script type="text/javascript">
+$(document).ready(function () {
+    $('#zrssfeed-minitage-dependencies').rssfeed('https://github.com/minitage-dependencies.atom', {
+        limit: 5
+    });
+});
+$(document).ready(function () {
+    $('#zrssfeed-minitage-eggs').rssfeed('https://github.com/minitage-eggs.atom', {
+        limit: 5
+    });
+});
+$(document).ready(function () {
+    $('#zrssfeed-minitage').rssfeed('https://github.com/minitage.atom', {
+        limit: 5
+    });
+});
+$(document).ready(function () {
+    $('#zrssfeed-kiorky').rssfeed('https://github.com/kiorky.atom', {
+        limit: 5
+    });
+}); 
+</script>
+<div id="zrssfeed-minitage"></div>
+<div id="zrssfeed-minitage-dependencies"></div>
+<div id="zrssfeed-minitage-eggs"></div>
+<div id="zrssfeed-kiorky"></div>
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="specifications">
+<h1>Specifications<a class="headerlink" href="#specifications" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="the-package-manager-in-7-points">
+<h2>The package manager in 7 points<a class="headerlink" href="#the-package-manager-in-7-points" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<ul>
+<li><p class="first">Be simple !</p>
+</li>
+<li><p class="first">Run on popular Unixes, including FreeBSD, Linux and MacOSX. And in a second time, why not port him to other OSs.</p>
+</li>
+<li><p class="first">Have a simple and robust dependency system.</p>
+</li>
+<li><p class="first">Integrates other build systems</p>
+</li>
+<li><p class="first">Fetch from several methods: main are svn, http, ftp, Mercurial, Git and Bzr</p>
+</li>
+<li><p class="first">Provide some system which allow us search for packages in alternate locations.</p>
+</li>
+<li><p class="first">Install each part independently to the others. Follow the http rule (DO NOT SHARE):</p>
+<div class="highlight-python"><pre>Independently is not a synonym of not using another dependency.
+It s just to say that you can not install in the same /dependencies/foo for 2 different dependencies at the same time.
+You must install each dependency separatly from the others and then reference in other packages.
+Be warned that there is not sandbox mecanism for checks and it is not goiong to appear, minitage must be simple.</pre>
+</div>
+</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="the-minilays">
+<h2>The minilays<a class="headerlink" href="#the-minilays" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="abstract">
+<h3>Abstract<a class="headerlink" href="#abstract" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<ul class="simple">
+<li>A minilay is a directory containing minibuilds.</li>
+<li>The name come from gentoo overlays system. See <a class="reference external" href="http://www.gentoo.org/proj/en/overlays/userguide.xml">http://www.gentoo.org/proj/en/overlays/userguide.xml</a></li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="overlaping-minilays">
+<h3>Overlaping minilays<a class="headerlink" href="#overlaping-minilays" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<ul>
+<li><p class="first">Minilays are parsed during the dependencies calculation done by minimerge.
+minimerge searches for minibuilds in all its minilays, in alphabetical order.</p>
+</li>
+<li><p class="first">That &#8216;s why when you do that:</p>
+<div class="highlight-python"><pre>minilays/
+    a_override_dependencies/
+        minibuild1
+    dependencies/
+        minibuild1</pre>
+</div>
+</li>
+<li><p class="first">And try to:</p>
+<div class="highlight-python"><pre>minimerge minibuild1</pre>
+</div>
+</li>
+</ul>
+</blockquote>
+<p>minimerge will install <tt class="docutils literal"><span class="pre">a_override_dependencies/minibuild1</span></tt> instead of <tt class="docutils literal"><span class="pre">dependencies/minibuild1</span></tt>.</p>
+<p>This mechanism is very useful to override things for special needs !</p>
+</div>
+<div class="section" id="specifying-alternate-minilays-to-minimerge">
+<h3>Specifying alternate minilays to minimerge<a class="headerlink" href="#specifying-alternate-minilays-to-minimerge" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<ul>
+<li><p class="first">You can give minilays to minimerge by placing them in:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">minitage</span><span class="o">/</span><span class="n">minilays</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">You can put paths in the MINILAYS environment variable (space separated paths), but be aware, they are read first in the dependencies calculation!:</p>
+<div class="highlight-python"><pre>export MINILAYS="path1 path2"</pre>
+</div>
+</li>
+</ul>
+</blockquote>
+</div>
+</div>
+<div class="section" id="the-minibuilds">
+<h2>The minibuilds<a class="headerlink" href="#the-minibuilds" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Abstract<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<ul>
+<li><p class="first">They are the minitage packages.</p>
+</li>
+<li><p class="first">A minibuild is similar to a gentoo ebuild  (i recommend you to read <a class="reference external" href="http://en.wikipedia.org/wiki/Ebuild">http://en.wikipedia.org/wiki/Ebuild</a>) or a FreeBSD Port Makefile (<a class="reference external" href="http://en.wikipedia.org/wiki/Ports_collection">http://en.wikipedia.org/wiki/Ports_collection</a>)  or a macport.</p>
+</li>
+<li><p class="first">The forms is a &#8216;Config.ini&#8217; like file.</p>
+</li>
+<li><dl class="first docutils">
+<dt>In a short, it is just a metadata file which contains all the necessary to describe the install process of a dependency:</dt>
+<dd><ul class="first last">
+<li><p class="first">Dependencies for the package ? ( eg: python-2.4 )</p>
+</li>
+<li><p class="first">Where to get it ? ( the url )</p>
+</li>
+<li><p class="first">How fetch it ? (svn, git, hg, http, ftp)</p>
+</li>
+<li><p class="first">How will it be installed ? ( buildout )</p>
+</li>
+<li><p class="first">Metadatas:</p>
+<blockquote>
+<ul class="simple">
+<li>License</li>
+<li>Project homepage</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="writing-minibuilds">
+<h3>Writing Minibuilds<a class="headerlink" href="#writing-minibuilds" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<ul>
+<li><p class="first">A minibuild is a config.ini file  which is read by minimerge and has a bunch of metadata :</p>
+<blockquote>
+<ul>
+<li><p class="first">a src_uri variable: where to fetch the package if not present on the file system</p>
+</li>
+<li><p class="first">a src_type variable: how to fetch it.
+Available fetch methods are:</p>
+<blockquote>
+<ul class="simple">
+<li>svn</li>
+<li>hg</li>
+<li>bzr</li>
+<li>git</li>
+<li>static (for http, file, local and ftp)</li>
+</ul>
+</blockquote>
+</li>
+<li><p class="first">a dependencies variable: list of other minibuilds which this one depends on</p>
+</li>
+<li><p class="first">a install_method variable : how to install it</p>
+<p>Available install methods are:</p>
+<blockquote>
+<ul class="simple">
+<li>buildout (use the <a class="reference internal" href="#buildout-maker"><em>buildout maker</em></a>)</li>
+</ul>
+</blockquote>
+</li>
+<li><p class="first">a category variable : controls the category of the minibuilds. [[br]]
+Categories are top level  directories in your minitage directory. [[br]]
+Possible categories may be:</p>
+<blockquote>
+<ul class="simple">
+<li>dependencies</li>
+<li>eggs</li>
+<li>misc</li>
+<li>django</li>
+<li>tg</li>
+<li>pylons</li>
+<li>zope</li>
+</ul>
+</blockquote>
+</li>
+<li><p class="first">You can use of course your own categories but be aware to name them
+with only letters and digits.</p>
+</li>
+<li><p class="first">minitage installs a minibuild called MINIBUILDNAME to your minitage/CATEGORY/MINIBUILDNAME.</p>
+</li>
+<li><p class="first">The steps ran are:</p>
+<blockquote>
+<ul>
+<li><p class="first">Fetch:</p>
+<blockquote>
+<ul class="simple">
+<li>in online mode only: Try to fetch the src_uri to minitage/CATEGORY/MINIBUILDNAME</li>
+<li>in offline mode: The files must be present !</li>
+</ul>
+</blockquote>
+</li>
+<li><p class="first">Run the install method</p>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<p>Exemple : the minibuilds/cyrus-sasl-2.1 minibuild:</p>
+<div class="highlight-python"><pre>[minibuild]
+# depends on the freetype-2.1 minibuild
+dependencies=freetype-2.1
+# must be fetched from svn
+src_type=svn
+# where it is !
+src_uri=https://subversion.makina-corpus.net/zopina/buildouts/buildout-meta/trunk/lib/cyrus-sasl-2.1.22/
+# this is a "buildout" minibuild which will install itself via buildout
+install_method="buildout"
+# will be installed in minitage/dependencies/packagename
+category=dependencies
+homepage=http://chuknorris.is.a.good/guy
+license=GPL</pre>
+</div>
+<p>You must place your minibuild in a minilay.</p>
+</div>
+<div class="section" id="conventions">
+<h3>Conventions<a class="headerlink" href="#conventions" title="Permalink to this headline">¶</a></h3>
+<p>They are rules, not just conventions, follow them or be killed.
+If you want a full review, just take a look to <tt class="docutils literal"><span class="pre">minitage.core/minitage/core/objects/minibuild.py`</span></tt> regular expressions ;).
+Please not that your project name cannot contain &#8220;<tt class="docutils literal"><span class="pre">-</span></tt>&#8221; as it is used to generate eggs names.</p>
+<blockquote>
+<ul>
+<li><p class="first">Valid names:</p>
+<blockquote>
+<ul class="simple">
+<li>meta-toto</li>
+<li>double-toto</li>
+<li>toto</li>
+<li>test-1.0</li>
+<li>test-test-1.0</li>
+<li>test-1.0.3</li>
+<li>test-1.0_beta444</li>
+<li>test-1.0_py2.4</li>
+<li>test-1.0_py2.5</li>
+<li>test-1.0_beta444_pre20071024</li>
+<li>test-1.0_alpha44</li>
+<li>test-1.0_alpha44_pre20071024</li>
+<li>test-1.0_pre20071024</li>
+<li>test-1.0_branchBRANCHNAME</li>
+<li>test-1.0_branchHEADDIGIT</li>
+<li>test-1.0_tagHEADDIGIT</li>
+<li>test-1.0_r1</li>
+<li>test-1.0_rHEAD</li>
+<li>test-1.0_rTIP</li>
+</ul>
+</blockquote>
+</li>
+<li><p class="first">Please set the version to MAJOR:MINOR without the revision for compiled dependencies !
+This will prevent from recompiling everything on security updates for example</p>
+</li>
+<li><p class="first">Multiple maker specific metadata</p>
+</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="the-buildout-maker">
+<span id="buildout-maker"></span><h3>The buildout maker<a class="headerlink" href="#the-buildout-maker" title="Permalink to this headline">¶</a></h3>
+<p>It will run a buildout somewhere</p>
+<p>Specific options:</p>
+<blockquote>
+<ul>
+<li><dl class="first docutils">
+<dt>buildout_config:</dt>
+<dd><p class="first last">configuration file  to run</p>
+</dd>
+</dl>
+</li>
+</ul>
+</blockquote>
+</div>
+</div>
+<div class="section" id="the-installation-layout">
+<h2>The installation layout<a class="headerlink" href="#the-installation-layout" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>Abstract<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><pre>etc/
+     minimerge.cfg
+bin/
+    minimerge
+    python
+lib/
+    python-ver/
+        site-packages/
+            minitage.core
+
+dependencies/
+    dep1/
+        buildout.cfg
+        hooks/
+        patches/::
+        parts/
+            part/
+                bin/
+                lib/
+                include/
+
+eggs/
+    cache/
+    projectn/
+        buildout.cfg
+        hooks/
+        patches/
+        parts/
+            site-packages-2.4
+            site-packages-2.5
+
+django/
+     project1/
+     ...
+     projectn/
+zope/
+     project1/
+     ...
+     projectn/
+
+anotherCategory/
+    anotherProject/
+
+minilays/
+    eggs/
+    dependencies/
+    instances/
+    meta/
+    samples/
+    anExternalMinilay/</pre>
+</div>
+</div>
+<div class="section" id="layout-explanation">
+<h3>Layout explanation<a class="headerlink" href="#layout-explanation" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt><em>bin/minimerge</em>:</dt>
+<dd><ul class="first last simple">
+<li>The project Assembler.</li>
+</ul>
+</dd>
+<dt><em>etc/minimerge.cfg</em>:</dt>
+<dd>Minitage configuration file.</dd>
+<dt><em>dependencies/</em>:</dt>
+<dd><ul class="first last">
+<li><p class="first">Libraries and applications like libpng, python-2.4 or readline.</p>
+</li>
+<li><p class="first">One dependency per directory.</p>
+</li>
+<li><p class="first">The installation prefix for each dependency is:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">dependencies</span><span class="o">/</span><span class="n">dependency</span><span class="o">-</span><span class="n">name</span><span class="o">/</span><span class="n">parts</span><span class="o">/</span><span class="n">part</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</dd>
+<dt><em>eggs/</em>:</dt>
+<dd><p class="first">They is two possibilities there:</p>
+<ul class="last">
+<li><p class="first">In a particular eggs/directory:</p>
+<blockquote>
+<ul>
+<li><p class="first">Traditional distutilized python modules</p>
+</li>
+<li><p class="first">Python modules shipped is a non pythonish way (like libxml2)</p>
+</li>
+<li><p class="first">They must install a sub site-packages for each python version supported:</p>
+<div class="highlight-python"><pre>eggs/egg/
+    site-packages-2.4/
+        module/__init__.py
+    site-packages-2.5/
+        module/__init__.py
+    site-packages-2.6/
+        module/__init__.py
+    site-packages-3.0/
+        module/__init__.py</pre>
+</div>
+</li>
+</ul>
+</blockquote>
+</li>
+<li><dl class="first docutils">
+<dt>Python eggyfiables modules</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>They are installed in the &#8220;eggs-cache&#8221;</dt>
+<dd><ul class="first last">
+<li><p class="first">eggs in release mode:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">eggs</span><span class="o">/</span><span class="n">cache</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt>django/:</dt>
+<dd><ul class="first last simple">
+<li>Django projects.</li>
+</ul>
+</dd>
+<dt><em>zope/</em>:</dt>
+<dd><ul class="first last simple">
+<li>Zope/Plone projects which only install zope, plone and the needed products.</li>
+<li>Just think to add the needed site-packages in the project&#8217;s extra-path so that buildout can find them!</li>
+<li>Do not use not packaged eggs parts there or BURN IN HELL!</li>
+</ul>
+</dd>
+<dt>misc:/</dt>
+<dd><ul class="first last simple">
+<li>All that cannot be elsewhere</li>
+</ul>
+</dd>
+<dt>tg/:</dt>
+<dd><ul class="first last simple">
+<li>Turbogears project</li>
+</ul>
+</dd>
+<dt><em>minilays/</em> <span class="classifier-delimiter">:</span> <span class="classifier"><em>dependencies</em> | <em>zope</em> | <em>django</em> | <em>eggs</em></span></dt>
+<dd><p class="first">Those are MINILAYS. Minilays are similar to gentoo &#8216;s OVERLAYS. Or, be reference, to entries in your source.list on Debian/Ubuntu.
+They contains minibuilds.
+Those are the packages that our package manager deals with.
+You can add search Directories which are not in <tt class="docutils literal"><span class="pre">minilays/</span></tt> by setting the &#8220;MINILAYS&#8221; environment variable.
+ex:</p>
+<div class="last highlight-sh"><div class="highlight"><pre><span class="nb">export </span><span class="nv">MINILAYS</span><span class="o">=</span><span class="s2">&quot;~/otherminibuildsdirectory&quot;</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="installation.html" title="Installation"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="about.html" title="About"
+             >previous</a> |</li>
+        <li><a href="index.html">Minitage - Last updated: Dec 29, 2010</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2008, Mathieu Pasquet.
+      Last updated on Dec 29, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

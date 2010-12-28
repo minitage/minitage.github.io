@@ -1,1 +1,7 @@
 build/
+a
+.installed.cfg
+.mr.developer.cfg
+bin
+.buildinfo
+objects.inv

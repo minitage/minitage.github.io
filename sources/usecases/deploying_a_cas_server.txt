@@ -1,0 +1,318 @@
+
+Install a project with a CAS server wired on an OpenLDAP backend
+==============================================================================
+
+Minitage
+---------
+
+Installer minitage as the official documentation says. ``http://www.minitage.org/installation.html``.
+
+Take $MT as the minitage installation prefix.
+::
+
+    MT=$HOME/minitage/
+
+Be up to date before each minitage commande usage
+::
+
+    easy_install -U minitage.core minitage.paste minitage.paste.extras
+
+
+Right after minitage installation, issue the following commands
+::
+
+    cd $MT/minilays
+    svn co https://yoururl/yourminilay
+    cd $MT
+    minimerge myproject
+    paster create -t minitage.instances.env myproject
+    . $MT/zope/myproject/sys/share/minitage/minitage.env
+
+
+Now, there are 3 tasks left:
+
++ LDAP server configuration
++ CAS (sso) server configuration
+
+
+Ldap configuration
+-----------------------
+
+Install a non privilegied slapd instance.
+::
+
+
+    passwd=$(whoami)
+    $MT/bin/paster create --no-interactive -t minitage.instances.openldap myproject db_orga=my-domain db_suffix=com db_port=1389 ssl_port=1636
+    cd $INS/sys/etc/openldap
+
+Include the right schemas in the slapd configuration file::
+
+    - core
+    - cosine
+    - inetorgperson
+    - nis:
+
+Comment out the additional schemas.
+::
+
+   $EDITOR $INS/etc/openldap/myproject_my-domain.com-slapd.conf
+
+Create the base ldif
+::
+
+    cat << EOF|sed "s/    //g" > /tmp/initial.ldif
+    dn: dc=my-domain,dc=com
+    objectClass: dcObject
+    objectClass: organization
+    o: Example Company
+    dc: my-domain
+    structuralObjectClass: organization
+    entryUUID: bde2ec54-fc08-102d-9c3e-0d9dd31353b4
+    creatorsName: cn=Manager,dc=my-domain,dc=com
+    createTimestamp: 20090703103350Z
+    entryCSN: 20090703103350.268281Z#000000#000#000000
+    modifiersName: cn=Manager,dc=my-domain,dc=com
+    modifyTimestamp: 20090703103350Z
+
+    dn: cn=Manager,dc=my-domain,dc=com
+    objectClass: organizationalRole
+    cn: Manager
+    structuralObjectClass: organizationalRole
+    entryUUID: be07d7bc-fc08-102d-9c3f-0d9dd31353b4
+    creatorsName: cn=Manager,dc=my-domain,dc=com
+    createTimestamp: 20090703103350Z
+    entryCSN: 20090703103350.510240Z#000000#000#000000
+    modifiersName: cn=Manager,dc=my-domain,dc=com
+    modifyTimestamp: 20090703103350Z
+
+    dn: cn=Professionnels,dc=my-domain,dc=com
+    objectClass: top
+    objectClass: groupOfUniqueNames
+    uniqueMember: cn=Manager,dc=my-domain,dc=com
+    uniqueMember: cn=hpotter,dc=my-domain,dc=com
+    cn: Professionnels
+    structuralObjectClass: groupOfUniqueNames
+    entryUUID: f5e1d890-fc08-102d-9c40-0d9dd31353b4
+    creatorsName: cn=Manager,dc=my-domain,dc=com
+    createTimestamp: 20090703103524Z
+    entryCSN: 20090703142607.008076Z#000000#000#000000
+    modifiersName: cn=Manager,dc=my-domain,dc=com
+    modifyTimestamp: 20090703142607Z
+
+    dn: ou=People,dc=my-domain,dc=com
+    ou: People
+    objectClass: top
+    objectClass: organizationalUnit
+    objectClass: domainRelatedObject
+    associatedDomain: my-domain.com
+
+    EOF
+
+Load the base ldif
+::
+
+    source $INS/sys/share/minitage/mintiage.env
+    $INS/sys//etc/init.d/openldap_myproject_my-domain.com stop
+    my-domain.com.slapadd  -l /tmp/initial.ldif
+    $INS/sys//etc/init.d/openldap_myproject_my-domain.com start
+
+Check
+::
+
+     my-domain.com.ldapsearch -w$(whoami)
+
+How to change the password
+::
+
+    passwd=$(my-domain.com.slappasswd  -h'{MD5}');sed -re "s/\{MD.*/$passwd/g" -i $INS/sys/etc/openldap/myproject_my-domain.com-slapd.conf
+    $INS/sys//etc/init.d/openldap_myproject_my-domain.com restart
+
+Check
+::
+
+     my-domain.com.ldapsearch -w$passwd
+
+At this stage, your OpenLDAP server must be configured and listening for input connections.
+
+CAS Server configuration
+---------------------------
+
+First, you must have a JDK configured and integrated (JAVA_HOME) under the hood
+For thus to be done, on Debian/Ubuntu, you can issue the followiung commands
+::
+
+    cd $MT
+    source bin/activate
+    sudo apt-get install openjdk-6-jdk
+    export JAVA_HOME=/usr/lib/jvm/java-6-openjdk/
+
+Assure to have java in your path and JAVA_HOME defined unless tomcat will not install
+
+Install tomcat
+::
+
+    # add tomcat-6.0.20 to minilays/yourminilay/myproject
+    vim $MT/minilays/yourminilay/myproject
+    minimerge -v myproject
+
+Install a CAS server instance
+::
+
+    $MT/bin/paster create -t minitage.instances.cas --no-interactive myproject http_port=8000
+
+
+Notes:
+
+
+    - Default admin credentials:  $(whoami)/secret
+    - Please have a look on the generated README in $INS
+
+
+Configure the LDAP server as an authentication backend for the CAS server (http://www.ja-sig.org/wiki/display/CASUM/LDAP):
+
+    - comment the bean *org.jasig.cas.authentication.handler.support.SimpleTestUsernamePasswordAuthenticationHandler* around the li.91 in $INS/sys/var/data/tomcat/cas/webapps/cas/WEB-INF/deployerConfigContext.xml::
+
+                    <!--    <bean class="org.jasig.cas.authentication.handler.support.SimpleTestUsernamePasswordAuthenticationHandler" />-->
+
+    - add the following Lines under the commented line and adapt the urls::
+
+
+                                   <bean
+                                       class="org.jasig.cas.adaptors.ldap.FastBindLdapAuthenticationHandler">
+                                       <property name="filter" value="uid=%u,ou=People,dc=my-domain,dc=com" />
+                                       <property name="contextSource" ref="contextSource" />
+                                   </bean>
+
+    - under the bean containing the previous one, just add::
+
+            <bean id="contextSource" class="org.springframework.ldap.core.support.LdapContextSource">
+                    <property name="anonymousReadOnly" value="false"/>
+                    <property name="pooled" value="true"/>
+                    <property name="urls">
+                            <list>
+                <!-- TO ENABLE SSL,  YOU MUST INSTALL THE SERVER CERTIFICATE INE THE JAVA SSL KEYSTORE
+                                    <value>ldaps://localhost:1389/</value>
+                -->
+                                    <value>ldap://localhost:1389/</value>
+                            </list>
+                    </property>
+                    <property name="baseEnvironmentProperties">
+                            <map>
+                <!--
+                                    <entry>
+                                            <key>
+                                                    <value>java.naming.security.protocol</value>
+                                            </key>
+                                            <value>ssl</value>
+                                    </entry>
+                -->
+                                    <entry>
+                                            <key>
+                                                    <value>java.naming.security.authentication</value>
+                                            </key>
+                                            <value>simple</value>
+                                    </entry>
+                            </map>
+                    </property>
+            </bean>
+
+        - Create some test users ::
+
+                    cat << EOF|sed "s/                    //g" > /tmp/test.ldif
+                    dn: uid=test1,ou=People,dc=my-domain,dc=com
+                    uid: test1
+                    cn: test1
+                    sn: test1
+                    mail: test1@my-domain.com
+                    objectClass: person
+                    objectClass: organizationalPerson
+                    objectClass: inetOrgPerson
+                    objectClass: top
+                    userPassword: foo
+
+                    dn: uid=test,ou=People,dc=my-domain,dc=com
+                    uid: test
+                    cn: test
+                    sn: test
+                    mail: test@my-domain.com
+                    objectClass: person
+                    objectClass: organizationalPerson
+                    objectClass: inetOrgPerson
+                    objectClass: top
+                    userPassword: foo
+                    EOF
+
+Insert::
+
+    my-domain.com.ldapadd -f /tmp/test.ldif
+
+Checks
+-----------
+I can connect; see my own password but not the other one's
+::
+
+        $ my-domain.com.ldapsearch -D uid=test,ou=People,dc=my-domain,dc=com -x -wfoo uid=test1
+        # extended LDIF
+        #
+        # LDAPv3
+        # base <dc=my-domain,dc=com> (default) with scope subtree
+        # filter: uid=test1
+        # requesting: ALL
+        #
+
+        # test1, People, my-domain.com
+        dn: uid=test1,ou=People,dc=my-domain,dc=com
+        uid: test1
+        cn: test1
+        sn: test1
+        mail: test1@my-domain.com
+        objectClass: person
+        objectClass: organizationalPerson
+        objectClass: inetOrgPerson
+        objectClass: top
+
+        # search result
+        search: 2
+        result: 0 Success
+
+        # numResponses: 2
+        # numEntries: 1
+        $ my-domain.com.ldapsearch -D uid=test,ou=People,dc=my-domain,dc=com -x -wfoo uid=test
+        # extended LDIF
+        #
+        # LDAPv3
+        # base <dc=my-domain,dc=com> (default) with scope subtree
+        # filter: uid=test
+        # requesting: ALL
+        #
+
+        # test, People, my-domain.com
+        dn: uid=test,ou=People,dc=my-domain,dc=com
+        uid: test
+        cn: test
+        sn: test
+        mail: test@my-domain.com
+        objectClass: person
+        objectClass: organizationalPerson
+        objectClass: inetOrgPerson
+        objectClass: top
+        userPassword:: Zm9v
+
+        # search result
+        search: 2
+        result: 0 Success
+
+        # numResponses: 2
+        # numEntries: 1
+
+I can authenticate on the CAS server (TTW) with the test1/foo login
+::
+
+        Connexion réussie
+
+        Vous vous êtes authentifié(e) auprès du Service Central d'Authentification.
+
+        Pour des raisons de sécurité, veuillez vous déconnecter et fermer votre navigateur lorsque vous avez fini d'accéder aux services authentifiés.
+
+

@@ -1,0 +1,115 @@
+
+About
+*****
+
+
+Purpose
+=======
+
+   * Minitage is a meta packages manager.
+
+   * It's goal is to integrate build systems / other package manager
+     together to make them install in a 'well known' layout.
+
+   * In other terms, it install its stuff in 'prefix' and it targets
+     the total isolation from the host system.
+
+   * Moreover, this tool will make you forget compilation and other
+     crazy stuff that put your mind away from your real project needs.
+
+   * Another subsidiary goal is to standardize installations, and make
+     development environments as similar as possible with production
+     deployments
+
+   * With all the precedings targets achieved, minitage would be
+     called a good ``industrialization tool`` :)
+
+
+Pre requisite knowledge
+=======================
+
+   * Read carefully this documentation:
+     http://plone.org/documentation/tutorial/buildout.
+
+   * And this one can be good too:
+     http://pypi.python.org/pypi/zc.buildout
+
+   * It is essential for you to know the basics of buildout to use it.
+
+   * It is not necessary for you to test it because you will do the
+     practise part just after ;).
+
+
+Variables used in this documentation
+====================================
+
+   * ``$project`` -> your project name
+
+   * ``$bd`` -> buildout directory
+
+   * ``$mt`` -> minitage root path
+
+   * ``$url`` -> the url of your versioned project
+
+
+Minitage, the origins
+=====================
+
+
+Buildout Limits
+---------------
+
+First of all, do not buy a gun before using buildout Buildout is not a
+magical tool and we just had quite a lot of drawbacks :
+
+   * Today offline mode can be problematic
+
+   * If you change your python, take a coffee.
+
+   * 1GB per project, it s too much.
+
+   * Buildout behaviour can be hard to predict even more if the
+     configuration file is huge.
+
+
+The Idea
+--------
+
+   * The idea is to write a light and simple package manager from
+     scratch which will allow us to integrate various build systems.
+
+   * What about shell scripts, buildout or makefiles interact together
+     to assemble all the parts of our project parts?
+
+   * To allow this, the approach is to share a common 'well known'
+     layout to install things in minitage.
+
+
+Implementation goals
+--------------------
+
+   * Write just small specialized buildouts.
+
+   * Reuse with svn:externals or others (mercurial forest extension,
+     package manager fetching methods)
+
+   * Centralize and re-use dependencies among projects.
+
+   * Use different ways to install, One tool for one thing, remember
+     the Unix way.
+
+   * Deploy a project from start to end.
+
+   * Isolate all the needed boilerplate from the host system. All
+     stuff in minitage is supposed to be independant from the host
+     base system. Compiled stuff is interlinked as much as possible.
+
+   * Reproduce the same environement everywhere (on UNIX platforms).
+     It will probably work on
+
+        * Linux
+
+        * MacOSX but at least OSX Leopard is required. (it has worked,
+          but not tested recently)
+
+        * FreeBSD (it has worked, but not tested recently)

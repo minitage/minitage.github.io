@@ -1,0 +1,423 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Plone 2.5 &mdash; Minitage - Last updated: Dec 29, 2010</title>
+    <link rel="stylesheet" href="../../static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     'Last updated: Dec 29, 2010',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../static/jquery.js"></script>
+    <script type="text/javascript" src="../../static/underscore.js"></script>
+    <script type="text/javascript" src="../../static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Minitage - Last updated: Dec 29, 2010"
+          href="../../static/opensearch.xml"/>
+    <link rel="shortcut icon" href="../../static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="top" title="Minitage - Last updated: Dec 29, 2010" href="../../index.html" />
+    <link rel="up" title="Minitage and projects templates" href="index.html" />
+    <link rel="next" title="Minitage and instances" href="../instances/index.html" />
+    <link rel="prev" title="The minitage buildout recipes" href="packaging_projects.html" />
+    <script src="static/jquery.min.js" type="text/javascript"></script>
+    <script src="static/jquery.zrssfeed.min.js" type="text/javascript"></script>
+
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../instances/index.html" title="Minitage and instances"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="packaging_projects.html" title="The minitage buildout recipes"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">Minitage - Last updated: Dec 29, 2010</a> &raquo;</li>
+          <li><a href="../index.html" >Minitage and paster templates</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Minitage and projects templates</a> &raquo;</li> 
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../index.html">
+              <img class="logo" src="../../static/logo.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+<h3><a href="../../index.html">Table Of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../why.html">Why should i use minitage?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">Minitage, the meta-package manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../spec.html">Specifications</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usecases/index.html">Minitage in the daily use of a developer</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Minitage and paster templates</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html">Minitage and projects templates</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#available-projects">Available projects</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="packaging_projects.html">The minitage buildout recipes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="packaging_projects.html#dependency-project">Dependency project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="packaging_projects.html#python-based-projet">Python based projet</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Plone 2.5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#zope2">Zope2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#plone-3">Plone 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#zope-3">Zope 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pylons-projects">Pylons projects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#django-projects">Django projects</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../instances/index.html">Minitage and instances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../instances/index.html#available-instances">Available instances</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../develop.html">Develop</a></li>
+</ul>
+
+        </div>
+      </div>
+
+<script type="text/javascript">
+$(document).ready(function () {
+    $('#zrssfeed-minitage-dependencies').rssfeed('https://github.com/minitage-dependencies.atom', {
+        limit: 5
+    });
+});
+$(document).ready(function () {
+    $('#zrssfeed-minitage-eggs').rssfeed('https://github.com/minitage-eggs.atom', {
+        limit: 5
+    });
+});
+$(document).ready(function () {
+    $('#zrssfeed-minitage').rssfeed('https://github.com/minitage.atom', {
+        limit: 5
+    });
+});
+$(document).ready(function () {
+    $('#zrssfeed-kiorky').rssfeed('https://github.com/kiorky.atom', {
+        limit: 5
+    });
+}); 
+</script>
+<div id="zrssfeed-minitage"></div>
+<div id="zrssfeed-minitage-dependencies"></div>
+<div id="zrssfeed-minitage-eggs"></div>
+<div id="zrssfeed-kiorky"></div>
+
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="plone-2-5">
+<span id="minitageplone25"></span><span id="minitagezope"></span><h1>Plone 2.5<a class="headerlink" href="#plone-2-5" title="Permalink to this headline">¶</a></h1>
+<ul>
+<li><p class="first">template : <strong>minitage.plone25</strong></p>
+</li>
+<li><p class="first">minitage category : <strong>zope</strong></p>
+</li>
+<li><p class="first">This template is simple and just there for posterity, Plone 25 is old and deprecated !</p>
+</li>
+<li><p class="first">template initialization and project start:</p>
+<div class="highlight-python"><pre>paster create -t minitage.plone25 myproject
+cd /minitage/zope/myproject/ &amp;&amp; bin/instance restart</pre>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="zope2">
+<span id="minitagezope2"></span><h1>Zope2<a class="headerlink" href="#zope2" title="Permalink to this headline">¶</a></h1>
+<ul>
+<li><p class="first">template : <strong>minitage.zope2</strong></p>
+</li>
+<li><p class="first">minitage category : <strong>zope</strong></p>
+</li>
+<li><p class="first">template initialization and starting your project:</p>
+<div class="highlight-python"><pre>paster create -t minitage.zope2 myproject
+cd /minitage/zope/myproject/ &amp;&amp; bin/instance restart</pre>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="plone-3">
+<span id="minitageplone3"></span><h1>Plone 3<a class="headerlink" href="#plone-3" title="Permalink to this headline">¶</a></h1>
+<ul>
+<li><p class="first">template : <strong>minitage.plone3</strong></p>
+</li>
+<li><p class="first">minitage category : <strong>zope</strong></p>
+</li>
+<li><p class="first">Features:</p>
+<blockquote>
+<ul class="simple">
+<li>A buildout for development mode with additionnal tools for debugging your application, IDE integration and DEBUG mode enabled.</li>
+<li>A buildout for production</li>
+<li>Paster configurations files to launch your Plone using WSGI</li>
+<li>Support forZODB, RelStorage, ZEO</li>
+<li>You can configure on the fly eggs, zcml and additionnal products</li>
+</ul>
+</blockquote>
+</li>
+<li><p class="first">Layout additional infos:</p>
+<blockquote>
+<ul>
+<li><p class="first">/minilay/project/:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">project</span><span class="p">,</span> <span class="n">project</span><span class="o">-</span><span class="n">dev</span> <span class="c"># minibuilds for installing your project in production or develop mode</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">/category/project/etc/:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="n">dev</span><span class="o">|</span><span class="n">prod</span><span class="p">]</span><span class="o">.</span><span class="n">ini</span> <span class="c"># Paste configuration files</span>
+<span class="n">relstorage</span><span class="o">.</span><span class="n">cfg</span><span class="p">,</span> <span class="n">zeo</span><span class="o">.</span><span class="n">cfg</span><span class="p">,</span> <span class="n">zodb</span><span class="o">.</span><span class="n">cfg</span> <span class="c"># buildout specific configuration files</span>
+<span class="n">versions</span><span class="o">.</span><span class="n">cfg</span> <span class="c"># Plone KGS</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">/category/project/:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">buildout</span><span class="o">.</span><span class="n">cfg</span> <span class="c"># buildout for production</span>
+<span class="n">dev</span><span class="o">.</span><span class="n">cfg</span> <span class="c"># buildout for development (extends buildout.cfg)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</blockquote>
+</li>
+<li><p class="first">Introduction to some generated binaries in bin/:</p>
+<blockquote>
+<ul class="simple">
+<li><strong>bin/ipython</strong>: an interactive IPython shell with your project environment inside</li>
+<li><strong>bin/zopepy</strong>: an interactive Python shell with your project environment inside</li>
+<li><strong>bin/paster</strong>: The paster script to use for having the right PYTHONPATH</li>
+<li><strong>bin/develop</strong>: see <a class="reference external" href="http://pypi.python.org/pypi/mr.developer">mr.developer</a> documentation</li>
+<li><strong>bin/zeoserver</strong>: Zdaemon controler for the zeoserver if any</li>
+</ul>
+</blockquote>
+</li>
+<li><p class="first">template initialization and starting your project:</p>
+<div class="highlight-python"><pre>paster create -t minitage.plone31 myproject
+cd /minitage/zope/myproject/ &amp;&amp; bin/instance start|fg
+bin/paster serve etc/CONFIG.ini # alternative for WSGI mode</pre>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="zope-3">
+<span id="minitagezope3"></span><h1>Zope 3<a class="headerlink" href="#zope-3" title="Permalink to this headline">¶</a></h1>
+<ul>
+<li><p class="first">template : <strong>minitage.zope3</strong></p>
+</li>
+<li><p class="first">minitage category : <strong>zope</strong></p>
+</li>
+<li><p class="first">Features</p>
+<blockquote>
+<ul class="simple">
+<li>Support for sob, relstorage and zeo mode</li>
+<li>Support for wsgi</li>
+<li>Support production and developement modes at the same time</li>
+<li>Intuitive configuration files editing and regenration with buildout to
+make them portables (zdaemon.conf.in zope.conf.in).</li>
+</ul>
+</blockquote>
+</li>
+<li><p class="first">Layout additional infos:</p>
+<blockquote>
+<ul>
+<li><p class="first">/category/project/zcml:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">apidoc</span><span class="o">.</span><span class="n">zcml</span><span class="p">,</span> <span class="n">site</span><span class="o">.</span><span class="n">zcml_tmpl</span> <span class="c"># ZCML files</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">/category/project/etc:</p>
+<div class="highlight-python"><pre>dev.ini, prod.ini # WSGI configuration files
+prod.zdaemon.conf.in # zdaemon.conf buildout template for production
+prod.zope.conf.in # zope.conf buildout template for production
+versions.cfg # KGS file
+zeo.conf.in # zeo.conf buildout template
+zdaemon.conf.in # zdaemon.conf buildout template for dev mode
+zope.conf.in # zope.conf buildout template for dev mode
+zeoserver.sh.in # zeo launcher template</pre>
+</div>
+</li>
+</ul>
+</blockquote>
+</li>
+<li><p class="first">Introduction to some generated binaries in bin/:</p>
+<blockquote>
+<ul class="simple">
+<li><strong>bin/ipython</strong>: an interactive IPython shell with your project environment inside</li>
+<li><strong>bin/zopepy</strong>: an interactive Python shell with your project environment inside</li>
+<li><strong>bin/paster</strong>: The paster script to use for having the right PYTHONPATH</li>
+<li><strong>bin/develop</strong>: see <a class="reference external" href="http://pypi.python.org/pypi/mr.developer">mr.developer</a> documentation</li>
+<li><strong>bin/z3-ctl</strong>: Zdaemon controller for production WSGI configuration</li>
+<li><strong>bin/z3-dev</strong>: Zdaemon controller for developement WSGI configuration</li>
+<li><strong>bin/z3-app</strong>: call your application in debug mode</li>
+<li><strong>bin/zeoserver</strong>: Zdaemon controler for the zeoserver if any</li>
+</ul>
+</blockquote>
+</li>
+<li><p class="first">Another note on ZDaemon, it can be used as a init script for your application,
+althought, you can use directly paster. Another way to make your application
+&#8220;initd compliant&#8221; is to use the <tt class="docutils literal"><span class="pre">minitage.paste-initd</span></tt> instancee.</p>
+</li>
+<li><p class="first">You can regenerate the *.conf after editing the <tt class="docutils literal"><span class="pre">.in</span></tt> ine <tt class="docutils literal"><span class="pre">etc/</span></tt>:</p>
+<div class="highlight-python"><pre>bin/buildout install [basename of config.file]
+eg:
+  vim etc/zeo.conf.in # be careful, emacs is dangerous for your fingers health
+  bin/buidout install zeo.conf</pre>
+</div>
+</li>
+<li><p class="first">The Spawning ultra perforamnt WSGI server is only available with ZEO or RelStorage because of
+its multithreading design.</p>
+</li>
+<li><p class="first">template initialization and starting your project:</p>
+<div class="highlight-python"><pre>paster create -t minitage.zope3 myproject
+cd /minitage/zope/myproject/ &amp;&amp; bin/myproject-ctl restart</pre>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="pylons-projects">
+<span id="minitagepylons"></span><h1>Pylons projects<a class="headerlink" href="#pylons-projects" title="Permalink to this headline">¶</a></h1>
+<ul>
+<li><p class="first">template : <strong>minitage.pylons</strong></p>
+</li>
+<li><p class="first">minitage category : <strong>pylons</strong></p>
+</li>
+<li><p class="first">template initialization:</p>
+<div class="highlight-python"><pre>paster create -t minitage.pylons myproject</pre>
+</div>
+</li>
+<li><p class="first">It will generate an egg in develop mode into:</p>
+<div class="highlight-python"><pre>$mt/pylons/myproject/src/myproject</pre>
+</div>
+</li>
+<li><p class="first">Under the hood, it just uses <strong>paster create -t pylons</strong>. This comes from
+Pylons itself.</p>
+</li>
+<li><p class="first">to start your project:</p>
+<div class="highlight-python"><pre>mt/pylons/myproject/bin/paster serve mt/pylons/myproject/src/myproject/development.ini</pre>
+</div>
+</li>
+<li><p class="first">Dont forget to keep the egg into version control.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="django-projects">
+<span id="minitagedjango"></span><h1>Django projects<a class="headerlink" href="#django-projects" title="Permalink to this headline">¶</a></h1>
+<ul>
+<li><p class="first">template : <strong>minitage.django</strong></p>
+</li>
+<li><p class="first">minitage category : <strong>django</strong></p>
+</li>
+<li><p class="first">We lauch django-admin startproject as a postinstall step to quickstart
+your project.</p>
+</li>
+<li><p class="first">We also create an egg for the sake of well-done packaging from start to end.</p>
+</li>
+<li><p class="first"><strong>GeoDjango support</strong>, just answer <strong>yes</strong> to GIS support</p>
+</li>
+<li><p class="first">We provide paste configuration files to launch your application in a WSGI envrionnement, <em>please stop using runserver</em>!</p>
+<blockquote>
+<ul class="simple">
+<li>It&#8217;s done through <a class="reference external" href="http://pypi.python.org/pypi/dj.paste">dj.paste</a> integration with the generated egg.</li>
+</ul>
+</blockquote>
+</li>
+<li><p class="first">Layout additional infos:</p>
+<blockquote>
+<ul>
+<li><p class="first">etc/</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="n">dev</span><span class="o">|</span><span class="n">prod</span><span class="p">]</span><span class="o">.</span><span class="n">ini</span> <span class="c"># Paste configuration files</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">src/yourproject/</p>
+<div class="highlight-python"><pre>Your project egg directory</pre>
+</div>
+</li>
+<li><p class="first">bin/:</p>
+<div class="highlight-python"><pre>paster # the paster script to starting your project
+yourproject* # Various wrappers to classical django utilities</pre>
+</div>
+</li>
+<li><p class="first">/category/project/:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">buildout</span><span class="o">.</span><span class="n">cfg</span> <span class="c"># buildout for customizing and deploying your project</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</blockquote>
+</li>
+<li><p class="first">template initialization and starting your project:</p>
+<div class="highlight-python"><pre>$mt/bin/paster create -t minitage.django myproject
+$mt/categ/project/bin/paster serve $mt/categ/project/etc/CONFIG.ini
+# or
+$mt/categ/project/bin/project_manage runserver # may God kill you :)</pre>
+</div>
+</li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../instances/index.html" title="Minitage and instances"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="packaging_projects.html" title="The minitage buildout recipes"
+             >previous</a> |</li>
+        <li><a href="../../index.html">Minitage - Last updated: Dec 29, 2010</a> &raquo;</li>
+          <li><a href="../index.html" >Minitage and paster templates</a> &raquo;</li>
+          <li><a href="index.html" >Minitage and projects templates</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2008, Mathieu Pasquet.
+      Last updated on Dec 29, 2010.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>
