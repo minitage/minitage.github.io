@@ -50,34 +50,13 @@ div.sphinxsidebar form {
     margin-bottom: 10px;
     font-size: 15px;
 }
-#zrssfeed-minitage {
+#zrssfeed  {
     font-size: 80%;
     position: absolute;
     right: 0;
     top: 32px;
     width: 300px;
 }
-#zrssfeed-minitage-dependencies {
-    font-size: 80%;
-    position: absolute;
-    right: 0;
-    top: 32px;
-    width: 300px;
-} 
-#zrssfeed-minitage-eggs {
-    font-size: 80%;
-    position: absolute;
-    right: 0;
-    top: 32px;
-    width: 300px;
-} 
-#zrssfeed-kiorky {
-    font-size: 80%;
-    position: absolute;
-    right: 0;
-    top: 32px;
-    width: 300px;
-} 
 div.rssHeader {
     background-color: #DDDDDD;
     color: #222222;
