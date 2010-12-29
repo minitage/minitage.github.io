@@ -5,7 +5,7 @@ Develop
 * We live on `github`_.
   If you need commit access, just register an account on github and ask for pull/push access on the relative repository.
 
-    - `website, minitage code, minitage artwork, shell scripts collection <http://www.github.com/minitage>`_
+    - `this website, minitage code, minitage artwork, shell scripts collection <http://www.github.com/minitage>`_
     - `Minitaged dependencies packages <http://www.github.com/minitage-dependencies>`_ 
     - `Minitaged python packages <http://www.github.com/minitage-eggs>`_  
 
