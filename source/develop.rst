@@ -22,16 +22,4 @@ Tools for developers
 .. _Trac: https://www.minitage.org/trac
 .. _`Pypi package index`:  http://pypi.python.org
 
-Installing the development version of minitage
-==================================================
-If you want to be bleeding edge and not have a 3 years old debianised
-minitage. You can give a try to the egg in development mode.
-Be aware that you must know what you are doing there !
-
-
-    - Get the sources which live now on github
-
-
-
-        .. code-block:: sh
 
