@@ -126,22 +126,10 @@
 <div class="section" id="tools-for-developers">
 <h2>Tools for developers<a class="headerlink" href="#tools-for-developers" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<ul>
-<li><p class="first">We live on  <a class="reference external" href="https://git.minitage.org">git repositories</a>. If you need commit access, it will be over ssh and you ll need to ask kiorky for an account.</p>
-</li>
-<li><p class="first">Bug tracking system is hosted on our <a class="reference external" href="https://www.minitage.org/trac">Trac</a></p>
-</li>
-<li><p class="first">We also have a <a class="reference external" href="https://gitweb.minitage.org">gitweb</a>.</p>
-</li>
-<li><p class="first">We host the eggs on <a class="reference external" href="http://pypi.python.org">Pypi package index</a></p>
-<blockquote>
 <ul class="simple">
-<li><a class="reference external" href="http://pypi.python.org/pypi/minitage.core">http://pypi.python.org/pypi/minitage.core</a></li>
-<li><a class="reference external" href="http://pypi.python.org/pypi/minitage.paste">http://pypi.python.org/pypi/minitage.paste</a></li>
-<li><a class="reference external" href="http://pypi.python.org/pypi/minitage.recipe">http://pypi.python.org/pypi/minitage.recipe</a></li>
-</ul>
-</blockquote>
-</li>
+<li>We live on  <a class="reference external" href="https://git.minitage.org">git repositories</a>. If you need commit access, just register an account on github and ask for pull/push access on the relative repository.</li>
+<li>Bug tracking system is hosted on github for all componennts</li>
+<li>We host the eggs on <a class="reference external" href="https:/github.com">github</a> and on <a class="reference external" href="http://pypi.python.org">Pypi package index</a></li>
 </ul>
 </blockquote>
 </div>
@@ -152,45 +140,14 @@ minitage. You can give a try to the egg in development mode.
 Be aware that you must know what you are doing there !</p>
 <blockquote>
 <ul>
-<li><p class="first">If you need to, fire your virtualenv</p>
+<li><p class="first">Get the sources which live now on github</p>
 <blockquote>
-<div class="highlight-sh"><div class="highlight"><pre><span class="nb">source</span> <span class="nv">$prefix</span>/bin/activate
-</pre></div>
-</div>
-</blockquote>
-</li>
-<li><p class="first">Get the sources</p>
-<blockquote>
-<div class="highlight-sh"><div class="highlight"><pre>mkdir -p ~/repos/minitage
-<span class="nb">cd</span> ~/repos/minitage
-git clone http://git.minitage.org/git/minitage/eggs/minitage.recipe/
-git clone http://git.minitage.org/git/minitage/eggs/minitage.core/
-git clone http://git.minitage.org/git/minitage/eggs/minitage.paste/
-git clone http://git.minitage.org/git/minitage/eggs/buildout.minitagificator
-</pre></div>
-</div>
-</blockquote>
-</li>
-<li><p class="first">Install/Reinstall minitage in develop mode</p>
-<blockquote>
-<div class="highlight-sh"><div class="highlight"><pre><span class="nb">source</span> <span class="nv">$prefix</span>/bin/activate
-<span class="nb">cd</span> ~/repos/minitage/minitage.core
-python setup.py develop
-<span class="nb">cd</span> ~/repos/minitage/minitage.recipe
-python setup.py develop
-<span class="nb">cd</span> ~/repos/minitage/minitage.paste
-python setup.py develop
-<span class="nb">cd</span> ~/repos/minitage/buildout.minitagificator
-python setup.py develop
-</pre></div>
-</div>
-</blockquote>
-</li>
-<li><p class="first">Sync its packages (all its minilays in minitage vocabulary).</p>
-<p><strong>This will initiate also all the minitage directories for the first run.</strong></p>
-<blockquote>
-<div class="highlight-sh"><div class="highlight"><pre><span class="nb">source</span> <span class="nv">$prefix</span>/bin/activate
-minimerge -s
+<ul class="simple">
+<li><a class="reference external" href="http://www.github.com/minitage">website, minitage code, minitage artwork, shell scripts collection</a></li>
+<li><a class="reference external" href="http://www.github.com/minitage-dependencies">Minitaged dependencies packages</a></li>
+<li><a class="reference external" href="http://www.github.com/minitage-eggs">Minitaged python packages</a></li>
+</ul>
+<div class="highlight-sh"><div class="highlight"><pre>
 </pre></div>
 </div>
 </blockquote>
