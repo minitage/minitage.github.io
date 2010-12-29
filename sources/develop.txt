@@ -5,7 +5,7 @@ Tools for developers
 =====================
 
     * We live on  `git repositories`_. If you need commit access, just register an account on github and ask for pull/push access on the relative repository.
-    * Bug tracking system is hosted on github for all componennts
+    * Bug tracking system is hosted on `github`_ for all componennts
     * We host the eggs on `github`_ and on `Pypi package index`_
 
 
