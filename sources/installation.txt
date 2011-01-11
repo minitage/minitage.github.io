@@ -193,7 +193,7 @@ Usage
 
         mkdir -p $python
         cd $python
-        wget http://git.minitage.org/git/minitage/shell/plain/PyBootstrapper.sh
+        wget --no-check-certificate https://github.com/minitage/minitage.shell/raw/master/PyBootstrapper.sh
         bash ./PyBootstrapper.sh $python
 
 offline mode
