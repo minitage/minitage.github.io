@@ -89,6 +89,26 @@ Suze
 
     * toolchain (gcc, autotools, m4)
 
+Centos
+-----------
+
+    Prior to begin with the project, ensure those dependencies are installed on
+    your system:
+
+    This one liner can help you
+
+        .. code-block:: sh
+
+             yum install automake autoconf libtool wget gcc-c++ patch gettext kernel-headers
+             
+
+    You may have problem to build glib2, because centos ships old kernel headers
+
+        .. code-block:: sh
+
+            mv /usr/include/linux /usr/include/linux.old
+            ln -s /usr/src/kernels/[YOURKERNEL]/include/linux /usr/include/linux
+
 Fedora
 -----------
 
@@ -99,7 +119,7 @@ Fedora
 
         .. code-block:: sh
 
-             yum install automake autoconf libtool wget gcc-c++ patch
+             yum install automake autoconf libtool wget gcc-c++ patch gettext kernel-headers
 
 
 MacOS X
