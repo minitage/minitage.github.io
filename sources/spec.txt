@@ -87,7 +87,7 @@ Writing Minibuilds
         - svn
         - hg
         - bzr
-        - git
+        - git (you can specify an other branch to checkout)
         - static (for http, file, local and ftp)
 
     - a dependencies variable: list of other minibuilds which this one depends on
@@ -136,6 +136,8 @@ Exemple : the minibuilds/cyrus-sasl-2.1 minibuild::
     category=dependencies
     homepage=http://chuknorris.is.a.good/guy
     license=GPL
+    # only for git atm (argument passed to git checkout -b %s --track)
+    branch = master 
 
 You must place your minibuild in a minilay.
 
