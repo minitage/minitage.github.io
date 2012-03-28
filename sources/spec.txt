@@ -137,7 +137,7 @@ Exemple : the minibuilds/cyrus-sasl-2.1 minibuild::
     homepage=http://chuknorris.is.a.good/guy
     license=GPL
     # only for git atm (argument passed to git checkout -b %s --track)
-    branch = master 
+    scm_branch = master 
 
 You must place your minibuild in a minilay.
 

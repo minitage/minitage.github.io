@@ -6,13 +6,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Porting an exising buildout based project to be a good minitage citizen &mdash; Minitage - Last updated: Jan 23, 2012</title>
+    <title>Porting an exising buildout based project to be a good minitage citizen &mdash; Minitage - Last updated: Mar 28, 2012</title>
     <link rel="stylesheet" href="../static/custom.css" type="text/css" />
     <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     'Last updated: Jan 23, 2012',
+        VERSION:     'Last updated: Mar 28, 2012',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -22,11 +22,11 @@
     <script type="text/javascript" src="../static/underscore.js"></script>
     <script type="text/javascript" src="../static/doctools.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Minitage - Last updated: Jan 23, 2012"
+          title="Search within Minitage - Last updated: Mar 28, 2012"
           href="../static/opensearch.xml"/>
     <link rel="shortcut icon" href="../static/favicon.ico"/>
     <link rel="author" title="About these documents" href="../about.html" />
-    <link rel="top" title="Minitage - Last updated: Jan 23, 2012" href="../index.html" />
+    <link rel="top" title="Minitage - Last updated: Mar 28, 2012" href="../index.html" />
     <link rel="up" title="Minitage in the daily use of a developer" href="index.html" />
     <link rel="next" title="Installation with a python 2.5" href="install25.html" />
     <link rel="prev" title="Beginning a project with minitage: The Initial Steps" href="begin_project.html" />
@@ -47,7 +47,7 @@
         <li class="right" >
           <a href="begin_project.html" title="Beginning a project with minitage: The Initial Steps"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">Minitage - Last updated: Jan 23, 2012</a> &raquo;</li>
+        <li><a href="../index.html">Minitage - Last updated: Mar 28, 2012</a> &raquo;</li>
           <li><a href="index.html" accesskey="U">Minitage in the daily use of a developer</a> &raquo;</li> 
       </ul>
     </div>
@@ -136,21 +136,44 @@
 <h1>Porting an exising buildout based project to be a good minitage citizen<a class="headerlink" href="#porting-an-exising-buildout-based-project-to-be-a-good-minitage-citizen" title="Permalink to this headline">¶</a></h1>
 <p>Althought you are not obliged to use minitage features, we would recommend to follow the next steps</p>
 <blockquote>
-<ul>
-<li><p class="first">make a python section pointing to the minitage python installation choosen:</p>
-<div class="highlight-python"><pre>[python]
-executable = ${buildout:directory}/../../dependencies/python-X.XX/parts/part/bin/python
+<ul class="simple">
+<li>Best practise is to make an extendend minitage.cfg configuration file which include the minitage environment.
+You will make a python section pointing to the minitage python installation choosen, add also no eggified packages</li>
+</ul>
+</blockquote>
+<div class="highlight-python"><pre>[minitage]
+location=${buildout:directory}/../..
+[libxslt]
+# the path to find the libxslt python bindings, maybe your global site-packages?
+site-packages=${minitage:location}/eggs/py-libxslt-1.1/parts/site-packages-2.6
+
+[python2.6]
+executable=${buildout:directory}/../../dependencies/python-2.6/parts/part/bin/python
+python=python2.6
+name=python2.6
 
 [buildout]
-python=python</pre>
+extensions+=buildout.minitagificator
+eggs-directory=${minitage:location}/eggs/cache
+[zopepy]
+extra-paths+=
+    ${libxml2:site-packages}
+    ${libxslt:site-packages}
+
+[someeggpart]
+recipe = minitage.recipe.scripts | zc.recipe.egg
+python = python2.6</pre>
 </div>
-</li>
+<p>Some important things to note in this configuration:</p>
+<blockquote>
+<blockquote>
+<ul>
 <li><p class="first">Use the common egg cache to drop your built eggs:</p>
 <div class="highlight-python"><pre>[buildout]
 eggs-directory=${buildout:directory}/../../eggs/cache</pre>
 </div>
 </li>
-<li><p class="first">Replace recipes with minitage ones if the equivalent exists</p>
+<li><p class="first">Replace recipes with minitage ones if the equivalent exists with buildout.minitagificator</p>
 <blockquote>
 <ul class="simple">
 <li><tt class="docutils literal"><span class="pre">zc.recipe.egg</span></tt>, <tt class="docutils literal"><span class="pre">zc.recipe.egg:scripts</span></tt> -&gt; <tt class="docutils literal"><span class="pre">minitage.recipe:scripts</span></tt></li>
@@ -160,15 +183,18 @@ eggs-directory=${buildout:directory}/../../eggs/cache</pre>
 </li>
 <li><p class="first">Read <a class="reference external" href="http://pypi.python.org/pypi/minitage.recipe">http://pypi.python.org/pypi/minitage.recipe</a> to understand what do the recipes</p>
 </li>
+</ul>
+</blockquote>
+<ul>
 <li><p class="first">Make a minibuild pointing to your project:</p>
 <div class="highlight-python"><pre>[minibuild]
-dependencies=openssl-0.9 libxml2-2.6 libxslt-1.1 zlib-1.2  py-libxml2-2.6 py-libxslt-1.1 python-2.4 ...
+dependencies=openssl-1 libxml2-2.6 libxslt-1.1 zlib-1.2  py-libxml2-2.6 py-libxslt-1.1 python-2.6 ...
 install_method=buildout
 src_uri=http://hg.foo.net
 src_type=hg
 category=zope
 homepage=http://foo.net
-description= a plone 3.1 buildout for plony</pre>
+description=something</pre>
 </div>
 </li>
 <li><p class="first">Version the whole and letz go. (see <a class="reference internal" href="begin_project.html#versioning-project"><em>Project versionning</em></a>).</p>
@@ -194,13 +220,13 @@ description= a plone 3.1 buildout for plony</pre>
         <li class="right" >
           <a href="begin_project.html" title="Beginning a project with minitage: The Initial Steps"
              >previous</a> |</li>
-        <li><a href="../index.html">Minitage - Last updated: Jan 23, 2012</a> &raquo;</li>
+        <li><a href="../index.html">Minitage - Last updated: Mar 28, 2012</a> &raquo;</li>
           <li><a href="index.html" >Minitage in the daily use of a developer</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2008, Mathieu Pasquet.
-      Last updated on Jan 23, 2012.
+      Last updated on Mar 28, 2012.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
     </div>
   </body>

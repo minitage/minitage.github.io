@@ -1,0 +1,395 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Minitage, the package manager &mdash; Minitage - Last updated: Mar 28, 2012</title>
+    <link rel="stylesheet" href="static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     'Last updated: Mar 28, 2012',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="static/jquery.js"></script>
+    <script type="text/javascript" src="static/underscore.js"></script>
+    <script type="text/javascript" src="static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Minitage - Last updated: Mar 28, 2012"
+          href="static/opensearch.xml"/>
+    <link rel="shortcut icon" href="static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="top" title="Minitage - Last updated: Mar 28, 2012" href="index.html" />
+    <script src="static/jquery.min.js" type="text/javascript"></script>
+    <script src="static/jquery.zrssfeed.min.js" type="text/javascript"></script>
+
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="index.html">Minitage - Last updated: Mar 28, 2012</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="document">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="static/logo.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+<h3><a href="index.html">Table Of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="why.html">Why should i use minitage?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">Minitage, the meta-package manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spec.html">Specifications</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usecases/index.html">Minitage in the daily use of a developer</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="paster/index.html">Minitage and paster templates</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="develop.html">Develop</a></li>
+</ul>
+
+        </div>
+      </div>
+  <script type="text/javascript">
+  $(document).ready(function () {
+      $('#zrssfeed-minitage-dependencies').rssfeed('https://github.com/minitage-dependencies.atom', {
+          limit: 5
+      });
+  });
+  $(document).ready(function () {
+      $('#zrssfeed-minitage-eggs').rssfeed('https://github.com/minitage-eggs.atom', {
+          limit: 5
+      });
+  });
+  $(document).ready(function () {
+      $('#zrssfeed-minitage').rssfeed('https://github.com/minitage.atom', {
+          limit: 5
+      });
+  });
+  $(document).ready(function () {
+      $('#zrssfeed-kiorky').rssfeed('https://github.com/kiorky.atom', {
+          limit: 5
+      });
+  }); 
+  </script>
+  <div class="documentwrapper">
+    <div id="zrssfeed">
+      <div id="zrssfeed-minitage"></div>
+      <div id="zrssfeed-minitage-dependencies"></div>
+      <div id="zrssfeed-minitage-eggs"></div>
+      <div id="zrssfeed-kiorky"></div>
+    </div>   
+    <div class="bodywrapper">
+      <div class="body">
+        
+  <div class="section" id="minitage-the-package-manager">
+<h1>Minitage, the package manager<a class="headerlink" href="#minitage-the-package-manager" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="le-vocabulaire">
+<h1>Le vocabulaire<a class="headerlink" href="#le-vocabulaire" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Conceptuellement inspiré des systèmes de port (xBSD, gentoo, sourcemage)</li>
+<li>mini(port)tage : le meta packae manager</li>
+<li>mini(e)merge: l&#8217;outil en ligne de commande qui controle une installation minitage</li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h1>Le vocabulaire<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>mini(e)build: Format de packages minitage</li>
+<li>mini(over)lay: un conteneur de minibuilds habituellement placé dans minitage/minilays/[UN REPERTOIRE]</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h1>Le vocabulaire<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Un projet est une application dont un minibuild va spécifier comment l&#8217;intégrer dans minitage</li>
+<li>Un profil est un scaffold de bases de données ou de wrappers qui permet de rendre le travail dans un projet minitagifié plus simple et précis.</li>
+<li>zc.buildout: outil de déploiment modulaire écrit par Jim Fulton, le papa de Zope</li>
+</ul>
+</div>
+<div class="section" id="les-fondammentaux">
+<h1>Les fondammentaux<a class="headerlink" href="#les-fondammentaux" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Isolation des packages vis à vis du système hôte</li>
+<li>Multiplateforme (Unix) (dans la réalité, surtout testé sur linux (multiple) &amp; MacOSX</li>
+<li>Reproductiblité des déploiements</li>
+</ul>
+</div>
+<div class="section" id="les-fondammentaux-2">
+<h1>Les fondammentaux (2)<a class="headerlink" href="#les-fondammentaux-2" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Installation en production, préproduction et développement indentique (mêmes versions, même layouts)</li>
+<li>Rester bas niveau</li>
+<li>Etre modulaire, configurable</li>
+</ul>
+</div>
+<div class="section" id="les-fondammentaux-3">
+<h1>Les fondammentaux (3)<a class="headerlink" href="#les-fondammentaux-3" title="Permalink to this headline">¶</a></h1>
+<ul>
+<li><p class="first">Avoir des mécanismes de mise à jour conservatifs</p>
+<blockquote>
+<ul class="simple">
+<li>migration in place</li>
+<li>on ne reinstalle pas un package déjà installé sauf demande explicite</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="qu-est-ce-qu-un-meta-package-manager">
+<h1>Qu&#8217;est ce qu&#8217;un meta package-manager<a class="headerlink" href="#qu-est-ce-qu-un-meta-package-manager" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>assemble, download, build, assemble</li>
+<li>minitage n&#8217;est qu&#8217;un ordonnanceur</li>
+<li>ce qui est réellement utilisé en dessous est zc.buildout</li>
+</ul>
+</div>
+<div class="section" id="most-important-all-is-project">
+<h1>Most important, All is project<a class="headerlink" href="#most-important-all-is-project" title="Permalink to this headline">¶</a></h1>
+<ul>
+<li><p class="first">project centric VS système centric</p>
+</li>
+<li><p class="first">Son but sur le système hote.</p>
+<blockquote>
+<ul class="simple">
+<li>déployer</li>
+<li>isoler</li>
+<li>perenniser le cycle de vie du projet</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="most-important-all-is-project-2">
+<h1>Most important, All is project (2)<a class="headerlink" href="#most-important-all-is-project-2" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Quand on utilise une base de données, souvent minitage propose une intégration pour poser cette base dans une sous hierarchie du projet (/sys) et des wrappers aux clients en ligne de commande préconfigurés pour s&#8217;y connecter (toto.psql)</li>
+</ul>
+</div>
+<div class="section" id="la-technique">
+<h1>LA TECHNIQUE<a class="headerlink" href="#la-technique" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="un-layout-commun">
+<h1>Un layout commun<a class="headerlink" href="#un-layout-commun" title="Permalink to this headline">¶</a></h1>
+<ul>
+<li><p class="first">isolation == layout stricte</p>
+</li>
+<li><p class="first">Tout ce qui est installé dans minitage suit un scheme strict (cf <a class="reference external" href="http://www.minitage.org">http://www.minitage.org</a>)</p>
+</li>
+<li><p class="first">Tout package respecte la convention suivante:</p>
+<div class="highlight-python"><pre>minitage_root/category/package/</pre>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="le-layout-pour-les-dependances-c-categorie-dependencies">
+<h1>Le layout pour les dépendances C (categorie: dependencies)<a class="headerlink" href="#le-layout-pour-les-dependances-c-categorie-dependencies" title="Permalink to this headline">¶</a></h1>
+<ul>
+<li><p class="first">Structure commune des installations</p>
+</li>
+<li><p class="first">Réutilisabilité de chaque package grace à ce layout</p>
+</li>
+<li><p class="first">On peut nommer des packages avec leur versions pour autoriser l&#8217;usage de mulitples versions d&#8217;un package donné:</p>
+<div class="highlight-python"><pre>/minitage/dependencies/python-2.6</pre>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="python-categorie-eggs">
+<h1>Python  (categorie: eggs)<a class="headerlink" href="#python-categorie-eggs" title="Permalink to this headline">¶</a></h1>
+<ul>
+<li><p class="first">Pour quelques packages un peu sioux:</p>
+<blockquote>
+<p>-libxml, PIL, PyQt, mapnik2</p>
+</blockquote>
+</li>
+<li><p class="first">Ne Permettre d&#8217;installer que les seules versions python necessaires pour l&#8217;application</p>
+</li>
+</ul>
+</div>
+<div class="section" id="python-categorie-eggs-2">
+<h1>Python  (categorie: eggs) (2)<a class="headerlink" href="#python-categorie-eggs-2" title="Permalink to this headline">¶</a></h1>
+<ul>
+<li><p class="first">Historiquement python va avoir plusieurs mode de déploiements:</p>
+<blockquote>
+<ul class="simple">
+<li>Utiliser un egg ou une source distribution</li>
+<li>Utiliser un systeme de build quelquonque pour mettre des chosss dans le site-packges du python cible</li>
+</ul>
+</blockquote>
+</li>
+<li><p class="first">Minitage utilise un &#8216;shared egg folder&#8217; pour tous les eggs produits par tous ses projets:</p>
+<div class="highlight-python"><pre>/minitage/eggs/cache</pre>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="python-categorie-eggs-3">
+<h1>Python  (categorie: eggs) (3)<a class="headerlink" href="#python-categorie-eggs-3" title="Permalink to this headline">¶</a></h1>
+<ul>
+<li><p class="first">Pour les projets utilisant directement le site-packages, minitage les installe dans un sous repertoire:</p>
+<div class="highlight-python"><pre>/minitage/eggs/package/parts/site-packages-pyver</pre>
+</div>
+</li>
+<li><p class="first">ou si le projet inclut aussi des binaires, etc</p>
+<div class="highlight-python"><pre>/minitage/eggs/package/parts/
+
+             site-packages-pyver/site-packages-pyver</pre>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="buildout">
+<h1>Buildout<a class="headerlink" href="#buildout" title="Permalink to this headline">¶</a></h1>
+<ul>
+<li><p class="first">minitage est une surcouche à zc.buildout.</p>
+</li>
+<li><p class="first">Une extension buildout : buildout.minitagificator
+Permet de remplacer à la volée des recettes de la communauté par les équivalents minitage:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="n">buildout</span><span class="p">]</span>
+<span class="n">extensions</span> <span class="o">=</span>  <span class="n">buildout</span><span class="o">.</span><span class="n">minitagicator</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="buildout-2">
+<h1>Buildout (2)<a class="headerlink" href="#buildout-2" title="Permalink to this headline">¶</a></h1>
+<ul>
+<li><p class="first">Les recettes intégrent les dépendances d&#8217;un projet dans l&#8217;environnement d&#8217;éxecution de buildout.</p>
+</li>
+<li><p class="first">Les principales recipes:</p>
+<blockquote>
+<ul class="simple">
+<li>minitage.recipe.cmmi &lt;=  zc.recipe.cmmi</li>
+<li>minitage.recipe.{scripts, egg}  zc.recipe.egg</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="workflow">
+<h1>Workflow<a class="headerlink" href="#workflow" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>L&#8217;idée part du principe suivant: Planifier et programmer le déploiement, répeter X fois.</li>
+<li>Un expert minitage commence par:<ul>
+<li>Créer le projet et le minitagifier</li>
+<li>Versionner ce projet</li>
+<li>Créer un minibuild qui pointe vers ce projet</li>
+</ul>
+</li>
+<li>Ensuite et seulement ensuite, les développeurs (utilisateurs) peuvent déployer le projet</li>
+</ul>
+</div>
+<div class="section" id="pitfalls">
+<h1>Pitfalls<a class="headerlink" href="#pitfalls" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Minitage n&#8217;est pas simple, mais pas tres compliqué non plus, un expert ira plus vite à rendre déployable un projet</li>
+<li>Ce meme expert traitera les problemes liés à minitage</li>
+<li>Les développeurs (users) n&#8217;ont plus qu&#8217;à télécharger le &#8220;minilay&#8221; et installer le projet.</li>
+</ul>
+</div>
+<div class="section" id="quelques-points-mal-testes-ne-respestant-pas-les-principes-initiaux">
+<h1>Quelques points mal testés / ne respestant pas les principes initiaux<a class="headerlink" href="#quelques-points-mal-testes-ne-respestant-pas-les-principes-initiaux" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Mode offline: pas de use case, pas traité.</li>
+</ul>
+</div>
+<div class="section" id="les-libraries-c-et-cpp-et-le-monde-de-rpath">
+<h1>Les libraries C, et CPP et le monde de RPATH<a class="headerlink" href="#les-libraries-c-et-cpp-et-le-monde-de-rpath" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Isolation de chaque librairie compilée</li>
+<li>LD_LIBRARY_PATH inutile ! vive -rpath</li>
+<li>Relocalisation == rebuildd /==/ minitage not relocalisable</li>
+</ul>
+</div>
+<div class="section" id="un-exemple">
+<h1>Un exemple<a class="headerlink" href="#un-exemple" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="minitage-dance">
+<h1>minitage dance<a class="headerlink" href="#minitage-dance" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-python"><pre>mkdir -p ~/.buildout/downloads
+cat &lt;&lt; EOF &gt; ~/.buildout/default.cfg
+[buildout]
+download-directory = $HOME/.buildout/downloads
+download-cache = $HOME/.buildout/downloads
+EOF</pre>
+</div>
+</div>
+<div class="section" id="minitage-dance-2">
+<h1>minitage dance (2)<a class="headerlink" href="#minitage-dance-2" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-python"><pre>sudo apt-get install build-essential m4 libtool pkg-config autoconf gettext bzip2 groff man-db automake libsigc++-2.0-dev tcl8.5
+export prefix=$HOME/minitage
+export python=$prefix/tools/python</pre>
+</div>
+</div>
+<div class="section" id="minitage-dance-3">
+<h1>minitage dance (3)<a class="headerlink" href="#minitage-dance-3" title="Permalink to this headline">¶</a></h1>
+<p>Un python rien que pour minitage</p>
+<div class="highlight-python"><pre>wget --no-check-certificate https://github.com/minitage/minitage.shell/raw/master/PyBootstrapper.sh
+bash ./PyBootstrapper.sh $python</pre>
+</div>
+</div>
+<div class="section" id="minitage-dance-4">
+<h1>minitage dance (4)<a class="headerlink" href="#minitage-dance-4" title="Permalink to this headline">¶</a></h1>
+<p>Isolation par virtualenv &amp; installation de minitage &amp; téléchargement des paquets &#8220;core&#8221;</p>
+<div class="highlight-python"><pre>$python/bin/virtualenv --no-site-packages --distribute $prefix
+source $prefix/bin/activate
+easy_install -U minitage.core
+minimerge -s</pre>
+</div>
+</div>
+
+
+      </div>
+      <div class="clearer"></div>
+    </div> 
+  </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="index.html">Minitage - Last updated: Mar 28, 2012</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2008, Mathieu Pasquet.
+      Last updated on Mar 28, 2012.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>
