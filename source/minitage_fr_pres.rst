@@ -91,7 +91,7 @@ Un layout commun
 - Tout ce qui est installé dans minitage suit un scheme strict (cf http://www.minitage.org)
 - Tout package respecte la convention suivante::
 
-    minitage_root/category/package/
+    /minitage_root/category/package/
 
 Le layout pour les dépendances C (categorie: dependencies)
 ============================================================
@@ -109,7 +109,6 @@ Le layout pour les dépendances C (categorie: dependencies)
 - Minitage utilise -rpath pour hardcoder les chemins de librairies dynamiques.
   Le but est de s'affranchir de LD_LIBRARY_PATH à l'éxecution
 - grace à la recette minitage.recipe.cmmi, les flags de compilations sont mis automatiquement dans l'environnement
-
 
 
 Layout python  (categorie: eggs)
@@ -157,7 +156,7 @@ Buildout
     - De mettre si néccesaire les flags de compilation et le path à jour pour l'environnement global de buildou::
 
       [buildout]
-      extensions =  buildout.minitagicator
+      extensions = buildout.minitagicator
 
 Buildout (2)
 =============
@@ -175,7 +174,6 @@ Workflow
 
 Workflow (2)
 =============
-
 - Un expert minitage va donc commencer par:
 
   - Créer le projet et le minitagifier
@@ -202,8 +200,33 @@ Les libraries C, et CPP et le monde de RPATH
 - LD_LIBRARY_PATH inutile ! vive -rpath
 - Relocalisation == rebuildd /==/ minitage not relocalisable
 
-Un exemple
-============
+
+Les minilays
+================
+- Un simple repertoire
+- Qui contient des "minibuilds"
+- généralement dans "minitage/minilays"
+
+Les minibuild
+==================
+- Permettent de décrire un package
+
+    - Dépendances
+    - Url de téléchargement du package
+    - Méthode d'installation
+
+Les minibuilds, un exemple
+===============================
+::
+
+    dependencies=py-libxml2-2.7 py-libxslt-1.1 libxml2-2.7 libxslt-1.1 pil-1.1.7 libiconv-1.12 python-2.6
+    install_method=buildout
+    src_uri=ssh://git.makina-corpus.net/var/git/plone/project.git
+    src_type=git
+    category=zope
+    homepage=http://www.makina-corpus.com/
+    description= a plone 4.1.3 buildout
+    buildout_config=minitage-develop.cfg (optionel)
 
 minitage dance
 ===============
@@ -244,4 +267,12 @@ Isolation par virtualenv & installation de minitage & téléchargement des paque
     easy_install -U minitage.core
     minimerge -s
 
+minitage dance (6)
+===================
+On pose le minilay, puis on installe le projet
+::
+
+    cd minitage/minilays
+    WGET/git http://minilayurl
+    minimerge -av projet
 
