@@ -1,17 +1,15 @@
-Minitage, the package manager
-================================
+Minitage, le meta gestionnaire de paquets
+==========================================
 
 
 Le vocabulaire
 ================
-- Conceptuellement inspiré des systèmes de port (xBSD, gentoo, sourcemage)
-- mini(port)tage : le meta packae manager
+- mini(port)tage : le meta gestionnaire de paquets
 - mini(e)merge: l'outil en ligne de commande qui controle une installation minitage
-
 
 Le vocabulaire
 ===================
-- mini(e)build: Format de packages minitage
+- mini(e)build: Format de paquets minitage
 - mini(over)lay: un conteneur de minibuilds habituellement placé dans minitage/minilays/[UN REPERTOIRE]
 
 Le vocabulaire
@@ -20,16 +18,16 @@ Le vocabulaire
 - Un profil est un scaffold de bases de données ou de wrappers qui permet de rendre le travail dans un projet minitagifié plus simple et précis.
 - zc.buildout: outil de déploiment modulaire écrit par Jim Fulton, le papa de Zope
 
-
 Les fondammentaux
 ====================
+- Conceptuellement inspiré des systèmes de port (xBSD, gentoo, sourcemage)
 - Isolation des packages vis à vis du système hôte
 - Multiplateforme (Unix) (dans la réalité, surtout testé sur linux (multiple) & MacOSX
 - Reproductiblité des déploiements
 
 Les fondammentaux (2)
 =======================
-- Installation en production, préproduction et développement indentique (mêmes versions, même layouts)
+- Installation en production, préproduction et développement IDENTIQUE (mêmes versions, même layouts)
 - Rester bas niveau
 - Etre modulaire, configurable
 
@@ -40,10 +38,20 @@ Les fondammentaux (3)
     - migration in place
     - on ne reinstalle pas un package déjà installé sauf demande explicite
 
+
+Les fondammentaux (4)
+=======================
+- Les packages restent atomiques, ce qui n'est pas un projet n'installe qu'une chose
+
+  eg: postgresql-8,4 et postgis-1.5 sont deux packages différents, ils ne sont pas regroupés
+
+
 Qu'est ce qu'un meta package-manager
 ======================================
-- assemble, download, build, assemble
 - minitage n'est qu'un ordonnanceur
+
+    - Assembler les dépendances puis les télécharger et les construire
+
 - ce qui est réellement utilisé en dessous est zc.buildout
 
 Most important, All is project
@@ -53,11 +61,26 @@ Most important, All is project
 
     - déployer
     - isoler
-    - perenniser le cycle de vie du projet
+    - pérenniser le cycle de vie du projet
 
 Most important, All is project (2)
 ==================================
-- Quand on utilise une base de données, souvent minitage propose une intégration pour poser cette base dans une sous hierarchie du projet (/sys) et des wrappers aux clients en ligne de commande préconfigurés pour s'y connecter (toto.psql)
+- Intégration d'outils populaires dans une sous hierarchie du projet (/sys)
+  pour simplifier l'usage des dépendances confinées dans leur layout
+
+  - On installe une base de données PostgreSQL avec des wrappers comme 'toto.psql'
+  - 'toto.psql' est préconfiguré pour se connecter à cette base de données
+
+
+minitage, dur à appréhender en tant que développeur?
+======================================================
+- minitage en tant que développeur est simple dans les concepts, les prerequis le sont moins.
+
+    - il faut avoir quelques notions de packaging (inter dépendances)
+    - il faut avoir quelques notions de compilation, les flaggs de compil, les outils de compilation (autotools, scons, cmake)
+
+minitage, dur à appréhender en tant qu'utilisateur ?
+====================================================
 
 LA TECHNIQUE
 =======================
@@ -72,30 +95,45 @@ Un layout commun
 
 Le layout pour les dépendances C (categorie: dependencies)
 ============================================================
-- Structure commune des installations
+- Structure commune des installations:
+
+    minitage_root/category/package/parts/part
+
 - Réutilisabilité de chaque package grace à ce layout
 - On peut nommer des packages avec leur versions pour autoriser l'usage de mulitples versions d'un package donné::
 
     /minitage/dependencies/python-2.6
 
-Python  (categorie: eggs)
-==========================
-- Pour quelques packages un peu sioux:
+Le layout pour les dépendances C (categorie: dependencies)
+============================================================
+- Minitage utilise -rpath pour hardcoder les chemins de librairies dynamiques.
+  Le but est de s'affranchir de LD_LIBRARY_PATH à l'éxecution
+- grace à la recette minitage.recipe.cmmi, les flags de compilations sont mis automatiquement dans l'environnement
 
-    -libxml, PIL, PyQt, mapnik2
 
-- Ne Permettre d'installer que les seules versions python necessaires pour l'application
 
-Python  (categorie: eggs) (2)
-==============================
+Layout python  (categorie: eggs)
+====================================
 - Historiquement python va avoir plusieurs mode de déploiements:
 
-    - Utiliser un egg ou une source distribution
+    - Utiliser un egg ou une source distribution, c'est le mode préféré de minitage
     - Utiliser un systeme de build quelquonque pour mettre des chosss dans le site-packges du python cible
 
 - Minitage utilise un 'shared egg folder' pour tous les eggs produits par tous ses projets::
 
     /minitage/eggs/cache
+
+Layout python (categorie: eggs) (2)
+====================================
+- Pour quelques packages un peu sioux, on installe dans un repertoire spécifique
+
+    - libxml2, PIL, PyQt, mapnik2::
+
+        minitage/eggs/py-libxml2-2.6/parts/site-packages-pyver
+
+- Ne Permettre d'installer que les seules versions python necessaires pour l'application.
+- Dans les buildouts de projets, on utilise ``eggs-directory`` pour indiquer le shared cache de minitage.
+
 
 Python  (categorie: eggs) (3)
 ================================
@@ -113,7 +151,10 @@ Buildout
 ===========
 - minitage est une surcouche à zc.buildout.
 - Une extension buildout : buildout.minitagificator
-  Permet de remplacer à la volée des recettes de la communauté par les équivalents minitage::
+  Permet:
+
+    - de remplacer à la volée des recettes de la communauté par les équivalents minitage
+    - De mettre si néccesaire les flags de compilation et le path à jour pour l'environnement global de buildou::
 
       [buildout]
       extensions =  buildout.minitagicator
@@ -121,15 +162,21 @@ Buildout
 Buildout (2)
 =============
 - Les recettes intégrent les dépendances d'un projet dans l'environnement d'éxecution de buildout.
-- Les principales recipes:
 
-    - minitage.recipe.cmmi <=  zc.recipe.cmmi
-    - minitage.recipe.{scripts, egg}  zc.recipe.egg
+  - CFLAGS, LDFLAGS, RPATH, CPPFLAGS, PATH, LD_LIBRARY_PATH, PYTHONPATH pour package sioux
+  - minitage.recipe.cmmi <=  zc.recipe.cmmi: compilation de dépendances C
+  - minitage.recipe.{scripts, egg} <= zc.recipe.egg: installation d'eggs & de distributions python
 
 Workflow
 ==========
-- L'idée part du principe suivant: Planifier et programmer le déploiement, répeter X fois.
-- Un expert minitage commence par:
+- Planifier et programmer un déploiement, le répeter X fois.
+- Minitagifier, c'est assez dur, déployer c'est facile.
+
+
+Workflow (2)
+=============
+
+- Un expert minitage va donc commencer par:
 
   - Créer le projet et le minitagifier
   - Versionner ce projet
@@ -137,15 +184,17 @@ Workflow
 
 - Ensuite et seulement ensuite, les développeurs (utilisateurs) peuvent déployer le projet
 
-Pitfalls
-=========
+Petites cachotteries
+========================
 - Minitage n'est pas simple, mais pas tres compliqué non plus, un expert ira plus vite à rendre déployable un projet
 - Ce meme expert traitera les problemes liés à minitage
 - Les développeurs (users) n'ont plus qu'à télécharger le "minilay" et installer le projet.
 
+
 Quelques points mal testés / ne respestant pas les principes initiaux
 ======================================================================
-- Mode offline: pas de use case, pas traité.
+- Mode offline: pas de use case, pas traité mais l'infrastructure pour le permettre est en place.
+  Pas difficile à mettre en oeuvre mais avis à contributions.
 
 Les libraries C, et CPP et le monde de RPATH
 ==============================================
