@@ -1,5 +1,5 @@
 minitagify an existing project
-===============================
+================================
 You can use the minitagify helper to generate some configs making automaticly:
 
 
