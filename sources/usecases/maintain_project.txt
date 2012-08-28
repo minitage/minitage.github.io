@@ -1,3 +1,57 @@
+minitagify an existing project
+===============================
+You can use the minitagify helper to generate some configs making automaticly:
+
+
+    - wrappers to all buildouts in the top directory to wrap minitage environment
+    - a minilay with minibuilds pointing to those wrappers
+
+
+This will help you integrating minitage !
+
+If you project layout is something like::
+
+    .
+    ├── base.cfg
+    ├── buildout.cfg
+    ├── otherbuildout.cfg
+    └── foo
+        └── bar
+
+
+You want it to be installed a a zope project, do the following::
+
+    cd ~/minitage
+    . bin/activate
+    mkdir -p zope
+    SCM clone URL zope/yourproject
+    minitagify -d zope/yourproject
+    . Wraping ~/minitage/zope/yourpoject/otherbuildout.cfg (minitage27.cfg) in ~/minitage/zope/yourpoject/minitage.otherbuildout.cfg->~/minitage/zope/yourpoject/.minitagecfg/otherbuildout.cfg
+    . Wraping ~/minitage/zope/yourpoject/buildout.cfg (minitage27.cfg) in ~/minitage/zope/yourpoject/minitage.buildout.cfg->~/minitage/zope/yourpoject/.minitagecfg/buildout.cfg
+    . Wraping ~/minitage/zope/yourpoject/base.cfg (minitage27.cfg) in ~/minitage/zope/yourpoject/minitage.base.cfg->~/minitage/zope/yourpoject/.minitagecfg/base.cfg
+    . Wroted minibuild yourpoject-otherbuildout in ~/minitage/minilays/05d75df848d13853578095d08f5c7253a/yourpoject-otherbuildout
+    . Wroted minibuild yourpoject-buildout in ~/minitage/minilays/05d75df848d13853578095d08f5c7253a/yourpoject-buildout
+    . Wroted minibuild yourpoject-base in ~/minitage/minilays/05d75df848d13853578095d08f5c7253a/yourpoject-base
+    . Wroted minibuild yourpoject in ~/minitage/minilays/05d75df848d13853578095d08f5c7253a/yourpoject
+
+You will then have to use:
+
+        - minitage.buildout.cfg for buildout.cfg
+        - minitage.otherbuildout.cfg for otherbuildout.cfg
+
+like::
+
+    cd zope/yourproject
+    python bootstrap.py
+    bin/buildout -vvvvvvvNc minitage.buildout.cfg
+    bin/buildout -vvvvvvvNc minitage.otherbuildout.cfg
+
+
+If no buildouts are present it will generate a base plone addon buildout infratructure
+
+
+ 
+
 Porting an exising buildout based project to be a good minitage citizen
 ============================================================================
 
@@ -58,57 +112,5 @@ Some important things to note in this configuration:
         description=something
 
     * Version the whole and letz go. (see :ref:`versioning_project`).
-
-minitagify the helper for Quick'n dirty integration of an existing buildout project
-=====================================================================================
-You can use the minitagify helper to generate some configs making automaticly:
-
-
-    - wrappers to all buildouts in the top directory to wrap minitage environment
-    - a minilay with minibuilds pointing to those wrappers
-
-
-This will help you integrating minitage !
-
-If you project layout is something like::
-
-    .
-    ├── base.cfg
-    ├── buildout.cfg
-    ├── otherbuildout.cfg
-    └── foo
-        └── bar
-
-
-You want it to be installed a a zope project, do the following::
-
-    cd ~/minitage
-    . bin/activate
-    mkdir -p zope
-    SCM clone URL zope/yourproject
-    minitagify -d zope/yourproject
-    . Wraping ~/minitage/zope/yourpoject/otherbuildout.cfg (minitage27.cfg) in ~/minitage/zope/yourpoject/minitage.otherbuildout.cfg->~/minitage/zope/yourpoject/.minitagecfg/otherbuildout.cfg
-    . Wraping ~/minitage/zope/yourpoject/buildout.cfg (minitage27.cfg) in ~/minitage/zope/yourpoject/minitage.buildout.cfg->~/minitage/zope/yourpoject/.minitagecfg/buildout.cfg
-    . Wraping ~/minitage/zope/yourpoject/base.cfg (minitage27.cfg) in ~/minitage/zope/yourpoject/minitage.base.cfg->~/minitage/zope/yourpoject/.minitagecfg/base.cfg
-    . Wroted minibuild yourpoject-otherbuildout in ~/minitage/minilays/05d75df848d13853578095d08f5c7253a/yourpoject-otherbuildout
-    . Wroted minibuild yourpoject-buildout in ~/minitage/minilays/05d75df848d13853578095d08f5c7253a/yourpoject-buildout
-    . Wroted minibuild yourpoject-base in ~/minitage/minilays/05d75df848d13853578095d08f5c7253a/yourpoject-base
-    . Wroted minibuild yourpoject in ~/minitage/minilays/05d75df848d13853578095d08f5c7253a/yourpoject
-
-You will then have to use:
-
-        - minitage.buildout.cfg for buildout.cfg
-        - minitage.otherbuildout.cfg for otherbuildout.cfg
-
-like::
-
-    cd zope/yourproject
-    python bootstrap.py
-    bin/buildout -vvvvvvvNc minitage.buildout.cfg
-    bin/buildout -vvvvvvvNc minitage.otherbuildout.cfg
-
-
-If no buildouts are present it will generate a base plone addon buildout infratructure
-
 
 

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Porting an exising buildout based project to be a good minitage citizen &mdash; Minitage - Last updated: Aug 28, 2012</title>
+    <title>minitagify an existing project &mdash; Minitage - Last updated: Aug 28, 2012</title>
     <link rel="stylesheet" href="../static/custom.css" type="text/css" />
     <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -83,8 +83,8 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Minitage in the daily use of a developer</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="using_minimerge.html">The minitage swiss knife, <strong>minimerge</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="begin_project.html">Beginning a project with minitage: The Initial Steps</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Porting an exising buildout based project to be a good minitage citizen</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#minitagify-the-helper-for-quick-n-dirty-integration-of-an-existing-buildout-project">minitagify the helper for Quick&#8217;n dirty integration of an existing buildout project</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">minitagify an existing project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#porting-an-exising-buildout-based-project-to-be-a-good-minitage-citizen">Porting an exising buildout based project to be a good minitage citizen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install25.html">Installation with a python 2.5</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plone3.html">A plone3 project with relstorage (postgresql) and varnish2 support</a></li>
 <li class="toctree-l2"><a class="reference internal" href="deploying_a_cas_server.html">Install a project with a CAS server wired on an OpenLDAP backend</a></li>
@@ -133,7 +133,54 @@
     <div class="bodywrapper">
       <div class="body">
         
-  <div class="section" id="porting-an-exising-buildout-based-project-to-be-a-good-minitage-citizen">
+  <div class="section" id="minitagify-an-existing-project">
+<h1>minitagify an existing project<a class="headerlink" href="#minitagify-an-existing-project" title="Permalink to this headline">¶</a></h1>
+<p>You can use the minitagify helper to generate some configs making automaticly:</p>
+<blockquote>
+<ul class="simple">
+<li>wrappers to all buildouts in the top directory to wrap minitage environment</li>
+<li>a minilay with minibuilds pointing to those wrappers</li>
+</ul>
+</blockquote>
+<p>This will help you integrating minitage !</p>
+<p>If you project layout is something like:</p>
+<div class="highlight-python"><pre>.
+├── base.cfg
+├── buildout.cfg
+├── otherbuildout.cfg
+└── foo
+    └── bar</pre>
+</div>
+<p>You want it to be installed a a zope project, do the following:</p>
+<div class="highlight-python"><pre>cd ~/minitage
+. bin/activate
+mkdir -p zope
+SCM clone URL zope/yourproject
+minitagify -d zope/yourproject
+. Wraping ~/minitage/zope/yourpoject/otherbuildout.cfg (minitage27.cfg) in ~/minitage/zope/yourpoject/minitage.otherbuildout.cfg-&gt;~/minitage/zope/yourpoject/.minitagecfg/otherbuildout.cfg
+. Wraping ~/minitage/zope/yourpoject/buildout.cfg (minitage27.cfg) in ~/minitage/zope/yourpoject/minitage.buildout.cfg-&gt;~/minitage/zope/yourpoject/.minitagecfg/buildout.cfg
+. Wraping ~/minitage/zope/yourpoject/base.cfg (minitage27.cfg) in ~/minitage/zope/yourpoject/minitage.base.cfg-&gt;~/minitage/zope/yourpoject/.minitagecfg/base.cfg
+. Wroted minibuild yourpoject-otherbuildout in ~/minitage/minilays/05d75df848d13853578095d08f5c7253a/yourpoject-otherbuildout
+. Wroted minibuild yourpoject-buildout in ~/minitage/minilays/05d75df848d13853578095d08f5c7253a/yourpoject-buildout
+. Wroted minibuild yourpoject-base in ~/minitage/minilays/05d75df848d13853578095d08f5c7253a/yourpoject-base
+. Wroted minibuild yourpoject in ~/minitage/minilays/05d75df848d13853578095d08f5c7253a/yourpoject</pre>
+</div>
+<p>You will then have to use:</p>
+<blockquote>
+<ul class="simple">
+<li>minitage.buildout.cfg for buildout.cfg</li>
+<li>minitage.otherbuildout.cfg for otherbuildout.cfg</li>
+</ul>
+</blockquote>
+<p>like:</p>
+<div class="highlight-python"><pre>cd zope/yourproject
+python bootstrap.py
+bin/buildout -vvvvvvvNc minitage.buildout.cfg
+bin/buildout -vvvvvvvNc minitage.otherbuildout.cfg</pre>
+</div>
+<p>If no buildouts are present it will generate a base plone addon buildout infratructure</p>
+</div>
+<div class="section" id="porting-an-exising-buildout-based-project-to-be-a-good-minitage-citizen">
 <h1>Porting an exising buildout based project to be a good minitage citizen<a class="headerlink" href="#porting-an-exising-buildout-based-project-to-be-a-good-minitage-citizen" title="Permalink to this headline">¶</a></h1>
 <p>Althought you are not obliged to use minitage features, we would recommend to follow the next steps</p>
 <blockquote>
@@ -202,53 +249,6 @@ description=something</pre>
 </li>
 </ul>
 </blockquote>
-</div>
-<div class="section" id="minitagify-the-helper-for-quick-n-dirty-integration-of-an-existing-buildout-project">
-<h1>minitagify the helper for Quick&#8217;n dirty integration of an existing buildout project<a class="headerlink" href="#minitagify-the-helper-for-quick-n-dirty-integration-of-an-existing-buildout-project" title="Permalink to this headline">¶</a></h1>
-<p>You can use the minitagify helper to generate some configs making automaticly:</p>
-<blockquote>
-<ul class="simple">
-<li>wrappers to all buildouts in the top directory to wrap minitage environment</li>
-<li>a minilay with minibuilds pointing to those wrappers</li>
-</ul>
-</blockquote>
-<p>This will help you integrating minitage !</p>
-<p>If you project layout is something like:</p>
-<div class="highlight-python"><pre>.
-├── base.cfg
-├── buildout.cfg
-├── otherbuildout.cfg
-└── foo
-    └── bar</pre>
-</div>
-<p>You want it to be installed a a zope project, do the following:</p>
-<div class="highlight-python"><pre>cd ~/minitage
-. bin/activate
-mkdir -p zope
-SCM clone URL zope/yourproject
-minitagify -d zope/yourproject
-. Wraping ~/minitage/zope/yourpoject/otherbuildout.cfg (minitage27.cfg) in ~/minitage/zope/yourpoject/minitage.otherbuildout.cfg-&gt;~/minitage/zope/yourpoject/.minitagecfg/otherbuildout.cfg
-. Wraping ~/minitage/zope/yourpoject/buildout.cfg (minitage27.cfg) in ~/minitage/zope/yourpoject/minitage.buildout.cfg-&gt;~/minitage/zope/yourpoject/.minitagecfg/buildout.cfg
-. Wraping ~/minitage/zope/yourpoject/base.cfg (minitage27.cfg) in ~/minitage/zope/yourpoject/minitage.base.cfg-&gt;~/minitage/zope/yourpoject/.minitagecfg/base.cfg
-. Wroted minibuild yourpoject-otherbuildout in ~/minitage/minilays/05d75df848d13853578095d08f5c7253a/yourpoject-otherbuildout
-. Wroted minibuild yourpoject-buildout in ~/minitage/minilays/05d75df848d13853578095d08f5c7253a/yourpoject-buildout
-. Wroted minibuild yourpoject-base in ~/minitage/minilays/05d75df848d13853578095d08f5c7253a/yourpoject-base
-. Wroted minibuild yourpoject in ~/minitage/minilays/05d75df848d13853578095d08f5c7253a/yourpoject</pre>
-</div>
-<p>You will then have to use:</p>
-<blockquote>
-<ul class="simple">
-<li>minitage.buildout.cfg for buildout.cfg</li>
-<li>minitage.otherbuildout.cfg for otherbuildout.cfg</li>
-</ul>
-</blockquote>
-<p>like:</p>
-<div class="highlight-python"><pre>cd zope/yourproject
-python bootstrap.py
-bin/buildout -vvvvvvvNc minitage.buildout.cfg
-bin/buildout -vvvvvvvNc minitage.otherbuildout.cfg</pre>
-</div>
-<p>If no buildouts are present it will generate a base plone addon buildout infratructure</p>
 </div>
 
 
