@@ -12,6 +12,7 @@ This script:
     - can install minitage (from source, no eggs)
     - Can install minitage base packages
     - Can install your project
+    - Can launch `CGWB <https://pypi.python.org/pypi/collective.generic.webbuilder>`_
     - Can make a snapshot (usable offline) of:
 
         - The minitage installation
