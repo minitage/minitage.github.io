@@ -12,6 +12,7 @@ This script:
     - can install minitage (from source, no eggs)
     - Can install minitage base packages
     - Can install your project
+    - Can launch `CGWB <https://pypi.python.org/pypi/collective.generic.webbuilder>`_
     - Can make a snapshot (usable offline) of:
 
         - The minitage installation
@@ -31,7 +32,6 @@ Installing minitage
 You need to be online to bootstrap with this script.
 
 In the other hand, to use offline, have ``./minitage/downloads``  feeded with neccessary archives.
-
 
 .. code-block:: sh
 
@@ -71,17 +71,15 @@ The only thing you have to do is to install the project minilay in ``minitage/mi
 
 Upgrade minitage itself
 ========================
-When you on your project, and you have issues with minitage, maybe upgrading will solve
-Simply run::
+Time to time, you need to update your software stack...
+Or you have issues with minitage and want to see if is is now xied, just run::
 
     ./minitagetool.sh selfupgrade
-
 
 Think to redeploy your project dependencies updates as well
 Simply run::
 
     ONLINE=y ./minitagetool.sh deploy <projectminibuild> [<otherminibuild>]
-
 
 Make a snapshot
 ========================
