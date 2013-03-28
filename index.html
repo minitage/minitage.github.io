@@ -6,13 +6,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Welcome to Minitage’s documentation! &mdash; Minitage - Last updated: Aug 28, 2012</title>
+    <title>Welcome to Minitage’s documentation! &mdash; Minitage - Last updated: Mar 29, 2013</title>
     <link rel="stylesheet" href="static/custom.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     'Last updated: Aug 28, 2012',
+        VERSION:     'Last updated: Mar 29, 2013',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -22,12 +22,12 @@
     <script type="text/javascript" src="static/underscore.js"></script>
     <script type="text/javascript" src="static/doctools.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Minitage - Last updated: Aug 28, 2012"
+          title="Search within Minitage - Last updated: Mar 29, 2013"
           href="static/opensearch.xml"/>
     <link rel="shortcut icon" href="static/favicon.ico"/>
     <link rel="author" title="About these documents" href="about.html" />
-    <link rel="top" title="Minitage - Last updated: Aug 28, 2012" href="#" />
-    <link rel="next" title="Why should i use minitage?" href="why.html" />
+    <link rel="top" title="Minitage - Last updated: Mar 29, 2013" href="#" />
+    <link rel="next" title="What is minitage" href="why.html" />
     <script src="static/jquery.min.js" type="text/javascript"></script>
     <script src="static/jquery.zrssfeed.min.js" type="text/javascript"></script>
 
@@ -40,9 +40,9 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="why.html" title="Why should i use minitage?"
+          <a href="why.html" title="What is minitage"
              accesskey="N">next</a> |</li>
-        <li><a href="#">Minitage - Last updated: Aug 28, 2012</a> &raquo;</li> 
+        <li><a href="#">Minitage - Last updated: Mar 29, 2013</a> &raquo;</li> 
       </ul>
     </div>
     <div class="document">
@@ -66,26 +66,41 @@
 <script type="text/javascript">$('#searchbox').show(0);</script>
 <h3><a href="#">Table Of Contents</a></h3>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="why.html">Why should i use minitage?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="about.html">Minitage, the meta-package manager</a></li>
-<li class="toctree-l1"><a class="reference internal" href="spec.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="why.html">What is minitage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spec.html">Minitage components explained</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation_prerequisite.html">System Prerequisites</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="usecases/index.html">Minitage in the daily use of a developer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation_new.html">Minitage Tool : installation, updates &amp; snapshots</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="paster/index.html">Minitage and paster templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usecases/index.html">Minitage usage</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="paster/index.html">Minitage and paster templates: projects &amp; instances</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="develop.html">Develop</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="about.html">Minitage, the origins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation_old.html">Installation, the old school way (obsolete &amp; unmaintained)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usecases/install25.html">Installation with a python 2.5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usecases/plone3.html">A plone3 project with relstorage (postgresql) and varnish2 support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usecases/deploying_a_cas_server.html">Install a project with a CAS server wired on an OpenLDAP backend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paster/archives.html">Paster archives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paster/projects/packaging_projects.html">The minitage buildout recipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paster/projects/packaging_projects.html#dependency-project">Dependency project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paster/projects/packaging_projects.html#python-based-projet">Python based projet</a></li>
 </ul>
 
         </div>
       </div>
   <script type="text/javascript">
+
+/*
   $(document).ready(function () {
       $('#zrssfeed-minitage-dependencies').rssfeed('https://github.com/minitage-dependencies.atom', {
           limit: 5
@@ -106,14 +121,16 @@
           limit: 5
       });
   }); 
+  */
   </script>
   <div class="documentwrapper">
+  <!-- 
     <div id="zrssfeed">
       <div id="zrssfeed-minitage"></div>
       <div id="zrssfeed-minitage-dependencies"></div>
       <div id="zrssfeed-minitage-eggs"></div>
       <div id="zrssfeed-kiorky"></div>
-    </div>   
+    </div>   -->
     <div class="bodywrapper">
       <div class="body">
         
@@ -124,23 +141,18 @@
 <p>Minitage is all about deployment and projects packaging</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="why.html">Why should i use minitage?</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="why.html#minitage-leitmotivs">Minitage leitmotivs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="why.html">What is minitage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="why.html#minitage-spirit">Minitage spirit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="why.html#a-professional-tool">A professional tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="why.html#pre-requisite-knowledge">Pre requisite knowledge</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="about.html">Minitage, the meta-package manager</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="about.html#purpose">Purpose</a></li>
-<li class="toctree-l2"><a class="reference internal" href="about.html#pre-requisite-knowledge">Pre requisite knowledge</a></li>
-<li class="toctree-l2"><a class="reference internal" href="about.html#variables-used-in-this-documentation">Variables used in this documentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="about.html#minitage-the-origins">Minitage, the origins</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="spec.html">Specifications</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="spec.html">Minitage components explained</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="spec.html#the-package-manager-in-7-points">The package manager in 7 points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spec.html#minitage-a-set-of-tools">Minitage a set of tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spec.html#the-installation-layout">The installation layout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="spec.html#the-minilays">The minilays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="spec.html#the-minibuilds">The minibuilds</a></li>
-<li class="toctree-l2"><a class="reference internal" href="spec.html#the-installation-layout">The installation layout</a></li>
 </ul>
 </li>
 </ul>
@@ -150,19 +162,39 @@
 <h2>How do i use it<a class="headerlink" href="#how-do-i-use-it" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation_prerequisite.html">System Prerequisites</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation_prerequisite.html#debian-ubuntu">Debian/Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation_prerequisite.html#freebsd">FreeBSD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation_prerequisite.html#gentoo">Gentoo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation_prerequisite.html#suze">Suze</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation_prerequisite.html#centos">Centos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation_prerequisite.html#fedora">Fedora</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation_prerequisite.html#macos-x">MacOS X</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="usecases/index.html">Minitage in the daily use of a developer</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="installation_new.html">Minitage Tool : installation, updates &amp; snapshots</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation_new.html#the-idea">The idea</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation_new.html#installing-minitage">Installing minitage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation_new.html#installing-a-project">Installing a project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation_new.html#upgrade-minitage-itself">Upgrade minitage itself</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation_new.html#make-a-snapshot">Make a snapshot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation_new.html#deploy-a-snapshot">Deploy a snapshot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation_new.html#launch-cgwb">Launch cgwb</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usecases/index.html">Minitage usage</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="usecases/using_minimerge.html">The minitage swiss knife, <strong>minimerge</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="usecases/begin_project.html">Beginning a project with minitage: The Initial Steps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usecases/maintain_project.html">minitagify an existing project</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usecases/maintain_project.html#porting-an-exising-buildout-based-project-to-be-a-good-minitage-citizen">Porting an exising buildout based project to be a good minitage citizen</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usecases/install25.html">Installation with a python 2.5</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usecases/plone3.html">A plone3 project with relstorage (postgresql) and varnish2 support</a></li>
-<li class="toctree-l2"><a class="reference internal" href="usecases/deploying_a_cas_server.html">Install a project with a CAS server wired on an OpenLDAP backend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usecases/maintain_project.html">minitagify an existing project or create a new empty minitage project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usecases/maintain_project.html#porting-manually-a-buildout-based-project">Porting <strong>MANUALLY</strong> a buildout based project</a></li>
 <li class="toctree-l2"><a class="reference internal" href="usecases/FAQ.html">FAQ</a></li>
 </ul>
 </li>
@@ -170,40 +202,17 @@
 </div>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="paster/index.html">Minitage and paster templates</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="paster/projects/index.html">Minitage and projects templates</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="paster/projects/index.html#paster-is-your-friend">paster is your friend</a></li>
-<li class="toctree-l3"><a class="reference internal" href="paster/projects/index.html#listing-the-available-templates">Listing the available templates</a></li>
-<li class="toctree-l3"><a class="reference internal" href="paster/projects/index.html#generating-a-minitage-project-from-a-paster-template">Generating a minitage project from a paster template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paster/index.html">Minitage and paster templates: projects &amp; instances</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="paster/index.html#two-kinds-of-templates">Two kinds of templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paster/index.html#paster-is-your-friend-cgwb-you-master">paster is your friend, cgwb you master</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paster/index.html#projects">Projects</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="paster/projects/index.html">Minitage and projects templates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paster/projects/index.html#available-projects">Available projects</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="paster/projects/index.html#available-projects">Available projects</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="paster/projects/packaging_projects.html">The minitage buildout recipes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="paster/projects/packaging_projects.html#dependency-project">Dependency project</a></li>
-<li class="toctree-l3"><a class="reference internal" href="paster/projects/packaging_projects.html#python-based-projet">Python based projet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="paster/projects/model_projects.html">Plone 2.5</a></li>
-<li class="toctree-l3"><a class="reference internal" href="paster/projects/model_projects.html#zope2">Zope2</a></li>
-<li class="toctree-l3"><a class="reference internal" href="paster/projects/model_projects.html#plone-3">Plone 3</a></li>
-<li class="toctree-l3"><a class="reference internal" href="paster/projects/model_projects.html#zope-3">Zope 3</a></li>
-<li class="toctree-l3"><a class="reference internal" href="paster/projects/model_projects.html#pylons-projects">Pylons projects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="paster/projects/model_projects.html#django-projects">Django projects</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="paster/instances/index.html">Minitage and instances</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="paster/instances/index.html#abstract">Abstract</a></li>
-<li class="toctree-l3"><a class="reference internal" href="paster/instances/index.html#basic-layout">Basic layout</a></li>
-<li class="toctree-l3"><a class="reference internal" href="paster/instances/index.html#listing-the-available-instances">Listing the available instances</a></li>
-<li class="toctree-l3"><a class="reference internal" href="paster/instances/index.html#installing-a-instance">Installing a instance</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="paster/instances/index.html#available-instances">Available instances</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="paster/instances/instances.html">minitage.instances.env</a></li>
-<li class="toctree-l3"><a class="reference internal" href="paster/instances/instances.html#minitage-instances-postgresql">minitage.instances.postgresql</a></li>
-<li class="toctree-l3"><a class="reference internal" href="paster/instances/instances.html#minitage-instances-varnish">minitage.instances.varnish</a></li>
-<li class="toctree-l3"><a class="reference internal" href="paster/instances/instances.html#minitage-instances-varnish2">minitage.instances.varnish2</a></li>
-<li class="toctree-l3"><a class="reference internal" href="paster/instances/instances.html#minitage-instances-paste-initd">minitage.instances.paste-initd</a></li>
-<li class="toctree-l3"><a class="reference internal" href="paster/instances/instances.html#minitage-instances-mysql">minitage.instances.mysql</a></li>
-<li class="toctree-l3"><a class="reference internal" href="paster/instances/instances.html#minitage-instances-cas">minitage.instances.cas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paster/index.html#instances">Instances</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="paster/instances/index.html">Minitage and instances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paster/instances/index.html#available-instances">Available instances</a></li>
 </ul>
 </li>
 </ul>
@@ -216,6 +225,22 @@
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="develop.html">Develop</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="doc-archives-not-maintained">
+<h2>Doc Archives (not maintained)<a class="headerlink" href="#doc-archives-not-maintained" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="about.html">Minitage, the origins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation_old.html">Installation, the old school way (obsolete &amp; unmaintained)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usecases/install25.html">Installation with a python 2.5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usecases/plone3.html">A plone3 project with relstorage (postgresql) and varnish2 support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usecases/deploying_a_cas_server.html">Install a project with a CAS server wired on an OpenLDAP backend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paster/archives.html">Paster archives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paster/projects/packaging_projects.html">The minitage buildout recipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paster/projects/packaging_projects.html#dependency-project">Dependency project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paster/projects/packaging_projects.html#python-based-projet">Python based projet</a></li>
 </ul>
 </div>
 </div>
@@ -233,14 +258,14 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="why.html" title="Why should i use minitage?"
+          <a href="why.html" title="What is minitage"
              >next</a> |</li>
-        <li><a href="#">Minitage - Last updated: Aug 28, 2012</a> &raquo;</li> 
+        <li><a href="#">Minitage - Last updated: Mar 29, 2013</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2008, Mathieu Pasquet.
-      Last updated on Aug 28, 2012.
+      Last updated on Mar 29, 2013.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
     </div>
   </body>

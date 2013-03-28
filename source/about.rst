@@ -1,31 +1,3 @@
-About
-######
-
-Purpose
-=======
-    - Minitage is a meta packages manager.
-    - It's goal is to integrate build systems / other package manager together to make them install in a 'well known' layout.
-    - In other terms, it install its stuff in 'prefix' and it targets the total isolation from the host system.
-    - Moreover, this tool will make you forget compilation and other crazy stuff that put your mind away from your real project needs.
-    - Another subsidiary goal is to standardize installations, and make development environments as similar as possible with production deployments
-    - With all the precedings targets achieved, minitage would be called a good ``industrialization tool`` :)
-
-Pre requisite knowledge
-=======================
-
- - Read carefully this documentation: http://plone.org/documentation/tutorial/buildout.
- - And this one can be good too: http://pypi.python.org/pypi/zc.buildout
- - It is essential for you to know the basics of buildout to use it.
- - It is not necessary for you to test it because you will do the practise part just after ;).
-
-Variables used in this documentation
-====================================
-
- - ``$project`` -> your project name
- - ``$bd`` -> buildout directory
- - ``$mt`` -> minitage root path
- - ``$url`` -> the url of your versioned project
-
 Minitage, the origins
 =======================
 
@@ -44,8 +16,8 @@ The Idea
 ---------
 
  - The idea is to write a light and simple package manager from scratch which will allow us to integrate various build systems.
- - What about shell scripts, buildout or makefiles interact together to assemble all the parts of our project parts?
- - To allow this, the approach is to share a common 'well known' layout to install things in minitage.
+ - What about shell scripts, buildout or makefiles interact together to assemble all the parts our project needs?
+ - To allow this, the approach is to share a common 'well known' layout to install things in minitage. Then the referencing packages can address each other easily as they respect the layout.
 
 Implementation goals
 ----------------------
@@ -61,4 +33,4 @@ Implementation goals
      - Linux
      - MacOSX but at least OSX Leopard is required. (it has worked, but not tested recently)
      - FreeBSD (it has worked, but not tested recently)
-
+ 

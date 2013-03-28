@@ -1,5 +1,5 @@
-Specifications
-################
+Minitage components explained
+##############################################
 
 The package manager in 7 points
 =================================
@@ -10,12 +10,187 @@ The package manager in 7 points
  - Integrates other build systems
  - Fetch from several methods: main are svn, http, ftp, Mercurial, Git and Bzr
  - Provide some system which allow us search for packages in alternate locations.
- - Install each part independently to the others. Follow the http rule (DO NOT SHARE)::
+ - Install each pdependency (software) independently to the others. Follow the http rule (DO NOT SHARE), then reference it in others thanks to the **well known layout**.
 
-     Independently is not a synonym of not using another dependency.
-     It s just to say that you can not install in the same /dependencies/foo for 2 different dependencies at the same time.
-     You must install each dependency separatly from the others and then reference in other packages.
-     Be warned that there is not sandbox mecanism for checks and it is not goiong to appear, minitage must be simple.
+
+Minitage a set of tools
+=======================
+
+    - **minimerge**: the "minitage" controller script
+    - **minitagetool.sh**: the "minitage for the common" helper script
+    - **minitagify**: a script to port projects to minitage
+    - **paster (minitage.paste)**: scaffolds collection to facilitate the use of minitage (create projects or instances inside it)
+    - **buildout recipes & buildout extensions**:
+        Those extensions & recipes knows the underlying mintiage environment & will load the adequat project settings like setting LDFLAGS, CFLAGS or PYTHONPATH.
+
+        - **minitage.recipe.scripts**:
+            Install python eggs & relevant scripts (``zc.recipe.egg`` alike)
+
+        - **minitage.recipe.egg**:
+            Install python eggs (without scripts)
+
+        - **minitage.recipe.cmmi**:
+            Generic recipe to install with "CMMI" steps (``zc.recipe.cmmi`` alike)
+
+        - **buildout.minitagificator**:
+            Wrap classical buildouts recipes into minitage relevate ones (zc.recipe.egg - >minitage.recipe.scripts), It can also load the minitage environment globally to the buildout run
+
+        - **minitage.recipe.du**:
+            Install packages directly in site packages
+
+        - **minitage.recipe.fetch**:
+            Download something, somewhere using minitage.fetchers (``hexagonit.recipe.download`` alike)
+
+
+
+The installation layout
+=========================
+
+Abstract
+----------
+::
+
+        minitagetool.sh
+        etc/
+             minimerge.cfg
+        bin/
+            minimerge
+            python
+        lib/
+            python-ver/
+                site-packages/
+                    minitage.core
+
+        downloads/
+
+        sources/
+            buildout.minitagificator/
+            minitage.core/
+            minitage.paste/
+            minitage.recipe/
+            minitage.recipe.cmmi/
+            minitage.recipe.common/
+            minitage.recipe.du/
+            minitage.recipe.egg/
+            minitage.recipe.fetch/
+            minitage.recipe.scripts/
+            minitage.shell/
+
+        dependencies/
+            dep1/
+                buildout.cfg
+                hooks/
+                patches/::
+                parts/
+                    part/
+                        bin/
+                        lib/
+                        include/
+
+        eggs/
+            cache/
+            projectn/
+                buildout.cfg
+                hooks/
+                patches/
+                parts/
+                    site-packages-2.4
+                    site-packages-2.5
+
+        django/
+             project1/
+             ...
+             projectn/
+        zope/
+             project1/
+             ...
+             projectn/
+
+        anotherCategory/
+            anotherProject/
+
+        minilays/
+            eggs/
+            dependencies/
+            instances/
+            meta/
+            samples/
+            anExternalMinilay/
+
+
+Layout explanation
+--------------------
+**minitagetool.sh**:
+    The minitage helper
+
+**bin/minimerge**:
+    The project Assembler
+
+**etc/minimerge.cfg**:
+    Minitage configuration file
+
+**downloads**:
+    Downloads folder
+
+**minilays/** : *dependencies* | *zope* | *django* | *eggs*
+    Those are MINILAYS. Minilays are similar to gentoo 's OVERLAYS. Or, be reference, to entries in your source.list on Debian/Ubuntu.
+    They contains minibuilds.
+    Those are the packages that our package manager deals with.
+    You can add search Directories which are not in ``minilays/`` by setting the "MINILAYS" environment variable.
+    ex:
+
+    .. sourcecode:: sh
+
+ 
+
+**sources/**:
+    minitage source code folders
+
+**dependencies/**:
+ - Libraries and applications like libpng, python-2.4 or readline.
+ - One dependency per directory.
+ - The installation prefix for each dependency is::
+
+            dependencies/dependency-name/parts/part
+
+**eggs/**:
+    They is two possibilities there:
+
+    - In a particular eggs/directory:
+
+        - Traditional distutilized python modules
+        - Python modules shipped is a non pythonish way (like libxml2)
+        - They must install a sub site-packages for each python version supported::
+
+            eggs/egg/
+                site-packages-2.4/
+                    module/__init__.py
+                site-packages-2.5/
+                    module/__init__.py
+                site-packages-2.6/
+                    module/__init__.py
+                site-packages-3.0/
+                    module/__init__.py
+
+
+    - Python eggyfiables modules
+        - They are installed in the "eggs-cache": **eggs/cache/**
+
+**django/**:
+    - Django projects.
+
+**zope/**:
+    - Zope/Plone projects which only install zope, plone and the needed products.
+    - Just think to add the needed site-packages in the project's extra-path so that buildout can find them!
+    - Do not use not packaged eggs parts there or BURN IN HELL!
+
+**misc/**:
+    - All that cannot be elsewhere
+
+**tg/**:
+    - Turbogears project
+       export MINILAYS="~/otherminibuildsdirectory"
+
 
 The minilays
 ==============
@@ -137,7 +312,7 @@ Exemple : the minibuilds/cyrus-sasl-2.1 minibuild::
     homepage=http://chuknorris.is.a.good/guy
     license=GPL
     # only for git atm (argument passed to git checkout -b %s --track)
-    scm_branch = master 
+    scm_branch = master
 
 You must place your minibuild in a minilay.
 
@@ -186,132 +361,4 @@ Specific options:
 
     * buildout_config:
           configuration file  to run
-
-
-
-The installation layout
-=========================
-
-Abstract
-----------
-::
-
-        etc/
-             minimerge.cfg
-        bin/
-            minimerge
-            python
-        lib/
-            python-ver/
-                site-packages/
-                    minitage.core
-
-        dependencies/
-            dep1/
-                buildout.cfg
-                hooks/
-                patches/::
-                parts/
-                    part/
-                        bin/
-                        lib/
-                        include/
-
-        eggs/
-            cache/
-            projectn/
-                buildout.cfg
-                hooks/
-                patches/
-                parts/
-                    site-packages-2.4
-                    site-packages-2.5
-
-        django/
-             project1/
-             ...
-             projectn/
-        zope/
-             project1/
-             ...
-             projectn/
-
-        anotherCategory/
-            anotherProject/
-
-        minilays/
-            eggs/
-            dependencies/
-            instances/
-            meta/
-            samples/
-            anExternalMinilay/
-
-
-Layout explanation
---------------------
-
-*bin/minimerge*:
-    - The project Assembler.
-
-*etc/minimerge.cfg*:
-    Minitage configuration file.
-
-*dependencies/*:
- - Libraries and applications like libpng, python-2.4 or readline.
- - One dependency per directory.
- - The installation prefix for each dependency is::
-
-            dependencies/dependency-name/parts/part
-
-*eggs/*:
-    They is two possibilities there:
-
-    - In a particular eggs/directory:
-
-        - Traditional distutilized python modules
-        - Python modules shipped is a non pythonish way (like libxml2)
-        - They must install a sub site-packages for each python version supported::
-
-            eggs/egg/
-                site-packages-2.4/
-                    module/__init__.py
-                site-packages-2.5/
-                    module/__init__.py
-                site-packages-2.6/
-                    module/__init__.py
-                site-packages-3.0/
-                    module/__init__.py
-
-
-    - Python eggyfiables modules
-        - They are installed in the "eggs-cache"
-            - eggs in release mode::
-
-                eggs/cache
-
-django/:
-    - Django projects.
-
-*zope/*:
-    - Zope/Plone projects which only install zope, plone and the needed products.
-    - Just think to add the needed site-packages in the project's extra-path so that buildout can find them!
-    - Do not use not packaged eggs parts there or BURN IN HELL!
-
-misc:/
-    - All that cannot be elsewhere
-
-tg/:
-    - Turbogears project
-
-*minilays/* : *dependencies* | *zope* | *django* | *eggs*
-    Those are MINILAYS. Minilays are similar to gentoo 's OVERLAYS. Or, be reference, to entries in your source.list on Debian/Ubuntu.
-    They contains minibuilds.
-    Those are the packages that our package manager deals with.
-    You can add search Directories which are not in ``minilays/`` by setting the "MINILAYS" environment variable.
-    ex:
-
-    .. sourcecode:: sh
-
-        export MINILAYS="~/otherminibuildsdirectory"
 

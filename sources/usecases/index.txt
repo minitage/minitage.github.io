@@ -1,4 +1,4 @@
-Minitage in the daily use of a developer
+Minitage usage
 #########################################
 
 Here are some examples and documentation to help you discover the wonderful world of minitage.
@@ -9,8 +9,5 @@ Here are some examples and documentation to help you discover the wonderful worl
     using_minimerge
     begin_project
     maintain_project
-    install25
-    plone3
-    deploying_a_cas_server
     FAQ
 

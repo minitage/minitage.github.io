@@ -1,19 +1,21 @@
-
-Why should i use minitage?
+What is minitage
 #######################################
 
 Is minitage for me : **Yes, it makes no doubt.**
 
-Minitage leitmotivs
--------------------
+Is it free: It is completly free (``GPL2``)!
 
-    * It makes deployments easy
-    * It enables you to have reproducible environments
-    * Industrialization is now possible
-    * Make it the hard way once, reproduce with just a command a dozens of identical environments.
-    * It save developers with compilation and configuration steps
-    * It save admins with crazy developers stuff
-    * It is completly free (``GPL2``)!
+Minitage spirit
+-------------------
+- Minitage is a meta packages manager:
+
+    * It's goal is to integrate build systems / other package manager together to make them install in a **well known layout**.
+    * It isolates your project & dependencies as much as possible from the host system
+    * This makes deployments easy, even if the first one can be tedious to assemble, idea is focused on the automation & reproducibility.
+    * This enables you to have industrialized & reproducible environments
+    * This will **save** developers **from manual** compilation and configuration steps from sysadmin world
+    * This will save admins from crazy developers stuff
+    * This can even deploy your software **totally offline**
 
 If you have some doubts about them, feel free to inform us on the bug tracker :)
 
@@ -21,13 +23,26 @@ A professional tool
 ----------------------
 It s a collection of tools used by professionals which tends to be well documented and tested.
 
-`Makina Corpus`_ use it as its primary mean to deploy websites and intranets.
+`Makina Corpus`_ use it as its primary tool to deploy python based websites and intranets.
 
 .. _`Makina Corpus`: http://www.makina-corpus.com
 
 Some public references:
 
-    * http://www.guerir.fr/ (Plone)
-    * http://www.bisonvert.net/ (Django + GIS)
-    * http://www.alfa-aci.com/ (Plone, LDAP)
+    * http://www.euronantes.com/fr
+    * http://mars.naturalsciences.be
+    * http://www.icsu.org
+    * http://www.makina-corpus.com
+
+
+
+Pre requisite knowledge
+-------------------------
+
+ - Read carefully this documentation: http://plone.org/documentation/tutorial/buildout.
+ - And this one can be good too: http://pypi.python.org/pypi/zc.buildout
+ - It is essential for you to know the basics of buildout to use it.
+ - It is not necessary for you to test it because you will do the practise part just after ;).
+
+
 

@@ -1,5 +1,5 @@
-minitagify an existing project
-================================
+minitagify an existing project or create a new empty minitage project
+=============================================================================================
 You can use the minitagify helper to generate some configs making automaticly:
 
 
@@ -18,7 +18,6 @@ If you project layout is something like::
     └── foo
         └── bar
 
-
 You want it to be installed a a zope project, do the following::
 
     cd ~/minitage
@@ -26,18 +25,42 @@ You want it to be installed a a zope project, do the following::
     mkdir -p zope
     SCM clone URL zope/yourproject
     minitagify -d zope/yourproject
-    . Wraping ~/minitage/zope/yourpoject/otherbuildout.cfg (minitage27.cfg) in ~/minitage/zope/yourpoject/minitage.otherbuildout.cfg->~/minitage/zope/yourpoject/.minitagecfg/otherbuildout.cfg
-    . Wraping ~/minitage/zope/yourpoject/buildout.cfg (minitage27.cfg) in ~/minitage/zope/yourpoject/minitage.buildout.cfg->~/minitage/zope/yourpoject/.minitagecfg/buildout.cfg
-    . Wraping ~/minitage/zope/yourpoject/base.cfg (minitage27.cfg) in ~/minitage/zope/yourpoject/minitage.base.cfg->~/minitage/zope/yourpoject/.minitagecfg/base.cfg
-    . Wroted minibuild yourpoject-otherbuildout in ~/minitage/minilays/05d75df848d13853578095d08f5c7253a/yourpoject-otherbuildout
-    . Wroted minibuild yourpoject-buildout in ~/minitage/minilays/05d75df848d13853578095d08f5c7253a/yourpoject-buildout
-    . Wroted minibuild yourpoject-base in ~/minitage/minilays/05d75df848d13853578095d08f5c7253a/yourpoject-base
-    . Wroted minibuild yourpoject in ~/minitage/minilays/05d75df848d13853578095d08f5c7253a/yourpoject
+     Wraping /minitage/zope/foo/otherbuildout.cfg (minitage27.cfg) in /minitage/zope/foo/minitage.otherbuildout.cfg->/minitage/zope/foo/.minitagecfg/otherbuildout.cfg
+     Wraping /minitage/zope/foo/buildout.cfg (minitage27.cfg) in /minitage/zope/foo/minitage.buildout.cfg->/minitage/zope/foo/.minitagecfg/buildout.cfg
+     Wraping /minitage/zope/foo/base.cfg (minitage27.cfg) in /minitage/zope/foo/minitage.base.cfg->/minitage/zope/foo/.minitagecfg/base.cfg
+     Wroted minibuild foo-base in /minitage/minilays/0-foo_8c3b59e78bfffa92309ff5bf96b21f88/foo-base
+     Wroted minibuild foo-otherbuildout in /minitage/minilays/0-foo_8c3b59e78bfffa92309ff5bf96b21f88/foo-otherbuildout
+     Wroted minibuild foo-buildout in /minitage/minilays/0-foo_8c3b59e78bfffa92309ff5bf96b21f88/foo-buildout
+     Wroted minibuild foo in /minitage/minilays/0-foo_8c3b59e78bfffa92309ff5bf96b21f88/foo
+     Installed minilay /minitage/zope/zope/foo/.minitagecfg/0-foo_8c3b59e78bfffa92309ff5bf96b21f88 by symlink: /minitage/minilays/0-foo_8c3b59e78bfffa92309ff5bf96b21f8
+
+You can then add the generated **.minitagecfg** folder to your SCM::
+
+    git add .minitagecfg
+
+
+The content of **.minitagecfg** explained::
+
+    .minitagecfg/
+    ├── 0-foo_8c3b59e78bfffa92309ff5bf96b21f88 -> the minilay
+    │   ├── foo
+    │   ├── foo-base
+    │   ├── foo-buildout
+    │   └── foo-otherbuildout
+    ├── base.cfg -> wrapper to base
+    ├── b.sh
+    ├── buildout.cfg -> wrapper to base 
+    ├── minitage26.cfg -> wrapper to use py26
+    ├── minitage27.cfg -> wrapper to use py27
+    ├── minitage.cfg -> minitage integration base variables
+    └── otherbuildout.cf -> wrapper to otherbuildout.cfg
+
 
 You will then have to use:
 
-        - minitage.buildout.cfg for buildout.cfg
-        - minitage.otherbuildout.cfg for otherbuildout.cfg
+    - minitage.base.cfg for base.cfg
+    - minitage.buildout.cfg for buildout.cfg
+    - minitage.otherbuildout.cfg for otherbuildout.cfg
 
 like::
 
@@ -46,14 +69,10 @@ like::
     bin/buildout -vvvvvvvNc minitage.buildout.cfg
     bin/buildout -vvvvvvvNc minitage.otherbuildout.cfg
 
+If no buildouts are present it will generate a base plone addon (**plonetest**) buildout infratructure
 
-If no buildouts are present it will generate a base plone addon buildout infratructure
-
-
- 
-
-Porting an exising buildout based project to be a good minitage citizen
-============================================================================
+Porting **MANUALLY** a buildout based project
+====================================================================================
 
 Althought you are not obliged to use minitage features, we would recommend to follow the next steps
 
@@ -88,17 +107,18 @@ Althought you are not obliged to use minitage features, we would recommend to fo
 
 Some important things to note in this configuration:
 
-        * Use the common egg cache to drop your built eggs::
+    * Use the common egg cache to drop your built eggs::
 
                 [buildout]
                 eggs-directory=${buildout:directory}/../../eggs/cache
 
-        * Replace recipes with minitage ones if the equivalent exists with buildout.minitagificator
+
+    * Replace recipes with minitage ones if the equivalent exists with ``buildout.minitagificator``
 
             * ``zc.recipe.egg``, ``zc.recipe.egg:scripts`` -> ``minitage.recipe:scripts``
             * ``something:cmmi`` -> ``minitage.recipe.cmmi``
 
-        * Read http://pypi.python.org/pypi/minitage.recipe to understand what do the recipes
+    * Read http://pypi.python.org/pypi/minitage.recipe to understand what do the recipes
 
     * Make a minibuild pointing to your project::
 

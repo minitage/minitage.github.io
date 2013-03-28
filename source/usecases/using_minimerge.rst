@@ -38,7 +38,7 @@ Build only dependencies
 
     minimerge --only-dependencies package
 
-Update your minimlays
+Update your minilays
 --------------------------
 ::
 
@@ -61,7 +61,7 @@ Update the package codebase
 That will run the update method of what you have used to checkout your
 package::
 
-    minimerge -U package
+    minimerge -NU package
 
 
 Run again the installation of a package
@@ -69,13 +69,13 @@ Run again the installation of a package
 That will run the update method of what you have used to checkout your
 package::
 
-    minimerge -u package
+    minimerge package
 
 Unconditionnally install or reinstall a package
 ------------------------------------------------------------
 ::
 
-    minimerge -R package
+    minimerge -NR package
 
 
 Note
@@ -98,26 +98,20 @@ Behaviour notes
 
         * Just run the buildout::
 
-            minimerge -NUu package
-            or
-            minimerge -Nu package
-
-        * Remove the .installed.cfg and run buildout::
-
-            minimerge  -NRU package
+            minimerge  -NRuU package # up
             minimerge  -NR package
 
 Relaunch an interrupted minitage
 ---------------------------------------
 ::
 
-            minimerge -u mypackage
+            minimerge  mypackage
 
 Relaunch a failed installation exactly where it stopped
 ------------------------------------------------------------
 ::
 
-            minimerge -uj myfailedpackage package
+            minimerge -j myfailedpackage package
 
 
 

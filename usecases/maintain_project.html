@@ -6,13 +6,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>minitagify an existing project &mdash; Minitage - Last updated: Aug 28, 2012</title>
+    <title>minitagify an existing project or create a new empty minitage project &mdash; Minitage - Last updated: Mar 29, 2013</title>
     <link rel="stylesheet" href="../static/custom.css" type="text/css" />
     <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     'Last updated: Aug 28, 2012',
+        VERSION:     'Last updated: Mar 29, 2013',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -22,13 +22,13 @@
     <script type="text/javascript" src="../static/underscore.js"></script>
     <script type="text/javascript" src="../static/doctools.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within Minitage - Last updated: Aug 28, 2012"
+          title="Search within Minitage - Last updated: Mar 29, 2013"
           href="../static/opensearch.xml"/>
     <link rel="shortcut icon" href="../static/favicon.ico"/>
     <link rel="author" title="About these documents" href="../about.html" />
-    <link rel="top" title="Minitage - Last updated: Aug 28, 2012" href="../index.html" />
-    <link rel="up" title="Minitage in the daily use of a developer" href="index.html" />
-    <link rel="next" title="Installation with a python 2.5" href="install25.html" />
+    <link rel="top" title="Minitage - Last updated: Mar 29, 2013" href="../index.html" />
+    <link rel="up" title="Minitage usage" href="index.html" />
+    <link rel="next" title="FAQ" href="FAQ.html" />
     <link rel="prev" title="Beginning a project with minitage: The Initial Steps" href="begin_project.html" />
     <script src="static/jquery.min.js" type="text/javascript"></script>
     <script src="static/jquery.zrssfeed.min.js" type="text/javascript"></script>
@@ -42,13 +42,13 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="install25.html" title="Installation with a python 2.5"
+          <a href="FAQ.html" title="FAQ"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="begin_project.html" title="Beginning a project with minitage: The Initial Steps"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">Minitage - Last updated: Aug 28, 2012</a> &raquo;</li>
-          <li><a href="index.html" accesskey="U">Minitage in the daily use of a developer</a> &raquo;</li> 
+        <li><a href="../index.html">Minitage - Last updated: Mar 29, 2013</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Minitage usage</a> &raquo;</li> 
       </ul>
     </div>
     <div class="document">
@@ -72,36 +72,48 @@
 <script type="text/javascript">$('#searchbox').show(0);</script>
 <h3><a href="../index.html">Table Of Contents</a></h3>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../why.html">Why should i use minitage?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../about.html">Minitage, the meta-package manager</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../spec.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../why.html">What is minitage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spec.html">Minitage components explained</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation_prerequisite.html">System Prerequisites</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation_new.html">Minitage Tool : installation, updates &amp; snapshots</a></li>
 </ul>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Minitage in the daily use of a developer</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Minitage usage</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="using_minimerge.html">The minitage swiss knife, <strong>minimerge</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="begin_project.html">Beginning a project with minitage: The Initial Steps</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">minitagify an existing project</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#porting-an-exising-buildout-based-project-to-be-a-good-minitage-citizen">Porting an exising buildout based project to be a good minitage citizen</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install25.html">Installation with a python 2.5</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plone3.html">A plone3 project with relstorage (postgresql) and varnish2 support</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deploying_a_cas_server.html">Install a project with a CAS server wired on an OpenLDAP backend</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">minitagify an existing project or create a new empty minitage project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#porting-manually-a-buildout-based-project">Porting <strong>MANUALLY</strong> a buildout based project</a></li>
 <li class="toctree-l2"><a class="reference internal" href="FAQ.html">FAQ</a></li>
 </ul>
 </li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../paster/index.html">Minitage and paster templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../paster/index.html">Minitage and paster templates: projects &amp; instances</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../develop.html">Develop</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">Minitage, the origins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation_old.html">Installation, the old school way (obsolete &amp; unmaintained)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install25.html">Installation with a python 2.5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plone3.html">A plone3 project with relstorage (postgresql) and varnish2 support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploying_a_cas_server.html">Install a project with a CAS server wired on an OpenLDAP backend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../paster/archives.html">Paster archives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../paster/projects/packaging_projects.html">The minitage buildout recipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../paster/projects/packaging_projects.html#dependency-project">Dependency project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../paster/projects/packaging_projects.html#python-based-projet">Python based projet</a></li>
 </ul>
 
         </div>
       </div>
   <script type="text/javascript">
+
+/*
   $(document).ready(function () {
       $('#zrssfeed-minitage-dependencies').rssfeed('https://github.com/minitage-dependencies.atom', {
           limit: 5
@@ -122,19 +134,21 @@
           limit: 5
       });
   }); 
+  */
   </script>
   <div class="documentwrapper">
+  <!-- 
     <div id="zrssfeed">
       <div id="zrssfeed-minitage"></div>
       <div id="zrssfeed-minitage-dependencies"></div>
       <div id="zrssfeed-minitage-eggs"></div>
       <div id="zrssfeed-kiorky"></div>
-    </div>   
+    </div>   -->
     <div class="bodywrapper">
       <div class="body">
         
-  <div class="section" id="minitagify-an-existing-project">
-<h1>minitagify an existing project<a class="headerlink" href="#minitagify-an-existing-project" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="minitagify-an-existing-project-or-create-a-new-empty-minitage-project">
+<h1>minitagify an existing project or create a new empty minitage project<a class="headerlink" href="#minitagify-an-existing-project-or-create-a-new-empty-minitage-project" title="Permalink to this headline">¶</a></h1>
 <p>You can use the minitagify helper to generate some configs making automaticly:</p>
 <blockquote>
 <ul class="simple">
@@ -157,17 +171,37 @@
 mkdir -p zope
 SCM clone URL zope/yourproject
 minitagify -d zope/yourproject
-. Wraping ~/minitage/zope/yourpoject/otherbuildout.cfg (minitage27.cfg) in ~/minitage/zope/yourpoject/minitage.otherbuildout.cfg-&gt;~/minitage/zope/yourpoject/.minitagecfg/otherbuildout.cfg
-. Wraping ~/minitage/zope/yourpoject/buildout.cfg (minitage27.cfg) in ~/minitage/zope/yourpoject/minitage.buildout.cfg-&gt;~/minitage/zope/yourpoject/.minitagecfg/buildout.cfg
-. Wraping ~/minitage/zope/yourpoject/base.cfg (minitage27.cfg) in ~/minitage/zope/yourpoject/minitage.base.cfg-&gt;~/minitage/zope/yourpoject/.minitagecfg/base.cfg
-. Wroted minibuild yourpoject-otherbuildout in ~/minitage/minilays/05d75df848d13853578095d08f5c7253a/yourpoject-otherbuildout
-. Wroted minibuild yourpoject-buildout in ~/minitage/minilays/05d75df848d13853578095d08f5c7253a/yourpoject-buildout
-. Wroted minibuild yourpoject-base in ~/minitage/minilays/05d75df848d13853578095d08f5c7253a/yourpoject-base
-. Wroted minibuild yourpoject in ~/minitage/minilays/05d75df848d13853578095d08f5c7253a/yourpoject</pre>
+ Wraping /minitage/zope/foo/otherbuildout.cfg (minitage27.cfg) in /minitage/zope/foo/minitage.otherbuildout.cfg-&gt;/minitage/zope/foo/.minitagecfg/otherbuildout.cfg
+ Wraping /minitage/zope/foo/buildout.cfg (minitage27.cfg) in /minitage/zope/foo/minitage.buildout.cfg-&gt;/minitage/zope/foo/.minitagecfg/buildout.cfg
+ Wraping /minitage/zope/foo/base.cfg (minitage27.cfg) in /minitage/zope/foo/minitage.base.cfg-&gt;/minitage/zope/foo/.minitagecfg/base.cfg
+ Wroted minibuild foo-base in /minitage/minilays/0-foo_8c3b59e78bfffa92309ff5bf96b21f88/foo-base
+ Wroted minibuild foo-otherbuildout in /minitage/minilays/0-foo_8c3b59e78bfffa92309ff5bf96b21f88/foo-otherbuildout
+ Wroted minibuild foo-buildout in /minitage/minilays/0-foo_8c3b59e78bfffa92309ff5bf96b21f88/foo-buildout
+ Wroted minibuild foo in /minitage/minilays/0-foo_8c3b59e78bfffa92309ff5bf96b21f88/foo
+ Installed minilay /minitage/zope/zope/foo/.minitagecfg/0-foo_8c3b59e78bfffa92309ff5bf96b21f88 by symlink: /minitage/minilays/0-foo_8c3b59e78bfffa92309ff5bf96b21f8</pre>
+</div>
+<p>You can then add the generated <strong>.minitagecfg</strong> folder to your SCM:</p>
+<div class="highlight-python"><pre>git add .minitagecfg</pre>
+</div>
+<p>The content of <strong>.minitagecfg</strong> explained:</p>
+<div class="highlight-python"><pre>.minitagecfg/
+├── 0-foo_8c3b59e78bfffa92309ff5bf96b21f88 -&gt; the minilay
+│   ├── foo
+│   ├── foo-base
+│   ├── foo-buildout
+│   └── foo-otherbuildout
+├── base.cfg -&gt; wrapper to base
+├── b.sh
+├── buildout.cfg -&gt; wrapper to base
+├── minitage26.cfg -&gt; wrapper to use py26
+├── minitage27.cfg -&gt; wrapper to use py27
+├── minitage.cfg -&gt; minitage integration base variables
+└── otherbuildout.cf -&gt; wrapper to otherbuildout.cfg</pre>
 </div>
 <p>You will then have to use:</p>
 <blockquote>
 <ul class="simple">
+<li>minitage.base.cfg for base.cfg</li>
 <li>minitage.buildout.cfg for buildout.cfg</li>
 <li>minitage.otherbuildout.cfg for otherbuildout.cfg</li>
 </ul>
@@ -178,10 +212,10 @@ python bootstrap.py
 bin/buildout -vvvvvvvNc minitage.buildout.cfg
 bin/buildout -vvvvvvvNc minitage.otherbuildout.cfg</pre>
 </div>
-<p>If no buildouts are present it will generate a base plone addon buildout infratructure</p>
+<p>If no buildouts are present it will generate a base plone addon (<strong>plonetest</strong>) buildout infratructure</p>
 </div>
-<div class="section" id="porting-an-exising-buildout-based-project-to-be-a-good-minitage-citizen">
-<h1>Porting an exising buildout based project to be a good minitage citizen<a class="headerlink" href="#porting-an-exising-buildout-based-project-to-be-a-good-minitage-citizen" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="porting-manually-a-buildout-based-project">
+<h1>Porting <strong>MANUALLY</strong> a buildout based project<a class="headerlink" href="#porting-manually-a-buildout-based-project" title="Permalink to this headline">¶</a></h1>
 <p>Althought you are not obliged to use minitage features, we would recommend to follow the next steps</p>
 <blockquote>
 <ul class="simple">
@@ -214,14 +248,13 @@ python = python2.6</pre>
 </div>
 <p>Some important things to note in this configuration:</p>
 <blockquote>
-<blockquote>
 <ul>
 <li><p class="first">Use the common egg cache to drop your built eggs:</p>
 <div class="highlight-python"><pre>[buildout]
 eggs-directory=${buildout:directory}/../../eggs/cache</pre>
 </div>
 </li>
-<li><p class="first">Replace recipes with minitage ones if the equivalent exists with buildout.minitagificator</p>
+<li><p class="first">Replace recipes with minitage ones if the equivalent exists with <tt class="docutils literal"><span class="pre">buildout.minitagificator</span></tt></p>
 <blockquote>
 <ul class="simple">
 <li><tt class="docutils literal"><span class="pre">zc.recipe.egg</span></tt>, <tt class="docutils literal"><span class="pre">zc.recipe.egg:scripts</span></tt> -&gt; <tt class="docutils literal"><span class="pre">minitage.recipe:scripts</span></tt></li>
@@ -231,9 +264,6 @@ eggs-directory=${buildout:directory}/../../eggs/cache</pre>
 </li>
 <li><p class="first">Read <a class="reference external" href="http://pypi.python.org/pypi/minitage.recipe">http://pypi.python.org/pypi/minitage.recipe</a> to understand what do the recipes</p>
 </li>
-</ul>
-</blockquote>
-<ul>
 <li><p class="first">Make a minibuild pointing to your project:</p>
 <div class="highlight-python"><pre>[minibuild]
 dependencies=openssl-1 libxml2-2.6 libxslt-1.1 zlib-1.2  py-libxml2-2.6 py-libxslt-1.1 python-2.6 ...
@@ -263,18 +293,18 @@ description=something</pre>
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="install25.html" title="Installation with a python 2.5"
+          <a href="FAQ.html" title="FAQ"
              >next</a> |</li>
         <li class="right" >
           <a href="begin_project.html" title="Beginning a project with minitage: The Initial Steps"
              >previous</a> |</li>
-        <li><a href="../index.html">Minitage - Last updated: Aug 28, 2012</a> &raquo;</li>
-          <li><a href="index.html" >Minitage in the daily use of a developer</a> &raquo;</li> 
+        <li><a href="../index.html">Minitage - Last updated: Mar 29, 2013</a> &raquo;</li>
+          <li><a href="index.html" >Minitage usage</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2008, Mathieu Pasquet.
-      Last updated on Aug 28, 2012.
+      Last updated on Mar 29, 2013.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
     </div>
   </body>

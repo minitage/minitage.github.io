@@ -14,16 +14,20 @@ Minitage is all about deployment and projects packaging
    :maxdepth: 2
 
    why
-   Minitage, the meta-package manager <about>
    spec
 
 How do i use it
 =================
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
-   installation
+   installation_prerequisite
+
+.. toctree::
+   :maxdepth: 2 
+
+   installation_new
 
 .. toctree::
    :maxdepth: 2
@@ -41,6 +45,20 @@ How can i contribute to its development
    :maxdepth: 2
 
    develop
+
+Doc Archives (not maintained)
+====================================
+.. toctree::
+   :maxdepth: 1
+
+   about.rst
+   installation_old
+   usecases/install25
+   usecases/plone3
+   usecases/deploying_a_cas_server
+   paster/archives.rst
+   paster/projects/packaging_projects
+
 
 .. Indices and tables
 .. ==================

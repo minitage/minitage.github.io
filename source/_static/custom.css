@@ -27,7 +27,7 @@ div.section > div.admonition {
 }
 
 div.bodywrapper {
-    margin: 0 300px 0 230px;
+    margin: 0 0px 0 230px;
 }
 div.sphinxsidebar {
     margin-left: 0;
@@ -35,7 +35,6 @@ div.sphinxsidebar {
 div.documentwrapper {
     float: none;
 }
-
 div.related {
     background: #329FD7;
 }

@@ -1,0 +1,215 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Using minimerge &mdash; Minitage - Last updated: Mar 28, 2013</title>
+    <link rel="stylesheet" href="static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     'Last updated: Mar 28, 2013',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="static/jquery.js"></script>
+    <script type="text/javascript" src="static/underscore.js"></script>
+    <script type="text/javascript" src="static/doctools.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Minitage - Last updated: Mar 28, 2013"
+          href="static/opensearch.xml"/>
+    <link rel="shortcut icon" href="static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="top" title="Minitage - Last updated: Mar 28, 2013" href="index.html" />
+    <link rel="next" title="Installation, the old school way (obsolete &amp; unmaintained)" href="installation_old.html" />
+    <link rel="prev" title="Minitage installation, updates &amp; snapshots" href="installation_new.html" />
+    <script src="static/jquery.min.js" type="text/javascript"></script>
+    <script src="static/jquery.zrssfeed.min.js" type="text/javascript"></script>
+
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="installation_old.html" title="Installation, the old school way (obsolete &amp; unmaintained)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="installation_new.html" title="Minitage installation, updates &amp; snapshots"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Minitage - Last updated: Mar 28, 2013</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="document">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="static/logo.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+<h3><a href="index.html">Table Of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="why.html">Why should i use minitage?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">Minitage, the meta-package manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spec.html">Specifications</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation_prerequisite.html">System Prerequsites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation_new.html">Minitage installation, updates &amp; snapshots</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Using minimerge</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usecases/index.html">Minitage usage</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="paster/index.html">Minitage and paster templates</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="develop.html">Develop</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation_prerequisite.html">System Prerequsites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation_new.html">Minitage installation, updates &amp; snapshots</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Using minimerge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation_old.html">Installation, the old school way (obsolete &amp; unmaintained)</a></li>
+</ul>
+
+        </div>
+      </div>
+  <script type="text/javascript">
+  $(document).ready(function () {
+      $('#zrssfeed-minitage-dependencies').rssfeed('https://github.com/minitage-dependencies.atom', {
+          limit: 5
+      });
+  });
+  $(document).ready(function () {
+      $('#zrssfeed-minitage-eggs').rssfeed('https://github.com/minitage-eggs.atom', {
+          limit: 5
+      });
+  });
+  $(document).ready(function () {
+      $('#zrssfeed-minitage').rssfeed('https://github.com/minitage.atom', {
+          limit: 5
+      });
+  });
+  $(document).ready(function () {
+      $('#zrssfeed-kiorky').rssfeed('https://github.com/kiorky.atom', {
+          limit: 5
+      });
+  }); 
+  </script>
+  <div class="documentwrapper">
+    <div id="zrssfeed">
+      <div id="zrssfeed-minitage"></div>
+      <div id="zrssfeed-minitage-dependencies"></div>
+      <div id="zrssfeed-minitage-eggs"></div>
+      <div id="zrssfeed-kiorky"></div>
+    </div>   
+    <div class="bodywrapper">
+      <div class="body">
+        
+  <div class="section" id="using-minimerge">
+<h1>Using minimerge<a class="headerlink" href="#using-minimerge" title="Permalink to this headline">¶</a></h1>
+<p>Minimerge is the main minitage tool, this script will control the underlying minitage environment.</p>
+<p>Those are usage samples...
+You have not to run that if you do not need to ;)</p>
+<div class="section" id="install-a-custom-minilay">
+<h2>Install a custom minilay<a class="headerlink" href="#install-a-custom-minilay" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div class="highlight-sh"><div class="highlight"><pre><span class="c"># get the project minilay</span>
+<span class="c"># minitage is aware of the MINILAYS environnment variable, you can use it to specify space separated minlays</span>
+scm CHECKOUT  https://subversion.foo.net/YOURPROJECT/minilay/trunk <span class="nv">$prefix</span>/minilays/YOURPROJECTMINILAY
+</pre></div>
+</div>
+</blockquote>
+</div>
+<div class="section" id="install-a-minibuild-package-python-xxx">
+<h2>Install a minibuild/package (python-xxx)<a class="headerlink" href="#install-a-minibuild-package-python-xxx" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div class="highlight-sh"><div class="highlight"><pre><span class="nb">source</span> <span class="nv">$prefix</span>/bin/activate
+minimerge python-xxx
+</pre></div>
+</div>
+</blockquote>
+</div>
+<div class="section" id="make-the-minimerge-dance">
+<h2>Make the minimerge dance<a class="headerlink" href="#make-the-minimerge-dance" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div class="highlight-sh"><div class="highlight"><pre><span class="c"># get the project minilay</span>
+<span class="c"># minitage is aware of the MINILAYS environnment variable, you can use it to specify space separated minlays</span>
+scm CHECKOUT  https://subversion.foo.net/YOURPROJECT/minilay/trunk <span class="nv">$prefix</span>/minilays/YOURPROJECTMINILAY
+<span class="c"># minimerging it</span>
+<span class="nb">source</span> <span class="nv">$prefix</span>/bin/activate
+minimerge project
+</pre></div>
+</div>
+</blockquote>
+</div>
+<div class="section" id="extra-options-and-usage">
+<h2>Extra options and usage<a class="headerlink" href="#extra-options-and-usage" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div class="highlight-sh"><div class="highlight"><pre><span class="nb">source</span> <span class="nv">$prefix</span>/bin/activate
+minimerge  --help
+</pre></div>
+</div>
+</blockquote>
+<p>Principal switches:</p>
+<blockquote>
+<ul class="simple">
+<li><strong>-NE</strong>: generate a project &#8221;.env&#8221; file in <tt class="docutils literal"><span class="pre">sys/share/minitage/minitage.env</span></tt> to source and help to integrate with minitage</li>
+<li><strong>-o</strong>: offline mode</li>
+<li><strong>-NRv &#8211;nofetch</strong>: inconditionnal reinstall a package <strong>without</strong> its dependencies &amp; do not refetch/update it</li>
+<li><strong>-F</strong>: only fetch sources packages (the packages as in &#8221;.deb&#8221; and not the real targeted source.</li>
+</ul>
+</blockquote>
+</div>
+</div>
+
+
+      </div>
+      <div class="clearer"></div>
+    </div> 
+  </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="installation_old.html" title="Installation, the old school way (obsolete &amp; unmaintained)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="installation_new.html" title="Minitage installation, updates &amp; snapshots"
+             >previous</a> |</li>
+        <li><a href="index.html">Minitage - Last updated: Mar 28, 2013</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2008, Mathieu Pasquet.
+      Last updated on Mar 28, 2013.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>
