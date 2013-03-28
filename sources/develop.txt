@@ -17,7 +17,11 @@ Develop
 .. |makinacom| image:: http://depot.makina-corpus.org/public/logo.gif
 .. _makinacom:  http://www.makina-corpus.com
 
-* Minitage is,supported by  |makinacom|_ 
+Credits
+############
+* Minitage is supported by and largelly founded by:
+
+    - |makinacom|_
 
 .. _`git repositories`: https://git.minitage.org
 .. _gitweb: https://gitweb.minitage.org
