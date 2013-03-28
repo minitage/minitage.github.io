@@ -13,6 +13,15 @@ Develop
 * We host the eggs on `github`_ and on `Pypi package index`_
 
 
+* Supported by |makinacom|_
+
+.. |makinacom| image:: http://depot.makina-corpus.org/public/logo.gif
+.. _makinacom:  http://www.makina-corpus.com
+
+
+
+
+Minitage is,supported by `Makina Corpus <http://www.makina-corpus.com>`_
 
 .. _`git repositories`: https://git.minitage.org
 .. _gitweb: https://gitweb.minitage.org

@@ -33,7 +33,6 @@ You need to be online to bootstrap with this script.
 
 In the other hand, to use offline, have ``./minitage/downloads``  feeded with neccessary archives.
 
-
 .. code-block:: sh
 
     mkdir minitage
