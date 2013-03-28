@@ -23,9 +23,7 @@ A professional tool
 ----------------------
 It s a collection of tools used by professionals which tends to be well documented and tested.
 
-`Makina Corpus`_ use it as its primary tool to deploy python based websites and intranets.
-
-.. _`Makina Corpus`: http://www.makina-corpus.com
+* |makinacom|_  use it as its primary tool to deploy python based websites and intranets.
 
 Some public references:
 
@@ -46,3 +44,5 @@ Pre requisite knowledge
 
 
 
+.. |makinacom| image:: http://depot.makina-corpus.org/public/logo.gif
+.. _makinacom:  http://www.makina-corpus.com 
