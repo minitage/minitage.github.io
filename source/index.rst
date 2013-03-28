@@ -25,7 +25,7 @@ How do i use it
    installation_prerequisite
 
 .. toctree::
-   :maxdepth: 2 
+   :maxdepth: 2
 
    installation_new
 

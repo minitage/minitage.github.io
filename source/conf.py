@@ -44,7 +44,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'Minitage'
-copyright = '2008, Mathieu Pasquet'
+copyright = '2008 - 2013, Mathieu Le Marec - Pasquet'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
