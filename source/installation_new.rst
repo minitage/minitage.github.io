@@ -41,6 +41,37 @@ In the other hand, to use offline, have ``./minitage/downloads``  feeded with ne
     chmod +x minitagetool.sh
     ./minitagetool.sh bootstrap # take a coffee...
 
+Downloads Errors
+==================
+If you see such a traceback, just relaunch the issued command to see if it was a temporary download problem
+::
+
+    minitage.recipe: Cache download http://prdownloads.sourceforge.net/libpng/libpng-1.5.9.tar.gz?download as /home/user/.buildout/downloads/minitage
+    minitage.recipe: Downloading http://prdownloads.sourceforge.net/libpng/libpng-1.5.9.tar.gz?download in /home/user/.buildout/downloads/minitage/libpng-1.5.9.tar.gz
+    While:
+      Installing part.
+
+    An internal error occured due to a bug in either zc.buildout or in a
+    recipe being used:
+    Traceback (most recent call last):
+      File "/usr/home/user/minitage/eggs/cache/zc.buildout-2.1.0-py2.7.egg/zc/buildout/buildout.py", line 1923, in main
+        getattr(buildout, command)(args)
+      File "/usr/home/user/minitage/eggs/cache/zc.buildout-2.1.0-py2.7.egg/zc/buildout/buildout.py", line 604, in install
+        installed_files = self[part]._call(recipe.install)
+      File "/usr/home/user/minitage/sources/buildout.minitagificator/src/buildout/minitagificator/minitagificator.py", line 243, in _call
+        ret = Options._old_call(self, f)
+      File "/usr/home/user/minitage/eggs/cache/zc.buildout-2.1.0-py2.7.egg/zc/buildout/buildout.py", line 1358, in _call
+        return f()
+      File "/usr/home/user/minitage/sources/minitage.recipe.cmmi/src/minitage/recipe/cmmi/cmmi.py", line 216, in install
+        fname = self._download(md5=self.md5, cache=True)
+      File "/usr/home/user/minitage/sources/minitage.recipe.common/src/minitage/recipe/common/common.py", line 943, in _download
+        use_cache=use_cache
+      File "/usr/home/user/minitage/sources/minitage.core/src/minitage/core/common.py", line 364, in get_from_cache
+        raise MinimergeError(msg)
+    MinimergeError: Failed download for http://prdownloads.sourceforge.net/libpng/libpng-1.5.9.tar.gz?download:     need more than 1 value to unpack
+    Backup of the downloaded file has been made in /home/user/.buildout/downloads/minitage/libpng-1.5.9.tar.gz.md5sum_mismatch.0
+
+
 Installing a project
 =====================
 Now what you cant is to install your project.
