@@ -23,8 +23,8 @@ Two kinds of templates
 
 paster is your friend, cgwb you master
 =========================================
-- paster from  `PasteScripts`_ will assist you to generate your **instances**
 - `CGWB`_, a web frontend to generate a project tarball to generate your **projects**
+- paster from  `PasteScripts`_ will assist you to generate your **instances**
 
 We do not use paster anymore for **projects** because of the number of answers to get input from.
 
