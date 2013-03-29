@@ -11,12 +11,12 @@ Minitage and paster templates: projects & instances
 Two kinds of templates
 ==========================
 
--**projects**:
+- **projects**:
 
     Something that will go inside ``<minitage>/categ/name``
     A minibase project
 
--**instances**:
+- **instances**:
 
     Something that will go inside ``<minitage>/categ/name/sys``
     A minibase project sub tool like a database, or an environment file
