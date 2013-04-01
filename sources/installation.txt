@@ -32,6 +32,7 @@ Installing minitage
 Create the minitage root::
 
     mkdir minitage
+    cd minitage
 
 You need to be online to use the next commands.
 
