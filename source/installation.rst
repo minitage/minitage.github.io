@@ -40,7 +40,7 @@ In the other hand, to use offline, have ``./minitage/downloads``  feeded with ne
     chmod +x minitagetool.sh
     ./minitagetool.sh bootstrap # take a coffee...
 
-If you want to upgrade from pre-minitagetool, just issue this::
+If you want to upgrade from pre-minitagetool, just issue this
 
 .. code-block:: sh
 
