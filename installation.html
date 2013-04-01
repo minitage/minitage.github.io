@@ -192,17 +192,18 @@
 <div class="section" id="installing-minitage">
 <h2>Installing minitage<a class="headerlink" href="#installing-minitage" title="Permalink to this headline">¶</a></h2>
 <p>Create the minitage root:</p>
-<div class="highlight-python"><pre>mkdir minitage
-cd minitage</pre>
+<div class="highlight-python"><pre>mkdir minitage</pre>
 </div>
 <p>You need to be online to use the next commands.</p>
 <div class="section" id="installing-minitage-tool">
 <h3>Installing minitage tool<a class="headerlink" href="#installing-minitage-tool" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-sh"><div class="highlight"><pre>wget -O minitagetool.sh https://raw.github.com/minitage/minitage.shell/master/minitagetool.sh
+<p>Inside the minitage &#8220;top level directory&#8221;
+.. code-block:: sh</p>
+<blockquote>
+cd minitage
+wget -O minitagetool.sh <a class="reference external" href="https://raw.github.com/minitage/minitage.shell/master/minitagetool.sh">https://raw.github.com/minitage/minitage.shell/master/minitagetool.sh</a>
 chmod +x minitagetool.sh
-./minitagetool.sh bootstrap <span class="c"># take a coffee...</span>
-</pre></div>
-</div>
+./minitagetool.sh bootstrap # take a coffee...</blockquote>
 </div>
 <div class="section" id="upgrading-from-non-minitagetool-minitage-installation">
 <h3>Upgrading from non-minitagetool minitage installation<a class="headerlink" href="#upgrading-from-non-minitagetool-minitage-installation" title="Permalink to this headline">¶</a></h3>

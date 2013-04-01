@@ -32,14 +32,15 @@ Installing minitage
 Create the minitage root::
 
     mkdir minitage
-    cd minitage
 
 You need to be online to use the next commands.
 
 Installing minitage tool
 -------------------------
+Inside the minitage "top level directory"
 .. code-block:: sh
 
+    cd minitage
     wget -O minitagetool.sh https://raw.github.com/minitage/minitage.shell/master/minitagetool.sh
     chmod +x minitagetool.sh
     ./minitagetool.sh bootstrap # take a coffee...
