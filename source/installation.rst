@@ -38,6 +38,7 @@ You need to be online to use the next commands.
 Installing minitage tool
 -------------------------
 Inside the minitage "top level directory"
+
 .. code-block:: sh
 
     cd minitage
