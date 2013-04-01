@@ -27,10 +27,6 @@ After, you can:
 
 - **WARNING**: it touches ~/.buildout/default.cfg to set the local download cache
 
-Additionnaly to minitage initial layout we have::
-
-    minitage/
-
 Installing minitage
 ====================
 You need to be online to bootstrap with this script.
