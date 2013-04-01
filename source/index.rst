@@ -27,7 +27,7 @@ How do i use it
 .. toctree::
    :maxdepth: 2
 
-   installation_new
+   installation
 
 .. toctree::
    :maxdepth: 2
