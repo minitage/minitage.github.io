@@ -29,26 +29,23 @@ After, you can:
 
 Installing minitage
 ====================
-You need to be online to bootstrap with this script.
+Create the minitage root::
 
-In the other hand, to use offline, have ``./minitage/downloads``  feeded with neccessary archives.
+    mkdir minitage
 
+You need to be online to use the next commands.
+
+Installing minitage tool
+-------------------------
 .. code-block:: sh
 
-    mkdir minitage;cd minitage
     wget -O minitagetool.sh https://raw.github.com/minitage/minitage.shell/master/minitagetool.sh
     chmod +x minitagetool.sh
     ./minitagetool.sh bootstrap # take a coffee...
 
-If you want to upgrade from pre-minitagetool, just issue this
-
-.. code-block:: sh
-
-    cd minitage
-    wget -O minitagetool.sh https://raw.github.com/minitage/minitage.shell/master/minitagetool.sh
-    chmod +x minitagetool.sh
-    ./minitagetool.sh bootstrap # take a coffee...
-
+Upgrading from non-minitagetool minitage installation
+---------------------------------------------------------
+Just run the install instructions, they will bootstrap and conserve all that can be one.
 
 Installing a project
 =====================
@@ -158,4 +155,4 @@ If you see such a traceback, just relaunch the issued command to see if it was a
     MinimergeError: Failed download for http://prdownloads.sourceforge.net/libpng/libpng-1.5.9.tar.gz?download:     need more than 1 value to unpack
     Backup of the downloaded file has been made in /home/user/.buildout/downloads/minitage/libpng-1.5.9.tar.gz.md5sum_mismatch.0
 
- 
+

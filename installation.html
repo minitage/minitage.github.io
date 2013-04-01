@@ -191,20 +191,21 @@
 </div>
 <div class="section" id="installing-minitage">
 <h2>Installing minitage<a class="headerlink" href="#installing-minitage" title="Permalink to this headline">¶</a></h2>
-<p>You need to be online to bootstrap with this script.</p>
-<p>In the other hand, to use offline, have <tt class="docutils literal"><span class="pre">./minitage/downloads</span></tt>  feeded with neccessary archives.</p>
-<div class="highlight-sh"><div class="highlight"><pre>mkdir minitage;cd minitage
-wget -O minitagetool.sh https://raw.github.com/minitage/minitage.shell/master/minitagetool.sh
+<p>Create the minitage root:</p>
+<div class="highlight-python"><pre>mkdir minitage</pre>
+</div>
+<p>You need to be online to use the next commands.</p>
+<div class="section" id="installing-minitage-tool">
+<h3>Installing minitage tool<a class="headerlink" href="#installing-minitage-tool" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-sh"><div class="highlight"><pre>wget -O minitagetool.sh https://raw.github.com/minitage/minitage.shell/master/minitagetool.sh
 chmod +x minitagetool.sh
 ./minitagetool.sh bootstrap <span class="c"># take a coffee...</span>
 </pre></div>
 </div>
-<p>If you want to upgrade from pre-minitagetool, just issue this</p>
-<div class="highlight-sh"><div class="highlight"><pre><span class="nb">cd </span>minitage
-wget -O minitagetool.sh https://raw.github.com/minitage/minitage.shell/master/minitagetool.sh
-chmod +x minitagetool.sh
-./minitagetool.sh bootstrap <span class="c"># take a coffee...</span>
-</pre></div>
+</div>
+<div class="section" id="upgrading-from-non-minitagetool-minitage-installation">
+<h3>Upgrading from non-minitagetool minitage installation<a class="headerlink" href="#upgrading-from-non-minitagetool-minitage-installation" title="Permalink to this headline">¶</a></h3>
+<p>Just run the install instructions, they will bootstrap and conserve all that can be one.</p>
 </div>
 </div>
 <div class="section" id="installing-a-project">
