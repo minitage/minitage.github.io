@@ -37,7 +37,7 @@ A stable version
         .. code-block:: sh
 
             source $prefix/bin/activate
-            easy_install -U minitage.core
+            easy_install -U minitage
 
     - Sync its packages (all its minilays in minitage terminology).
 

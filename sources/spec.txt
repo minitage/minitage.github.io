@@ -16,12 +16,15 @@ The package manager in 7 points
 Minitage a set of tools
 =======================
 
+    - **minitage**: the package manager, the python package
     - **minimerge**: the "minitage" controller script
     - **minitagetool.sh**: the "minitage for the common" helper script
     - **minitagify**: a script to port projects to minitage
     - **paster (minitage.paste)**: scaffolds collection to facilitate the use of minitage (create projects or instances inside it)
     - **buildout recipes & buildout extensions**:
         Those extensions & recipes knows the underlying mintiage environment & will load the adequat project settings like setting LDFLAGS, CFLAGS or PYTHONPATH.
+
+
 
         - **minitage.recipe.scripts**:
             Install python eggs & relevant scripts (``zc.recipe.egg`` alike)
@@ -59,6 +62,7 @@ Abstract
         lib/
             python-ver/
                 site-packages/
+                    minitage
                     minitage.core
 
         downloads/
@@ -66,6 +70,7 @@ Abstract
         sources/
             buildout.minitagificator/
             minitage.core/
+            minitage/
             minitage.paste/
             minitage.recipe/
             minitage.recipe.cmmi/
@@ -320,7 +325,7 @@ Conventions
 ------------
 
 They are rules, not just conventions, follow them or be killed.
-If you want a full review, just take a look to ``minitage.core/minitage/core/objects/minibuild.py``` regular expressions ;).
+If you want a full review, just take a look to ``minitage/minitage/core/objects/minibuild.py``` regular expressions ;).
 Please not that your project name cannot contain "``-``" as it is used to generate eggs names.
 
     - Valid names:

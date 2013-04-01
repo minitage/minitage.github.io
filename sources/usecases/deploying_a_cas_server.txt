@@ -15,7 +15,7 @@ Take $MT as the minitage installation prefix.
 Be up to date before each minitage commande usage
 ::
 
-    easy_install -U minitage.core minitage.paste minitage.paste.extras
+    easy_install -U minitage minitage.paste minitage.paste.extras
 
 
 Right after minitage installation, issue the following commands

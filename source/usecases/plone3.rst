@@ -20,7 +20,7 @@ Make a minitage instance::
 
     $python/bin/virtualenv --no-site-packages $minitage
     source $minitage/bin/activate
-    easy_install -U minitage.core minitage.paste
+    easy_install -U minitage minitage.paste
     minimerge -s
 
 Create and install a **plone3 with RelsSorage project** with the **varnish2** and **postgresql** profiles on top of it::
