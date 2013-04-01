@@ -1,4 +1,5 @@
 build/
+eggs/*egg
 source/eggs
 a
 .installed.cfg
