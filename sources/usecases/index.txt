@@ -1,4 +1,4 @@
-Minitage usage
+Minitage advanced usage
 #########################################
 
 Here are some examples and documentation to help you discover the wonderful world of minitage.
