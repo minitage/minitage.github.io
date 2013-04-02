@@ -48,6 +48,7 @@ Inside the minitage **top level directory**
 
 Upgrading from non-minitagetool minitage installation
 ---------------------------------------------------------
-Just run the install instructions, they will bootstrap and conserve all that can be one.
+Just run the install instructions, 
+they will bootstrap and conserve all that can be done.
 
 
