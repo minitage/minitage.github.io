@@ -136,6 +136,9 @@ Layout explanation
 **bin/minimerge**:
     The project Assembler
 
+**bin/minitagify**:
+    The minitagifier script 
+
 **etc/minimerge.cfg**:
     Minitage configuration file
 
