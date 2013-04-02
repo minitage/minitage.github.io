@@ -28,6 +28,7 @@ How do i use it
    :maxdepth: 2
 
    installation
+   minitagetool
 
 .. toctree::
    :maxdepth: 2
