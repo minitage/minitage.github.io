@@ -18,7 +18,8 @@ Minitage a set of tools
 
     - **minitagetool.sh**: the "minitage for the common" helper script
     - **minitage**: the package manager & the python package
-      Parts of minitage:
+
+        Parts of minitage:
 
         - **minimerge**: the "minitage" controller script
         - **minitagify**: a script to port projects to minitage
