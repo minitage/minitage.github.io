@@ -25,7 +25,7 @@ Minitage a set of tools
         - **minitagify**: a script to port projects to minitage
 
     - **paster (minitage.paste)**: scaffolds collection to facilitate the use of minitage (create projects or instances inside it)
-    - **ccollective.generic.webbuilder** AKA **CGWB**: web interface to paster templates
+    - **ccollective.generic.webbuilder** AKA **CGWB**: web interface to paster templates to quickly generate projects
     - **buildout recipes & buildout extensions**:
         Those extensions & recipes knows the underlying mintiage environment & will load the adequat project settings like setting LDFLAGS, CFLAGS or PYTHONPATH.
 
