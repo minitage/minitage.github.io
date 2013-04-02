@@ -233,7 +233,7 @@ git clone git@foo:bar-minilay minitage/minilays/bar-minilay</pre>
 </ul>
 </blockquote>
 <ul>
-<li><p class="first">Run the minimerge dance via the tool minus the <strong>ONLINE</strong> switch:</p>
+<li><p class="first">Run the minimerge dance via the tool <strong>+</strong> the <strong>ONLINE</strong> switch:</p>
 <div class="highlight-python"><pre>ONLINE=y ./minitagetool.sh deploy &lt;projectminibuild&gt; [&lt;otherminibuild&gt;]</pre>
 </div>
 </li>
@@ -245,7 +245,8 @@ git clone git@foo:bar-minilay minitage/minilays/bar-minilay</pre>
 Or you have issues with minitage and want to see if is is now xied, just run:</p>
 <div class="highlight-python"><pre>./minitagetool.sh selfupgrade</pre>
 </div>
-<p>Think to redeploy your project dependencies updates as well:</p>
+<p>Think to redeploy your project dependencies updates,
+You can do this command to do the whole at the same time (update minitage+projects):</p>
 <div class="highlight-python"><pre>./minitagetool.sh selfupgrade &lt;projectminibuild&gt; [&lt;otherminibuild&gt;]</pre>
 </div>
 </div>

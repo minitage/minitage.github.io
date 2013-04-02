@@ -73,7 +73,7 @@ The only thing you have to do is to install the project minilay in ``minitage/mi
         cd minitage
         git clone git@foo:bar-minilay minitage/minilays/bar-minilay
 
-- Run the minimerge dance via the tool minus the **ONLINE** switch::
+- Run the minimerge dance via the tool **+** the **ONLINE** switch::
 
     ONLINE=y ./minitagetool.sh deploy <projectminibuild> [<otherminibuild>]
 
@@ -85,7 +85,8 @@ Or you have issues with minitage and want to see if is is now xied, just run::
 
     ./minitagetool.sh selfupgrade
 
-Think to redeploy your project dependencies updates as well::
+Think to redeploy your project dependencies updates,
+You can do this command to do the whole at the same time (update minitage+projects)::
 
     ./minitagetool.sh selfupgrade <projectminibuild> [<otherminibuild>]
 
