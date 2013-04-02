@@ -16,7 +16,7 @@ Minitage is all about deployment and projects packaging
    why
    spec
 
-How do i use it
+Usage
 =================
 
 .. toctree::
@@ -31,7 +31,7 @@ How do i use it
    minitagetool
 
 Advanced usage
-================= 
+=================
 .. toctree::
    :maxdepth: 2
 
