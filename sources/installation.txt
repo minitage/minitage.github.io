@@ -75,7 +75,7 @@ The only thing you have to do is to install the project minilay in ``minitage/mi
 
 - Run the minimerge dance via the tool **+** the **ONLINE** switch::
 
-    ONLINE=y ./minitagetool.sh deploy <projectminibuild> [<otherminibuild>]
+    ./minitagetool.sh deploy <projectminibuild> [<otherminibuild>]
 
 
 Upgrade minitage itself
@@ -94,7 +94,7 @@ Upgrade projects
 ==================
 Simply run::
 
-    ONLINE=y ./minitagetool.sh deploy <projectminibuild> [<otherminibuild>]
+    ./minitagetool.sh deploy <projectminibuild> [<otherminibuild>]
 
 Make a snapshot
 ========================
@@ -121,7 +121,13 @@ get the archives produced by ``./minitagetool.sh snapshot``::
 
 Restore the snapshot to an usable state::
 
-     ./minitagetool.sh deploy <project>
+     ./minitagetool.sh offlinedeploy <project>
+
+(Re)install a project in offline mode
+=======================================
+Just as earlier, use the offline switch::
+
+     ./minitagetool.sh offlinedeploy <project>
 
 Launch cgwb
 =============

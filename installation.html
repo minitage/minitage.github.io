@@ -85,6 +85,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#upgrade-projects">Upgrade projects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#make-a-snapshot">Make a snapshot</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#deploy-a-snapshot">Deploy a snapshot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#re-install-a-project-in-offline-mode">(Re)install a project in offline mode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#launch-cgwb">Launch cgwb</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#downloads-errors">Downloads Errors</a></li>
 </ul>
@@ -234,7 +235,7 @@ git clone git@foo:bar-minilay minitage/minilays/bar-minilay</pre>
 </blockquote>
 <ul>
 <li><p class="first">Run the minimerge dance via the tool <strong>+</strong> the <strong>ONLINE</strong> switch:</p>
-<div class="highlight-python"><pre>ONLINE=y ./minitagetool.sh deploy &lt;projectminibuild&gt; [&lt;otherminibuild&gt;]</pre>
+<div class="highlight-python"><pre>./minitagetool.sh deploy &lt;projectminibuild&gt; [&lt;otherminibuild&gt;]</pre>
 </div>
 </li>
 </ul>
@@ -253,7 +254,7 @@ You can do this command to do the whole at the same time (update minitage+projec
 <div class="section" id="upgrade-projects">
 <h2>Upgrade projects<a class="headerlink" href="#upgrade-projects" title="Permalink to this headline">¶</a></h2>
 <p>Simply run:</p>
-<div class="highlight-python"><pre>ONLINE=y ./minitagetool.sh deploy &lt;projectminibuild&gt; [&lt;otherminibuild&gt;]</pre>
+<div class="highlight-python"><pre>./minitagetool.sh deploy &lt;projectminibuild&gt; [&lt;otherminibuild&gt;]</pre>
 </div>
 </div>
 <div class="section" id="make-a-snapshot">
@@ -276,7 +277,13 @@ tar xzvf &lt;minitageoffline-CHRONO-downloads.tar.gz&gt;
 tar xzvf &lt;minitageoffline-CHRONO-projects.tar.gz&gt;</pre>
 </div>
 <p>Restore the snapshot to an usable state:</p>
-<div class="highlight-python"><pre>./minitagetool.sh deploy &lt;project&gt;</pre>
+<div class="highlight-python"><pre>./minitagetool.sh offlinedeploy &lt;project&gt;</pre>
+</div>
+</div>
+<div class="section" id="re-install-a-project-in-offline-mode">
+<h2>(Re)install a project in offline mode<a class="headerlink" href="#re-install-a-project-in-offline-mode" title="Permalink to this headline">¶</a></h2>
+<p>Just as earlier, use the offline switch:</p>
+<div class="highlight-python"><pre>./minitagetool.sh offlinedeploy &lt;project&gt;</pre>
 </div>
 </div>
 <div class="section" id="launch-cgwb">
