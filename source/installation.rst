@@ -1,4 +1,4 @@
-Minitage Tool : installation
+Installation
 ##################################################
 
 The idea
