@@ -1,7 +1,7 @@
 System Prerequisites
 ########################
 
-.. contents:
+.. contents::
 
 Minitage requires:
 
