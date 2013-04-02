@@ -28,5 +28,6 @@ rm -rf ../sources                           \
                                         
 
 make html
+git add ..
 git commit -am up
 # vim:set et sts=4 ts=4 tw=80:
