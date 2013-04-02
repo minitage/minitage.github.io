@@ -1,5 +1,5 @@
-Minitage Tool : Usage
-################################### 
+minitagetool : Usage
+###################################
 
 Installing a project
 =====================
@@ -116,4 +116,4 @@ If you see such a traceback, just relaunch the issued command to see if it was a
     MinimergeError: Failed download for http://prdownloads.sourceforge.net/libpng/libpng-1.5.9.tar.gz?download:     need more than 1 value to unpack
     Backup of the downloaded file has been made in /home/user/.buildout/downloads/minitage/libpng-1.5.9.tar.gz.md5sum_mismatch.0
 
-  
+

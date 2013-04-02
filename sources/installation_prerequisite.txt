@@ -1,6 +1,8 @@
 System Prerequisites
 ########################
 
+.. contents:
+
 Minitage requires:
 
     - GIT the DVCS
