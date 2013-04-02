@@ -2,7 +2,6 @@
 rm -rf ../sources                           \
     ../a                                       \
     ../about.html                              \
-    ../CNAME                                   \
     ../develop.html                            \
     ../doctrees                                \
     ../genindex.html                           \
