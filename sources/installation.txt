@@ -81,7 +81,7 @@ The only thing you have to do is to install the project minilay in ``minitage/mi
 Upgrade minitage itself
 ========================
 Time to time, you need to update your software stack...
-Or you have issues with minitage and want to see if is is now xied, just run::
+Or you have issues with minitage and want to see if is is now fixed, just run::
 
     ./minitagetool.sh selfupgrade
 
