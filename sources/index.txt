@@ -30,6 +30,8 @@ How do i use it
    installation
    minitagetool
 
+Advanced usage
+================= 
 .. toctree::
    :maxdepth: 2
 
