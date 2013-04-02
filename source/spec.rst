@@ -16,11 +16,15 @@ The package manager in 7 points
 Minitage a set of tools
 =======================
 
-    - **minitage**: the package manager, the python package
-    - **minimerge**: the "minitage" controller script
     - **minitagetool.sh**: the "minitage for the common" helper script
-    - **minitagify**: a script to port projects to minitage
+    - **minitage**: the package manager & the python package
+      Parts of minitage:
+
+        - **minimerge**: the "minitage" controller script
+        - **minitagify**: a script to port projects to minitage
+
     - **paster (minitage.paste)**: scaffolds collection to facilitate the use of minitage (create projects or instances inside it)
+    - **ccollective.generic.webbuilder** AKA **CGWB**: web interface to paster templates
     - **buildout recipes & buildout extensions**:
         Those extensions & recipes knows the underlying mintiage environment & will load the adequat project settings like setting LDFLAGS, CFLAGS or PYTHONPATH.
 
@@ -146,7 +150,7 @@ Layout explanation
 
     .. sourcecode:: sh
 
- 
+
 
 **sources/**:
     minitage source code folders
