@@ -54,7 +54,7 @@ Doc Archives (not maintained)
 .. toctree::
    :maxdepth: 1
 
-   archives/index
+   archives
 
 
 .. Indices and tables
