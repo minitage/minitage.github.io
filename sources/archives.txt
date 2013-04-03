@@ -1,4 +1,4 @@
-Doc Archives (not maintained)
+Archives index
 ====================================
 .. toctree::
    :maxdepth: 1
@@ -9,4 +9,7 @@ Doc Archives (not maintained)
    usecases/plone3
    usecases/deploying_a_cas_server
    paster/archives.rst
-   paster/projects/packaging_projects 
+   paster/projects/packaging_projects
+
+
+
