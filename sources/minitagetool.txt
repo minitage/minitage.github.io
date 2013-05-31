@@ -44,7 +44,7 @@ Offline(no internet) mode upgrade
 -------------------------------------
 After having upgrade local source code (eg from snapshot tarballs)::
 
-    ./minitagetool.sh selfupgrade
+    ./minitagetool.sh offlineupgrade
 
 Think to redeploy your project dependencies updates,
 You can do this command to do the whole at the same time (update minitage+projects)::
