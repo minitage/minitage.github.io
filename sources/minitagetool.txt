@@ -46,6 +46,9 @@ After having upgrade local source code (eg from snapshot tarballs)::
 
     ./minitagetool.sh offlineupgrade
 
+Reinstalling projects while upgrading
+-----------------------------------------
+
 Think to redeploy your project dependencies updates,
 You can do this command to do the whole at the same time (update minitage+projects)::
 
