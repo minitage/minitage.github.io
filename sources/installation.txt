@@ -1,6 +1,10 @@
 Installation
 ##################################################
 
+Prerequisite
+==============
+Please see :ref:`mininsprerequisites`
+
 The minitagetool
 =================
 Minitage can be hard to use for non developers, so we made a script **minitagetool.sh** to help working with minitage.
@@ -44,11 +48,11 @@ Inside the minitage **top level directory**
     cd minitage
     wget -O minitagetool.sh https://raw.github.com/minitage/minitage.shell/master/minitagetool.sh
     chmod +x minitagetool.sh
-    ./minitagetool.sh bootstrap # take a coffee...
+    ./minitagetool.sh deploy # take a coffee...
 
 Upgrading from non-minitagetool minitage installation
 ---------------------------------------------------------
-Just run the install instructions, 
+Just run the install instructions,
 they will bootstrap and conserve all that can be done.
 
 

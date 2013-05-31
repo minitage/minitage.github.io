@@ -3,7 +3,7 @@ Installation
 
 Prerequisite
 ==============
-Please see `mininsprerequisites`_
+Please see :ref:`mininsprerequisites`
 
 The minitagetool
 =================
@@ -48,11 +48,11 @@ Inside the minitage **top level directory**
     cd minitage
     wget -O minitagetool.sh https://raw.github.com/minitage/minitage.shell/master/minitagetool.sh
     chmod +x minitagetool.sh
-    ./minitagetool.sh bootstrap # take a coffee...
+    ./minitagetool.sh deploy # take a coffee...
 
 Upgrading from non-minitagetool minitage installation
 ---------------------------------------------------------
-Just run the install instructions, 
+Just run the install instructions,
 they will bootstrap and conserve all that can be done.
 
 
