@@ -32,14 +32,24 @@ The only thing you have to do is to install the project minilay in ``minitage/mi
 Upgrade minitage itself
 ========================
 Time to time, you need to update your software stack...
-Or you have issues with minitage and want to see if is is now fixed, just run::
+Or you have issues with minitage and want to see if is is now fixed,
+
+Online(internet) mode upgrade
+------------------------------
+::
+
+    ./minitagetool.sh selfupgrade
+
+Offline(no internet) mode upgrade
+-------------------------------------
+After having upgrade local source code (eg from snapshot tarballs)::
 
     ./minitagetool.sh selfupgrade
 
 Think to redeploy your project dependencies updates,
 You can do this command to do the whole at the same time (update minitage+projects)::
 
-    ./minitagetool.sh selfupgrade <projectminibuild> [<otherminibuild>]
+    ./minitagetool.sh selfupgrade|offlineupgrade <projectminibuild> [<otherminibuild>]
 
 Upgrade projects
 ==================

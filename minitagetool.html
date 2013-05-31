@@ -176,12 +176,21 @@ git clone git@foo:bar-minilay minitage/minilays/bar-minilay</pre>
 <div class="section" id="upgrade-minitage-itself">
 <h2>Upgrade minitage itself<a class="headerlink" href="#upgrade-minitage-itself" title="Permalink to this headline">¶</a></h2>
 <p>Time to time, you need to update your software stack...
-Or you have issues with minitage and want to see if is is now fixed, just run:</p>
+Or you have issues with minitage and want to see if is is now fixed,</p>
+<div class="section" id="online-internet-mode-upgrade">
+<h3>Online(internet) mode upgrade<a class="headerlink" href="#online-internet-mode-upgrade" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><pre>./minitagetool.sh selfupgrade</pre>
+</div>
+</div>
+<div class="section" id="offline-no-internet-mode-upgrade">
+<h3>Offline(no internet) mode upgrade<a class="headerlink" href="#offline-no-internet-mode-upgrade" title="Permalink to this headline">¶</a></h3>
+<p>After having upgrade local source code (eg from snapshot tarballs):</p>
 <div class="highlight-python"><pre>./minitagetool.sh selfupgrade</pre>
 </div>
 <p>Think to redeploy your project dependencies updates,
 You can do this command to do the whole at the same time (update minitage+projects):</p>
-<div class="highlight-python"><pre>./minitagetool.sh selfupgrade &lt;projectminibuild&gt; [&lt;otherminibuild&gt;]</pre>
+<div class="highlight-python"><pre>./minitagetool.sh selfupgrade|offlineupgrade &lt;projectminibuild&gt; [&lt;otherminibuild&gt;]</pre>
+</div>
 </div>
 </div>
 <div class="section" id="upgrade-projects">
