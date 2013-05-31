@@ -34,13 +34,13 @@ Upgrade minitage itself
 Time to time, you need to update your software stack...
 Or you have issues with minitage and want to see if is is now fixed,
 
-Online(internet) mode upgrade
-------------------------------
+Online (internet) mode upgrade
+-------------------------------
 ::
 
     ./minitagetool.sh selfupgrade
 
-Offline(no internet) mode upgrade
+Offline (no internet) mode upgrade
 -------------------------------------
 After having upgrade local source code (eg from snapshot tarballs)::
 
