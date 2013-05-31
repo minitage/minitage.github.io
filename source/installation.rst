@@ -1,6 +1,10 @@
 Installation
 ##################################################
 
+Prerequisite
+==============
+Please see `mininsprerequisites`_
+
 The minitagetool
 =================
 Minitage can be hard to use for non developers, so we made a script **minitagetool.sh** to help working with minitage.

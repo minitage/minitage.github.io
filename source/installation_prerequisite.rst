@@ -1,3 +1,5 @@
+.. _mininsprerequisites:
+
 System Prerequisites
 ########################
 
