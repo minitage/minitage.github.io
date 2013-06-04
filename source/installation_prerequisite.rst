@@ -102,31 +102,6 @@ Fedora
 MacOS X
 -------
 
-    Before starting with the project, be sure that these dependencies are installed via macports (http://macports.org) on your system :
-
-        * `bzip2 <http://trac.macports.org/projects/macports/browser/trunk/dports/archivers/bzip2/Portfile>`_
-        * `gnutar (gtar) <http://trac.macports.org/projects/macports/browser/trunk/dports/archivers/gnutar/Portfile>`_
-        * `unzip <http://trac.macports.org/projects/macports/browser/trunk/dports/archivers/unzip/Portfile>`_
-        * `binutils <http://trac.macports.org/projects/macports/browser/trunk/dports/devel/binutils/Portfile>`_
-        * `sed (gsed) <http://trac.macports.org/projects/macports/browser/trunk/dports/textproc/gsed/Portfile>`_
-        * `gnu make (gmake) <http://trac.macports.org/projects/macports/browser/trunk/dports/devel/gmake/Portfile>`_
-        * `autoconf <http://trac.macports.org/projects/macports/browser/trunk/dports/devel/autoconf/Portfile>`_
-        * `automake <http://trac.macports.org/projects/macports/browser/trunk/dports/devel/automake/Portfile>`_
-        * `gettext <http://trac.macports.org/projects/macports/browser/trunk/dports/devel/gettext/Portfile>`_
-        * `m4 <http://trac.macports.org/projects/macports/browser/trunk/dports/devel/m4/Portfile>`_
-
-    Do not forget to update your bash profile to take your installed ports into account
-
-        .. code-block:: sh
-
-            # put this line into ~/.bashrc and ~/.bash_profile
-            export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-
-    Install requirements
-
-        .. code-block:: sh
-
-            sudo /opt/local/bin/port install gnutar gsed unzip binutils gsed gmake autoconf automake gettext
-
+    Normally, you just need a copy of the XCode and git and you are ready to dance.
 
 
