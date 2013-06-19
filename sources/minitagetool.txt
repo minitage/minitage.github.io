@@ -56,7 +56,7 @@ You can do this command to do the whole at the same time (update minitage+projec
 
 Upgrade projects
 ==================
-This will pull the new code from origin prior to a regular deploy
+This will pull the new code from origin prior then do a regular deploy
 Simply run::
 
     ./minitagetool.sh upgrade <projectminibuild> [<otherminibuild>]
