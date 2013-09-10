@@ -26,7 +26,7 @@ As the project didn't get mass adoption, i decided to give it the end of life it
 deserves.
 
 Minitage goals are there, the project is stable and really useful.
-On the other hand,  is terribly time consuming in maintening terms.
+On the other hand,  it is terribly time consuming in maintening terms.
 We are agreeing that what is hard to maintain is the package tree and it
 security  and not minitage itself.
 It is also and was never made to be that easy to use.
