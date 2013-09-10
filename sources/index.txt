@@ -31,7 +31,7 @@ We are agreeing that what is hard to maintain is the package tree and it
 security  and not minitage itself.
 It is also and was never made to be that easy to use.
 minitagetool was there as a try to leverage the usage, but that's even didn't
-make it
+made it
 
 That's no doubt that There are uses cases where i will miss it like to snapshot old installations or
 use a 'from source install' in an offline location, but i don't have the energy
