@@ -44,7 +44,7 @@ There are lot in the balance like:
     - less and less benefits that using another modern isolation technology
     - Real life issues
 
-Please migrate your projects to something else, and use your systeme packages.
+Please migrate your projects to something else, and use your system packages.
 Your options to isolate are:
 
     - Freebsd Jails
