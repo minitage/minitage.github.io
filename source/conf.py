@@ -185,7 +185,7 @@ htmlhelp_basename = 'minitage-github-doc'
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
   ('index', 'minitage-github.tex', u'Minitage github Documentation',
-   u'kiorky', 'manual'),
+   u'MakinaCorpus', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
