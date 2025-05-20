@@ -12,7 +12,7 @@ Develop
 * Bug tracking system is hosted on `github`_ for all componennts
 * We host the eggs on `github`_ and on `Pypi package index`_
 * The developper team can be join on IRC, irc.freenode.net **#minitage**
-* You can reach kiorky by mail at kiorky@cryptelium.net.
+* You can reach kiorky by mail at freesoftware@makina-corpus.com.
 
 .. |makinacom| image:: http://depot.makina-corpus.org/public/logo.gif
 .. _makinacom:  http://www.makina-corpus.com
